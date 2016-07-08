@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="Psychology Interactive">
+<meta name="keywords"
+	content="Simulation, Interactive, Sim, Psychology ">
+<title name="LateAdulthood" id="lateAdulthood">Late Adulthood |
+	Lifespan | Psychology</title>
+<!-- <link rel="canonical" href=""/>  -->
+
+<link rel="stylesheet" href="css/app.css" />
+
+</head>
+<body>
+	<div id="appContainer" class="app-container">
+		<div id="sceneWrapper" class="scene-wrapper">
+			<div id="sceneIntro" class="scene-intro scene ">
+				<div id="subSceneZeroZero" class="sub-scene ">
+					<div id="gameWorldOne" class="game-world">
+						<div id="backGroundOne" class="background"></div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div id="sceneZero" class="scene scene-zero  ">
+				<div id="subSceneZeroZero" class="sub-scene ">
+					<div id="gameWorldZero" class="game-world">
+
+						<div id="backGroundZero" class="background scene-zero"></div>
+						<div id="foreGroundZero" class="foreground">
+							<div id="tablePieceZero" class="table-piece scene-zero"></div>
+							<div id="chairLouiseZero" class="chair-louise zero scene-zero"></div>
+							<div id="characterLouiseZero"
+								class="character louise scene-zero-anim idle "></div>
+							<div id="tableZero" class="table scene-zero"></div>
+
+							<div id="characterPlayerZero"
+								class="character player scene-zero-anim idle "></div>
+							<div id="chairPlayerZero" class="chair-player zero scene-zero"></div>
+							<div id="chairSarahZero" class="chair-sarah zero scene-zero"></div>
+
+							<div id="characterSarahZero"
+								class="character sarah scene-zero-anim idle "></div>
+							<div id="chairSarahOverlayZero"
+								class="chair-sarah-overlay zero scene-zero"></div>
+
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+			<div id="sceneOne" class="scene scene-one ">
+				<div id="subSceneOneZero" class="sub-scene ">
+					<div id="gameWorldOne" class="game-world">
+						<div id="backGroundOne" class="background"></div>
+
+						<div id="foreGroundOne" class="foreground">
+
+							<div id="chairSarahSceneOne" class="chair-sarah scene-one"></div>
+							<div id="chairPlayerSceneOne" class="chair-player scene-one"></div>
+
+							<div id="characterSarahOne"
+								class="character sarah scene-one-anim idle"></div>
+							<div id="characterPlayerOne"
+								class="character player scene-one-anim idle"></div>
+
+							<div id="tableOne" class="table scene-one"></div>
+
+
+
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+
+			<div id="sceneTwo" class="scene scene-two ">
+				<div id="subSceneTwoZero" class="sub-scene ">
+					<div id="gameWorldTwoZero" class="game-world">
+						<div id="backGroundTwoZero" class="background"></div>
+						<div id="foreGroundTwoZero" class="foreground">
+							<div id="characterPlayerTwoZero"
+								class="character player scene-two-anim idle"></div>
+						</div>
+					</div>
+				</div>
+				<div id="subSceneTwoOne" class="sub-scene ">
+					<div id="gameWorldTwoOne" class="game-world">
+						<div id="backGroundTwoOne" class="background"></div>
+						<div id="foreGroundTwoOne" class="foreground">
+							<div id="characterPlayerTwoOne"
+								class="character player scene-two-anim idle"></div>
+						</div>
+					</div>
+				</div>
+				<div id="subSceneTwoTwo" class="sub-scene ">
+					<div id="gameWorldTwoTwo" class="game-world">
+						<div id="backGroundTwoTwo" class="background"></div>
+						<div id="foreGroundTwoTwo" class="foreground">
+							<div id="characterPlayerTwoTwo"
+								class="character player scene-two-anim idle"></div>
+						</div>
+					</div>
+				</div>
+				<div id="subSceneTwoThree" class="sub-scene ">
+					<div id="gameWorldTwoThree" class="game-world">
+						<div id="backGroundTwoThree" class="background"></div>
+						<div id="foreGroundTwoThree" class="foreground">
+							<div id="characterPlayerTwoThree"
+								class="character player scene-two-anim idle"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+
+	<!-- UI level Items  -->
+
+	<div id="userInterface" class="user-interface">
+
+		<div id="gameOverlay" class="game-overlay">
+			<div id="gameMode" class="game-mode">
+
+				<div id="infoText" class="info-text">Click in the info text.
+					Click on something else. I dont care as long as you do something
+					over here.Have a nice Day.</div>
+				<div id="conversationLayer" class="conversation-layer hide ">
+
+					<div id="conversationBubble" class="conversation-bubble sarah-a">
+						<div id="speakerName" class="speaker-name">Sarah</div>
+						<div id="conversationtext" class="conversation-text">Hey!
+							Whatsup? Hows it going? Still haven't kicked the bucket I
+							see!Hey! Whatsup? Hows it going? Still haven't kicked the bucket
+							I see!Hey! Whatsup? Hows it going? Still haven't kicked the
+							bucket I see!Hey! Whatsup? Hows it going? Still haven't kicked
+							the bucket I see!</div>
+					</div>
+
+				</div>
+				<div id="OOILayer" class="OOI-layer hide  "></div>
+
+				<div id="gameMap" class="game-map hide">
+					<div id="apartmentOne" class="apartment one point">
+						<div id="pointerArrowOne" class="pointer-arrow "></div>
+					</div>
+					<div id="apartmentTwo" class="apartment two point">
+						<div id="pointerArrowTwo" class="pointer-arrow "></div>
+					</div>
+					<div id="apartmentThree" class="apartment three point">
+						<div id="pointerArrowThree" class="pointer-arrow "></div>
+					</div>
+
+					<div id="apartmentInfo" class="apartment-info hide">
+						<div id="apartmentTitle" class="apartment-title"></div>
+						<ul id="apartmentDetailsList" class="apartment-details-list">
+							<li id="rentDetails" class="apartment-details  rent"></li>
+							<li id="ratingDetails" class="apartment-details  rating"></li>
+							<li id="distanceDetails" class="apartment-details  distance">
+							</li>
+							<li id="ammenitiesDetails" class="apartment-details  ammenities">
+							</li>
+
+						</ul>
+						<div id="tourButton" class="tour-button">Tour</div>
+					</div>
+				</div>
+				<div id="progressBar" class="progress-bar ">
+					<div id="progressContainer" class="progress-container">
+						<div id="progressLine" class="progress-line"></div>
+					</div>
+					<div id="loadingTips" class="loading-tips"></div>
+				</div>
+				<div id="gameTitle" class="game-title">
+					<div id="companyLogo" class="company-logo"></div>
+				</div>
+				<div id="objectDescription" class="object-description hide">
+					<div id="objectTitle" class="object-title"></div>
+					<div id="closeObject" class="close-object"></div>
+					<div id="objectDescriptionContent"
+						class="object-description-content">Older, painted, heavy
+						wood, and small windows facing back of neighboring building</div>
+
+				</div>
+
+				<div id="objectEffect" class="object-effect hide">
+					<div id="objectEffectContent" class="object-effect-content">
+						How might…affect a person with auditory impairment? Is this a
+						positive, negative, or neutral aspect of the apartment for
+						Raymond?</div>
+					<div id="objectEffectPostive" class="object-effect-tag positive"></div>
+					<div id="objectEffectNeutral" class="object-effect-tag neutral"></div>
+					<div id="objectEffectNegative" class="object-effect-tag negative"></div>
+					<div id="characterPin" class="character-pin"></div>
+
+
+				</div>
+
+				<div id="exploredObjectsList" class="explored-objects-list hide">
+					<span id="noOfObjectsExplored"> 2/6 </span>Object Explored
+				</div>
+
+				<div id="instructionHUD" class="instruction-HUD hide">
+					<div id="charProfile" class="char-profile hide">
+						<div id="charAvtar" class="char-avtar">
+							<span id="charProfileName" class="char-profile-name char-span">
+							</span><span id="charProfileSummary"
+								class="char-profile-summary char-span"> </span>
+						</div>
+						<ul id="charDetailsList" class="char-details-list">
+							<li id="charDetailsOne" class="char-details-one"></li>
+							<li id="charDetailsTwo" class="char-details-two"></li>
+
+						</ul>
+					</div>
+					<div id="instructionTitle" class="instruction-title hide"></div>
+					<div id="instructionContent" class="instruction-content hide"></div>
+					<div id="nextButton" class="next-button">
+						Got It! <b>NEXT >> </b>
+					</div>
+				</div>
+				<div id="characterSelectionWidget"
+					class="character-selection-widget hide">
+					<!--     <div id="widgetTitle" class="widget-title"> Choose a member </div> -->
+					<div id="slotMachine" class="slot-machine">
+						<div id="machineBackground" class="machine-background"></div>
+						<div id="characterInfoLayer" class="character-info-layer ">
+							<div id="stage">
+								<div id="rotate">
+									<div id="ring-1" class="ring">
+										<div class="poster gladys"
+											style="-webkit-transform: rotateX(0deg) translateZ(200px);">
+											<div class="spinner-char-info">Gladys</div>
+										</div>
+										<div class="poster raymond"
+											style="-webkit-transform: rotateX(30deg) translateZ(200px);">
+											<div class="spinner-char-info">Raymond</div>
+										</div>
+										<div class="poster mary"
+											style="-webkit-transform: rotateX(60deg) translateZ(200px);">
+											<div class="spinner-char-info">Mary</div>
+										</div>
+										<div class="poster gladys"
+											style="-webkit-transform: rotateX(90deg) translateZ(200px);">
+											<div class="spinner-char-info">Gladys</div>
+										</div>
+										<div class="poster raymond"
+											style="-webkit-transform: rotateX(120deg) translateZ(200px);">
+											<div class="spinner-char-info">Raymond</div>
+										</div>
+										<div class="poster mary"
+											style="-webkit-transform: rotateX(150deg) translateZ(200px);">
+											<div class="spinner-char-info">Mary</div>
+										</div>
+										<div class="poster gladys"
+											style="-webkit-transform: rotateX(180deg) translateZ(200px);">
+											<div class="spinner-char-info">Gladys</div>
+										</div>
+										<div class="poster raymond"
+											style="-webkit-transform: rotateX(210deg) translateZ(200px);">
+											<div class="spinner-char-info">Raymond</div>
+										</div>
+										<div class="poster mary"
+											style="-webkit-transform: rotateX(240deg) translateZ(200px);">
+											<div class="spinner-char-info">Mary</div>
+										</div>
+										<div class="poster gladys"
+											style="-webkit-transform: rotateX(270deg) translateZ(200px);">
+											<div class="spinner-char-info">Gladys</div>
+										</div>
+										<div class="poster raymond"
+											style="-webkit-transform: rotateX(300deg) translateZ(200px);">
+											<div class="spinner-char-info">Raymond</div>
+										</div>
+										<div class="poster mary"
+											style="-webkit-transform: rotateX(330deg) translateZ(200px);">
+											<div class="spinner-char-info">Mary</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--     <div id="characterTileOne" class="character-tiles one"></div>
+    <div id="characterTileTwo" class="character-tiles two"></div>
+    <div id="characterTileThree" class="character-tiles three"></div> -->
+						</div>
+						<div id="glassFrame" class="glass-frame "></div>
+					</div>
+					<div id="spinButton" class="spin-button point">
+						Spin
+						<div id="pointerArrowSpin" class="pointer-arrow"></div>
+					</div>
+
+
+				</div>
+				<div id="guideHeader" class="guide-header"></div>
+
+
+			</div>
+			<div id="settingsView" class="settings-view hide">
+
+				<div id="viewTitle" class="view-title">Settings</div>
+				<ul id="conrtolsList" class="controls-list">
+					<li id="gameMusicControl" class="controls  sound">Game Sound <img
+						src="assets/images/sound-setting.png" id="soundControl"
+						class="control-icon">
+					</li>
+					<li id="replayControl" class="controls music">Replay<img
+						src="assets/images/replay.png" id="musicControl"
+						class="control-icon"></li>
+
+				</ul>
+				<div id="applyButton" class="apply-button">Apply</div>
+			</div>
+
+		</div>
+		<!--   <div id="topToolBar" class="top-tool-bar">
+  <div id = "prevButton" class="buttons prev">&lt;</div>
+  <div id = "playButton" class="buttons play">&#61;</div>
+  <div id = "nextButton"  class="buttons next">&gt;</div>
+
+  </div> -->
+		<!--  <div id="controlLayer" class="control-layer">
+  
+   
+  </div> -->
+		<div id="controlMode" class="control-mode">
+			<div id="controlLeft" class="control-left control-bar ">
+				<div id="controlSetting" class="control-button left setting hide"></div>
+				<div id="controlMap" class="control-button left map hide"></div>
+				<div id="controlInfo" class="control-button left info hide"></div>
+
+
+			</div>
+			<div id="controlRight" class="control-right control-bar ">
+				<div id="controlScore" class="control-button right score hide"></div>
+			</div>
+		</div>
+		<audio id="gameMusic">
+			<source src="assets/sounds/book-of-love.mp3" type="audio/mpeg">
+
+			
+			
+			
+			
+			
+		</audio>
+
+	</div>
+
+
+	<!-- UI level Items  -->
+
+
+	</div>
+	<!--  <script type="text/javascript" src="js/app.js"></script> -->
+	<script type="text/javascript" data-main="js/app" src="js/require.js"></script>
+	<script type="text/javascript" src="js/devAnimMaker.js"></script>
+	<script type="text/javascript" src="vendor/pxloader/PxLoader.js"></script>
+	<script type="text/javascript" src="vendor/pxloader/PxLoaderImage.js"></script>
+	<script type="text/javascript" src="vendor/pxloader/PxLoaderSound.js"></script>
+	<!--  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-NFJ3V2');</script>
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFJ3V2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+   -->
+</body>
+</html>
