@@ -1235,7 +1235,7 @@ function loadGame() {
 	setup_posters(ringOne);
 	showProgress();
 	showGameTitle()
-	//toggleGameMusic();
+	toggleGameMusic();
 	setTimeout(initGame, 25000);
 }
 
