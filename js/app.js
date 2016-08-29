@@ -1,10 +1,11 @@
 
 var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
-var controlInfo, rightNav , ailmentNotes , ailmentTitle , backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, conclusionScriptArray ,  conversationScriptArray;
+var controlInfo, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, conclusionScriptArray ,  conversationScriptArray;
 
-var tagScore = 5 , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 25000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
+var tagScore = 5 , pinegroveObjectsExplored = 0 , lakeviewObjectsExplored = 0 , lakeviewObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 25000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
+var apartmentObjectsExplored = [pinegroveObjectsExplored , lakeviewObjectsExplored , lakeviewObjectsExplored ] ;
 infoScriptArray = [
 		{
 			'infoTitle' : 'info-one',
@@ -1287,6 +1288,8 @@ infoApartmentArray = [ {
 
 characterIDArray = [ 'sarah', 'louise', 'gladys', 'mary', 'raymond' ];
 
+subSceneArray = [ 'exterior', 'livingroom', 'bathroom' ];
+
 playerCharacterArray = [ {
 	'name' : 'Gladys',
 	'gender' : 'Female',
@@ -1326,6 +1329,10 @@ playerCharacterArray = [ {
 }
 
 ];
+
+
+
+
 
 appContainer = document.getElementById('appContainer');
 controlInfo = document.getElementById('controlInfo');
@@ -1714,6 +1721,14 @@ showOOIsControl();
 
 function showAilmentDescription(i){
 	
+	if(i == 0){
+		 checkEye = true ;
+	}else if(i == 1){
+		 checkLeg = true ;
+	}else if(i == 2){
+		 checkEar = true ;
+	}
+	
 	for(var k=0 ; k < ailmentArray.length ;  k++){
 		ailmentNotes.classList.remove(ailmentArray[k].class);	
 	}
@@ -1723,11 +1738,34 @@ function showAilmentDescription(i){
 	ailmentContent.innerHTML = ailmentArray[i].description ;
 }
 
+
+
 function showAilmentNotes(){
 	ailmentNotes.classList.remove('hide');
 }
+
+
 function closeAilmentNotes(){
-	ailmentNotes.classList.add('hide');
+
+	if(introPage){
+
+		if(!checkLeg){
+			showAilmentDescription(1);	
+		}else{
+		if(!checkEar){
+			showAilmentDescription(2);	
+		}else{
+			introPage = false;
+			ailmentNotes.classList.add('hide');
+			guideHeader.innerText = 'Choose a member';
+			characterSelectionWidget.classList.remove('hide');
+		}
+			
+		}
+
+	}else{
+		ailmentNotes.classList.add('hide');
+	}
 }
 
 function showTagNotes(info){
@@ -1745,6 +1783,9 @@ function selectCharacter(info) {
 	var randChar = info[Math.floor(Math.random() * info.length)];
 
 	playerChar = randChar;
+	
+	sceneWrapper.classList.add(playerChar.class);
+	
 	var charName = randChar.name;
 	//machineBackground.innerText = charName;
 	selectPlayerInAllScenes();
@@ -1771,11 +1812,22 @@ function initApartmentControls(){
 		userInterface.classList.remove(playerCharacterArray[i].class);
 	};
 	
+	for ( var i = 0; i < subSceneArray.length; i++) {
+		OOILayer.classList.remove(subSceneArray[i]);
+		userInterface.classList.remove(subSceneArray[i]);
+	};
+	
+	
+	
 	userInterface.classList.add(playerChar.class);
 	OOILayer.classList.add(playerChar.class);
 	
+	userInterface.classList.add(subSceneArray[currentSubSceneIndex]);
+	OOILayer.classList.add(subSceneArray[currentSubSceneIndex]);
+
 	userInterface.classList.add(currentApartment.class);
 	OOILayer.classList.add(currentApartment.class);
+	
 	OOILayer.classList.remove("hide");
 	rightNav.classList.remove('hide');	
 	
@@ -1917,6 +1969,7 @@ function toggleMap() {
 };
 function revealMap(){
 	controlMap.classList.remove('hide');
+	
 	toggleMap();
 }
 function showApartmentInfo(info, i) {
@@ -1938,7 +1991,10 @@ function showApartmentInfo(info, i) {
 	for ( var j = 0; j < apartmentClasses.length ; j++) {
 		apartmentInfo.classList.remove(apartmentClasses[j]);
 	}
-	apartmentInfo.classList.add(info[i].class)
+	apartmentInfo.classList.add(info[i].class);
+	
+	controlNotes.classList.remove('hide');
+	exploredObjectsList.classList.remove('hide');
 }
 function tagOOI(info,i){
 	for(var k = 0; k < objectEffectTag.length ; k++){
@@ -1963,11 +2019,17 @@ function tagOOI(info,i){
 		playerOOITags[currentApartment.index].taggedOOIs.bathtub = currentTag ;
 	}
 	
+	apartmentObjectsExplored[currentApartment.index] = apartmentObjectsExplored[currentApartment.index] + 1 ;
+	
+	
+	noOfObjectsExplored.innerHTML = apartmentObjectsExplored[currentApartment.index] + "/6";
 	
 /*	
 	var exploredItems = 
 	
 	noOfObjectsExplored.innerHTML =  + "/6";*/
+	
+	
 	
 	if(info[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].OOIImpact.indexOf(currentTag) > -1){
 	//	gameScore = gameScore + tagScore ;
@@ -1989,8 +2051,11 @@ function NPCTagResponse(){
 	
 	conversationLayer.classList.remove('hide');
 	conversationLayer.classList.add('tag-response');
+	conversationBubble.classList.add('OOI-tagging'); //to fix chat bubble on top of sarah
 	speakerName.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCName
 	conversationtext.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCResponse;
+
+
 }
 
 
@@ -2023,8 +2088,10 @@ function navigateInstructions() {
 		instructionCount = 0;
 		instructionHUD.classList.add('hide');
 		showInstructions(instructionCount);
-		guideHeader.innerText = 'Choose a member';
-		characterSelectionWidget.classList.remove('hide');
+		showAilmentDescription(0)
+		showAilmentNotes();
+/*		guideHeader.innerText = 'Choose a member';
+		characterSelectionWidget.classList.remove('hide');*/
 	}
 }
 function showInstructions(i) {
@@ -2241,6 +2308,22 @@ function tourApartment() {
 	initApartmentControls();
 	//resetgame();
 }
+
+function animateValue(id, start, end, duration) {
+    var range = end - start;
+    var current = start;
+    var increment = end > start? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = document.getElementById(id);
+    var timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
+}
+
 
 function navigateScenes(sceneNo,subSceneNo, callBack) {
 	gameOverlay.classList.remove('tint');
