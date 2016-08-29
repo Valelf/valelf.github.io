@@ -13,6 +13,7 @@
 <!-- <link rel="canonical" href=""/>  -->
 
 <link rel="stylesheet" href="css/app.css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 </head>
 <body>
@@ -21,7 +22,7 @@
 			<div id="sceneIntro" class="scene-intro scene ">
 				<div id="subSceneZeroZero" class="sub-scene ">
 					<div id="gameWorldOne" class="game-world">
-						<div id="backGroundOne" class="background"></div>
+						<div id="backGroundZeroZero" class="background splash"></div>
 
 					</div>
 
@@ -88,35 +89,72 @@
 			</div>
 
 
-			<div id="sceneTwo" class="scene scene-two ">
-				<div id="subSceneTwoZero" class="sub-scene ">
+			<div id="sceneTwo"class="scene scene-two ">
+				<div id="subSceneTwoZero"  data-subSceneIndex="0"  class="sub-scene ">
 					<div id="gameWorldTwoZero" class="game-world">
-						<div id="backGroundTwoZero" class="background"></div>
+						<div id="backGroundTwoZero" class="background  "></div>
 						<div id="foreGroundTwoZero" class="foreground">
+						<div id="intercomPinegrove" class="glowing-object pinegrove-glow intercom glow  hide"></div>
+						<div id="rampSunnyvale" class="glowing-object sunnyvale-glow ramp glow hide"></div>
+						<div id="streetSunnyvale" class="glowing-object sunnyvale-glow street glow hide"></div>
+						<div id="stairsLakeview" class="glowing-object lakeview-glow stairs glow hide"></div>
+						<div id="frenchDoorLakeview" class="glowing-object lakeview-glow french-door glow hide"></div>
 							<div id="characterPlayerTwoZero"
 								class="character player scene-two-anim idle"></div>
+								
+											<div id="characterSarahTwoZero"
+								class="character sarah scene-two-anim idle"></div>
+							
+								
+								
 						</div>
 					</div>
 				</div>
-				<div id="subSceneTwoOne" class="sub-scene ">
+				<div id="subSceneTwoOne" data-subSceneIndex="1" class="sub-scene ">
 					<div id="gameWorldTwoOne" class="game-world">
-						<div id="backGroundTwoOne" class="background"></div>
+						<div id="backGroundTwoOne" class="background  "></div>
 						<div id="foreGroundTwoOne" class="foreground">
+					<div id="stepsPinegrove" class="glowing-object pinegrove-glow steps glow hide"></div>
+					<div id="lightPinegrove" class="glowing-object pinegrove-glow light glow  hide"></div>
+					<div id="windowPinegrove" class="glowing-object pinegrove-glow window glow hide "></div>
+					<div id="sofaPinegrove" class="sofa-pinegrove pinegrove-glow hide"></div>
+					<div id="lampPinegrove" class="lamp-pinegrove hide "></div>
+					<div id="floorPinegrove" class="glowing-object pinegrove-glow floor glow  hide"></div>
+					
+					<div id="windowSunnyvale" class="glowing-object sunnyvale-glow window glow  hide"></div>
+					<div id="lightSunnyvale" class="glowing-object sunnyvale-glow light glow  hide"></div>
+					<div id="floorSunnyvale" class="glowing-object sunnyvale-glow floor glow hide "></div>	
+					
+					<div id="floorLakeview" class="glowing-object lakeview-glow floor glow hide "></div>	
+					<div id="ceilingLakeview" class="glowing-object lakeview-glow ceiling glow hide "></div>	
+					<div id="lightLakeview" class="glowing-object lakeview-glow light glow hide "></div>
+					
 							<div id="characterPlayerTwoOne"
 								class="character player scene-two-anim idle"></div>
+								
+											<div id="characterSarahTwoOne"
+								class="character sarah scene-two-anim idle"></div>
 						</div>
 					</div>
 				</div>
-				<div id="subSceneTwoTwo" class="sub-scene ">
+				<div id="subSceneTwoTwo" data-subSceneIndex="2"  class="sub-scene ">
 					<div id="gameWorldTwoTwo" class="game-world">
-						<div id="backGroundTwoTwo" class="background"></div>
+						<div id="backGroundTwoTwo" class="background  "></div>
 						<div id="foreGroundTwoTwo" class="foreground">
-							<div id="characterPlayerTwoTwo"
+						<div id="bathtubPinegrove" class="glowing-object pinegrove-glow bathtub glow  hide"></div>
+						<div id="bathtubLakeview" class="glowing-object lakeview-glow bathtub glow  hide"></div>
+							<div id="washLakeview" class="wash-lakeview lakeview-glow hide"></div>
+						<div id="bathtubSunnyvale" class="glowing-object sunnyvale-glow bathtub glow  hide"></div>
+						<div id="characterPlayerTwoTwo"
 								class="character player scene-two-anim idle"></div>
+								
+											<div id="characterSarahTwoTwo"
+								class="character sarah scene-two-anim idle"></div>
+								
 						</div>
 					</div>
 				</div>
-				<div id="subSceneTwoThree" class="sub-scene ">
+<!-- 				<div id="subSceneTwoThree" class="sub-scene ">
 					<div id="gameWorldTwoThree" class="game-world">
 						<div id="backGroundTwoThree" class="background"></div>
 						<div id="foreGroundTwoThree" class="foreground">
@@ -124,13 +162,13 @@
 								class="character player scene-two-anim idle"></div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 			</div>
 
 		</div>
 
-
+	
 
 
 
@@ -144,40 +182,41 @@
 		<div id="gameOverlay" class="game-overlay">
 			<div id="gameMode" class="game-mode">
 
-				<div id="infoText" class="info-text">Click in the info text.
-					Click on something else. I dont care as long as you do something
-					over here.Have a nice Day.</div>
+				
 				<div id="conversationLayer" class="conversation-layer hide ">
 
-					<div id="conversationBubble" class="conversation-bubble sarah-a">
-						<div id="speakerName" class="speaker-name">Sarah</div>
-						<div id="conversationtext" class="conversation-text">Hey!
-							Whatsup? Hows it going? Still haven't kicked the bucket I
-							see!Hey! Whatsup? Hows it going? Still haven't kicked the bucket
-							I see!Hey! Whatsup? Hows it going? Still haven't kicked the
-							bucket I see!Hey! Whatsup? Hows it going? Still haven't kicked
-							the bucket I see!</div>
+					<div id="conversationBubble" class="conversation-bubble ">
+						<div id="speakerName" class="speaker-name"></div>
+						<div id="conversationtext" class="conversation-text"></div>
 					</div>
 
 				</div>
-				<div id="OOILayer" class="OOI-layer hide  "></div>
+				<div id="OOILayer" class=" OOI-layer hide ">
+				
+				<div id="OOIOne" class="in-scene-OOI frontdoor" ></div>
+				<div id="OOITwo" class="in-scene-OOI steps" ></div>
+				<div id="OOIThree" class="in-scene-OOI windows" ></div>
+				<div id="OOIFour" class="in-scene-OOI lighting" ></div>
+				<div id="OOIFive" class="in-scene-OOI flooring" ></div>
+				<div id="OOISix" class="in-scene-OOI bathtub" ></div>
+				
+				</div>
 
-				<div id="gameMap" class="game-map hide">
+				<div id="gameMap" class="game-map   hide">
 					<div id="apartmentOne" class="apartment one point">
-						<div id="pointerArrowOne" class="pointer-arrow "></div>
+						
 					</div>
 					<div id="apartmentTwo" class="apartment two point">
-						<div id="pointerArrowTwo" class="pointer-arrow "></div>
+						
 					</div>
 					<div id="apartmentThree" class="apartment three point">
-						<div id="pointerArrowThree" class="pointer-arrow "></div>
+						
 					</div>
 
 					<div id="apartmentInfo" class="apartment-info hide">
 						<div id="apartmentTitle" class="apartment-title"></div>
 						<ul id="apartmentDetailsList" class="apartment-details-list">
 							<li id="rentDetails" class="apartment-details  rent"></li>
-							<li id="ratingDetails" class="apartment-details  rating"></li>
 							<li id="distanceDetails" class="apartment-details  distance">
 							</li>
 							<li id="ammenitiesDetails" class="apartment-details  ammenities">
@@ -205,14 +244,11 @@
 
 				</div>
 
-				<div id="objectEffect" class="object-effect hide">
-					<div id="objectEffectContent" class="object-effect-content">
-						How might…affect a person with auditory impairment? Is this a
-						positive, negative, or neutral aspect of the apartment for
-						Raymond?</div>
-					<div id="objectEffectPostive" class="object-effect-tag positive"></div>
-					<div id="objectEffectNeutral" class="object-effect-tag neutral"></div>
-					<div id="objectEffectNegative" class="object-effect-tag negative"></div>
+				<div id="objectEffect" class="object-effect hide ">
+					<div id="objectEffectContent" class="object-effect-content hide"> This text is from index page</div>
+					<div id="objectEffectPostive" class="object-effect-tag positive hide"></div>
+					<div id="objectEffectNeutral" class="object-effect-tag neutral hide"></div>
+					<div id="objectEffectNegative" class="object-effect-tag negative hide"></div>
 					<div id="characterPin" class="character-pin"></div>
 
 
@@ -221,7 +257,36 @@
 				<div id="exploredObjectsList" class="explored-objects-list hide">
 					<span id="noOfObjectsExplored"> 2/6 </span>Object Explored
 				</div>
-
+				<div id="tagNotes" class="tag-notes hide">
+				
+				<div id="activeApartment" class="active-apartment">
+				<div id="apartmentOOIOne" class="apartment-OOI apartment-OOI-one"><div class="tag-OOI left tagged negative"></div></div>
+				<div id="apartmentOOITwo"  class="apartment-OOI apartment-OOI-two"><div class="tag-OOI left  negative"></div></div>
+				<div id="apartmentOOIThree"  class="apartment-OOI apartment-OOI-three"><div class="tag-OOI left tagged positive"></div></div>
+				<div id="apartmentOOIFour"  class="apartment-OOI apartment-OOI-four"><div class="tag-OOI  right positive"></div></div>
+				<div id="apartmentOOIFive"  class="apartment-OOI apartment-OOI-five"><div class="tag-OOI right tagged neutral"></div></div>
+				<div id="apartmentOOISix"  class="apartment-OOI apartment-OOI-six"><div class="tag-OOI right neutral"></div></div>
+				
+				
+				</div>
+				<div id="inActiveApartmentLeft"  class="inactive-apartment left"></div>
+				<div id="inActiveApartmentRight"  class="inactive-apartment right"></div>
+				
+				<div id="noteDismissButton" class="note-dismiss-button">Dismiss</div>
+				
+				</div>
+               <div id="scoreContainer" class="score-container hide">
+               <div id="scoreTitle" class="score-title"></div>
+               <div id="scoreContent" class="score-content">
+               <p class="score-value" >90</p>
+               <p class="score-description" >Your Score</p>
+               <p class="score-value" >50</p>
+               <p class="score-description" >Your Engagement Score</p>
+               <p class="score-value" >10</p>
+               <p class="score-description" >Your Rank</p>
+               
+               </div>
+               </div>
 				<div id="instructionHUD" class="instruction-HUD hide">
 					<div id="charProfile" class="char-profile hide">
 						<div id="charAvtar" class="char-avtar">
@@ -238,9 +303,24 @@
 					<div id="instructionTitle" class="instruction-title hide"></div>
 					<div id="instructionContent" class="instruction-content hide"></div>
 					<div id="nextButton" class="next-button">
-						Got It! <b>NEXT >> </b>
+						Got It! <b>NEXT  </b>
 					</div>
 				</div>
+				
+				<div id="ailmentNotes" class="ailment-notes hide">
+				<div id="ailmentTitle" class="ailment-title "></div>
+					<div id="ailmentContainer" class="ailment-container ">
+				<div id="ailmentVisual" class="ailments ailment-eye"></div>
+				<div id="ailmentMobility" class="ailments ailment-mobility"></div>
+				<div id="ailmentAuditory" class="ailments ailment-auditory"></div>
+					</div>
+					
+					<div id="ailmentContent" class="ailment-content "></div>
+					<div id="dismissAilmentButton" class="dismiss-ailment-button">
+						Got It! <b>NEXT  </b>
+					</div>
+				</div>
+				
 				<div id="characterSelectionWidget"
 					class="character-selection-widget hide">
 					<!--     <div id="widgetTitle" class="widget-title"> Choose a member </div> -->
@@ -252,51 +332,39 @@
 									<div id="ring-1" class="ring">
 										<div class="poster gladys"
 											style="-webkit-transform: rotateX(0deg) translateZ(200px);">
-											<div class="spinner-char-info">Gladys</div>
 										</div>
 										<div class="poster raymond"
 											style="-webkit-transform: rotateX(30deg) translateZ(200px);">
-											<div class="spinner-char-info">Raymond</div>
 										</div>
 										<div class="poster mary"
 											style="-webkit-transform: rotateX(60deg) translateZ(200px);">
-											<div class="spinner-char-info">Mary</div>
 										</div>
 										<div class="poster gladys"
 											style="-webkit-transform: rotateX(90deg) translateZ(200px);">
-											<div class="spinner-char-info">Gladys</div>
 										</div>
 										<div class="poster raymond"
 											style="-webkit-transform: rotateX(120deg) translateZ(200px);">
-											<div class="spinner-char-info">Raymond</div>
 										</div>
 										<div class="poster mary"
 											style="-webkit-transform: rotateX(150deg) translateZ(200px);">
-											<div class="spinner-char-info">Mary</div>
 										</div>
 										<div class="poster gladys"
 											style="-webkit-transform: rotateX(180deg) translateZ(200px);">
-											<div class="spinner-char-info">Gladys</div>
 										</div>
 										<div class="poster raymond"
 											style="-webkit-transform: rotateX(210deg) translateZ(200px);">
-											<div class="spinner-char-info">Raymond</div>
 										</div>
 										<div class="poster mary"
 											style="-webkit-transform: rotateX(240deg) translateZ(200px);">
-											<div class="spinner-char-info">Mary</div>
 										</div>
 										<div class="poster gladys"
 											style="-webkit-transform: rotateX(270deg) translateZ(200px);">
-											<div class="spinner-char-info">Gladys</div>
 										</div>
 										<div class="poster raymond"
 											style="-webkit-transform: rotateX(300deg) translateZ(200px);">
-											<div class="spinner-char-info">Raymond</div>
 										</div>
 										<div class="poster mary"
 											style="-webkit-transform: rotateX(330deg) translateZ(200px);">
-											<div class="spinner-char-info">Mary</div>
 										</div>
 									</div>
 								</div>
@@ -304,12 +372,20 @@
 							<!--     <div id="characterTileOne" class="character-tiles one"></div>
     <div id="characterTileTwo" class="character-tiles two"></div>
     <div id="characterTileThree" class="character-tiles three"></div> -->
+    										<div class="spinner-char-info vanish"><span class="char-name">Gladys</span>
+											<div class="char-profile-spinner">
+											<span class="char-gender" >Female</span>
+											<span class="char-age">86 years</span></div>
+                                               <div class="char-ethnicity">African-American</div>
+											
+											</div>
 						</div>
 						<div id="glassFrame" class="glass-frame "></div>
 					</div>
 					<div id="spinButton" class="spin-button point">
-						Spin
-						<div id="pointerArrowSpin" class="pointer-arrow"></div>
+						Go <img
+						src="assets/images/next-icon.png" id="nextArrow"
+						class="next-arrow">
 					</div>
 
 
@@ -331,7 +407,7 @@
 						class="control-icon"></li>
 
 				</ul>
-				<div id="applyButton" class="apply-button">Apply</div>
+				<div id="applyButton" class="apply-button">Dismiss</div>
 			</div>
 
 		</div>
@@ -349,12 +425,16 @@
 			<div id="controlLeft" class="control-left control-bar ">
 				<div id="controlSetting" class="control-button left setting hide"></div>
 				<div id="controlMap" class="control-button left map hide"></div>
+				<div id="leftNav" class="nav-button left hide "></div>
 				<div id="controlInfo" class="control-button left info hide"></div>
+				<div id="infoText" class="info-text hide"> This text is from index page <div id="infoClose" class="info-close"></div></div>
 
 
 			</div>
 			<div id="controlRight" class="control-right control-bar ">
 				<div id="controlScore" class="control-button right score hide"></div>
+				<div id="rightNav" class="nav-button right hide "></div>
+				<div id="controlNotes" class="control-button right notes "></div>
 			</div>
 		</div>
 		<audio id="gameMusic">
