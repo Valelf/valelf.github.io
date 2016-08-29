@@ -2032,7 +2032,7 @@ function tagOOI(info,i){
 		objectEffectTag[k].classList.remove('tagged');
 	}
 	objectEffectTag[i].classList.add('tagged');
-	NPCTagResponse();
+
 	var tags = ['plus','neutral','minus'];
 	currentTag = tags[i];
 	var tagOOIClass = currentOOI.OOIClass ;
@@ -2068,7 +2068,7 @@ function tagOOI(info,i){
 	
 	noOfObjectsExplored.innerHTML = apartmentObjectsExplored[currentApartment.index] + " / 6 ";
 	
-	
+	NPCTagResponse();
 	
 	
 /*	
@@ -2102,7 +2102,7 @@ function NPCTagResponse(){
 	speakerName.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCName
 	conversationtext.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCResponse;
 
-	if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] == 17){
+	if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] == 18){
 		setTimeout(function(){
 			
 			navigateScenes(2,0);
