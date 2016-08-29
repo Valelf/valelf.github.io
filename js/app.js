@@ -1880,7 +1880,7 @@ function showCharProfile(info) {
 	spinButton.innerText = 'meet ' + info.name + ' >>';
 	charName[0].innerText = info.name;
 	charGender[0].innerText = info.gender;
-	charEthnicity[0].innerText = info.ethnicity;
+	//charEthnicity[0].innerText = info.ethnicity;
 	charAge[0].innerText = info.age + 'Years';
 
 	spinnerCharInfo[0].classList.remove('vanish');
