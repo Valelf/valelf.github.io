@@ -1650,7 +1650,7 @@ width:100%;
     top: 43%;
     height: 16%;
     left: 37%;
-    width: 16%;
+    width: 38%;
 }
 
 .pinegrove #OOIFour {
@@ -2141,6 +2141,26 @@ background-image: url(../assets/images/character-animations/scene-0/idle/gladys/
 }
 
 
+ .walker-zero {
+    position: absolute;
+/*     border: 1px solid yellow; */
+    height: 27%;
+    bottom: 14%;
+    left: 0%;
+    width: 27%;
+    background-image: url(../assets/images/walker-scene-zero.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    z-index: 0;
+    display: none;
+}
+
+ .mary .walker-zero {
+    display:block;
+ }
+
+
 .scene-zero .chair-sarah  {
     position: absolute;
     /* border: 1px solid yellow; */
@@ -2210,6 +2230,27 @@ background-image: url(../assets/images/character-animations/scene-0/idle/gladys/
     overflow: visible;
     z-index:0;
 }
+
+
+
+ .walker-one {
+position: absolute;
+    /* border: 1px solid yellow; */
+    height: 30%;
+    bottom: 3%;
+    right: 7%;
+    width: 25%;
+    background-image: url(../assets/images/walker-scene-one.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    z-index: 0;
+    display: none;
+}
+
+ .mary .walker-one {
+    display:block;
+ }
 
 
 .scene-one.chair-sarah{
@@ -2314,11 +2355,107 @@ background-image: url(../assets/images/character-animations/scene-0/idle/gladys/
     height: 54%; /*  because raymond is tall */	
 }
 .scene-one .character.player.mary{
-	    right: 15%;
-    width: 35%;
-    height: 46%;
- background-image: url(../assets/images/character-animations/scene-1/idle/mary/Mary_talking_00054.png);	
+right: 15%;
+width: 35%;
+height: 46%;
+background-image: url(../assets/images/character-animations/scene-1/idle/mary/Mary_talking_00054.png);	
 }
+
+.walker-back-two-two{
+    position: absolute;
+    /* border: 1px solid #169438; */
+    width: 101%;
+    background-image: url(../assets/images/table-scene-1.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    height: 18%;
+    left: 0%;
+    bottom: 0%;
+    overflow: visible;
+    z-index: 0;	
+    display:none
+}
+.walker-front-two-two{
+    position: absolute;
+    /* border: 1px solid #169438; */
+    width: 101%;
+    background-image: url(../assets/images/table-scene-1.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    height: 18%;
+    left: 0%;
+    bottom: 0%;
+    overflow: visible;
+    z-index: 0;	
+    display:none
+}
+.walker-back-two-one{
+    position: absolute;
+    /* border: 1px solid #169438; */
+    width: 101%;
+    background-image: url(../assets/images/table-scene-1.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    height: 18%;
+    left: 0%;
+    bottom: 0%;
+    overflow: visible;
+    z-index: 0;	
+    display:none
+}
+.walker-front-two-one{
+    position: absolute;
+    /* border: 1px solid #169438; */
+    width: 101%;
+    background-image: url(../assets/images/table-scene-1.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    height: 18%;
+    left: 0%;
+    bottom: 0%;
+    overflow: visible;
+    z-index: 0;	
+    display:none
+}
+.walker-back-two-zero{
+    position: absolute;
+    /* border: 1px solid #b35a99; */
+    width: 27%;
+    background-image: url(../assets/images/walker-back.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    height: 24.7%;
+    right: 3.6%;
+    bottom: -0.3%;
+    overflow: visible;
+    z-index: 0;
+    display: none;
+}
+.walker-front-two-zero{
+    position: absolute;
+    /* border: 1px solid #b35a99; */
+    width: 27%;
+    background-image: url(../assets/images/walker-front.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 50%;
+    height: 21%;
+    right: 3%;
+    bottom: 0%;
+    overflow: visible;
+    z-index: 2;
+    display: none;
+}
+
+.mary .walker-front-two-zero , .mary .walker-front-two-zero , .mary .walker-front-two-zero , .mary .walker-back-two-zero , .mary .walker-back-two-zero , .mary .walker-back-two-zero {
+	display:block;
+}
+
 
 .scene-two .character.sarah{
     position: absolute;

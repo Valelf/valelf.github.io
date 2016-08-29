@@ -1166,42 +1166,42 @@ playerOOITags = [
                  {
                 	apartmentClass : "pinegrove",
                 	taggedOOIs : 
-                	              {
-                	            	"windows": "",
-                	            	"lighting":"",
-                	            	"flooring":"",
-                	            	"frontdoor":"",
-                	            	"steps":"",
-                	            	"bathtub":""
-                	              }
+                	              [
+                	            	{"frontdoor": "none"},
+                	            	{"steps":"none"},
+                	            	{"windows":"none"},
+                	            	{"lighting":"none"},
+                	            	{"flooring":"none"},
+                	            	{"bathtub":"none"}
+                	              ]
                 	              
                 	
                  },
                  {
                 	apartmentClass : "lakeview",
                 	taggedOOIs : 
-                	              {
-                	            	"windows": "",
-                	            	"lighting":"",
-                	            	"flooring":"",
-                	            	"frontdoor":"",
-                	            	"steps":"",
-                	            	"bathtub":""
-                	              }
+                	              [
+               	            	{"frontdoor": "none"},
+            	            	{"steps":"none"},
+            	            	{"windows":"none"},
+            	            	{"lighting":"none"},
+            	            	{"flooring":"none"},
+            	            	{"bathtub":"none"}
+            	              ]
                 	              
                 	
                  },
                  {
                 	apartmentClass : "sunnyvale",
                 	taggedOOIs : 
-                	              {
-                	            	"windows": "",
-                	            	"lighting":"",
-                	            	"flooring":"",
-                	            	"frontdoor":"",
-                	            	"steps":"",
-                	            	"bathtub":""
-                	              }
+                	              [
+               	            	{"frontdoor": "none"},
+            	            	{"steps":"none"},
+            	            	{"windows":"none"},
+            	            	{"lighting":"none"},
+            	            	{"flooring":"none"},
+            	            	{"bathtub":"none"}
+            	              ]
                 	              
                 	
                  }
@@ -1688,6 +1688,32 @@ nextButton.addEventListener('click', function() {
 
 });
 
+
+/**************  main functions              *****************/
+
+
+
+Object.prototype.getKeyByValue = function( value ) {
+    for( var prop in this ) {
+        if( this.hasOwnProperty( prop ) ) {
+             if( this[ prop ] === value )
+                 return prop;
+        }
+    }
+}
+
+
+function cleanArray(actual) {
+	  var newArray = new Array();
+	  for (var i = 0; i < actual.length; i++) {
+	    if (actual[i]) {
+	      newArray.push(actual[i]);
+	    }
+	  }
+	  return newArray;
+	}
+
+
 function navigateApartmentRooms(info){
 
 
@@ -1711,7 +1737,7 @@ if (info == 'left'){
 	}
 	currentSubSceneIndex = currentSubSceneIndex+1
 }
-console.log(currentSubSceneIndex)
+//console.log(currentSubSceneIndex)
     navigateScenes(3,currentSubSceneIndex);
 
 showOOIsControl();
@@ -1977,6 +2003,7 @@ function showApartmentInfo(info, i) {
 		apartmentIcon[j].classList.remove('clicked');
 	}
 	currentApartment = info[i]
+	noOfObjectsExplored.innerHTML = apartmentObjectsExplored[currentApartment.index] + " / 6 ";
 	apartmentIcon[i].classList.add('clicked');
 	apartmentIcon[i].classList.remove('point');
 	apartmentTitle.innerText = info[i].title;
@@ -1996,6 +2023,10 @@ function showApartmentInfo(info, i) {
 	controlNotes.classList.remove('hide');
 	exploredObjectsList.classList.remove('hide');
 }
+
+
+
+
 function tagOOI(info,i){
 	for(var k = 0; k < objectEffectTag.length ; k++){
 		objectEffectTag[k].classList.remove('tagged');
@@ -2006,23 +2037,39 @@ function tagOOI(info,i){
 	currentTag = tags[i];
 	var tagOOIClass = currentOOI.OOIClass ;
 	if(tagOOIClass == "frontdoor"){
-		playerOOITags[currentApartment.index].taggedOOIs.frontdoor = currentTag ;
+		playerOOITags[currentApartment.index].taggedOOIs[0].frontdoor = currentTag ;
 	}else if(tagOOIClass == "steps"){
-		playerOOITags[currentApartment.index].taggedOOIs.steps = currentTag ;
+		playerOOITags[currentApartment.index].taggedOOIs[1].steps = currentTag ;
 	}else if(tagOOIClass == "windows"){
-		playerOOITags[currentApartment.index].taggedOOIs.windows = currentTag ;
+		playerOOITags[currentApartment.index].taggedOOIs[2].windows = currentTag ;
 	}else if(tagOOIClass == "lighting"){
-		playerOOITags[currentApartment.index].taggedOOIs.lighting = currentTag ;
+		playerOOITags[currentApartment.index].taggedOOIs[3].lighting = currentTag ;
 	}else if(tagOOIClass == "flooring"){
-		playerOOITags[currentApartment.index].taggedOOIs.flooring = currentTag ;
+		playerOOITags[currentApartment.index].taggedOOIs[4].flooring = currentTag ;
 	}else if(tagOOIClass == "bathtub"){
-		playerOOITags[currentApartment.index].taggedOOIs.bathtub = currentTag ;
+		playerOOITags[currentApartment.index].taggedOOIs[5].bathtub = currentTag ;
 	}
 	
-	apartmentObjectsExplored[currentApartment.index] = apartmentObjectsExplored[currentApartment.index] + 1 ;
+	var nonTags = [];
+	
+	for(var i=0 ; i< playerOOITags[currentApartment.index].taggedOOIs.length ; i++){
+		nonTags.push(playerOOITags[currentApartment.index].taggedOOIs[i].getKeyByValue("none"));
+	}
+	nonTags = cleanArray(nonTags);
+	//console.log(6 - nonTags.length);
+
+	
+	apartmentObjectsExplored[currentApartment.index] = 6 - nonTags.length ;
 	
 	
-	noOfObjectsExplored.innerHTML = apartmentObjectsExplored[currentApartment.index] + "/6";
+	
+	//apartmentObjectsExplored[currentApartment.index] = apartmentObjectsExplored[currentApartment.index] + 1 ;
+	
+	
+	noOfObjectsExplored.innerHTML = apartmentObjectsExplored[currentApartment.index] + " / 6 ";
+	
+	
+	
 	
 /*	
 	var exploredItems = 
@@ -2055,7 +2102,14 @@ function NPCTagResponse(){
 	speakerName.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCName
 	conversationtext.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCResponse;
 
-
+	if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] == 18){
+		setTimeout(function(){
+			
+			navigateScenes(2,0);
+			OOILayer.classList.add('hide');
+			
+		},1000);
+	}
 }
 
 
@@ -2267,7 +2321,7 @@ function preLoadPlayerImages(){
 			}
 		
 			
-		},4500)	;
+		},10000)	;
 
 
 
@@ -2286,7 +2340,7 @@ setTimeout(function(){
 		NPCChar.classList.remove('talk');
 	}
 	
-},5000)
+},10000)
 
 }
 
