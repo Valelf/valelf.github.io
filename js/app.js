@@ -2163,7 +2163,7 @@ function selectCharacter(info) {
 	console.log(charName);
 }
 function initApartmentControls(){
-	leftNav.classList.remove('hide');
+	//leftNav.classList.remove('hide');
 	rightNav.classList.remove('hide');
 	
 	OOILayer.classList.add("active");
