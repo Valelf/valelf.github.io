@@ -16,6 +16,7 @@ body {
 	background-color: #231f20;
 	font-size : 16.5px ; /*  15px it should be for ipad , kamasksh suggested about 20*/
 	font-family: 'Montserrat', sans-serif;
+	font-weight:bold;
 	margin:0%;
 }
 
@@ -217,9 +218,14 @@ ul,li { list-style-type: none;
     height: 50%;
     left: 30%;
        background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: auto 50%;
     background-position: 50%;
+        cursor:pointer;
 
+}
+#activeApartment.active{
+    background-size: auto 80%;	
+    cursor:default;
 }
 .tag-OOI{
     position: absolute;
@@ -397,12 +403,16 @@ top: -2%;
     /* background-size: auto 70%; */
     background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
     border-radius: 10px;
-    box-shadow: 4px 3px 6px rgba(70, 68, 68, 0.66);
+    box-shadow: 0px -2px 6px rgba(70, 68, 68, 0.66);
     /* background-position: 50%; */
     z-index: 3;
     transition: all 0.46s ease;
     right: 0;
     /* right: 10px; */
+}
+
+.explored-objects-list.slide{
+	bottom: -10%;
 }
 
 .explored-objects-list span{
@@ -573,7 +583,7 @@ top: -2%;
     font-size: 200%;
     color: #e65026;
     text-align: left;
-    top: 30%;
+    top: 36%;
     right: 13%;
     transition: all 0.5s ease; 
 }
@@ -655,10 +665,11 @@ top: -2%;
 }
 
 .tap-to-contn{
-    position:relative;
+position: relative;
     text-align: center;
     margin: 5% 0% 0% 0%;
-    color:grey;
+    color: #717171;
+    font-size: 90%;
 }
 
 .next-arrow{
@@ -739,9 +750,10 @@ position: absolute;
 }
 .ailment-container{
     position: relative;
-/*     border: 1px solid; */
+    /* border: 1px solid; */
     height: 25vh;
-    width: 100%;	
+    width: 100%;
+    margin: 2% 0%;	
 }
 .ailments{
 /* 	    border: 1px solid red; */
@@ -774,32 +786,33 @@ position: absolute;
     margin: 3% 0 1% 0%;
     text-align: left;
     padding: 0 1% 0% 1%;
-    font-weight: bold;
+    font-weight: bolder;
     color: #e84b13;
-    font-size: 170%;
-    left: 9%;
+    font-size: 200%;
+    left: 5%;
     width: 80%;
     max-height: 20%;
     height: auto;
     /* font-size: 33px; */
-    font-family: 'Montserrat', sans-serif;	
+    font-family: 'Montserrat', sans-serif;
 }
 
 .ailment-content{
-position: relative;
+    position: relative;
     height: auto;
-    padding: 5% 1%;
-    left: 9%;
-    margin: 0 0% 10% 0%;
+    padding: 4% 4%;
+    left: 6%;
+    margin: 0 0% 14% 0%;
     float: left;
     bottom: 0%;
-    font-size: 150%;
-    color: #313030;
+    font-size: 120%;
+    color: #404040;
+    line-height: 1.5;
     font-weight: bold;
     text-align: left;
     width: 80%;
-    background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    box-shadow: 1px 1px 8px 2px rgba(71, 74, 71, 0.66);
+    background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgb(255, 255, 255) 100%);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
     /* overflow: hidden; */
     border-radius: 5px;
 }
@@ -839,19 +852,19 @@ position: relative;
     position: absolute;
     bottom: 7%;
     height: auto;
-    padding: 1.6vh 0;
-    left: 40%;
+    padding: 1.6vh 2%;
+    left: 38%;
     min-height: 2.5vh;
     color: white;
     font-size: 110%;
     letter-spacing: 0.5px;
     /* font-size: 100%; */
     text-align: center;
-    text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.69);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
     width: 20%;
     background: -webkit-linear-gradient(top, rgba(250,175,64,1) 0%,rgba(232,75,19,1) 100%);
     border-radius: 5px;
-    box-shadow: 1px 1px 2px 1px rgba(39, 62, 36, 0.66);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
     cursor: pointer;
 }
 .decision-HUD{
@@ -1010,7 +1023,8 @@ list-style-type: circle;
     cursor: pointer;	
 }
 .apartment-info{
-    position: absolute;
+position: absolute;
+    padding: 2%;
     height: auto;
     min-height: 26%;
     min-width: 31%;
@@ -1019,7 +1033,7 @@ list-style-type: circle;
     left: 32%;
     /* border: 1px solid red; */
     background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    box-shadow: 1px 1px 2px 1px rgba(121, 125, 120, 0.66);
+    box-shadow: 0px 0px 3px 1px rgba(117, 117, 117, 0.66);
     border-radius: 5px;
 }
 
@@ -1482,7 +1496,7 @@ li.controls {
 	    background-image: url(../assets/images/info.png) , url(../assets/images/icon-base-active.png);
 }
 .control-button.score{
-	    background-image: url(../assets/images/score.png) , url(../assets/images/icon-base-default.png);
+	    background-image: url(../assets/images/star.png) , url(../assets/images/icon-base-default.png);
 }
 
 div#engagementScoreBox {
@@ -1672,10 +1686,10 @@ width:100%;
 }
 
 .pinegrove #OOIOne {
-    top: 43%;
-    height: 9%;
-    width: 7%;
-    left: 45%;
+top: 42%;
+    height: 12%;
+    width: 12%;
+    left: 42%;
 }
 
 .pinegrove #OOITwo {
@@ -1684,6 +1698,7 @@ width:100%;
     left: 2%;
     height: 16%;
     width: 22%;
+        z-index: 1;
 }
 
 .pinegrove #OOIThree {
@@ -1700,6 +1715,7 @@ width:100%;
     width: 8%;
     left: 25%;
     height: 25%;
+        z-index: 1;
 }
 
 .pinegrove #OOIFive {
@@ -1711,10 +1727,10 @@ width:100%;
 
 .pinegrove #OOISix {
     top: auto;
-    bottom: 10%;
-    width: 35%;
-    height: 23%;
-    left: 29%;
+    bottom: 13%;
+    width: 40%;
+    height: 29%;
+    left: 26%;
 }
 
 
@@ -1772,20 +1788,20 @@ right: 3%;
 
 
 .sunnyvale #OOIOne {
-    bottom: 0%;
+    bottom: 44%;
     top: auto;
-    left: 2%;
-    height: 32%;
-    width: 96%;
+    left: 41%;
+    height: 27%;
+    width: 19%;
 }
 
 .sunnyvale #OOITwo {
 
-    
-        top: 50%;
-    height: 14%;
+    bottom: 34%;
+    height: 10%;
     width: 23%;
     left: 39%;
+    top: auto;
 }
 
 .sunnyvale #OOIThree {
@@ -1797,25 +1813,25 @@ right: 3%;
 }
 
 .sunnyvale #OOIFour {
-    top: 2%;
-    height: 23%;
-    left: 22%;
-    width: 43%;
+    top: 0%;
+    height: 26%;
+    left: 19%;
+    width: 52%;
 }
 
 .sunnyvale #OOIFive {
     top: auto;
     bottom: 0%;
-    height: 29%;
+    height: 33%;
     width: 100%;
 }
 
 .sunnyvale #OOISix {
     top: auto;
-    bottom: 10%;
-    width: 59%;
-    height: 52%;
-    left: 9%;
+    bottom: 17%;
+    width: 74%;
+    height: 57%;
+    left: 3%;
 }
 
 
@@ -1934,12 +1950,15 @@ div#pointerArrowSpin {
     width: 100%;
     height: auto;
     margin: 3% 0;
-    font-size: 90%;
+    line-height: 1.5;
+    color: #212121;
+    letter-spacing: 1px;
+    font-size: 100%;
     min-height: 50%;
-    padding: 18px;
+    padding: 12% 10% 9% 10%;
     background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
     border-radius: 10px;
-    box-shadow: 4px 3px 6px rgba(70, 68, 68, 0.66);
+    box-shadow: 0px 0px 6px rgba(70, 70, 70, 0.66);
 }
 .conversation-bubble{
     position: absolute;
@@ -1971,15 +1990,16 @@ div#pointerArrowSpin {
 }
 .conversation-bubble.gladys.scene-zero , .conversation-bubble.raymond.scene-zero , .conversation-bubble.mary.scene-zero{
     top: auto;
-    left: 6%;
-    bottom: 64%;
+    left: 18%;
+    bottom: 77%;
 }
 
 
 .conversation-bubble.sarah.scene-one
 {
-	    top: 34%;
+    top: auto;
     left: 9%;
+    bottom: 69%;
 }
 .conversation-bubble.louise.scene-one{
 	right: 4%;
@@ -1989,7 +2009,7 @@ div#pointerArrowSpin {
     top: auto;
     left: auto;
     right: 22%;
-    bottom: 63%;
+    bottom: 77%;
 }
 
 
@@ -1998,16 +2018,17 @@ div#pointerArrowSpin {
     position: absolute;
     /* border: 1px solid #DEB313; */
     width: 25%;
-    background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    font-size: 90%;
+    background: -webkit-linear-gradient(top, rgba(187,189,191,1) 0%,rgba(205,206,208,1) 13%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+    font-size: 100%;
     height: auto;
     min-height: 16%;
-    box-shadow: 4px 3px 6px rgba(70, 68, 68, 0.66);
-    left: 7%;
+    /* box-shadow: 4px 3px 6px rgba(70, 68, 68, 0.66); */
+    left: 9%;
     text-align: center;
     /* top: -7%; */
+    padding: 1.5% 3%;
     z-index: 1;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 
@@ -2932,7 +2953,7 @@ height: 83%;
     /* border: 1px solid #ff0a0a; */
     width: 18%;
     right: 39.9%;
-    height: 24.3%;
+    height: 8.3%;
     background-image: url(../assets/images/ramp-sunnyvale.png);
     background-repeat: no-repeat;
     background-size: auto 100%;
@@ -2942,16 +2963,17 @@ height: 83%;
 
 #streetSunnyvale{
     position: absolute;
-    width: 100%;
-    background-image: url(../assets/images/street-sunnyvale.png);
+    width: 10%;
+    background-image: url(../assets/images/frontdoor-sunnyvale.png);
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 50%;
-    height: 100%;
-    left: 0%;
-    top: 0%;
+    height: 17.7%;
+    left: 45.7%;
+    bottom: 42.9%;
+    /* border: 1px solid red; */
     overflow: visible;
-    z-index: 0;	
+    z-index: 0;
 }
 
 

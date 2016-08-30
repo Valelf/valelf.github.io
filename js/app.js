@@ -1,11 +1,11 @@
 
 var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
-var controlInfo, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, conclusionScriptArray ,  conversationScriptArray;
+var controlInfo, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
-var tagScore = 5 , scoreContainer , scoreTitle , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 25000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
+var tagScore = 5 , scoreContainer , scoreTitle , gameScoreArray , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 1000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
-var apartmentObjectsExplored = [pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
+var apartmentObjectsExplored = [ pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
 infoScriptArray = [
 		{
 			'infoTitle' : 'info-one',
@@ -258,7 +258,7 @@ conversationScriptArray = [
 					},
 					{
 						"speaker" : "Raymond",
-						"dialogue" : "Hello…I'm sorry. Did you say your name was Terri?",
+						"dialogue" : "Hello...I'm sorry. Did you say your name was Terri?",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -1151,7 +1151,43 @@ OOIContentArray = [
  * 
  */
 
-conclusionScriptArray : [
+gameScoreArray = [
+                  {
+                  	apartmentClass : "pinegrove",
+                  	taggedOOIs : 
+                  	              [5,5,5,5,5,5/*
+                  	            	{"frontdoor": 5},
+                  	            	{"steps":5},
+                  	            	{"windows":5},
+                  	            	{"lighting":5},
+                  	            	{"flooring":5},
+                  	            	{"bathtub":5}
+                  	              */]
+                  	              
+                  	
+                   },
+                   {
+                  	apartmentClass : "lakeview",
+                  	taggedOOIs : 
+                  	              [5,5,5,5,5,5]
+                  	              
+                  	
+                   },
+                   {
+                  	apartmentClass : "sunnyvale",
+                  	taggedOOIs : 
+                  	              [5,5,5,5,5,5]
+                  	              
+                  	
+                   }
+                   
+                   
+                   ];
+
+
+
+
+apartmentSelectionScript : [
                          
                          
                          
@@ -1211,9 +1247,7 @@ playerOOITags = [
 
 
 loadingTipsArray = [
-		"Help the seniors at Main Street Center choose the apartment that suits them best.",
-		"make sure you take time to understand the challenges they face.",
-		"Don't forget to investigate the glowing objects in the apartment before making your recommendation." 
+		"Describe how a person's brain and body change in late adulthood."
 		];
 instructionsArray = [
 		{
@@ -1295,15 +1329,15 @@ var reviewConversationArray = [
                         	   "selectedApartment":[
                         	                        {
                         	                        	"apartment":"pinegrove",
-                        	                        	"playerReview":"It’s much too dark, and I get nervous when I move around. I tripped over the coffee table the other day and hurt my ankle. I’m going to have to get the lights replaced with some brighter ones."
+                        	                        	"playerReview":"It's much too dark, and I get nervous when I move around. I tripped over the coffee table the other day and hurt my ankle. I'm going to have to get the lights replaced with some brighter ones."
                         	                        },
                         	                        {
                         	                        	"apartment":"lakeview",
-                        	                        	"playerReview":"It’s perfect.The apartment is really bright, and the glowing light switches are great. I can find them easily."
+                        	                        	"playerReview":"It's perfect.The apartment is really bright, and the glowing light switches are great. I can find them easily."
                         	                        },
                         	                        {
                         	                        	"apartment":"sunnyvale",
-                        	                        	"playerReview":"The narrow windows let in very little light making it difficult for me to see and move around. I’m going to need better lighting."
+                        	                        	"playerReview":"The narrow windows let in very little light making it difficult for me to see and move around. I'm going to need better lighting."
                         	                        }
                         	                        
                         	                        
@@ -1315,15 +1349,15 @@ var reviewConversationArray = [
                         	   "selectedApartment":[
                         	                        {
                         	                        	"apartment":"pinegrove",
-                        	                        	"playerReview":"The apartment is quite nice, but it’s difficult to get up and down the steps into the living room with my walker. And I really need an accessible bathroom. The poor lighting also does not help. I get scared about tripping over all the lamp cords. "
+                        	                        	"playerReview":"The apartment is quite nice, but it's difficult to get up and down the steps into the living room with my walker. And I really need an accessible bathroom. The poor lighting also does not help. I get scared about tripping over all the lamp cords. "
                         	                        },
                         	                        {
                         	                        	"apartment":"lakeview",
-                        	                        	"playerReview":"The apartment would probably be fine for someone else, but the bathroom does not work for me. And the steps leading up to the porch is just too much work to get up and down each day. I also can’t get those French doors to open without much effort."
+                        	                        	"playerReview":"The apartment would probably be fine for someone else, but the bathroom does not work for me. And the steps leading up to the porch is just too much work to get up and down each day. I also can't get those French doors to open without much effort."
                         	                        },
                         	                        {
                         	                        	"apartment":"sunnyvale",
-                        	                        	"playerReview":"I’m not quite as spry as I used to be, and I have some trouble getting around. This apartment has a great floor plan. I can move around easily. And the bathroom’s been modified for people with impaired mobility, which is perfect for my condition."
+                        	                        	"playerReview":"I'm not quite as spry as I used to be, and I have some trouble getting around. This apartment has a great floor plan. I can move around easily. And the bathroom's been modified for people with impaired mobility, which is perfect for my condition."
                         	                        }
                         	                        
                         	                        
@@ -1339,11 +1373,11 @@ var reviewConversationArray = [
                         	                        },
                         	                        {
                         	                        	"apartment":"lakeview",
-                        	                        	"playerReview":"I’m not happy with it. The apartment is nice, and I like the hardwood floors because I can feel vibrations. But Pine Grove would have been better with the video intercom and detectors with strobe lights and vibrations."
+                        	                        	"playerReview":"I'm not happy with it. The apartment is nice, and I like the hardwood floors because I can feel vibrations. But Pine Grove would have been better with the video intercom and detectors with strobe lights and vibrations."
                         	                        },
                         	                        {
                         	                        	"apartment":"sunnyvale",
-                        	                        	"playerReview":"I don’t really like it. The building faces a busy street, and the noise outside is very distracting. I also wish it has a video intercom and the accessible detectors that Pine Grove has."
+                        	                        	"playerReview":"I don't really like it. The building faces a busy street, and the noise outside is very distracting. I also wish it has a video intercom and the accessible detectors that Pine Grove has."
                         	                        }
                         	                        
                         	                        
@@ -1443,6 +1477,7 @@ buttonPrev = document.getElementById('prevButton');
 sceneWrapper = document.getElementById('sceneWrapper');
 OOILayer = document.getElementById('OOILayer'); 
 ailmentNotes = document.getElementById('ailmentNotes'); 
+engagementScoreBox = document.getElementById('engagementScoreBox'); 
 buttonPlay = document.getElementById('playButton');
 guideHeader = document.getElementById('guideHeader');
 buttonNext = document.getElementById('nextButton');
@@ -1463,6 +1498,7 @@ charProfileSummary = document.getElementById('charProfileSummary');
 charDetailsList = document.getElementById('charDetailsList');
 charDetailsOne = document.getElementById('charDetailsOne');
 userInterface = document.getElementById('userInterface');
+controlScore = document.getElementById('controlScore');
 charDetailsTwo = document.getElementById('charDetailsTwo');
 distanceDetails = document.getElementById('distanceDetails');
 ammenitiesDetails = document.getElementById('ammenitiesDetails');
@@ -1653,12 +1689,15 @@ tourButton.addEventListener('click', function() {
 	tourApartment();
 });
 apartmentIcon[0].addEventListener('click', function() {
+	controlScore.classList.remove('hide');
 	showApartmentInfo(infoApartmentArray, 0);
 });
 apartmentIcon[1].addEventListener('click', function() {
+	controlScore.classList.remove('hide');
 	showApartmentInfo(infoApartmentArray, 1);
 });
 apartmentIcon[2].addEventListener('click', function() {
+	controlScore.classList.remove('hide');
 	showApartmentInfo(infoApartmentArray, 2);
 });
 
@@ -1723,6 +1762,8 @@ characterPin.addEventListener('click', function() {
 });
 
 noteDismissButton.addEventListener('click', function() {
+	evaluateApartmentScore();
+	closeTagNotes();
 	reviewByLouise();
 });
 controlNotes.addEventListener('click', function() {
@@ -1759,6 +1800,11 @@ infoClose.addEventListener('click', function() {
 });
 
 controlMap.addEventListener('click', function() {
+	if(hasClass(conversationLayer, 'tag-response')){
+		conversationLayer.classList.add('hide')	
+	}
+
+	
 	toggleMap();
 });
 gameMap.addEventListener('click', function() {
@@ -1798,6 +1844,11 @@ inActiveApartmentRight.addEventListener('click', function() {
 	noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
 });
 activeApartment.addEventListener('click', function() {
+	this.classList.add('active');
+	for(var i=0 ; i < taggedApartmentOOI.length ;i++ ){
+		taggedApartmentOOI[i].classList.remove('hide');	
+	}
+	
 	if(!apartmentPlayerSelected){
 		if(activeApartment.classList[0] == "pinegrove"){
 			currentApartment = infoApartmentArray[0];
@@ -1821,6 +1872,8 @@ gameOverlay.addEventListener('click', function() {
 			runConversation(conversationScriptArray);
 		}else if(hasClass(conversationLayer, 'louise-review')){
 			
+			
+			conversationLayer.classList.remove('louise-review');
 			conversationLayer.classList.add('player-review');
 			conversationBubble.classList.remove('louise');
 			conversationBubble.classList.add(playerChar.name); 
@@ -1878,6 +1931,12 @@ Object.prototype.getKeyByValue = function( value ) {
     }
 }
 
+function evaluateApartmentScore(){
+	if(currentApartment.class === playerChar.rightApartment){
+		gameScore = gameScore + 10 ;
+	}
+}
+
 
 function cleanArray(actual) {
 	  var newArray = new Array();
@@ -1888,6 +1947,10 @@ function cleanArray(actual) {
 	  }
 	  return newArray;
 	}
+
+function animateEngagementScore(){
+	
+}
 
 
 function navigateApartmentRooms(info){
@@ -1997,8 +2060,9 @@ function closeAilmentNotes(){
 }
 
 function showTagNotes(info){
+	conversationLayer.classList.add('hide');
 	tagNotes.classList.remove("hide");
-	
+	decisionButtonHUD.classList.add('hide');
 	allotTags(currentApartment);
 	
 	
@@ -2339,9 +2403,18 @@ function tagOOI(info,i){
 	
 	
 	if(info[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].OOIImpact.indexOf(currentTag) > -1){
-	//	gameScore = gameScore + tagScore ;
+		gameScore = gameScore + gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] ;
+		gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] = 0 ;
 		
+
+		
+	}else{
+		if(gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] == 0){
+			gameScore = gameScore - 5 ;
+			gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] = 5 ;
+		}
 	}
+	console.log(gameScore);
 }
 function selectOOI(i){
 	currentOOIIndex = i ;
@@ -2375,7 +2448,7 @@ function NPCTagResponse(){
 				conversationLayer.classList.remove('tag-response');
 				conversationBubble.classList.remove('OOI-tagging'); 
 				speakerName.innerHTML = "Sarah"
-				conversationtext.innerHTML = "I’m glad to join you today. Which apartment will you choose?";
+				conversationtext.innerHTML = "I'm glad to join you today. Which apartment will you choose?";
 				decisionButtonHUD.classList.remove('hide');
 
 				
@@ -2452,13 +2525,7 @@ function showProgress() {
 }
 function loadTips() {
 	loadingTips.innerText = loadingTipsArray[0];
-	setTimeout(function() {
-		loadingTips.innerText = loadingTipsArray[1];
-		setTimeout(function() {
-			loadingTips.innerText = loadingTipsArray[2];
 
-		}, 7000);
-	}, 7000);
 }
 function charAnimation(info) {
 	// console.log(currentScene.getElementsByClassName(info.class));
