@@ -3,7 +3,7 @@ var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
 var controlInfo, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, conclusionScriptArray ,  conversationScriptArray;
 
-var tagScore = 5 , apartmentSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 5000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
+var tagScore = 5 , scoreContainer , scoreTitle , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 25000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
 var apartmentObjectsExplored = [pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
 infoScriptArray = [
@@ -1271,7 +1271,7 @@ infoApartmentArray = [ {
 
 }, {
 	'title' : 'Lakeview Courts',
-	'name' : 'PLakeview',
+	'name' : 'Lakeview',
 	'rent' : '$ 975 /month ',
 	'distance' : " 0.25 mile",
 	'ammenities' : "Library , Super Market",
@@ -1374,7 +1374,8 @@ playerCharacterArray = [ {
 	'index' : 0,
 	'charID' : 2,
 	'class' : 'gladys',
-	"impairment" : "visual impairment"
+	"impairment" : "visual impairment",
+	"rightApartment":"lakeview"
 
 }, {
 	'name' : 'Mary',
@@ -1386,7 +1387,8 @@ playerCharacterArray = [ {
 	'index' : 1,
 	'charID' : 3,
 	'class' : 'mary',
-	"impairment" : "mobility impairments"
+	"impairment" : "mobility impairments",
+	"rightApartment":"sunnyvale"
 
 }, {
 	'name' : 'Raymond',
@@ -1398,7 +1400,8 @@ playerCharacterArray = [ {
 	'index' : 2,
 	'charID' : 4,
 	'class' : 'raymond',
-	"impairment" : "auditory impairment"
+	"impairment" : "auditory impairment",
+	"rightApartment":"pinegrove"
 
 }
 
@@ -1494,6 +1497,9 @@ objectEffectContent   = document.getElementById('objectEffectContent');
 activeApartment   = document.getElementById('activeApartment'); 
 inActiveApartmentLeft   = document.getElementById('inActiveApartmentLeft');
 inActiveApartmentRight   = document.getElementById('inActiveApartmentRight');
+scoreContainer   = document.getElementById('scoreContainer');
+scoreTitle   = document.getElementById('scoreTitle');
+scoreContent   = document.getElementById('scoreContent');
 
 
 
@@ -1792,7 +1798,7 @@ inActiveApartmentRight.addEventListener('click', function() {
 	noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
 });
 activeApartment.addEventListener('click', function() {
-	if(!apartmentSelected){
+	if(!apartmentPlayerSelected){
 		if(activeApartment.classList[0] == "pinegrove"){
 			currentApartment = infoApartmentArray[0];
 		}else if(activeApartment.classList[0] == "lakeview"){
@@ -1802,7 +1808,7 @@ activeApartment.addEventListener('click', function() {
 		}
 
 		allotTags(currentApartment);
-		apartmentSelected = true;
+		apartmentPlayerSelected = true;
 		noteDismissButton.classList.remove('hide');
 		noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
 	}
@@ -1813,7 +1819,22 @@ gameOverlay.addEventListener('click', function() {
 		if (hasClass(conversationLayer, 'active')) {
 			/* if(dialogueCount < ) */
 			runConversation(conversationScriptArray);
-		}else if(hasClass(gameOverlay, 'apartment-controls')){
+		}else if(hasClass(conversationLayer, 'louise-review')){
+			
+			conversationLayer.classList.add('player-review');
+			conversationBubble.classList.remove('louise');
+			conversationBubble.classList.add(playerChar.name); 
+			conversationBubble.classList.add('scene-zero'); 
+			speakerName.innerHTML = playerChar.name;
+			conversationtext.innerHTML = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].playerReview + '<div class="tap-to-contn">TAP TO CONTINUE</div>';
+			
+			
+		}else if(hasClass(conversationLayer, 'player-review')){
+			
+			conversationLayer.classList.add('hide');
+			navigateScenes(0,0);
+
+			displayScore();
 			
 		}
 	}
@@ -1900,9 +1921,25 @@ showOOIsControl();
 
 }
 
+function displayScore(){
+	scoreContainer.classList.remove('hide');
+	scoreTitle.innerHTML = "Try Again!";
+	scoreContent.innerHTML = '<p class="score-value" >90</p><p class="score-description" >Your Score</p><p class="score-value" >50</p><p class="score-description" >Your Engagement Score</p><p class="score-value" >10</p><p class="score-description" >Your Rank</p>'
+}
+
+
 function reviewByLouise(){
 	navigateScenes(1,0);
 	conversationLayer.classList.remove('hide');
+	conversationLayer.classList.add('louise-review');
+	conversationBubble.classList.remove('scene-zero');
+	conversationBubble.classList.remove('sarah');
+	conversationBubble.classList.add('louise'); 
+	conversationBubble.classList.add('scene-zero'); 
+	document.getElementById('characterSarahZero').classList.remove('talk');
+	speakerName.innerHTML = "Louise";
+	conversationtext.innerHTML = "Hi, "+ playerChar.Name +". Good to see you again. How do you like your new apartment?  <div class='tap-to-contn'>TAP TO CONTINUE</div>";
+
 	
 	
 	//reviewConversationArray
