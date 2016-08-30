@@ -1769,6 +1769,7 @@ closeObject.addEventListener('click', function() {
 });
 
 characterPin.addEventListener('click', function() {
+	closeOOIDescription(); 
 	objectEffect.classList.add('active');
 	for(var k = 0 ; k < objectEffect.children.length ; k++){
 		objectEffect.children[k].classList.remove('hide');
@@ -2231,6 +2232,10 @@ function showOOIsControl(){
 	
 }
 function showOOIDescription(info,i){
+	
+	exploredObjectsList.classList.add('slide');
+	controlNotes.classList.add('hide');
+	
 	conversationLayer.classList.add('hide');
 	conversationLayer.classList.remove('tag-response');
 	selectOOI(i);
@@ -2266,6 +2271,9 @@ function showDiamond(){
 	characterPin.classList.remove('hide');
 }
 function closeOOIDescription(){
+	exploredObjectsList.classList.remove('slide');
+	controlNotes.classList.remove('hide');
+	
 	objectDescription.classList.add('hide');	
 }
 
