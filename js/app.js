@@ -3,7 +3,7 @@ var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
 var controlInfo, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
-var tagScore = 5 , scoreContainer , scoreTitle , gameScoreArray , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
+var tagScore = 5 , scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
 var apartmentObjectsExplored = [ pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
 infoScriptArray = [
@@ -613,7 +613,7 @@ OOIContentArray = [
                      	                 					"character" : "Gladys",
                      	                 					"charID" : 2,
                      	                 					"charClass" : "gladys",
-                     	                 					"OOIImpact" : "neutral",
+                     	                 					"OOIImpact" : "plus",
                      	                 					"NPCName":"Sarah",
                      	                 					"NPCID":0,
                      	                 					"NPCClass":"sarah,",
@@ -623,7 +623,7 @@ OOIContentArray = [
                      	                 					"character" : "Mary",
                      	                 					"charID" : 3,
                      	                 					"charClass" : "mary",
-                     	                 					"OOIImpact" : "plus",
+                     	                 					"OOIImpact" : "minus",
                      	                 					"NPCName":"Sarah",
                      	                 					"NPCID":0,
                      	                 					"NPCClass":"sarah,",
@@ -633,7 +633,7 @@ OOIContentArray = [
                      	                 					"character" : "Raymond",
                      	                 					"charID" : 4,
                      	                 					"charClass" : "raymond",
-                     	                 					"OOIImpact" : "plus",
+                     	                 					"OOIImpact" : "neutral",
                      	                 					"NPCName":"Sarah",
                      	                 					"NPCID":0,
                      	                 					"NPCClass":"sarah,",
@@ -657,7 +657,7 @@ OOIContentArray = [
                      	                					"character" : "Gladys",
                      	                					"charID" : 2,
                      	                					"charClass" : "gladys",
-                     	                					"OOIImpact" : "neutral minus",
+                     	                					"OOIImpact" : " minus",
                      	                					"NPCName":"Sarah",
                      	                					"NPCID":0,
                      	                					"NPCClass":"sarah,",
@@ -701,7 +701,7 @@ OOIContentArray = [
      					"character" : "Gladys",
      					"charID" : 2,
      					"charClass" : "gladys",
-     					"OOIImpact" : "minus",
+     					"OOIImpact" : "plus",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -711,7 +711,7 @@ OOIContentArray = [
      					"character" : "Mary",
      					"charID" : 3,
      					"charClass" : "mary",
-     					"OOIImpact" : "minus",
+     					"OOIImpact" : "plus neutral",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -744,7 +744,7 @@ OOIContentArray = [
      					"character" : "Gladys",
      					"charID" : 2,
      					"charClass" : "gladys",
-     					"OOIImpact" : "minus",
+     					"OOIImpact" : "plus",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -754,7 +754,7 @@ OOIContentArray = [
      					"character" : "Mary",
      					"charID" : 3,
      					"charClass" : "mary",
-     					"OOIImpact" : "minus",
+     					"OOIImpact" : "plus neutral",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -764,7 +764,7 @@ OOIContentArray = [
      					"character" : "Raymond",
      					"charID" : 4,
      					"charClass" : "raymond",
-     					"OOIImpact" : "neutral",
+     					"OOIImpact" : "plus neutral",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -787,7 +787,7 @@ OOIContentArray = [
      					"character" : "Gladys",
      					"charID" : 2,
      					"charClass" : "gladys",
-     					"OOIImpact" : "neutral",
+     					"OOIImpact" : "plus",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -797,7 +797,7 @@ OOIContentArray = [
      					"character" : "Mary",
      					"charID" : 3,
      					"charClass" : "mary",
-     					"OOIImpact" : "neutral minus",
+     					"OOIImpact" : "plus",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -807,7 +807,7 @@ OOIContentArray = [
      					"character" : "Raymond",
      					"charID" : 4,
      					"charClass" : "raymond",
-     					"OOIImpact" : "plus",
+     					"OOIImpact" : "neutral minus",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -840,7 +840,7 @@ OOIContentArray = [
      					"character" : "Mary",
      					"charID" : 3,
      					"charClass" : "mary",
-     					"OOIImpact" : "minus",
+     					"OOIImpact" : "plus",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -850,7 +850,7 @@ OOIContentArray = [
      					"character" : "Raymond",
      					"charID" : 4,
      					"charClass" : "raymond",
-     					"OOIImpact" : "neutral",
+     					"OOIImpact" : "plus neutral",
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
@@ -886,7 +886,7 @@ OOIContentArray = [
                              	                 					"character" : "Gladys",
                              	                 					"charID" : 2,
                              	                 					"charClass" : "gladys",
-                             	                 					"OOIImpact" : "neutral",
+                             	                 					"OOIImpact" : "minus",
                              	                 					"NPCName":"Sarah",
                              	                 					"NPCID":0,
                              	                 					"NPCClass":"sarah,",
@@ -896,7 +896,7 @@ OOIContentArray = [
                              	                 					"character" : "Mary",
                              	                 					"charID" : 3,
                              	                 					"charClass" : "mary",
-                             	                 					"OOIImpact" : "plus",
+                             	                 					"OOIImpact" : "neutral minus",
                              	                 					"NPCName":"Sarah",
                              	                 					"NPCID":0,
                              	                 					"NPCClass":"sarah,",
@@ -906,7 +906,7 @@ OOIContentArray = [
                              	                 					"character" : "Raymond",
                              	                 					"charID" : 4,
                              	                 					"charClass" : "raymond",
-                             	                 					"OOIImpact" : "plus",
+                             	                 					"OOIImpact" : "neutral",
                              	                 					"NPCName":"Sarah",
                              	                 					"NPCID":0,
                              	                 					"NPCClass":"sarah,",
@@ -930,7 +930,7 @@ OOIContentArray = [
                              	                					"character" : "Gladys",
                              	                					"charID" : 2,
                              	                					"charClass" : "gladys",
-                             	                					"OOIImpact" : "neutral minus",
+                             	                					"OOIImpact" : "plus",
                              	                					"NPCName":"Sarah",
                              	                					"NPCID":0,
                              	                					"NPCClass":"sarah,",
@@ -940,7 +940,7 @@ OOIContentArray = [
                              	                					"character" : "Mary",
                              	                					"charID" : 3,
                              	                					"charClass" : "mary",
-                             	                					"OOIImpact" : "minus",
+                             	                					"OOIImpact" : "plus",
                              	                					"NPCName":"Sarah",
                              	                					"NPCID":0,
                              	                					"NPCClass":"sarah,",
@@ -950,7 +950,7 @@ OOIContentArray = [
                              	                					"character" : "Raymond",
                              	                					"charID" : 4,
                              	                					"charClass" : "raymond",
-                             	                					"OOIImpact" : "neutral minus",
+                             	                					"OOIImpact" : "neutral plus",
                              	                					"NPCName":"Sarah",
                              	                					"NPCID":0,
                              	                					"NPCClass":"sarah,",
@@ -984,7 +984,7 @@ OOIContentArray = [
              					"character" : "Mary",
              					"charID" : 3,
              					"charClass" : "mary",
-             					"OOIImpact" : "minus",
+             					"OOIImpact" : "plus",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -994,7 +994,7 @@ OOIContentArray = [
              					"character" : "Raymond",
              					"charID" : 4,
              					"charClass" : "raymond",
-             					"OOIImpact" : "neutral",
+             					"OOIImpact" : "plus neutral",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1017,7 +1017,7 @@ OOIContentArray = [
              					"character" : "Gladys",
              					"charID" : 2,
              					"charClass" : "gladys",
-             					"OOIImpact" : "minus",
+             					"OOIImpact" : "plus neutral",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1027,7 +1027,7 @@ OOIContentArray = [
              					"character" : "Mary",
              					"charID" : 3,
              					"charClass" : "mary",
-             					"OOIImpact" : "minus",
+             					"OOIImpact" : "plus neutral",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1037,7 +1037,7 @@ OOIContentArray = [
              					"character" : "Raymond",
              					"charID" : 4,
              					"charClass" : "raymond",
-             					"OOIImpact" : "neutral",
+             					"OOIImpact" : "plus neutral",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1060,7 +1060,7 @@ OOIContentArray = [
              					"character" : "Gladys",
              					"charID" : 2,
              					"charClass" : "gladys",
-             					"OOIImpact" : "neutral",
+             					"OOIImpact" : "plus",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1070,7 +1070,7 @@ OOIContentArray = [
              					"character" : "Mary",
              					"charID" : 3,
              					"charClass" : "mary",
-             					"OOIImpact" : "neutral minus",
+             					"OOIImpact" : "plus",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1080,7 +1080,7 @@ OOIContentArray = [
              					"character" : "Raymond",
              					"charID" : 4,
              					"charClass" : "raymond",
-             					"OOIImpact" : "plus",
+             					"OOIImpact" : "minus",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1103,7 +1103,7 @@ OOIContentArray = [
              					"character" : "Gladys",
              					"charID" : 2,
              					"charClass" : "gladys",
-             					"OOIImpact" : "neutral minus",
+             					"OOIImpact" : "neutral plus",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1113,7 +1113,7 @@ OOIContentArray = [
              					"character" : "Mary",
              					"charID" : 3,
              					"charClass" : "mary",
-             					"OOIImpact" : "minus",
+             					"OOIImpact" : "plus",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1123,7 +1123,7 @@ OOIContentArray = [
              					"character" : "Raymond",
              					"charID" : 4,
              					"charClass" : "raymond",
-             					"OOIImpact" : "neutral",
+             					"OOIImpact" : "neutral plus",
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
@@ -1187,14 +1187,27 @@ gameScoreArray = [
 
 
 
-apartmentSelectionScript : [
-                         
-                         
-                         
-                         
-                         
-                         
-                         ]
+engagementScoreArray = [
+                        {
+                          	apartmentClass : "pinegrove",
+                          	taggedOOIs :[5,5,5,5,5,5] ,
+                            clickedOOIs : [5,5,5,5,5,5] 
+                           },
+                           {
+                          	apartmentClass : "lakeview",
+                          	taggedOOIs :[5,5,5,5,5,5] ,
+                            clickedOOIs : [5,5,5,5,5,5]            
+                                      	 
+                           },
+                           {
+                          	apartmentClass : "sunnyvale",
+                          	taggedOOIs :[5,5,5,5,5,5] ,
+                            clickedOOIs : [5,5,5,5,5,5]       
+                          	
+                           }
+                           
+                           
+                           ]
 
 
 
@@ -1536,6 +1549,7 @@ inActiveApartmentRight   = document.getElementById('inActiveApartmentRight');
 scoreContainer   = document.getElementById('scoreContainer');
 scoreTitle   = document.getElementById('scoreTitle');
 scoreContent   = document.getElementById('scoreContent');
+gameRestart   = document.getElementById('gameRestart');
 
 
 
@@ -1883,7 +1897,7 @@ gameOverlay.addEventListener('click', function() {
 			
 			
 		}else if(hasClass(conversationLayer, 'player-review')){
-			
+			conversationLayer.classList.remove('player-review');
 			conversationLayer.classList.add('hide');
 			navigateScenes(0,0);
 
@@ -1987,7 +2001,7 @@ showOOIsControl();
 function displayScore(){
 	scoreContainer.classList.remove('hide');
 	scoreTitle.innerHTML = "Try Again!";
-	scoreContent.innerHTML = '<p class="score-value" >90</p><p class="score-description" >Your Score</p><p class="score-value" >50</p><p class="score-description" >Your Engagement Score</p><p class="score-value" >10</p><p class="score-description" >Your Rank</p>'
+	scoreContent.innerHTML = '<p class="score-value" >'+gameScore+'</p><p class="score-description" >Your Score</p><p class="score-value" >'+engagementScore+'</p><p class="score-description" >Your Engagement Score</p>'
 }
 
 
@@ -2230,6 +2244,22 @@ function showOOIDescription(info,i){
 		}
 	}
 	showDiamond();
+	
+	var currentEngagementScore = engagementScore ;
+	engagementScore = engagementScore + engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] ;
+	
+	if(!engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] == 0 ){
+		
+		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
+		
+		animateEngagementScore();
+	}
+	
+	engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] = 0 ;	
+	
+	
+	
+	
 }
 function showDiamond(){
 	objectEffect.classList.remove('hide');
@@ -2400,6 +2430,18 @@ function tagOOI(info,i){
 	
 	noOfObjectsExplored.innerHTML =  + "/6";*/
 	
+	var currentEngagementScore = engagementScore ;
+	
+	engagementScore = engagementScore + engagementScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] ;
+	
+	if(!engagementScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] == 0 ){
+		
+		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
+		
+		animateEngagementScore();
+	}
+	
+	engagementScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] = 0 ;
 	
 	
 	if(info[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].OOIImpact.indexOf(currentTag) > -1){
