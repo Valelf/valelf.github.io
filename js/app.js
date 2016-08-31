@@ -1594,7 +1594,7 @@ function loadGame() {
 	showProgress();
 	showGameTitle()
 	//toggleGameMusic();
-	setTimeout(initGame, loadDuration);
+	//setTimeout(initGame, loadDuration - 25000);
 }
 
 function initGame() {
@@ -2781,21 +2781,64 @@ function preLoadPlayerImages(){
 }
 
 function preLoadNPCImages(){
-	
+
 	var NPCChar;
+  var louiseImages = images;
+  console.log(louiseImages[1]);
+  var totalCountWidth = 53.5;
+/*  var louiseImages = ['/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00920.png',
+  '/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00921.png',
+  '/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00922.png',
+  '/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00923.png',
+  '/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00924.png']; */
+  var louiseImagesLength = louiseImages.length;
+  console.log("louiseImagesLength");
+  console.log(louiseImagesLength);
+  var completedCount = 0;
+    
+    console.log('preLoadNPCImages sceneWrapper length');
+    console.log(sceneWrapper.getElementsByClassName('character').length);
+
+    var loader = new PxLoader({statusInterval: 500});
+    for (var i = 0; i < louiseImages.length; i++) {
+       loader.add(new PxLoaderImage(louiseImages[i]));
+    }
+    loader.addProgressListener(function(e) {
+      console.log(e);
+      console.log(53.5*completedCount/louiseImagesLength);
+      completedCount++;
+      progressLine.style.transitionDuration = "0.2s"
+      progressLine.style.width = (53.5*completedCount/louiseImagesLength).toString() +"%";
+    });
+    loader.addCompletionListener(function() {
+
+    //  progressLine.style.transitionDuration = "0s"
+      progressLine.style.width = "53.5%";
+      setTimeout(initGame , 500);
+    });
+    loader.start();
 	for ( var j = 0; j < sceneWrapper.getElementsByClassName('character').length; j++) {
-		NPCChar = sceneWrapper.getElementsByClassName('character')[j];
-		NPCChar.classList.add('talk');
+    console.log(j);
+    console.log('preLoadNPCImages sceneWrapper at '+ j);
+    if(j != 4 && j != 5 && j != 7 && j != 9 && j != 1){
+     //var backgroundImg = loader.addImage('assets/images/character-animations/scene-0/talk/louise/Louise_00924.png');
+      console.log("loaded sample louise Images")
+      console.log(sceneWrapper.getElementsByClassName('character')[j]);
+    }else{
+
+      console.log(sceneWrapper.getElementsByClassName('character')[j]);
+      NPCChar = sceneWrapper.getElementsByClassName('character')[j];
+      NPCChar.classList.add('talk');
+    }
 	}
-setTimeout(function(){
+  //initGame();
+/*setTimeout(function(){
 	for ( var j = 0; j < sceneWrapper.getElementsByClassName('character').length; j++) {
 		NPCChar = sceneWrapper.getElementsByClassName('character')[j];
 		NPCChar.classList.remove('talk');
 	}
-	
-},10000)
 
-}
+},100) */}
 
 function tourApartment() {
 	
