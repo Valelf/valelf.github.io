@@ -1895,6 +1895,7 @@ gameOverlay.addEventListener('click', function() {
 			conversationLayer.classList.add('player-review');
 			conversationBubble.classList.remove('louise');
 			conversationBubble.classList.add(playerChar.class); 
+			conversationBubble.classList.remove('scene-one'); 
 			conversationBubble.classList.add('scene-zero'); 
 			speakerName.innerHTML = playerChar.name;
 			conversationtext.innerHTML = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].playerReview + '<div class="tap-to-contn">TAP TO CONTINUE</div>';
@@ -2166,7 +2167,7 @@ function selectCharacter(info) {
 	console.log(charName);
 }
 function initApartmentControls(){
-	//leftNav.classList.remove('hide');
+	leftNav.classList.add('hide');
 	
 
 	
