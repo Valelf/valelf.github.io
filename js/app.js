@@ -1190,17 +1190,20 @@ gameScoreArray = [
 engagementScoreArray = [
                         {
                           	apartmentClass : "pinegrove",
+                          	mapIcon : 5 ,
                           	taggedOOIs :[5,5,5,5,5,5] ,
                             clickedOOIs : [5,5,5,5,5,5] 
                            },
                            {
                           	apartmentClass : "lakeview",
+                          	mapIcon : 5 ,
                           	taggedOOIs :[5,5,5,5,5,5] ,
                             clickedOOIs : [5,5,5,5,5,5]            
                                       	 
                            },
                            {
                           	apartmentClass : "sunnyvale",
+                          	mapIcon : 5 ,
                           	taggedOOIs :[5,5,5,5,5,5] ,
                             clickedOOIs : [5,5,5,5,5,5]       
                           	
@@ -2164,6 +2167,9 @@ function selectCharacter(info) {
 }
 function initApartmentControls(){
 	//leftNav.classList.remove('hide');
+	
+
+	
 	rightNav.classList.remove('hide');
 	
 	OOILayer.classList.add("active");
@@ -2734,6 +2740,7 @@ setTimeout(function(){
 }
 
 function tourApartment() {
+	
 	dialogueCount = 0 ;
 	currentSubSceneIndex = 0 ;
 	for ( var i = 0; i < 3; i++) {
@@ -2754,7 +2761,7 @@ function tourApartment() {
 
 
 
-function navigateScenes(sceneNo,subSceneNo, callBack) {
+function navigateScenes(sceneNo,subSceneNo) {
 	gameOverlay.classList.remove('tint');
 	gameOverlay.classList.add('darken');
 	controlMode.classList.add('hide');

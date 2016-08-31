@@ -1140,6 +1140,18 @@ position: absolute;
 	background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
     
 }
+.object-effect-content:before {
+    content: "";
+    position: absolute;
+    border-width: 12px;
+    border-style: solid;
+    left: 100%;
+    border-left-color: rgba(255, 255, 255, 0.8);
+    border-right-color: transparent;
+    border-top-color: transparent;
+    top: 35%;
+    border-bottom-color: transparent;
+}
 .object-effect-content{
     position: absolute;
 /*     border: 1px solid; */
@@ -1209,123 +1221,315 @@ position: absolute;
     background-image: url(../assets/images/diamond.png);
 }
 
-.gladys.pinegrove.exterior .character-pin{
-	
+.gladys.pinegrove.exterior .object-effect{
+    right: auto;
+    left: 37%;
+    bottom: 52%;
+    top: auto;
 }
 
-.gladys.pinegrove.livingroom .character-pin{
-	
+.gladys.pinegrove.livingroom .object-effect{
+    right: auto;
+    left: 35%;
+    bottom: 47%;
+    top: auto;
 }
 
-.gladys.pinegrove.bathroom .character-pin{
-	
+.gladys.pinegrove.bathroom .object-effect{
+    right: auto;
+    left: 41%;
+    bottom: 52%;
+    top: auto;
 }
 
-.gladys.lakeview.exterior .character-pin{
-	
+.gladys.lakeview.exterior .object-effect{
+    right: auto;
+    left: 42%;
+    bottom: 48%;
+    top: auto;
 }
 
-.gladys.lakeview.livingroom .character-pin{
-	
+.gladys.lakeview.livingroom .object-effect{
+    right: auto;
+    left: 43%;
+    bottom: 41%;
+    top: auto;
 }
 
-.gladys.lakeview.bathroom .character-pin{
-	
+.gladys.lakeview.bathroom .object-effect{
+    right: auto;
+    left: 43%;
+    bottom: 51%;
+    top: auto;
 }
 
-.gladys.sunnyvale.exterior .character-pin{
-	
+.gladys.sunnyvale.exterior .object-effect{
+    right: auto;
+    left: 35%;
+    bottom: 44%;
+    top: auto;
 }
 
-.gladys.sunnyvale.livingroom .character-pin{
-	
+.gladys.sunnyvale.livingroom .object-effect{
+    right: auto;
+    left: 35%;
+    bottom: 56%;
+    top: auto;
 }
 
-.gladys.sunnyvale.bathroom .character-pin{
-	
-}
-
-
-.raymond.pinegrove.exterior .character-pin{
-	
-}
-
-.raymond.pinegrove.livingroom .character-pin{
-	
-}
-
-.raymond.pinegrove.bathroom .character-pin{
-	
-}
-
-.raymond.lakeview.exterior .character-pin{
-	
-}
-
-.raymond.lakeview.livingroom .character-pin{
-	
-}
-
-.raymond.lakeview.bathroom .character-pin{
-	
-}
-
-.raymond.sunnyvale.exterior .character-pin{
-	
-}
-
-.raymond.sunnyvale.livingroom .character-pin{
-	
-}
-
-.raymond.sunnyvale.bathroom .character-pin{
-	
+.gladys.sunnyvale.bathroom .object-effect{
+    right: auto;
+    left: 42%;
+    bottom: 57%;
+    top: auto;
 }
 
 
-
-.mary.pinegrove.exterior .character-pin{
-	
+.raymond.pinegrove.exterior .object-effect{
+	top: auto;
+    bottom: 63%;
+    left: auto;
+    right: 22%;
 }
 
-.mary.pinegrove.livingroom .character-pin{
-	
+.raymond.pinegrove.livingroom .object-effect{
+    top: auto;
+    bottom: 58%;
+    left: auto;
+    right: 22%;
 }
 
-.mary.pinegrove.bathroom .character-pin{
-	
+.raymond.pinegrove.bathroom .object-effect{
+    top: auto;
+    bottom: 65%;
+    left: auto;
+    right: 22%;
 }
 
-.mary.lakeview.exterior .character-pin{
-	
+.raymond.lakeview.exterior .object-effect{
+    top: auto;
+    bottom: 59%;
+    right: auto;
+    left: 45%;
 }
 
-.mary.lakeview.livingroom .character-pin{
-	
+.raymond.lakeview.livingroom .object-effect{
+    top: auto;
+    bottom: 50%;
+    right: auto;
+    left: 44%;
 }
 
-.mary.lakeview.bathroom .character-pin{
-	
+.raymond.lakeview.bathroom .object-effect{
+    top: auto;
+    bottom: 64%;
+    right: auto;
+    left: 44%;
 }
 
-.mary.sunnyvale.exterior .character-pin{
-	
+.raymond.sunnyvale.exterior .object-effect{
+    top: auto;
+    bottom: 58%;
+    left: 44%;
+    right: auto;
 }
 
-.mary.sunnyvale.livingroom .character-pin{
-	
+.raymond.sunnyvale.livingroom .object-effect{
+    top: auto;
+    bottom: 70%;
+    left: 45%;
+    right: auto;
 }
 
-.mary.sunnyvale.bathroom .character-pin{
-	
+.raymond.sunnyvale.bathroom .object-effect{
+    top: auto;
+    bottom: 69%;
+    left: 45%;
+    right: auto;
 }
 
 
 
+.mary.pinegrove.exterior .object-effect{
+    top: auto;
+    bottom: 54%;
+    left: auto;
+    right: 23%;
+}
 
+.mary.pinegrove.livingroom .object-effect{
+    top: auto;
+    bottom: 46%;
+    left: auto;
+    right: 31%;
+}
 
+.mary.pinegrove.bathroom .object-effect{
+    top: auto;
+    bottom: 52%;
+    left: auto;
+    right: 31%;
+}
 
+.mary.lakeview.exterior .object-effect{
+    top: auto;
+    bottom: 51%;
+    left: auto;
+    right: 23%;
+}
 
+.mary.lakeview.livingroom .object-effect{
+    top: auto;
+    bottom: 41%;
+    left: auto;
+    right: 30%;
+}
+
+.mary.lakeview.bathroom .object-effect{
+    top: auto;
+    bottom: 52%;
+    left: auto;
+    right: 30%;
+}
+
+.mary.sunnyvale.exterior .object-effect{
+    top: auto;
+    bottom: 46%;
+    left: auto;
+    right: 24%;
+}
+
+.mary.sunnyvale.livingroom .object-effect{
+    top: auto;
+    bottom: 56%;
+    left: auto;
+    right: 29%;
+}
+
+.mary.sunnyvale.bathroom .object-effect{
+    top: auto;
+    bottom: 56%;
+    left: auto;
+    right: 29%;
+}
+
+/*conversation texts for sarah in scene 2 various locations*/
+.pinegrove.exterior .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 39%;
+    bottom: auto;
+    right: auto;
+}
+.pinegrove.exterior .conversation-bubble.sarah{
+    top: auto;
+    bottom: 76%;
+    left: 9%;
+    right: auto;
+}
+
+.pinegrove.livingroom .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 33%;
+    bottom: auto;
+    right: auto;
+}
+.pinegrove.livingroom .conversation-bubble.sarah{
+    top: auto;
+    bottom: 70%;
+    left: 7%;
+    right: auto;
+}
+
+.pinegrove.bathroom .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 37%;
+    bottom: auto;
+    right: auto;
+}
+.pinegrove.bathroom .conversation-bubble.sarah{
+    top: auto;
+    bottom: 74%;
+    left: 10%;
+    right: auto;
+}
+
+.sunnyvale.exterior .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 39%;
+    bottom: auto;
+    right: auto;
+}
+.sunnyvale.exterior .conversation-bubble.sarah{
+    top: auto;
+    bottom: 67%;
+    left: 12%;
+    right: auto;
+}
+
+.sunnyvale.livingroom .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 33%;
+    bottom: auto;
+    right: auto;
+}
+.sunnyvale.livingroom .conversation-bubble.sarah{
+    top: auto;
+    bottom: 78%;
+    left: 8%;
+    right: auto;
+}
+
+.sunnyvale.bathroom .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 46%;
+    bottom: auto;
+    right: auto;
+}
+.sunnyvale.bathroom .conversation-bubble.sarah{
+    top: auto;
+    bottom: 81%;
+    left: 11%;
+    right: auto;
+}
+
+.lakeview.exterior .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 39%;
+    bottom: auto;
+    right: auto;
+}
+.lakeview.exterior .conversation-bubble.sarah{
+    top: auto;
+    bottom: 71%;
+    left: 9%;
+    right: auto;
+}
+
+.lakeview.livingroom .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 38%;
+    bottom: auto;
+    right: auto;
+}
+.lakeview.livingroom .conversation-bubble.sarah{
+    top: auto;
+    bottom: 62%;
+    left: 9%;
+    right: auto;
+}
+
+.lakeview.bathroom .conversation-bubble.sarah .conversation-text:before{
+    top: 100%;
+    left: 37%;
+    bottom: auto;
+    right: auto;
+}
+.lakeview.bathroom .conversation-bubble.sarah{
+    top: auto;
+    bottom: 74%;
+    left: 10%;
+    right: auto;
+}
 
 .apartment-title{
     position: relative;
@@ -1999,38 +2203,141 @@ div#pointerArrowSpin {
     /* box-shadow: 4px 3px 6px rgba(70, 68, 68, 0.66); */
 }
 
+.conversation-bubble  .conversation-text:before{
+    border-top-color: rgb(255,255,255);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    -webkit-border-image: none;
+    -moz-border-image: none;
+    border-image: none;
+    border-style: solid;
+    border-width: 12px;
+    content: "";
+    /* box-shadow: 1px 1px 4px 2px rgba(68, 68, 68, 0.66); */
+    height: 0;
+    left: 43%;
+    position: absolute;
+    top: 100%;
+    width: 0;
+    z-index: 1;
+}
+
 .conversation-bubble.sarah.scene-zero{
     top: 27%;
     left: 51%;	
 }
+
+.conversation-bubble.louise.scene-zero .conversation-text:before {
+    top: 100%;
+    bottom: auto;
+    left: 43%;
+    right: auto;
+    border-top-color: rgba(255,255,255,1);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
 .conversation-bubble.louise.scene-zero{
     top: auto;
     left: auto;
-    bottom: 62%;
-    right: 18%;
+    bottom: 68%;
+    right: 19%;
 }
-.conversation-bubble.gladys.scene-zero , .conversation-bubble.raymond.scene-zero , .conversation-bubble.mary.scene-zero{
+
+.conversation-bubble.gladys.scene-zero .conversation-text:before, .conversation-bubble.raymond.scene-zero .conversation-text:before, .conversation-bubble.mary.scene-zero .conversation-text:before {
+    top: 100%;
+    bottom: auto;
+    left: 43%;
+    right: auto;
+    border-top-color: rgba(255,255,255,1);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+.conversation-bubble.gladys.scene-zero, .conversation-bubble.mary.scene-zero{
     top: auto;
-    left: 18%;
-    bottom: 77%;
+    left: 8%;
+    bottom: 72%;
+    right: auto;
+}
+.conversation-bubble.raymond.scene-zero{
+    top: auto;
+    left: 8%;
+    bottom: 74%;
+    right: auto;
 }
 
-
+.conversation-bubble.sarah.scene-one .conversation-text:before {
+    top: 100%;
+    bottom: auto;
+    left: 53%;
+    right: auto;
+    border-top-color: rgba(255,255,255,1);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
 .conversation-bubble.sarah.scene-one
 {
     top: auto;
-    left: 9%;
-    bottom: 69%;
+    left: 14%;
+    bottom: 65%;
 }
 .conversation-bubble.louise.scene-one{
 	right: 4%;
     top: 30%;
 }
-.conversation-bubble.gladys.scene-one , .conversation-bubble.raymond.scene-one , .conversation-bubble.mary.scene-one{
+
+.conversation-bubble.gladys.scene-one .conversation-text:before {
+    top: 100%;
+    bottom: auto;
+    left: 39%;
+    right: auto;
+    border-top-color: rgba(255,255,255,1);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+.conversation-bubble.gladys.scene-one{
     top: auto;
     left: auto;
-    right: 22%;
-    bottom: 77%;
+    right: 21%;
+    bottom: 67%;
+}
+
+.conversation-bubble.mary.scene-one .conversation-text:before {
+    top: 100%;
+    bottom: auto;
+    left: 42%;
+    right: auto;
+    border-top-color: rgba(255,255,255,1);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+.conversation-bubble.mary.scene-one{
+    top: auto;
+    left: auto;
+    right: 20%;
+    bottom: 64%;
+}
+
+.conversation-bubble.raymond.scene-one .conversation-text:before {
+    top: 100%;
+    bottom: auto;
+    left: 42%;
+    right: auto;
+    border-top-color: rgba(255,255,255,1);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+.conversation-bubble.raymond.scene-one{
+    top: auto;
+    left: auto;
+    right: 20%;
+    bottom: 74%;
 }
 
 
