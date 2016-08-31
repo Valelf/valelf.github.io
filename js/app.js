@@ -1701,6 +1701,10 @@ spinButton.addEventListener('click', function() {
 
 	
 });
+gameRestart.addEventListener('click', function() {
+	resetgame();
+});
+
 
 tourButton.addEventListener('click', function() {
 	tourApartment();
@@ -1776,6 +1780,7 @@ closeObject.addEventListener('click', function() {
 characterPin.addEventListener('click', function() {
 	//closeOOIDescription(); 
 	objectEffect.classList.add('active');
+	objectEffect.classList.remove('hide');
 	for(var k = 0 ; k < objectEffect.children.length ; k++){
 		objectEffect.children[k].classList.remove('hide');
 	}
@@ -1828,10 +1833,12 @@ infoClose.addEventListener('click', function() {
 
 controlMap.addEventListener('click', function() {
 	if(hasClass(conversationLayer, 'tag-response')){
-		conversationLayer.classList.add('hide')	
+		conversationLayer.classList.add('hide')	;
 	}
-
-	
+	apartmentInfo.classList.add('hide');
+	closeOOIDescription(); 
+	hideDiamond();
+	conversationLayer.classList.add('hide');
 	toggleMap();
 });
 gameMap.addEventListener('click', function() {
@@ -1927,6 +1934,10 @@ gameOverlay.addEventListener('click', function() {
 
 
 	// hideMap();
+});
+OOILayer.addEventListener('click', function() {
+	conversationLayer.classList.add('hide');
+
 });
 nextButton.addEventListener('click', function() {
 	// hideMap();
@@ -2090,6 +2101,7 @@ function closeAilmentNotes(){
 			introPage = false;
 			ailmentNotes.classList.add('hide');
 			guideHeader.innerText = 'Choose a member';
+			guideHeader.classList.remove('hide');
 			characterSelectionWidget.classList.remove('hide');
 			dismissAilmentButton.innerHTML = "Dismiss";
 		}
@@ -2263,6 +2275,9 @@ function showOOIsControl(){
 }
 function showOOIDescription(info,i){
 	
+	
+
+	
 	exploredObjectsList.classList.add('slide');
 	controlNotes.classList.add('hide');
 	
@@ -2297,14 +2312,20 @@ function showOOIDescription(info,i){
 	
 }
 function showDiamond(){
-	objectEffect.classList.remove('hide');
+//	objectEffect.classList.remove('hide');
 	characterPin.classList.remove('hide');
 }
 function hideDiamond(){
+	objectEffect.classList.remove('active');
 	objectEffect.classList.add('hide');
 	characterPin.classList.add('hide');
 }
 function closeOOIDescription(){
+
+	
+	objectEffect.classList.remove('active');
+	objectEffect.classList.add('hide');
+
 	exploredObjectsList.classList.remove('slide');
 	controlNotes.classList.remove('hide');
 	
@@ -2407,7 +2428,7 @@ function showApartmentInfo(info, i) {
 	//ratingDetails.innerText = "Locality rating : " + info[i].rating;
 	distanceDetails.innerText = "Distance from senior center : "
 			+ info[i].distance;
-	ammenitiesDetails.innerText = "Close By : " + info[i].ammenities;
+	ammenitiesDetails.innerText = "Near By : " + info[i].ammenities;
 	apartmentInfo.classList.remove('hide');
 	var apartmentClasses = ['pinegrove','sunnyvale','lakeview','hide'] //'hide' added in array for simplicity
 	
@@ -2506,11 +2527,12 @@ function selectOOI(i){
 }
 function NPCTagResponse(){
 
-	objectEffect.classList.remove('active');
-	objectEffect.classList.add('hide');
-	for(var k = 0 ; k < objectEffect.children.length ; k++){
-		objectEffect.children[k].classList.add('hide');
-	}
+
+	characterPin.classList.add('hide');
+	closeOOIDescription(); 
+	
+	
+
 
 	
 	
@@ -2592,7 +2614,7 @@ function showInstructions(i) {
 function meetCharacter() {
 	closeCharWiget();
 	console.log('meet');
-
+	guideHeader.classList.add('hide');
 	instructionHUD.classList.add('hide');
 	guideHeader.innerText = '';
 	navigateScenes(1,0);

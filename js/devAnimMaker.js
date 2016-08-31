@@ -4,10 +4,10 @@
 	var cssArray = [] , 
 	animationDirection = "loop" ,  // forward
 	cssString = '',
-	animName = "raymondAnim" ,
-	imageName = "Louise_00",
-	frameNumber =  151 ,
-	firstImageNo = 920 ,
+	animName = "gladysAnim" ,
+	imageName = "sarah_00",
+	frameNumber =  48 ,
+	firstImageNo = 932 ,
 	cssLine ="";
 	var increment = Number((100/(frameNumber-1)).toFixed(2)),
 	incrementLoop = Number((50/(frameNumber-1)).toFixed(2)),
@@ -15,7 +15,7 @@
 	iterationsLoop = 2*frameNumber   ,
 	keyNumber = 0 ;
 	var index ="",
-	pathA = "scene-0/talk/louise/",
+	pathA = "scene-2/idle/sarah/",
 	loopindex = "";
 	
 	if(animationDirection == "forward"){

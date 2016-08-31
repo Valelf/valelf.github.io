@@ -1208,9 +1208,9 @@ position: absolute;
 .character-pin{
     position: absolute;
     /* border: 1px solid black; */
-    height: 70%;
+    height: 14%;
     cursor:pointer;
-    width: 30%;
+    width: 11%;
     /* background-color: rgb(231, 87, 38); */
     /* color: white; */
     text-align: center;
@@ -1222,195 +1222,357 @@ position: absolute;
 }
 
 .gladys.pinegrove.exterior .object-effect{
-    right: auto;
-    left: 37%;
-    bottom: 52%;
-    top: auto;
+    right: 31%;
+    left: auto;
+    bottom: auto;
+    top: 27%;
+}
+.gladys.pinegrove.exterior .character-pin{
+    right: 20%;
+    left: auto;
+    bottom: auto;
+    top: 27%;
 }
 
 .gladys.pinegrove.livingroom .object-effect{
-    right: auto;
-    left: 35%;
-    bottom: 47%;
-    top: auto;
+    right: 32%;
+    left: auto;
+    bottom: auto;
+    top: 32%;
+}
+.gladys.pinegrove.livingroom .character-pin{
+    right: 21%;
+    left: auto;
+    bottom: auto;
+    top: 32%;
 }
 
 .gladys.pinegrove.bathroom .object-effect{
-    right: auto;
-    left: 41%;
-    bottom: 52%;
-    top: auto;
+    right: 26%;
+    left: auto;
+    bottom: auto;
+    top: 28%;
+}
+.gladys.pinegrove.bathroom .character-pin{
+    right: 15%;
+    left: auto;
+    bottom: auto;
+    top: 28%;
 }
 
 .gladys.lakeview.exterior .object-effect{
-    right: auto;
-    left: 42%;
-    bottom: 48%;
-    top: auto;
+    right: 25%;
+    left: auto;
+    bottom: auto;
+    top: 32%;
+}
+.gladys.lakeview.exterior .character-pin{
+    right: 14%;
+    left: auto;
+    bottom: auto;
+    top: 32%;
 }
 
 .gladys.lakeview.livingroom .object-effect{
-    right: auto;
-    left: 43%;
-    bottom: 41%;
-    top: auto;
+    right: 24%;
+    left: auto;
+    bottom: auto;
+    top: 39%;
+}
+.gladys.lakeview.livingroom .character-pin{
+    right: 13%;
+    left: auto;
+    bottom: auto;
+    top: 39%;
 }
 
 .gladys.lakeview.bathroom .object-effect{
-    right: auto;
-    left: 43%;
-    bottom: 51%;
-    top: auto;
+    right: 25%;
+    left: auto;
+    bottom: auto;
+    top: 28%;
+}
+.gladys.lakeview.bathroom .character-pin{
+    right: 14%;
+    left: auto;
+    bottom: auto;
+    top: 28%;
 }
 
 .gladys.sunnyvale.exterior .object-effect{
-    right: auto;
-    left: 35%;
-    bottom: 44%;
-    top: auto;
+    right: 32%;
+    left: auto;
+    bottom: auto;
+    top: 36%;
+}
+.gladys.sunnyvale.exterior .character-pin{
+    right: 21%;
+    left: auto;
+    bottom: auto;
+    top: 36%;
 }
 
 .gladys.sunnyvale.livingroom .object-effect{
-    right: auto;
-    left: 35%;
-    bottom: 56%;
-    top: auto;
+    right: 33%;
+    left: auto;
+    bottom: auto;
+    top: 24%
+}
+.gladys.sunnyvale.livingroom .character-pin{
+    right: 22%;
+    left: auto;
+    bottom: auto;
+    top: 24%
 }
 
 .gladys.sunnyvale.bathroom .object-effect{
-    right: auto;
-    left: 42%;
-    bottom: 57%;
-    top: auto;
+    right: 25%;
+    left: auto;
+    bottom: auto;
+    top: 23%;
+}
+.gladys.sunnyvale.bathroom .character-pin{
+    right: 14%;
+    left: auto;
+    bottom: auto;
+    top: 23%;
 }
 
 
 .raymond.pinegrove.exterior .object-effect{
-	top: auto;
-    bottom: 63%;
+    right: 23%;
     left: auto;
-    right: 22%;
+    bottom: auto;
+    top: 17%;;
+}
+.raymond.pinegrove.exterior .character-pin{
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    top: 17%;
 }
 
 .raymond.pinegrove.livingroom .object-effect{
-    top: auto;
-    bottom: 58%;
+    right: 23%;
     left: auto;
-    right: 22%;
+    bottom: auto;
+    top: 22%;
+}
+.raymond.pinegrove.livingroom .character-pin{
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    top: 22%;
 }
 
 .raymond.pinegrove.bathroom .object-effect{
-    top: auto;
-    bottom: 65%;
+    right: 23%;
     left: auto;
-    right: 22%;
+    bottom: auto;
+    top: 16%;
+}
+.raymond.pinegrove.bathroom .character-pin{
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    top: 16%;
 }
 
 .raymond.lakeview.exterior .object-effect{
-    top: auto;
-    bottom: 59%;
-    right: auto;
-    left: 45%;
+    right: 22%;
+    left: auto;
+    bottom: auto;
+    top: 21%;
+}
+.raymond.lakeview.exterior .character-pin{
+    right: 11%;
+    left: auto;
+    bottom: auto;
+    top: 21%;
 }
 
 .raymond.lakeview.livingroom .object-effect{
-    top: auto;
-    bottom: 50%;
-    right: auto;
-    left: 44%;
+    right: 23%;
+    left: auto;
+    bottom: auto;
+    top: 30%;
+}
+.raymond.lakeview.livingroom .character-pin{
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    top: 30%;
 }
 
 .raymond.lakeview.bathroom .object-effect{
-    top: auto;
-    bottom: 64%;
-    right: auto;
-    left: 44%;
+    right: 23%;
+    left: auto;
+    bottom: auto;
+    top: 16%;
+}
+.raymond.lakeview.bathroom .character-pin{
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    top: 16%;
 }
 
 .raymond.sunnyvale.exterior .object-effect{
-    top: auto;
-    bottom: 58%;
-    left: 44%;
-    right: auto;
+    right: 23%;
+    left: auto;
+    bottom: auto;
+    top: 23%;
+}
+.raymond.sunnyvale.exterior .character-pin{
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    top: 23%;
 }
 
 .raymond.sunnyvale.livingroom .object-effect{
-    top: auto;
-    bottom: 70%;
-    left: 45%;
-    right: auto;
+    right: 23%;
+    left: auto;
+    bottom: auto;
+    top: 11%;
+}
+.raymond.sunnyvale.livingroom .character-pin{
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    top: 11%;
 }
 
 .raymond.sunnyvale.bathroom .object-effect{
-    top: auto;
-    bottom: 69%;
-    left: 45%;
-    right: auto;
+    right: 23%;
+    left: auto;
+    bottom: auto;
+    top: 12%;
+}
+.raymond.sunnyvale.bathroom .character-pin{
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    top: 12%;
 }
 
 
 
 .mary.pinegrove.exterior .object-effect{
-    top: auto;
-    bottom: 54%;
+    right: 24%;
     left: auto;
-    right: 23%;
+    bottom: auto;
+    top: 27%;
+}
+.mary.pinegrove.exterior .character-pin{
+    right: 13%;
+    left: auto;
+    bottom: auto;
+    top: 27%;
 }
 
 .mary.pinegrove.livingroom .object-effect{
-    top: auto;
-    bottom: 46%;
-    left: auto;
     right: 31%;
+    left: auto;
+    bottom: auto;
+    top: 35%;
+}
+.mary.pinegrove.livingroom .character-pin{
+    right: 20%;
+    left: auto;
+    bottom: auto;
+    top: 35%;
 }
 
 .mary.pinegrove.bathroom .object-effect{
-    top: auto;
-    bottom: 52%;
-    left: auto;
     right: 31%;
+    left: auto;
+    bottom: auto;
+    top: 29%;
+}
+.mary.pinegrove.bathroom .character-pin{
+    right: 20%;
+    left: auto;
+    bottom: auto;
+    top: 29%;
 }
 
 .mary.lakeview.exterior .object-effect{
-    top: auto;
-    bottom: 51%;
+    right: 24%;
     left: auto;
-    right: 23%;
+    bottom: auto;
+    top: 30%;
+}
+.mary.lakeview.exterior .character-pin{
+    right: 13%;
+    left: auto;
+    bottom: auto;
+    top: 30%;
 }
 
 .mary.lakeview.livingroom .object-effect{
-    top: auto;
-    bottom: 41%;
-    left: auto;
     right: 30%;
+    left: auto;
+    bottom: auto;
+    top: 41%;
+}
+.mary.lakeview.livingroom .character-pin{
+    right: 19%;
+    left: auto;
+    bottom: auto;
+    top: 41%;
 }
 
 .mary.lakeview.bathroom .object-effect{
-    top: auto;
-    bottom: 52%;
+    right: 31%;
     left: auto;
-    right: 30%;
+    bottom: auto;
+    top: 29%;
+}
+.mary.lakeview.bathroom .character-pin{
+    right: 20%;
+    left: auto;
+    bottom: auto;
+    top: 29%;
 }
 
 .mary.sunnyvale.exterior .object-effect{
-    top: auto;
-    bottom: 46%;
-    left: auto;
     right: 24%;
+    left: auto;
+    bottom: auto;
+    top: 34%;
+}
+.mary.sunnyvale.exterior .character-pin{
+    right: 13%;
+    left: auto;
+    bottom: auto;
+    top: 34%;
 }
 
 .mary.sunnyvale.livingroom .object-effect{
-    top: auto;
-    bottom: 56%;
+    right: 31%;
     left: auto;
-    right: 29%;
+    bottom: auto;
+    top: 26%;
+}
+.mary.sunnyvale.livingroom .character-pin{
+    right: 20%;
+    left: auto;
+    bottom: auto;
+    top: 26%;
 }
 
 .mary.sunnyvale.bathroom .object-effect{
-    top: auto;
-    bottom: 56%;
+    right: 31%;
     left: auto;
-    right: 29%;
+    bottom: auto;
+    top: 25%;
+}
+.mary.sunnyvale.bathroom .character-pin{
+    right: 20%;
+    left: auto;
+    bottom: auto;
+    top: 25%;
 }
 
 /*conversation texts for sarah in scene 2 various locations*/
@@ -2532,7 +2694,7 @@ background-image: url(../assets/images/character-animations/scene-0/idle/gladys/
 }
 
 .scene-zero .character.player.raymond{
- background-image: url(../assets/images/character-animations/scene-0/idle/raymond/Raymond_00000.png);	
+ background-image: url(../assets/images/character-animations/scene-0/idle/raymond/Raymond_00001.png);	
 }
 .scene-zero .character.player.mary{
  background-image: url(../assets/images/character-animations/scene-0/idle/mary/mary_waiting_00090.png);	
@@ -2713,14 +2875,14 @@ position: absolute;
 .scene-one .character.sarah{
     position: absolute;
     /* border: 1px solid #DEB313; */
-    width: 41%;
-    background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00050.png);
+    width: 47%;
+    background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01000.png);
     background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: 0 0;
-    height: 57%;
-    left: 23%;
-    bottom: -1%;
+    background-size: auto 100%;
+    background-position: 50%;
+    height: 76%;
+    left: 4%;
+    bottom: 0%;
     top: auto;
     overflow: visible;
     z-index: 0;
@@ -2871,57 +3033,57 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
     z-index: 2;
 }
 .pinegrove #characterSarahTwoOne{
-    height: 84%;
+    height: 64%;
     left: 3%;
     bottom: 0%;
     width: 41%;
 }
 .pinegrove #characterSarahTwoTwo{
-    height: 93%;
+    height: 71%;
     left: 7%;
     bottom: -1%;
     width: 41%;
 }
 .pinegrove #characterSarahTwoZero{
-    height: 93%;
+    height: 71%;
     left: 7%;
     bottom: -1%;
     width: 41%;
 }
 
 .lakeview #characterSarahTwoOne{
-    height: 82%;
+    height: 61%;
     left: 7%;
     bottom: -6%;
     width: 41%;
 }
 .lakeview #characterSarahTwoTwo{
-    height: 93%;
+    height: 71%;
     left: 7%;
         bottom: -1%;
             width: 41%;
 }
 .lakeview #characterSarahTwoZero{
-    height: 92%;
+    height: 70%;
     left: 7%;
     bottom: -5%;
     width: 41%;
 }
 
 .sunnyvale #characterSarahTwoOne{
-    height: 98%;
+    height: 75%;
     left: 4%;
     bottom: -1%;
     width: 41%;
 }
 .sunnyvale #characterSarahTwoTwo{
-    height: 102%;
+    height: 76%;
     left: 12%;
     bottom: -1%;
     width: 41%;
 }
 .sunnyvale #characterSarahTwoZero{
-    height: 95%;
+    height: 73%;
     left: 10%;
     bottom: -11%;
     width: 41%;
@@ -2975,7 +3137,7 @@ height: 80%;
     bottom: 0%;
 }
 .pinegrove #characterPlayerTwoTwo.gladys{
-	    height: 83%;
+	    height: 77%;
     right: 0%;
 }
 
@@ -2994,7 +3156,7 @@ height: 80%;
 
 }
 .pinegrove #characterPlayerTwoOne.gladys{
-    height: 77%;
+    height: 70%;
     right: 6%;
     width: 37%;	
 }
@@ -3007,7 +3169,7 @@ height: 80%;
     height: 80%;	
 }
 .pinegrove #characterPlayerTwoZero.gladys{
-    height: 84%;
+    height: 77%;
     width: 37%;
     right: 5%;	
 }
@@ -3028,7 +3190,7 @@ height: 80%;
     bottom: 0%;
 }
 .lakeview #characterPlayerTwoTwo.gladys{
-height: 83%;
+height: 77%;
     bottom: 0%;	
 }
 
@@ -3046,7 +3208,7 @@ height: 83%;
 
 }
 .lakeview #characterPlayerTwoOne.gladys{
-    height: 67%;	
+    height: 64%;	
 }
 
 .lakeview #characterPlayerTwoZero.raymond{
@@ -3060,7 +3222,7 @@ height: 83%;
 }
 .lakeview #characterPlayerTwoZero.gladys{
     width: 37%;
-    height: 78%;	
+    height: 73%;	
 }
 
 
@@ -3078,7 +3240,7 @@ height: 83%;
     bottom: 0%;
 }
 .sunnyvale #characterPlayerTwoTwo.gladys{
-	    height: 91%;
+	    height: 84%;
     bottom: 0%;
 }
 
@@ -3098,7 +3260,7 @@ height: 83%;
 }
 .sunnyvale #characterPlayerTwoOne.gladys{
 	    width: 37%;
-    height: 88%;
+    height: 82%;
     right: 7%;
     bottom: 0%;
 }
@@ -3111,7 +3273,7 @@ height: 83%;
     height: 69%;	
 }
 .sunnyvale #characterPlayerTwoZero.gladys{
-	height: 83%;
+	height: 77.5%;
     bottom: -9%;
     right: 6%;
 }
@@ -4055,8 +4217,7 @@ position: absolute;
 
 @-webkit-keyframes sarahIdleSceneOne {
 
-	0.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00050.png) } 1.04%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00051.png) } 2.08%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00052.png) } 3.12%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00053.png) } 4.16%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00054.png) } 5.20%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00055.png) } 6.24%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00056.png) } 7.28%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00057.png) } 8.32%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00058.png) } 9.36%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00059.png) } 10.40%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00060.png) } 11.44%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00061.png) } 12.48%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00062.png) } 13.52%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00063.png) } 14.56%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00064.png) } 15.60%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00065.png) } 16.64%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00066.png) } 17.68%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00067.png) } 18.72%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00068.png) } 19.76%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00069.png) } 20.80%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00070.png) } 21.84%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00071.png) } 22.88%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00072.png) } 23.92%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00073.png) } 24.96%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00074.png) } 26.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00075.png) } 27.04%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00076.png) } 28.08%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00077.png) } 29.12%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00078.png) } 30.16%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00079.png) } 31.20%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00080.png) } 32.24%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00081.png) } 33.28%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00082.png) } 34.32%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00083.png) } 35.36%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00084.png) } 36.40%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00085.png) } 37.44%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00086.png) } 38.48%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00087.png) } 39.52%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00088.png) } 40.56%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00089.png) } 41.60%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00090.png) } 42.64%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00091.png) } 43.68%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00092.png) } 44.72%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00093.png) } 45.76%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00094.png) } 46.80%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00095.png) } 47.84%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00096.png) } 48.88%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00097.png) } 49.92%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00098.png) } 50.96%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00097.png) } 52.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00096.png) } 53.04%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00095.png) } 54.08%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00094.png) } 55.12%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00093.png) } 56.16%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00092.png) } 57.20%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00091.png) } 58.24%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00090.png) } 59.28%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00089.png) } 60.32%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00088.png) } 61.36%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00087.png) } 62.40%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00086.png) } 63.44%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00085.png) } 64.48%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00084.png) } 65.52%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00083.png) } 66.56%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00082.png) } 67.60%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00081.png) } 68.64%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00080.png) } 69.68%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00079.png) } 70.72%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00078.png) } 71.76%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00077.png) } 72.80%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00076.png) } 73.84%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00075.png) } 74.88%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00074.png) } 75.92%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00073.png) } 76.96%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00072.png) } 78.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00071.png) } 79.04%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00070.png) } 80.08%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00069.png) } 81.12%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00068.png) } 82.16%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00067.png) } 83.20%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00066.png) } 84.24%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00065.png) } 85.28%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00064.png) } 86.32%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00063.png) } 87.36%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00062.png) } 88.40%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00061.png) } 89.44%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00060.png) } 90.48%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00059.png) } 91.52%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00058.png) } 92.56%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00057.png) } 93.60%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00056.png) } 94.64%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00055.png) } 95.68%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00054.png) } 96.72%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00053.png) } 97.76%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00052.png) } 98.80%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00051.png) } 99.84%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_00050.png) } 
-	
+	0.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01000.png) } 1.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01001.png) } 2.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01002.png) } 3.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01003.png) } 4.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01004.png) } 5.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01005.png) } 6.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01006.png) } 7.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01007.png) } 8.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01008.png) } 9.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01009.png) } 10.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01010.png) } 11.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01011.png) } 12.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01012.png) } 13.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01013.png) } 14.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01014.png) } 15.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01015.png) } 16.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01016.png) } 17.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01017.png) } 18.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01018.png) } 19.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01019.png) } 20.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01020.png) } 21.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01021.png) } 22.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01022.png) } 23.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01023.png) } 24.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01024.png) } 25.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01025.png) } 26.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01026.png) } 27.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01027.png) } 28.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01028.png) } 29.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01029.png) } 30.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01030.png) } 31.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01031.png) } 32.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01032.png) } 33.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01033.png) } 34.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01034.png) } 35.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01035.png) } 36.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01036.png) } 37.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01037.png) } 38.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01038.png) } 39.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01039.png) } 40.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01040.png) } 41.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01041.png) } 42.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01042.png) } 43.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01043.png) } 44.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01044.png) } 45.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01045.png) } 46.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01046.png) } 47.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01047.png) } 48.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01048.png) } 49.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01049.png) } 50.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01050.png) } 51.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01049.png) } 52.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01048.png) } 53.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01047.png) } 54.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01046.png) } 55.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01045.png) } 56.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01044.png) } 57.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01043.png) } 58.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01042.png) } 59.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01041.png) } 60.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01040.png) } 61.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01039.png) } 62.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01038.png) } 63.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01037.png) } 64.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01036.png) } 65.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01035.png) } 66.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01034.png) } 67.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01033.png) } 68.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01032.png) } 69.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01031.png) } 70.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01030.png) } 71.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01029.png) } 72.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01028.png) } 73.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01027.png) } 74.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01026.png) } 75.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01025.png) } 76.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01024.png) } 77.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01023.png) } 78.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01022.png) } 79.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01021.png) } 80.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01020.png) } 81.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01019.png) } 82.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01018.png) } 83.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01017.png) } 84.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01016.png) } 85.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01015.png) } 86.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01014.png) } 87.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01013.png) } 88.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01012.png) } 89.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01011.png) } 90.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01010.png) } 91.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01009.png) } 92.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01008.png) } 93.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01007.png) } 94.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01006.png) } 95.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01005.png) } 96.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01004.png) } 97.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01003.png) } 98.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01002.png) } 99.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01001.png) } 100.00%{ background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01000.png) } 
 }
 
 
@@ -4084,8 +4245,7 @@ position: absolute;
 
 @-webkit-keyframes sarahTalkSceneOne {
 	
-0.00%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00126.png) } 1.35%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00127.png) } 2.70%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00128.png) } 4.05%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00129.png) } 5.40%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00130.png) } 6.75%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00131.png) } 8.10%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00132.png) } 9.45%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00133.png) } 10.80%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00134.png) } 12.15%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00135.png) } 13.50%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00136.png) } 14.85%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00137.png) } 16.20%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00138.png) } 17.55%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00139.png) } 18.90%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00140.png) } 20.25%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00141.png) } 21.60%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00142.png) } 22.95%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00143.png) } 24.30%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00144.png) } 25.65%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00145.png) } 27.00%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00146.png) } 28.35%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00147.png) } 29.70%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00148.png) } 31.05%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00149.png) } 32.40%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00150.png) } 33.75%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00151.png) } 35.10%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00152.png) } 36.45%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00153.png) } 37.80%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00154.png) } 39.15%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00155.png) } 40.50%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00156.png) } 41.85%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00157.png) } 43.20%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00158.png) } 44.55%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00159.png) } 45.90%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00160.png) } 47.25%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00161.png) } 48.60%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00162.png) } 49.95%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00163.png) } 51.30%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00162.png) } 52.65%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00161.png) } 54.00%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00160.png) } 55.35%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00159.png) } 56.70%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00158.png) } 58.05%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00157.png) } 59.40%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00156.png) } 60.75%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00155.png) } 62.10%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00154.png) } 63.45%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00153.png) } 64.80%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00152.png) } 66.15%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00151.png) } 67.50%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00150.png) } 68.85%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00149.png) } 70.20%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00148.png) } 71.55%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00147.png) } 72.90%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00146.png) } 74.25%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00145.png) } 75.60%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00144.png) } 76.95%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00143.png) } 78.30%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00142.png) } 79.65%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00141.png) } 81.00%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00140.png) } 82.35%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00139.png) } 83.70%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00138.png) } 85.05%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00137.png) } 86.40%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00136.png) } 87.75%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00135.png) } 89.10%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00134.png) } 90.45%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00133.png) } 91.80%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00132.png) } 93.15%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00131.png) } 94.50%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00130.png) } 95.85%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00129.png) } 97.20%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00128.png) } 98.55%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00127.png) } 99.90%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_00126.png) } 
-	
+0.00%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01110.png) } 1.39%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01111.png) } 2.78%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01112.png) } 4.17%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01113.png) } 5.56%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01114.png) } 6.95%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01115.png) } 8.34%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01116.png) } 9.73%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01117.png) } 11.12%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01118.png) } 12.51%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01119.png) } 13.90%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01120.png) } 15.29%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01121.png) } 16.68%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01122.png) } 18.07%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01123.png) } 19.46%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01124.png) } 20.85%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01125.png) } 22.24%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01126.png) } 23.63%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01127.png) } 25.02%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01128.png) } 26.41%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01129.png) } 27.80%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01130.png) } 29.19%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01131.png) } 30.58%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01132.png) } 31.97%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01133.png) } 33.36%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01134.png) } 34.75%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01135.png) } 36.14%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01136.png) } 37.53%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01137.png) } 38.92%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01138.png) } 40.31%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01139.png) } 41.70%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01140.png) } 43.09%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01141.png) } 44.48%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01142.png) } 45.87%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01143.png) } 47.26%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01144.png) } 48.65%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01145.png) } 50.04%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01146.png) } 51.43%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01145.png) } 52.82%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01144.png) } 54.21%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01143.png) } 55.60%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01142.png) } 56.99%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01141.png) } 58.38%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01140.png) } 59.77%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01139.png) } 61.16%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01138.png) } 62.55%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01137.png) } 63.94%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01136.png) } 65.33%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01135.png) } 66.72%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01134.png) } 68.11%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01133.png) } 69.50%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01132.png) } 70.89%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01131.png) } 72.28%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01130.png) } 73.67%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01129.png) } 75.06%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01128.png) } 76.45%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01127.png) } 77.84%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01126.png) } 79.23%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01125.png) } 80.62%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01124.png) } 82.01%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01123.png) } 83.40%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01122.png) } 84.79%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01121.png) } 86.18%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01120.png) } 87.57%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01119.png) } 88.96%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01118.png) } 90.35%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01117.png) } 91.74%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01116.png) } 93.13%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01115.png) } 94.52%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01114.png) } 95.91%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01113.png) } 97.30%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01112.png) } 98.69%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01111.png) } 100.08%{ background-image: url(../assets/images/character-animations/scene-1/talk/sarah/sarah_01110.png) } 	
 }
 
 
@@ -4097,7 +4257,8 @@ position: absolute;
 
 @-webkit-keyframes gladysIdleSceneTwo {
 	
-0.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00127.png) } 0.98%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00128.png) } 1.96%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00129.png) } 2.94%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00130.png) } 3.92%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00131.png) } 4.90%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00132.png) } 5.88%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00133.png) } 6.86%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00134.png) } 7.84%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00135.png) } 8.82%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00136.png) } 9.80%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00137.png) } 10.78%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00138.png) } 11.76%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00139.png) } 12.74%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00140.png) } 13.72%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00141.png) } 14.70%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00142.png) } 15.68%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00143.png) } 16.66%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00144.png) } 17.64%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00145.png) } 18.62%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00146.png) } 19.60%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00147.png) } 20.58%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00148.png) } 21.56%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00149.png) } 22.54%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00150.png) } 23.52%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00151.png) } 24.50%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00152.png) } 25.48%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00153.png) } 26.46%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00154.png) } 27.44%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00155.png) } 28.42%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00156.png) } 29.40%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00157.png) } 30.38%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00158.png) } 31.36%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00159.png) } 32.34%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00160.png) } 33.32%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00161.png) } 34.30%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00162.png) } 35.28%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00163.png) } 36.26%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00164.png) } 37.24%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00165.png) } 38.22%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00166.png) } 39.20%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00167.png) } 40.18%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00168.png) } 41.16%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00169.png) } 42.14%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00170.png) } 43.12%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00171.png) } 44.10%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00172.png) } 45.08%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00173.png) } 46.06%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00174.png) } 47.04%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00175.png) } 48.02%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00176.png) } 49.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00177.png) } 49.98%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00178.png) } 50.96%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00177.png) } 51.94%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00176.png) } 52.92%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00175.png) } 53.90%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00174.png) } 54.88%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00173.png) } 55.86%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00172.png) } 56.84%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00171.png) } 57.82%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00170.png) } 58.80%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00169.png) } 59.78%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00168.png) } 60.76%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00167.png) } 61.74%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00166.png) } 62.72%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00165.png) } 63.70%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00164.png) } 64.68%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00163.png) } 65.66%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00162.png) } 66.64%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00161.png) } 67.62%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00160.png) } 68.60%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00159.png) } 69.58%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00158.png) } 70.56%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00157.png) } 71.54%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00156.png) } 72.52%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00155.png) } 73.50%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00154.png) } 74.48%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00153.png) } 75.46%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00152.png) } 76.44%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00151.png) } 77.42%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00150.png) } 78.40%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00149.png) } 79.38%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00148.png) } 80.36%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00147.png) } 81.34%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00146.png) } 82.32%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00145.png) } 83.30%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00144.png) } 84.28%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00143.png) } 85.26%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00142.png) } 86.24%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00141.png) } 87.22%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00140.png) } 88.20%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00139.png) } 89.18%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00138.png) } 90.16%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00137.png) } 91.14%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00136.png) } 92.12%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00135.png) } 93.10%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00134.png) } 94.08%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00133.png) } 95.06%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00132.png) } 96.04%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00131.png) } 97.02%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00130.png) } 98.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00129.png) } 98.98%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00128.png) } 99.96%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00127.png) } 	
+0.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00830.png) } 1.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00831.png) } 2.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00832.png) } 3.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00833.png) } 4.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00834.png) } 5.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00835.png) } 6.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00836.png) } 7.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00837.png) } 8.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00838.png) } 9.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00839.png) } 10.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00840.png) } 11.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00841.png) } 12.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00842.png) } 13.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00843.png) } 14.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00844.png) } 15.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00845.png) } 16.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00846.png) } 17.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00847.png) } 18.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00848.png) } 19.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00849.png) } 20.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00850.png) } 21.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00851.png) } 22.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00852.png) } 23.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00853.png) } 24.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00854.png) } 25.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00855.png) } 26.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00856.png) } 27.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00857.png) } 28.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00858.png) } 29.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00859.png) } 30.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00860.png) } 31.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00861.png) } 32.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00862.png) } 33.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00863.png) } 34.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00864.png) } 35.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00865.png) } 36.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00866.png) } 37.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00867.png) } 38.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00868.png) } 39.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00869.png) } 40.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00870.png) } 41.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00871.png) } 42.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00872.png) } 43.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00873.png) } 44.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00874.png) } 45.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00875.png) } 46.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00876.png) } 47.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00877.png) } 48.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00878.png) } 49.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00879.png) } 50.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00880.png) } 51.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00879.png) } 52.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00878.png) } 53.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00877.png) } 54.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00876.png) } 55.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00875.png) } 56.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00874.png) } 57.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00873.png) } 58.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00872.png) } 59.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00871.png) } 60.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00870.png) } 61.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00869.png) } 62.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00868.png) } 63.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00867.png) } 64.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00866.png) } 65.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00865.png) } 66.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00864.png) } 67.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00863.png) } 68.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00862.png) } 69.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00861.png) } 70.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00860.png) } 71.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00859.png) } 72.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00858.png) } 73.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00857.png) } 74.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00856.png) } 75.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00855.png) } 76.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00854.png) } 77.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00853.png) } 78.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00852.png) } 79.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00851.png) } 80.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00850.png) } 81.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00849.png) } 82.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00848.png) } 83.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00847.png) } 84.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00846.png) } 85.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00845.png) } 86.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00844.png) } 87.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00843.png) } 88.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00842.png) } 89.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00841.png) } 90.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00840.png) } 91.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00839.png) } 92.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00838.png) } 93.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00837.png) } 94.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00836.png) } 95.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00835.png) } 96.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00834.png) } 97.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00833.png) } 98.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00832.png) } 99.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00831.png) } 100.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00830.png) } ;
+
 }
 
 @-webkit-keyframes raymondIdleSceneTwo {
@@ -4111,7 +4272,8 @@ position: absolute;
 
 @-webkit-keyframes sarahIdleSceneTwo {
 
-0.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00000.png) } 0.86%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00001.png) } 1.72%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00002.png) } 2.58%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00003.png) } 3.44%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00004.png) } 4.30%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00005.png) } 5.16%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00006.png) } 6.02%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00007.png) } 6.88%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00008.png) } 7.74%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00009.png) } 8.60%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00010.png) } 9.46%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00011.png) } 10.32%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00012.png) } 11.18%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00013.png) } 12.04%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00014.png) } 12.90%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00015.png) } 13.76%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00016.png) } 14.62%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00017.png) } 15.48%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00018.png) } 16.34%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00019.png) } 17.20%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00020.png) } 18.06%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00021.png) } 18.92%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00022.png) } 19.78%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00023.png) } 20.64%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00024.png) } 21.50%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00025.png) } 22.36%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00026.png) } 23.22%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00027.png) } 24.08%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00028.png) } 24.94%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00029.png) } 25.80%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00030.png) } 26.66%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00031.png) } 27.52%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00032.png) } 28.38%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00033.png) } 29.24%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00034.png) } 30.10%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00035.png) } 30.96%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00036.png) } 31.82%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00037.png) } 32.68%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00038.png) } 33.54%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00039.png) } 34.40%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00040.png) } 35.26%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00041.png) } 36.12%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00042.png) } 36.98%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00043.png) } 37.84%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00044.png) } 38.70%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00045.png) } 39.56%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00046.png) } 40.42%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00047.png) } 41.28%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00048.png) } 42.14%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00049.png) } 43.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00050.png) } 43.86%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00051.png) } 44.72%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00052.png) } 45.58%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00053.png) } 46.44%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00054.png) } 47.30%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00055.png) } 48.16%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00056.png) } 49.02%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00057.png) } 49.88%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00058.png) } 50.74%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00057.png) } 51.60%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00056.png) } 52.46%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00055.png) } 53.32%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00054.png) } 54.18%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00053.png) } 55.04%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00052.png) } 55.90%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00051.png) } 56.76%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00050.png) } 57.62%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00049.png) } 58.48%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00048.png) } 59.34%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00047.png) } 60.20%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00046.png) } 61.06%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00045.png) } 61.92%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00044.png) } 62.78%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00043.png) } 63.64%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00042.png) } 64.50%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00041.png) } 65.36%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00040.png) } 66.22%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00039.png) } 67.08%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00038.png) } 67.94%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00037.png) } 68.80%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00036.png) } 69.66%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00035.png) } 70.52%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00034.png) } 71.38%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00033.png) } 72.24%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00032.png) } 73.10%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00031.png) } 73.96%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00030.png) } 74.82%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00029.png) } 75.68%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00028.png) } 76.54%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00027.png) } 77.40%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00026.png) } 78.26%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00025.png) } 79.12%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00024.png) } 79.98%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00023.png) } 80.84%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00022.png) } 81.70%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00021.png) } 82.56%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00020.png) } 83.42%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00019.png) } 84.28%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00018.png) } 85.14%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00017.png) } 86.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00016.png) } 86.86%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00015.png) } 87.72%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00014.png) } 88.58%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00013.png) } 89.44%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00012.png) } 90.30%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00011.png) } 91.16%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00010.png) } 92.02%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00009.png) } 92.88%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00008.png) } 93.74%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00007.png) } 94.60%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00006.png) } 95.46%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00005.png) } 96.32%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00004.png) } 97.18%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00003.png) } 98.04%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00002.png) } 98.90%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00001.png) } 99.76%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00000.png) } 	
+0.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00932.png) } 1.06%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00933.png) } 2.12%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00934.png) } 3.18%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00935.png) } 4.24%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00936.png) } 5.30%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00937.png) } 6.36%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00938.png) } 7.42%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00939.png) } 8.48%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00940.png) } 9.54%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00941.png) } 10.60%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00942.png) } 11.66%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00943.png) } 12.72%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00944.png) } 13.78%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00945.png) } 14.84%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00946.png) } 15.90%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00947.png) } 16.96%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00948.png) } 18.02%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00949.png) } 19.08%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00950.png) } 20.14%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00951.png) } 21.20%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00952.png) } 22.26%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00953.png) } 23.32%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00954.png) } 24.38%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00955.png) } 25.44%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00956.png) } 26.50%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00957.png) } 27.56%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00958.png) } 28.62%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00959.png) } 29.68%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00960.png) } 30.74%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00961.png) } 31.80%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00962.png) } 32.86%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00963.png) } 33.92%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00964.png) } 34.98%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00965.png) } 36.04%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00966.png) } 37.10%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00967.png) } 38.16%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00968.png) } 39.22%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00969.png) } 40.28%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00970.png) } 41.34%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00971.png) } 42.40%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00972.png) } 43.46%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00973.png) } 44.52%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00974.png) } 45.58%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00975.png) } 46.64%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00976.png) } 47.70%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00977.png) } 48.76%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00978.png) } 49.82%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00979.png) } 50.88%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00978.png) } 51.94%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00977.png) } 53.00%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00976.png) } 54.06%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00975.png) } 55.12%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00974.png) } 56.18%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00973.png) } 57.24%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00972.png) } 58.30%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00971.png) } 59.36%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00970.png) } 60.42%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00969.png) } 61.48%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00968.png) } 62.54%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00967.png) } 63.60%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00966.png) } 64.66%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00965.png) } 65.72%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00964.png) } 66.78%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00963.png) } 67.84%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00962.png) } 68.90%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00961.png) } 69.96%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00960.png) } 71.02%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00959.png) } 72.08%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00958.png) } 73.14%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00957.png) } 74.20%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00956.png) } 75.26%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00955.png) } 76.32%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00954.png) } 77.38%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00953.png) } 78.44%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00952.png) } 79.50%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00951.png) } 80.56%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00950.png) } 81.62%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00949.png) } 82.68%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00948.png) } 83.74%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00947.png) } 84.80%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00946.png) } 85.86%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00945.png) } 86.92%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00944.png) } 87.98%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00943.png) } 89.04%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00942.png) } 90.10%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00941.png) } 91.16%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00940.png) } 92.22%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00939.png) } 93.28%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00938.png) } 94.34%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00937.png) } 95.40%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00936.png) } 96.46%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00935.png) } 97.52%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00934.png) } 98.58%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00933.png) } 99.64%{ background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00932.png) } 
+
 }
 
 @-webkit-keyframes sarahTalkSceneTwo {
