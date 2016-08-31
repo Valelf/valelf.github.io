@@ -1769,10 +1769,12 @@ inSceneOOIs[5].addEventListener('click', function() {
 
 closeObject.addEventListener('click', function() {
 	closeOOIDescription(); 
+	hideDiamond();
+	conversationLayer.classList.add('hide');
 });
 
 characterPin.addEventListener('click', function() {
-	closeOOIDescription(); 
+	//closeOOIDescription(); 
 	objectEffect.classList.add('active');
 	for(var k = 0 ; k < objectEffect.children.length ; k++){
 		objectEffect.children[k].classList.remove('hide');
@@ -1792,9 +1794,16 @@ dismissAilmentButton.addEventListener('click', function() {
 });
 rightNav.addEventListener('click', function() {
 navigateApartmentRooms('right');
+closeOOIDescription(); 
+	hideDiamond();
+	conversationLayer.classList.add('hide');
 });
 leftNav.addEventListener('click', function() {
 navigateApartmentRooms('left');
+closeOOIDescription(); 
+	hideDiamond();
+	conversationLayer.classList.add('hide');
+
 });
 
 applyButton.addEventListener('click', function() {
@@ -1882,11 +1891,16 @@ activeApartment.addEventListener('click', function() {
 		noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
 	}
 });
-
+var countcheck=0;
 gameOverlay.addEventListener('click', function() {
 	if(!settingOn){
 		if (hasClass(conversationLayer, 'active')) {
 			/* if(dialogueCount < ) */
+			countcheck++;
+			if(countcheck>1)
+			{
+			conversationBubble.classList.remove('hide');
+			}
 			runConversation(conversationScriptArray);
 		}else if(hasClass(conversationLayer, 'louise-review')){
 			
@@ -1976,7 +1990,6 @@ function navigateApartmentRooms(info){
 
 
 
-
 if (info == 'left'){
     rightNav.classList.remove('hide');
 	if(currentSubSceneIndex == 1 ){
@@ -1996,6 +2009,16 @@ if (info == 'left'){
 	currentSubSceneIndex = currentSubSceneIndex+1
 }
 //console.log(currentSubSceneIndex)
+
+
+
+for ( var i = 0; i < subSceneArray.length; i++) {
+	userInterface.classList.remove(subSceneArray[i]);
+};
+
+
+
+userInterface.classList.add(subSceneArray[currentSubSceneIndex]);
     navigateScenes(3,currentSubSceneIndex);
 
 showOOIsControl();
@@ -2277,6 +2300,10 @@ function showDiamond(){
 	objectEffect.classList.remove('hide');
 	characterPin.classList.remove('hide');
 }
+function hideDiamond(){
+	objectEffect.classList.add('hide');
+	characterPin.classList.add('hide');
+}
 function closeOOIDescription(){
 	exploredObjectsList.classList.remove('slide');
 	controlNotes.classList.remove('hide');
@@ -2480,6 +2507,7 @@ function selectOOI(i){
 function NPCTagResponse(){
 
 	objectEffect.classList.remove('active');
+	objectEffect.classList.add('hide');
 	for(var k = 0 ; k < objectEffect.children.length ; k++){
 		objectEffect.children[k].classList.add('hide');
 	}

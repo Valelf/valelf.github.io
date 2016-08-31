@@ -1422,8 +1422,8 @@ position: absolute;
 }
 .pinegrove.exterior .conversation-bubble.sarah{
     top: auto;
-    bottom: 76%;
-    left: 9%;
+    bottom: 67%;
+    left: 10%;
     right: auto;
 }
 
@@ -1435,8 +1435,8 @@ position: absolute;
 }
 .pinegrove.livingroom .conversation-bubble.sarah{
     top: auto;
-    bottom: 70%;
-    left: 7%;
+    bottom: 61%;
+    left: 8%;
     right: auto;
 }
 
@@ -1448,8 +1448,8 @@ position: absolute;
 }
 .pinegrove.bathroom .conversation-bubble.sarah{
     top: auto;
-    bottom: 74%;
-    left: 10%;
+    bottom: 66%;
+    left: 11%;
     right: auto;
 }
 
@@ -1461,8 +1461,8 @@ position: absolute;
 }
 .sunnyvale.exterior .conversation-bubble.sarah{
     top: auto;
-    bottom: 67%;
-    left: 12%;
+    bottom: 58%;
+    left: 13%;
     right: auto;
 }
 
@@ -1474,8 +1474,8 @@ position: absolute;
 }
 .sunnyvale.livingroom .conversation-bubble.sarah{
     top: auto;
-    bottom: 78%;
-    left: 8%;
+    bottom: 70%;
+    left: 9%;
     right: auto;
 }
 
@@ -1487,8 +1487,8 @@ position: absolute;
 }
 .sunnyvale.bathroom .conversation-bubble.sarah{
     top: auto;
-    bottom: 81%;
-    left: 11%;
+    bottom: 72%;
+    left: 13%;
     right: auto;
 }
 
@@ -1500,8 +1500,8 @@ position: absolute;
 }
 .lakeview.exterior .conversation-bubble.sarah{
     top: auto;
-    bottom: 71%;
-    left: 9%;
+    bottom: 62%;
+    left: 10%;
     right: auto;
 }
 
@@ -1513,8 +1513,8 @@ position: absolute;
 }
 .lakeview.livingroom .conversation-bubble.sarah{
     top: auto;
-    bottom: 62%;
-    left: 9%;
+    bottom: 53%;
+    left: 11%;
     right: auto;
 }
 
@@ -1526,8 +1526,8 @@ position: absolute;
 }
 .lakeview.bathroom .conversation-bubble.sarah{
     top: auto;
-    bottom: 74%;
-    left: 10%;
+    bottom: 66%;
+    left: 11%;
     right: auto;
 }
 
@@ -2171,10 +2171,10 @@ div#pointerArrowSpin {
  
  }
 .conversation-text{
-    position: absolute;
+    position: relative;
     width: 100%;
     height: auto;
-    margin: 3% 0;
+    margin: 0;
     line-height: 1.5;
     color: #212121;
     letter-spacing: 1px;
@@ -2194,7 +2194,8 @@ div#pointerArrowSpin {
     padding: 1.5% 1%;
     /* background: #c2e1ef; */
     min-height: 8%;
-    max-height: 20%;
+    /*max-height: 20%;*/
+    height: auto;
 	font-family: 'Montserrat', sans-serif;
     right: 41%;
     top: 20%;
@@ -2241,8 +2242,8 @@ div#pointerArrowSpin {
 .conversation-bubble.louise.scene-zero{
     top: auto;
     left: auto;
-    bottom: 68%;
-    right: 19%;
+    bottom: 56%;
+    right: 18%;
 }
 
 .conversation-bubble.gladys.scene-zero .conversation-text:before, .conversation-bubble.raymond.scene-zero .conversation-text:before, .conversation-bubble.mary.scene-zero .conversation-text:before {
@@ -2255,16 +2256,22 @@ div#pointerArrowSpin {
     border-left-color: transparent;
     border-right-color: transparent;
 }
-.conversation-bubble.gladys.scene-zero, .conversation-bubble.mary.scene-zero{
+.conversation-bubble.gladys.scene-zero{
     top: auto;
     left: 8%;
-    bottom: 72%;
+    bottom: 57%;
+    right: auto;
+}
+.conversation-bubble.mary.scene-zero{
+    top: auto;
+    left: 9%;
+    bottom: 59%;
     right: auto;
 }
 .conversation-bubble.raymond.scene-zero{
     top: auto;
-    left: 8%;
-    bottom: 74%;
+    left: 7%;
+    bottom: 60%;
     right: auto;
 }
 
@@ -2281,8 +2288,8 @@ div#pointerArrowSpin {
 .conversation-bubble.sarah.scene-one
 {
     top: auto;
-    left: 14%;
-    bottom: 65%;
+    left: 15%;
+    bottom: 48%;
 }
 .conversation-bubble.louise.scene-one{
 	right: 4%;
@@ -2300,10 +2307,10 @@ div#pointerArrowSpin {
     border-right-color: transparent;
 }
 .conversation-bubble.gladys.scene-one{
-    top: auto;
+     top: auto;
     left: auto;
-    right: 21%;
-    bottom: 67%;
+    right: 20%;
+    bottom: 48%;
 }
 
 .conversation-bubble.mary.scene-one .conversation-text:before {
@@ -2319,8 +2326,8 @@ div#pointerArrowSpin {
 .conversation-bubble.mary.scene-one{
     top: auto;
     left: auto;
-    right: 20%;
-    bottom: 64%;
+    right: 19%;
+    bottom: 44%;
 }
 
 .conversation-bubble.raymond.scene-one .conversation-text:before {
@@ -2336,17 +2343,19 @@ div#pointerArrowSpin {
 .conversation-bubble.raymond.scene-one{
     top: auto;
     left: auto;
-    right: 20%;
-    bottom: 74%;
+    right: 19%;
+    bottom: 52%;
 }
 
 
 
 .speaker-name{
-    position: absolute;
+    position: relative;
     /* border: 1px solid #DEB313; */
     width: 25%;
     background: -webkit-linear-gradient(top, rgba(187,189,191,1) 0%,rgba(205,206,208,1) 13%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
     font-size: 100%;
     height: auto;
     min-height: 16%;
