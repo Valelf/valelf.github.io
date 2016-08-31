@@ -1894,7 +1894,7 @@ gameOverlay.addEventListener('click', function() {
 			conversationLayer.classList.remove('louise-review');
 			conversationLayer.classList.add('player-review');
 			conversationBubble.classList.remove('louise');
-			conversationBubble.classList.add(playerChar.name); 
+			conversationBubble.classList.add(playerChar.class); 
 			conversationBubble.classList.add('scene-zero'); 
 			speakerName.innerHTML = playerChar.name;
 			conversationtext.innerHTML = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].playerReview + '<div class="tap-to-contn">TAP TO CONTINUE</div>';
@@ -2500,6 +2500,13 @@ function NPCTagResponse(){
 			exploredObjectsList.classList.add('hide');
 			setTimeout(function(){
 			// add talk animation to sarah also
+				
+				for ( var i = 0; i < infoApartmentArray.length; i++) {
+					userInterface.classList.remove(infoApartmentArray[i].class);
+				};
+				
+				
+				
 				conversationLayer.classList.remove('hide');
 				conversationLayer.classList.remove('tag-response');
 				conversationBubble.classList.remove('OOI-tagging'); 
