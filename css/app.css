@@ -2015,6 +2015,18 @@ div#engagementScoreBox {
     background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
     padding: 1.1% 2.2% 1.1% 3.5%;
 }
+
+/* .close-info-text{
+    position: relatives;
+    width: 4.86%;
+    height: 35%;
+    border-radius: 50%;
+    background-color: grey;
+    right: 0%;
+    bottom: 32%;
+    margin: auto 3%;	
+} */
+
 .info-close{
     position: absolute;
     width: 4.86%;

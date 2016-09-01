@@ -1484,6 +1484,7 @@ progressLine = document.getElementById('progressLine');
 progressBar = document.getElementById('progressBar');
 /* controlLayer = document.getElementById('controlLayer') ; */
 infoText = document.getElementById('infoText');
+var closeInfoText= document.getElementById('closeInfoText');
 objectTitle = document.getElementById('objectTitle');
 gameMap = document.getElementById('gameMap');
 
@@ -2327,12 +2328,12 @@ function hideHintIcon(){
 	//hideHint(); 
 	controlInfo.classList.add("hide");
 	controlInfoIcon.classList.add("hide");
-	hintInterface.classList.remove("hide");
+	hintInterface.classList.add("hide");
 }
 
 function showHint(){
 	hintFlags.isHintMsgShowing = true;
-	infoText.innerHTML = currentHint + closeHint;
+	closeInfoText.innerHTML = currentHint + closeHint;
 	controlInfo.classList.add("hide");
 	infoText.classList.remove("hide");
 }
@@ -2699,6 +2700,7 @@ function toggleMap() {
 		controlMap.classList.add('hide');        //removes controlmap icon
 	
 		currentHint = infoScriptArray.map.informationText + closeHint;
+		closeInfoText.innerHTML = currentHint + closeHint;
 		if(hintFlags.map==0){
 			showHint();
 			hintFlags.map=1;
