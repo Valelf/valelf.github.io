@@ -1484,7 +1484,7 @@ progressLine = document.getElementById('progressLine');
 progressBar = document.getElementById('progressBar');
 /* controlLayer = document.getElementById('controlLayer') ; */
 infoText = document.getElementById('infoText');
-var closeInfoText= document.getElementById('closeInfoText');
+var hintInfoText= document.getElementById('hintInfoText');
 objectTitle = document.getElementById('objectTitle');
 gameMap = document.getElementById('gameMap');
 
@@ -1723,6 +1723,13 @@ gameRestart.addEventListener('click', function() {
 
 
 tourButton.addEventListener('click', function() {
+	
+	
+	
+	
+	
+	
+	
 	tourApartment();
 	controlMap.classList.remove('hide');
 	objectsExplored();
@@ -1907,6 +1914,8 @@ gameMap.addEventListener('click', function() {
 	// hideMap();
 });
 
+var activateApartment = false; 
+
 inActiveApartmentLeft.addEventListener('click', function() {
 	var newClass = activeApartment.classList[0];
 	activeApartment.classList = "";
@@ -1923,6 +1932,14 @@ inActiveApartmentLeft.addEventListener('click', function() {
 	activeApartment.classList.add(currentApartment.class);
 	activeApartment.classList.add("active");
 	noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
+	
+	
+	if(activateApartment){
+
+		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
+		
+	}
+	
 });
 inActiveApartmentRight.addEventListener('click', function() {
 	var newClass = activeApartment.classList[0];
@@ -1940,8 +1957,26 @@ inActiveApartmentRight.addEventListener('click', function() {
 	activeApartment.classList.add(currentApartment.class);
 	activeApartment.classList.add("active");
 	noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
+	
+	
+	if(activateApartment){
+
+		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
+		
+	}
+	
+	
 });
+
+
+
 activeApartment.addEventListener('click', function() {
+	activateApartment =true;
+	
+	
+	guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
+	
+	
 	this.classList.add('active');
 	for(var i=0 ; i < taggedApartmentOOI.length ;i++ ){
 		taggedApartmentOOI[i].classList.remove('hide');	
@@ -2231,12 +2266,23 @@ showOOIsControl();
 
 function displayScore(){
 	scoreContainer.classList.remove('hide');
-	scoreTitle.innerHTML = "Try Again!";
+	
+	
+	if(engagementScore == 180 && gameScore == 100){
+		scoreTitle.innerHTML = "Good Work!";
+	}else{
+		scoreTitle.innerHTML = "Try Again!";
+	}
+	
 	scoreContent.innerHTML = '<p class="score-value" >'+gameScore+'</p><p class="score-description" >Your Score</p><p class="score-value" >'+engagementScore+'</p><p class="score-description" >Your Engagement Score</p>'
 }
 
 
 function reviewByLouise(){
+	
+	guideHeader.innerText = "";
+	
+	
 	navigateScenes(1,0);
 	conversationLayer.classList.remove('hide');
 	conversationLayer.classList.add('louise-review');
@@ -2246,7 +2292,7 @@ function reviewByLouise(){
 	conversationBubble.classList.add('scene-zero'); 
 	document.getElementById('characterSarahZero').classList.remove('talk');
 	speakerName.innerHTML = "Louise";
-	conversationtext.innerHTML = "Hi, "+ playerChar.Name +". Good to see you again. How do you like your new apartment?  <div class='tap-to-contn'>TAP TO CONTINUE</div>";
+	conversationtext.innerHTML = "Hi, "+ playerChar.name +". Good to see you again. How do you like your new apartment?  <div class='tap-to-contn'>TAP TO CONTINUE</div>";
 
 	
 	
@@ -2336,7 +2382,7 @@ function hideHintIcon(){
 
 function showHint(){
 	hintFlags.isHintMsgShowing = true;
-	closeInfoText.innerHTML = currentHint + closeHint;
+	hintInfoText.innerHTML = currentHint + closeHint;
 	controlInfo.classList.add("hide");
 	infoText.classList.remove("hide");
 }
@@ -2365,7 +2411,7 @@ function showTagNotes(info){
 	guideHeader.classList.remove("hide");
 	guideHeader.classList.add("decision");
 	
-	guideHeader.innerText = 'Click on the apartments to recall the pros and cons, and choose the apartment you think will work best for ' +playerChar.Name+ '.';
+	guideHeader.innerText = 'Click on the apartments to recall the pros and cons, and choose the apartment you think will work best for ' +playerChar.name+ '.';
 	
 	
 }
@@ -2497,7 +2543,7 @@ function initApartmentControls(){
 	userInterface.classList.add(currentApartment.class);
 	OOILayer.classList.add(currentApartment.class);
 	
-	OOILayer.classList.remove("hide");
+	//OOILayer.classList.remove("hide");
 	rightNav.classList.remove('hide');	
 	
 	showOOIsControl();
@@ -2703,7 +2749,7 @@ function toggleMap() {
 		controlMap.classList.add('hide');        //removes controlmap icon
 	
 		currentHint = infoScriptArray.map.informationText + closeHint;
-		closeInfoText.innerHTML = currentHint + closeHint;
+		hintInfoText.innerHTML = currentHint + closeHint;
 		if(hintFlags.map==0){
 			showHint();
 			hintFlags.map=1;
@@ -3213,7 +3259,6 @@ function tourApartment() {
 }
 
 
-
 function navigateScenes(sceneNo,subSceneNo) {
 	gameOverlay.classList.remove('tint');
 	gameOverlay.classList.add('darken');
@@ -3222,6 +3267,9 @@ function navigateScenes(sceneNo,subSceneNo) {
 	if(hintFlags.isHintMsgShowing){
 		infoText.classList.add("hide");
 	}
+	
+		OOILayer.classList.add("hide");
+	
 	setTimeout(function() {
 
 		for ( var i = 0; i < sceneWrapper.children.length; i++) {
@@ -3244,6 +3292,9 @@ function navigateScenes(sceneNo,subSceneNo) {
 			showHintIcon();
 			if(hintFlags.isHintMsgShowing){
 				showHint()
+			};
+			if(currentScene && hasClass(currentScene,"scene-two")){
+				OOILayer.classList.remove("hide");
 			};
 			//callBack;
 		}, 3000);
