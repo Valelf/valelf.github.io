@@ -3,27 +3,36 @@ var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
 var controlInfo, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
-var tagScore = 5 , scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
+var tagScore = 5 , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
 var apartmentObjectsExplored = [ pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
-infoScriptArray = [
-		{
-			'infoTitle' : 'info-one',
+infoScriptArray = {
+		'wheelSpin' :{
 			'informationText' : 'Spin the wheel to choose the character you will be playing.',
 			'index' : 0
 		},
-		{
-			'infoTitle' : 'info-two',
-			'informationText' : 'Using the map, click to tour each apartment to learn more about it.',
-			'timing' : 4
+		'officeConversation' :{
+			'informationText' : 'Tap to continue.',
+			'index' : 0
 		},
-		{
-			'infoTitle' : 'info-three',
+		'map' :{
+			'informationText' : 'Using the map, click to tour each apartment to learn more about it.',
+			'index' : 0
+		},
+		'apartmentVisit' :{
 			'informationText' : 'Use your mouse to move around the apartment. Keep an eye out for objects that glow.',
-			'timing' : 4
-		}
+			'index' : 0
+		},
+		'apartmentExit' :{
+			'informationText' : 'Use map to checkout other apartments.',
+			'index' : 0
+		},
 
-];
+};
+//flags set for hints. 0 - firsttime. 1 otherwise
+hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0, "isHintMsgShowing": false}; 
+currentHint = "";
+closeHint = ""; //'<div id="infoClose" class="info-close hide">';
 
 conversationScriptArray = [
 		{
@@ -1469,6 +1478,8 @@ var apartmentSelected=   {
 
 appContainer = document.getElementById('appContainer');
 controlInfo = document.getElementById('controlInfo');
+controlInfoIcon = document.getElementById('controlInfoIcon');
+hintInterface = document.getElementById('hintInterface');
 progressLine = document.getElementById('progressLine');
 progressBar = document.getElementById('progressBar');
 /* controlLayer = document.getElementById('controlLayer') ; */
@@ -1487,6 +1498,7 @@ leftNav = document.getElementById('leftNav');
 rightNav = document.getElementById('rightNav');
 
 tagNotes = document.getElementById('tagNotes');
+replayControl = document.getElementById('replayControl');
 controlNotes = document.getElementById('controlNotes');
 dismissAilmentButton  = document.getElementById('dismissAilmentButton');
 buttonPrev = document.getElementById('prevButton');
@@ -1702,24 +1714,53 @@ spinButton.addEventListener('click', function() {
 	
 });
 gameRestart.addEventListener('click', function() {
-	resetgame();
+restartTheGame();
 });
 
 
 tourButton.addEventListener('click', function() {
 	tourApartment();
+	controlMap.classList.remove('hide');
+	objectsExplored();
 });
 apartmentIcon[0].addEventListener('click', function() {
 	controlScore.classList.remove('hide');
+	if(hasClass(this,'clicked'))
+	{
+		apartmentInfo.classList.add('hide');
+		apartmentOne.classList.remove('clicked');
+	}
+else {
 	showApartmentInfo(infoApartmentArray, 0);
+	apartmentInfo.classList.remove('hide');
+}
+
 });
 apartmentIcon[1].addEventListener('click', function() {
 	controlScore.classList.remove('hide');
+	if(hasClass(this,'clicked'))
+	{
+		apartmentInfo.classList.add('hide');
+		apartmentTwo.classList.remove('clicked');
+	}
+else {
 	showApartmentInfo(infoApartmentArray, 1);
+	apartmentInfo.classList.remove('hide');
+}
+	
 });
 apartmentIcon[2].addEventListener('click', function() {
 	controlScore.classList.remove('hide');
+	if(hasClass(this,'clicked'))
+	{
+		apartmentInfo.classList.add('hide');
+		apartmentThree.classList.remove('clicked');
+	}
+else {
 	showApartmentInfo(infoApartmentArray, 2);
+	apartmentInfo.classList.remove('hide');
+}
+	
 });
 
 
@@ -1771,6 +1812,10 @@ inSceneOOIs[5].addEventListener('click', function() {
 	showOOIDescription('bathtub',5); 
 });
 
+replayControl.addEventListener('click', function() {
+	restartTheGame();
+});
+
 closeObject.addEventListener('click', function() {
 	closeOOIDescription(); 
 	hideDiamond();
@@ -1793,22 +1838,35 @@ noteDismissButton.addEventListener('click', function() {
 });
 controlNotes.addEventListener('click', function() {
 	showAilmentNotes(); //showTagNotes(taggedOOI);
+	controlNotes.classList.add('hide');
+	controlMap.classList.add('hide');
+	toggleNavButton();
 });
 dismissAilmentButton.addEventListener('click', function() {
 	closeAilmentNotes(); //showTagNotes(taggedOOI);
+	if(hasClass(OOILayer,'active')){
+	{
+	   controlNotes.classList.remove('hide');
+	   toggleNavButton();}	
+	controlMap.classList.remove('hide');
+	}	
 });
 rightNav.addEventListener('click', function() {
+	closeOOIDescription(true); 
 navigateApartmentRooms('right');
-closeOOIDescription(); 
+
 	hideDiamond();
 	conversationLayer.classList.add('hide');
+	objectsExplored();
 });
 leftNav.addEventListener('click', function() {
-navigateApartmentRooms('left');
-closeOOIDescription(); 
+
+	closeOOIDescription(true); 
+	navigateApartmentRooms('left');
+
 	hideDiamond();
 	conversationLayer.classList.add('hide');
-
+	objectsExplored();
 });
 
 applyButton.addEventListener('click', function() {
@@ -1823,13 +1881,13 @@ gameMusicControl.addEventListener('click', function() {
 	toggleGameMusic();
 });
 
-controlInfo.addEventListener('click', function() {
-	//showRelevantInfo(2);
-	showInfo();
-});
-infoClose.addEventListener('click', function() {
-	closeInfo();
-});
+// controlInfo.addEventListener('click', function() {
+// 	//showRelevantInfo(2);
+// 	showInfo();
+// });
+/*infoClose.addEventListener('click', function() {
+	hideHint();
+});*/
 
 controlMap.addEventListener('click', function() {
 	if(hasClass(conversationLayer, 'tag-response')){
@@ -1859,6 +1917,7 @@ inActiveApartmentLeft.addEventListener('click', function() {
 	this.classList="";
 	this.classList.add(newClass);
 	activeApartment.classList.add(currentApartment.class);
+	activeApartment.classList.add("active");
 	noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
 });
 inActiveApartmentRight.addEventListener('click', function() {
@@ -1875,6 +1934,7 @@ inActiveApartmentRight.addEventListener('click', function() {
 	this.classList="";
 	this.classList.add(newClass);
 	activeApartment.classList.add(currentApartment.class);
+	activeApartment.classList.add("active");
 	noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
 });
 activeApartment.addEventListener('click', function() {
@@ -1996,6 +2056,134 @@ function animateEngagementScore(){
 	
 }
 
+function restartTheGame(){
+
+
+navigateScenes(0,0);
+
+  console.log("gameRestartgameRestart gameRestart gameRestart gameRestart gameRestart");
+  console.log(playerOOITags);
+  scoreContainer.classList.add('hide');
+  navigateScenes(0,0);
+  currentOOIDescription = "";
+  currentOOI = {};
+
+  engagementScoreArray = [
+                          {
+                            	apartmentClass : "pinegrove",
+                            	mapIcon : 5 ,
+                            	taggedOOIs :[5,5,5,5,5,5] ,
+                              clickedOOIs : [5,5,5,5,5,5]
+                             },
+                             {
+                            	apartmentClass : "lakeview",
+                            	mapIcon : 5 ,
+                            	taggedOOIs :[5,5,5,5,5,5] ,
+                              clickedOOIs : [5,5,5,5,5,5]
+
+                             },
+                             {
+                            	apartmentClass : "sunnyvale",
+                            	mapIcon : 5 ,
+                            	taggedOOIs :[5,5,5,5,5,5] ,
+                              clickedOOIs : [5,5,5,5,5,5]
+
+                             }
+
+
+                             ]
+playerOOITags   = [
+                    {
+                   	apartmentClass : "pinegrove",
+                   	taggedOOIs :
+                   	              [
+                   	            	{"frontdoor": "none"},
+                   	            	{"steps":"none"},
+                   	            	{"windows":"none"},
+                   	            	{"lighting":"none"},
+                   	            	{"flooring":"none"},
+                   	            	{"bathtub":"none"}
+                   	              ]
+
+
+                    },
+                    {
+                   	apartmentClass : "lakeview",
+                   	taggedOOIs :
+                   	              [
+                  	            	{"frontdoor": "none"},
+               	            	{"steps":"none"},
+               	            	{"windows":"none"},
+               	            	{"lighting":"none"},
+               	            	{"flooring":"none"},
+               	            	{"bathtub":"none"}
+               	              ]
+
+
+                    },
+                    {
+                   	apartmentClass : "sunnyvale",
+                   	taggedOOIs :
+                   	              [
+                  	            	{"frontdoor": "none"},
+               	            	{"steps":"none"},
+               	            	{"windows":"none"},
+               	            	{"lighting":"none"},
+               	            	{"flooring":"none"},
+               	            	{"bathtub":"none"}
+               	              ]
+
+
+                    }
+
+
+                    ]
+  pinegroveObjectsExplored = 0;
+  lakeviewObjectsExplored = 0;
+  sunnyvaleObjectsExplored = 0;
+  apartmentObjectsExplored = [ 0 , 0 , 0 ] ;
+  engagementScore = 0;
+  currentEngagementScore = engagementScore;
+  	noOfObjectsExplored.innerHTML = "0 / 6 ";
+    engagementScoreBox.innerHTML = "0"
+  guideHeader.innerText = 'Choose a member';
+  //characterSelectionWidget.classList.remove('hide');
+  dismissAilmentButton.innerHTML = "Dismiss";
+  controlMap.classList.add('hide');
+  gameOverlay.classList.add('tint');
+  progressBar.classList.remove('tint');
+  introPage = true;
+  checkLeg = true;
+  checkEar = true;
+  contextCount = 0;
+  spinned = false;
+  document.getElementById("ring-1").classList.remove("mary")
+  document.getElementById("ring-1").classList.remove("gladys")
+  document.getElementById("ring-1").classList.remove("mary")
+  spinnerCharInfo[0].classList.add("vanish")
+  for ( var j = 0; j < characterIDArray.length ; j++) {
+    ringOne.classList.remove(characterIDArray[j]);
+  }
+
+  //add .point to spin button
+  spinButton.classList.add("point");
+  spinButton.innerHTML = "Go >>";
+  // remove selected from poster
+  var removePoster = document.getElementsByClassName("poster");
+  for ( var j = 0; j < removePoster.length ; j++) {
+      removePoster[j].classList.remove("selected");
+  }
+  //remove show from characterInfoLayer
+  document.getElementById("characterInfoLayer").classList.remove("show");
+  closeAilmentNotes();
+  //navigateInstructions();
+  //selectCharacter(playerCharacterArray);
+
+	gameMode.classList.remove('hide');
+	settingsView.classList.add('hide');
+	settingOn = false;
+  
+}
 
 function navigateApartmentRooms(info){
 
@@ -2104,6 +2292,16 @@ function closeAilmentNotes(){
 			guideHeader.classList.remove('hide');
 			characterSelectionWidget.classList.remove('hide');
 			dismissAilmentButton.innerHTML = "Dismiss";
+			//at this point of the game hints become useful.
+			//seting the initial hint(we are at spinning wheel)
+			currentHint = infoScriptArray.wheelSpin.informationText + closeHint;
+			//displaying the icons.
+			showHintIcon();
+			//show the hint
+			if(hintFlags.wheelSpin==0){
+				showHint();
+				hintFlags.wheelSpin=1;
+			}
 		}
 			
 		}
@@ -2112,13 +2310,58 @@ function closeAilmentNotes(){
 		ailmentNotes.classList.add('hide');
 	}
 }
+hintInterface.addEventListener("click",function(){
+	toggleHint();
+});
+
+
+//most of the times these work together
+function showHintIcon(){
+	controlInfo.classList.remove("hide");
+	controlInfoIcon.classList.remove("hide");
+	hintInterface.classList.remove("hide");
+}
+
+function hideHintIcon(){
+	//should we take care of hiding hint message here as well 
+	//hideHint(); 
+	controlInfo.classList.add("hide");
+	controlInfoIcon.classList.add("hide");
+	hintInterface.classList.remove("hide");
+}
+
+function showHint(){
+	hintFlags.isHintMsgShowing = true;
+	infoText.innerHTML = currentHint + closeHint;
+	controlInfo.classList.add("hide");
+	infoText.classList.remove("hide");
+}
+
+function hideHint(){
+	hintFlags.isHintMsgShowing = false;
+	controlInfo.classList.remove("hide");
+	infoText.classList.add("hide");
+}
+
+function toggleHint(){
+	if(hintFlags.isHintMsgShowing){
+		hideHint();
+	} else {
+		showHint();
+	}
+}
 
 function showTagNotes(info){
 	conversationLayer.classList.add('hide');
 	tagNotes.classList.remove("hide");
 	decisionButtonHUD.classList.add('hide');
 	allotTags(currentApartment);
+	controlNotes.classList.add('hide');
 	
+	guideHeader.classList.remove("hide");
+	guideHeader.classList.add("decision");
+	
+	guideHeader.innerText = 'Click on the apartments to recall the pros and cons, and choose the apartment you think will work best for ' +playerChar.Name+ '.';
 	
 	
 }
@@ -2224,6 +2467,21 @@ function initApartmentControls(){
 		userInterface.classList.remove(subSceneArray[i]);
 	};
 	
+	if(hintFlags.apartmentExit==0){
+		currentHint = infoScriptArray.apartmentVisit.informationText + closeHint;
+	} else {
+		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
+	}
+	if(hintFlags.apartmentVisit==0){
+		hintFlags.isHintMsgShowing=true;
+		hintFlags.apartmentVisit=1;
+	}
+	
+	
+	controlInfo.classList.remove('bring-it-up');
+	infoText.classList.remove('bring-it-up');
+	controlInfoIcon.classList.remove('bring-it-up');
+	
 	
 	
 	userInterface.classList.add(playerChar.class);
@@ -2240,9 +2498,21 @@ function initApartmentControls(){
 	
 	showOOIsControl();
 	
+	
+	
+	
+	
 }
 
 function showOOIsControl(){
+	
+	
+	/****   need to be changed into a new function    **/
+	controlNotes.classList.remove('hide');
+	exploredObjectsList.classList.remove('hide');
+	/****   need to be changed into a new function    **/
+	
+	
 
 	var allApartmentGlows = document.getElementsByClassName('glowing-object');
 	for ( var i = 0; i < allApartmentGlows.length; i++) {
@@ -2284,6 +2554,10 @@ function showOOIDescription(info,i){
 	conversationLayer.classList.add('hide');
 	conversationLayer.classList.remove('tag-response');
 	selectOOI(i);
+	if(hintFlags.isHintMsgShowing){
+		infoText.classList.add("hide");
+	}
+	hideHintIcon();
 	objectDescription.classList.remove('hide');
 	for(var j=0 ; j < OOIContentArray[currentApartment.index].apartmentOOIs.length ; j++){
 		if(OOIContentArray[currentApartment.index].apartmentOOIs[j].OOIClass == info){
@@ -2320,7 +2594,14 @@ function hideDiamond(){
 	objectEffect.classList.add('hide');
 	characterPin.classList.add('hide');
 }
-function closeOOIDescription(){
+function objectsExplored(){
+	exploredObjectsList.classList.add('slide');
+	setTimeout(function() {
+  exploredObjectsList.classList.remove('slide');
+}, 3700);
+	
+}
+function closeOOIDescription(a){
 
 	
 	objectEffect.classList.remove('active');
@@ -2328,6 +2609,14 @@ function closeOOIDescription(){
 
 	exploredObjectsList.classList.remove('slide');
 	controlNotes.classList.remove('hide');
+
+	if(!a){
+		if(hintFlags.isHintMsgShowing){
+			infoText.classList.remove("hide");
+		}
+		showHintIcon();
+	}
+	
 	
 	objectDescription.classList.add('hide');	
 }
@@ -2405,13 +2694,49 @@ function toggleMap() {
 
 	if (hasClass(gameMap, 'hide')) {
 		gameMap.classList.remove('hide');
+		toggleNavButton();
+		controlNotes.classList.add('hide');
+		controlMap.classList.add('hide');        //removes controlmap icon
+	
+		currentHint = infoScriptArray.map.informationText + closeHint;
+		if(hintFlags.map==0){
+			showHint();
+			hintFlags.map=1;
+		}
+		
+		controlInfo.classList.add('bring-it-up');
+		infoText.classList.add('bring-it-up');
+		controlInfoIcon.classList.add('bring-it-up');
+		
+		
 	} else {
 		gameMap.classList.add('hide');
+		toggleNavButton();
+		controlNotes.classList.remove('hide');
+		controlMap.classList.remove('hide');      //shows controlmap icon
 	}
-
-};
+}
+function toggleNavButton(){
+	if(hasClass(OOILayer,'active')){
+	if(hasClass(rightNav,'hide')){
+		if(currentSubSceneIndex<2){
+			rightNav.classList.remove('hide');
+		}
+	}
+	else{
+		rightNav.classList.add('hide');
+	}
+	if(hasClass(leftNav,'hide')){
+		if(currentSubSceneIndex > 0){
+			leftNav.classList.remove('hide');
+		}
+	}
+	else{
+		leftNav.classList.add('hide');
+	}
+}}
 function revealMap(){
-	controlMap.classList.remove('hide');
+	controlMap.classList.add('hide');
 	
 	toggleMap();
 }
@@ -2437,8 +2762,8 @@ function showApartmentInfo(info, i) {
 	}
 	apartmentInfo.classList.add(info[i].class);
 	
-	controlNotes.classList.remove('hide');
-	exploredObjectsList.classList.remove('hide');
+/*	controlNotes.classList.remove('hide');
+	exploredObjectsList.classList.remove('hide');*/
 }
 
 
@@ -2544,19 +2869,26 @@ function NPCTagResponse(){
 
 	if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] == 18){
 		setTimeout(function(){
+			infoText.classList.add("hide-perm");
+			controlInfoIcon.classList.add("hide-perm");
+			controlInfo.classList.add("hide-perm");
 			
 			navigateScenes(2,0);
 			conversationLayer.classList.add('hide');
+			
+			rightNav.classList.add('hide');
 			OOILayer.classList.add('hide');
 			exploredObjectsList.classList.add('hide');
+			leftNav.classList.add('hide');
+			controlMap.classList.add('hide');
 			setTimeout(function(){
 			// add talk animation to sarah also
-				
+		
 				for ( var i = 0; i < infoApartmentArray.length; i++) {
 					userInterface.classList.remove(infoApartmentArray[i].class);
 				};
 				
-				
+						
 				
 				conversationLayer.classList.remove('hide');
 				conversationLayer.classList.remove('tag-response');
@@ -2568,6 +2900,12 @@ function NPCTagResponse(){
 				
 			},2500);
 		},1000);
+	} else if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] == 3){
+		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
+		if(hintFlags.apartmentExit==0){
+			showHint();
+			hintFlags.apartmentExit=1;
+		}
 	}
 }
 
@@ -2618,7 +2956,12 @@ function meetCharacter() {
 	instructionHUD.classList.add('hide');
 	guideHeader.innerText = '';
 	navigateScenes(1,0);
-
+	
+	currentHint = infoScriptArray.officeConversation.informationText + closeHint;
+	if(hintFlags.officeConversation==0){
+		hintFlags.isHintMsgShowing = true;
+		hintFlags.officeConversation=1;
+	}
 	 runConversation(conversationScriptArray);
 }
 function showProgress() {
@@ -2841,6 +3184,10 @@ function preLoadNPCImages(){
 },100) */}
 
 function tourApartment() {
+		for ( var j = 0; j < 3; j++) {
+		apartmentIcon[j].classList.remove('location');
+	}
+	apartmentIcon[currentApartment.index].classList.add('location');
 	
 	dialogueCount = 0 ;
 	currentSubSceneIndex = 0 ;
@@ -2866,6 +3213,10 @@ function navigateScenes(sceneNo,subSceneNo) {
 	gameOverlay.classList.remove('tint');
 	gameOverlay.classList.add('darken');
 	controlMode.classList.add('hide');
+	hideHintIcon();
+	if(hintFlags.isHintMsgShowing){
+		infoText.classList.add("hide");
+	}
 	setTimeout(function() {
 
 		for ( var i = 0; i < sceneWrapper.children.length; i++) {
@@ -2885,6 +3236,10 @@ function navigateScenes(sceneNo,subSceneNo) {
 		setTimeout(function() {
 			gameOverlay.classList.remove('darken');
 			controlMode.classList.remove('hide');
+			showHintIcon();
+			if(hintFlags.isHintMsgShowing){
+				showHint()
+			};
 			//callBack;
 		}, 3000);
 
