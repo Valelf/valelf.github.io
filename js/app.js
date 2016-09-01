@@ -1715,7 +1715,10 @@ spinButton.addEventListener('click', function() {
 	
 });
 gameRestart.addEventListener('click', function() {
-restartTheGame();
+
+	window.location.reload();
+	
+	//restartTheGame();
 });
 
 
