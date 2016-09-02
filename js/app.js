@@ -1,7 +1,7 @@
 
 var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
-var controlInfo, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+var controlInfo, closeInfoText, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
 var tagScore = 5 , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
@@ -1420,6 +1420,7 @@ var reviewConversationArray = [
 
 
 characterIDArray = [ 'sarah', 'louise', 'gladys', 'mary', 'raymond' ];
+characterPlayerIDArray = [ 'gladys', 'mary', 'raymond' ];
 
 subSceneArray = [ 'exterior', 'livingroom', 'bathroom' ];
 
@@ -1478,6 +1479,7 @@ var apartmentSelected=   {
 
 appContainer = document.getElementById('appContainer');
 controlInfo = document.getElementById('controlInfo');
+closeInfoText = document.getElementById('closeInfoText');
 controlInfoIcon = document.getElementById('controlInfoIcon');
 hintInterface = document.getElementById('hintInterface');
 progressLine = document.getElementById('progressLine');
@@ -1714,12 +1716,192 @@ spinButton.addEventListener('click', function() {
 
 	
 });
-gameRestart.addEventListener('click', function() {
+gameRestart.addEventListener('click', function(e) {
 
-	window.location.reload();
-	
+	//window.location.reload();
+	e.stopPropogation();
+	e.preventDefault();
 	//restartTheGame();
+	restartGame();
 });
+
+
+
+function restartGame(){
+	console.log("gameRestartgameRestart gameRestart gameRestart gameRestart gameRestart");
+console.log(playerOOITags);
+
+
+currentOOIDescription = "";
+currentOOI = {};
+
+engagementScoreArray = [
+												{
+														apartmentClass : "pinegrove",
+														mapIcon : 5 ,
+														taggedOOIs :[5,5,5,5,5,5] ,
+														clickedOOIs : [5,5,5,5,5,5]
+													 },
+													 {
+														apartmentClass : "lakeview",
+														mapIcon : 5 ,
+														taggedOOIs :[5,5,5,5,5,5] ,
+														clickedOOIs : [5,5,5,5,5,5]
+
+													 },
+													 {
+														apartmentClass : "sunnyvale",
+														mapIcon : 5 ,
+														taggedOOIs :[5,5,5,5,5,5] ,
+														clickedOOIs : [5,5,5,5,5,5]
+
+													 }
+
+
+													 ]
+playerOOITags   = [
+									{
+									apartmentClass : "pinegrove",
+									taggedOOIs :
+																[
+																{"frontdoor": "none"},
+																{"steps":"none"},
+																{"windows":"none"},
+																{"lighting":"none"},
+																{"flooring":"none"},
+																{"bathtub":"none"}
+																]
+
+
+									},
+									{
+									apartmentClass : "lakeview",
+									taggedOOIs :
+																[
+																{"frontdoor": "none"},
+														{"steps":"none"},
+														{"windows":"none"},
+														{"lighting":"none"},
+														{"flooring":"none"},
+														{"bathtub":"none"}
+														]
+
+
+									},
+									{
+									apartmentClass : "sunnyvale",
+									taggedOOIs :
+																[
+																{"frontdoor": "none"},
+														{"steps":"none"},
+														{"windows":"none"},
+														{"lighting":"none"},
+														{"flooring":"none"},
+														{"bathtub":"none"}
+														]
+
+
+									}
+
+
+									]
+pinegroveObjectsExplored = 0;
+lakeviewObjectsExplored = 0;
+sunnyvaleObjectsExplored = 0;
+apartmentObjectsExplored = [ 0 , 0 , 0 ] ;
+engagementScore = 0;
+currentEngagementScore = engagementScore;
+	noOfObjectsExplored.innerHTML = "0 / 6 ";
+	engagementScoreBox.innerHTML = "0"
+guideHeader.innerText = 'Choose a member';
+//characterSelectionWidget.classList.remove('hide');
+
+dismissAilmentButton.innerHTML = "Dismiss";
+  controlMap.classList.add('hide');
+  gameOverlay.classList.add('tint');
+  progressBar.classList.remove('tint');
+
+
+dialogueCount = 0;
+introPage = true;
+checkLeg = true;
+checkEar = true;
+contextCount = 0;
+spinned = false;
+document.getElementById("ring-1").classList.remove("mary")
+document.getElementById("ring-1").classList.remove("gladys")
+document.getElementById("ring-1").classList.remove("mary")
+spinnerCharInfo[0].classList.add("vanish")
+console.log("characterPlayerIDArray characterPlayerIDArray");
+console.log(characterPlayerIDArray);
+for ( var j = 0; j < characterPlayerIDArray.length ; j++) {
+	ringOne.classList.remove(characterPlayerIDArray[j]);
+
+
+	console.log(characterPlayerIDArray[j]);
+	var charElements = sceneWrapper.getElementsByClassName(characterPlayerIDArray[j])
+	console.log(charElements);
+	console.log(charElements.length);
+	//resetting scenewrapper by removing player classes if exists
+	if(charElements){
+		sceneWrapper.classList.remove(characterPlayerIDArray[j]);
+		for ( var k = 0; k < sceneWrapper.getElementsByClassName('player').length ; k++) {
+			sceneWrapper.getElementsByClassName('player')[k].classList.remove(characterPlayerIDArray[j]);
+
+		}
+	}
+}
+
+
+//add .point to spin button
+spinButton.classList.add("point");
+spinButton.innerHTML = "Go >>";
+// remove selected from poster
+var removePoster = document.getElementsByClassName("poster");
+for ( var j = 0; j < removePoster.length ; j++) {
+		removePoster[j].classList.remove("selected");
+}
+//remove show from characterInfoLayer
+document.getElementById("characterInfoLayer").classList.remove("show");
+
+for ( var i = 0; i < sceneWrapper.children.length; i++) {
+	sceneWrapper.children[i].classList.add('hide');
+
+	for ( var j = 0; j < sceneWrapper.children[i].children.length; j++) {
+		sceneWrapper.children[i].children[j].classList.add('hide');
+	};
+
+
+};
+
+for ( var j = 0; j < sceneWrapper.getElementsByClassName('character').length; j++) {
+	NPCChar = sceneWrapper.getElementsByClassName('character')[j];
+	NPCChar.classList.remove('talk');
+}
+
+
+//hide everything and reset all variables
+settingsView.classList.add('hide');
+scoreContainer.classList.add('hide');
+controlScore.classList.add('hide');
+rightNav.classList.add('hide');
+leftNav.classList.add('hide');
+controlNotes.classList.add('hide');
+exploredObjectsList.classList.add('hide');
+conversationLayer.classList.add('hide');
+
+gameMap.classList.add('hide');
+showHint();
+closeAilmentNotes();
+
+navigateScenes(0,0);
+//navigateInstructions();
+//selectCharacter(playerCharacterArray);
+}
+	
+document.getElementById("musicControl").addEventListener('click' , function(){
+	restartGame();
+})
 
 
 tourButton.addEventListener('click', function() {
@@ -1884,6 +2066,10 @@ applyButton.addEventListener('click', function() {
 	gameMode.classList.remove('hide');
 	settingsView.classList.add('hide');
 	settingOn = false;
+	console.log(currentScene);
+	if (hasClass(currentScene,"scene-zero") || hasClass(currentScene,"scene-one")) {
+			conversationLayer.classList.add("active");
+	}
 });
 controlSetting.addEventListener('click', function() {
 	showSettings();
@@ -1896,9 +2082,10 @@ gameMusicControl.addEventListener('click', function() {
 // 	//showRelevantInfo(2);
 // 	showInfo();
 // });
-/*infoClose.addEventListener('click', function() {
+closeInfoText.addEventListener('click', function(e) {
+	e.stopPropagation();
 	hideHint();
-});*/
+});
 
 controlMap.addEventListener('click', function() {
 	if(hasClass(conversationLayer, 'tag-response')){
@@ -2203,6 +2390,10 @@ playerOOITags   = [
   for ( var j = 0; j < characterIDArray.length ; j++) {
     ringOne.classList.remove(characterIDArray[j]);
   }
+
+	for (var i = 0; i < sceneWrapper.children.length; i++) {
+		sceneWrapper.children[i]
+	}
 
   //add .point to spin button
   spinButton.classList.add("point");
@@ -2631,6 +2822,9 @@ function showOOIDescription(info,i){
 	
 	engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] = 0 ;	
 	
+/*	//added these 2 lines for easier dev , need to be removed in prod
+	document.getElementById("characterPin").click();
+	document.getElementById("objectEffectPostive").click();*/
 	
 	
 	
@@ -2965,6 +3159,7 @@ function showSettings() {
 	settingOn = true;
 	gameMode.classList.add('hide');
 	settingsView.classList.remove('hide');
+	conversationLayer.classList.remove('active');
 
 }
 function showControls() {
@@ -3155,6 +3350,7 @@ function preLoadPlayerImages(){
 	
 	var speakerChar;
 
+/*
 
 
 		for ( var j = 0; j < sceneWrapper.children.length - 1; j++) {
@@ -3170,6 +3366,7 @@ function preLoadPlayerImages(){
 			
 		},10000)	;
 
+*/
 
 
 }
@@ -3226,13 +3423,13 @@ function preLoadNPCImages(){
     }
 	}
   //initGame();
-/*setTimeout(function(){
+setTimeout(function(){
 	for ( var j = 0; j < sceneWrapper.getElementsByClassName('character').length; j++) {
 		NPCChar = sceneWrapper.getElementsByClassName('character')[j];
 		NPCChar.classList.remove('talk');
 	}
 
-},100) */}
+},100) }
 
 function tourApartment() {
 		for ( var j = 0; j < 3; j++) {
@@ -3297,7 +3494,7 @@ function navigateScenes(sceneNo,subSceneNo) {
 				OOILayer.classList.remove("hide");
 			};
 			//callBack;
-		}, 3000);
+		}, 1000);
 
 	}, 1000);
 

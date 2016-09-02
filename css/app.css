@@ -1820,7 +1820,7 @@ li.controls {
 }
 
 #replayControl{
-	opacity:0.5   /* deactivated temporarily */
+	opacity:1;   /* deactivated temporarily */
 }
 
 .apply-button{
@@ -2013,19 +2013,20 @@ div#engagementScoreBox {
     left: 2%;
     border-radius: 7px;
     background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    padding: 1.1% 2.2% 1.1% 3.5%;
+    padding: 1.1% 4% 1.1% 3.5%;
 }
 
-/* .close-info-text{
-    position: relatives;
-    width: 4.86%;
-    height: 35%;
+ .close-info-text{
+    position: absolute;
+    width: 3vh;
+    height: 3vh;
     border-radius: 50%;
     background-color: grey;
     right: 0%;
-    bottom: 32%;
-    margin: auto 3%;	
-} */
+    top: 1vh;
+    margin: auto 2%;
+    padding: 0%;	
+} 
 
 .info-close{
     position: absolute;
@@ -2999,7 +3000,8 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
     position: absolute;
     /* border: 1px solid #169438; */
     width: 101%;
-    background-image: url(../assets/images/table-scene-1.png);
+    /* background-image: url(../assets/images/table-scene-1.png); */
+    background-image: url(../assets/images/walker-back.png); 
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 50%;
@@ -3014,7 +3016,8 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
     position: absolute;
     /* border: 1px solid #169438; */
     width: 101%;
-    background-image: url(../assets/images/table-scene-1.png);
+    /* background-image: url(../assets/images/table-scene-1.png); */
+    background-image: url(../assets/images/walker-front.png);
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 50%;
@@ -3029,7 +3032,8 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
     position: absolute;
     /* border: 1px solid #169438; */
     width: 101%;
-    background-image: url(../assets/images/table-scene-1.png);
+    /* background-image: url(../assets/images/table-scene-1.png); */
+    background-image: url(../assets/images/walker-back.png); 
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 50%;
@@ -3043,16 +3047,17 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
 .walker-front-two-one{
     position: absolute;
     /* border: 1px solid #169438; */
-    width: 101%;
-    background-image: url(../assets/images/table-scene-1.png);
+    width: 31%;
+    background-image: url(../assets/images/walker-front.png);
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 50%;
     height: 18%;
-    left: 0%;
+    right: 8%;
     bottom: 0%;
     overflow: visible;
-    z-index: 0;	
+    z-index: 2;
+    /* display: none; */
     display:none
 }
 .walker-back-two-zero{
@@ -3086,7 +3091,7 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
     display: none;
 }
 
-.mary .walker-front-two-zero , .mary .walker-front-two-zero , .mary .walker-front-two-zero , .mary .walker-back-two-zero , .mary .walker-back-two-zero , .mary .walker-back-two-zero {
+.mary .walker-front-two-zero , .mary .walker-front-two-one , .mary .walker-front-two-two , .mary .walker-back-two-zero , .mary .walker-back-two-one , .mary .walker-back-two-two {
 	display:block;
 }
 
