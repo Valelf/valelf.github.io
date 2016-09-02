@@ -1595,6 +1595,8 @@ charName = document.getElementsByClassName('char-name');
 charPoster = document.getElementsByClassName('poster');
 inSceneOOIs  = document.getElementsByClassName('in-scene-OOI');
 
+ailments[0].classList.add('learn');
+
 /** Initializing functions ** */
 //document.documentElement.webkitRequestFullscreen();
 var windowWidth = window.innerWidth, windowHeight = window.innerHeight, windowWidthNew;
@@ -1902,7 +1904,7 @@ controlNotes.classList.add('hide');
 OOILayer.classList.remove('active');
 exploredObjectsList.classList.add('hide');
 conversationLayer.classList.add('hide');
-
+tagNotes.classList.add("hide");
 gameMode.classList.remove('hide');
 
 hideDiamond();
@@ -2025,7 +2027,8 @@ ailments[2].addEventListener('click', function() {
 	
 });
 
-decisionScreenButton.addEventListener('click', function() {
+decisionScreenButton.addEventListener('click', function(e) {
+	e.stopPropagation();
 	showTagNotes(playerOOITags);
 });
 objectEffectTag[0].addEventListener('click', function() {
@@ -2096,6 +2099,7 @@ controlNotes.addEventListener('click', function() {
 	toggleNavButton();
 });
 dismissAilmentButton.addEventListener('click', function() {
+
 	closeAilmentNotes(); //showTagNotes(taggedOOI);
 	if(hasClass(OOILayer,'active')){
 	{
@@ -2122,14 +2126,24 @@ leftNav.addEventListener('click', function() {
 	objectsExplored();
 });
 
-applyButton.addEventListener('click', function() {
+applyButton.addEventListener('click', function(e) {
+
+	e.stopPropagation();
+	console.log("asdfsdfdf asdfasdf asdfadsf  == 18");
+	console.log(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2]);
+
 	gameMode.classList.remove('hide');
 	settingsView.classList.add('hide');
 	settingOn = false;
 	console.log(currentScene);
-	if (hasClass(currentScene,"scene-zero") || hasClass(currentScene,"scene-one")) {
+	if ((hasClass(currentScene,"scene-zero") || hasClass(currentScene,"scene-one") ) && apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18) {
 			conversationLayer.classList.add("active");
 	}
+
+
+
+
+
 });
 controlSetting.addEventListener('click', function() {
 	showSettings();
@@ -2152,6 +2166,9 @@ controlMap.addEventListener('click', function() {
 		conversationLayer.classList.add('hide')	;
 	}
 	apartmentInfo.classList.add('hide');
+
+
+
 	closeOOIDescription(); 
 	hideDiamond();
 	conversationLayer.classList.add('hide');
@@ -2288,7 +2305,6 @@ OOILayer.addEventListener('click', function() {
 });
 nextButton.addEventListener('click', function() {
 	// hideMap();
-
 
 		navigateInstructions();
 
@@ -2560,12 +2576,25 @@ function showAilmentDescription(i){
 	}else if(i == 2){
 		 checkEar = true ;
 	}
+	if(hasClass(ailments[i],'learn')){
+		for(k=0;k<ailments.length;k++)
+		{
+			ailments[k].classList.remove('cursor');
+		}
+		ailments[i].classList.add('cursor');
+		ailments[i].classList.remove('learn');
+		if(i+1<3)
+		{
+		ailments[i+1].classList.add('learn');
+		}
 	
+	}
 	for(var k=0 ; k < ailmentArray.length ;  k++){
 		ailmentNotes.classList.remove(ailmentArray[k].class);	
+
 	}
-	
 	ailmentNotes.classList.add(ailmentArray[i].class);
+	
 	ailmentTitle.innerHTML = ailmentArray[i].ailment;
 	ailmentContent.innerHTML = ailmentArray[i].description ;
 }
@@ -2749,20 +2778,23 @@ function selectCharacter(info) {
 }
 
 function initApartmentHint(){
-    if(apartmentObjectsExplored[currentApartment.index]==6){
-        currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
-        hintInfoText.innerHTML = currentHint;
-    } else if(apartmentObjectsExplored[currentApartment.index]>0){
-        currentHint = infoScriptArray.apartmentRoam.informationText + closeHint;
-        hintInfoText.innerHTML = currentHint;
-    } else {
-		currentHint = infoScriptArray.apartmentVisit.informationText + closeHint;
-		hintInfoText.innerHTML = currentHint;
-	}
-	if(hintFlags.apartmentVisit==0){
-		// to prevent premature hint showup.. navigate scenes will look at this and show the hint
-		hintFlags.isHintMsgShowing=true;
-		hintFlags.apartmentVisit=1;
+	if(currentApartment && currentApartment.index){
+
+	    if(apartmentObjectsExplored[currentApartment.index]==6){
+	        currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
+	        hintInfoText.innerHTML = currentHint;
+	    } else if(apartmentObjectsExplored[currentApartment.index]>0){
+	        currentHint = infoScriptArray.apartmentRoam.informationText + closeHint;
+	        hintInfoText.innerHTML = currentHint;
+	    } else {
+			currentHint = infoScriptArray.apartmentVisit.informationText + closeHint;
+			hintInfoText.innerHTML = currentHint;
+		}
+		if(hintFlags.apartmentVisit==0){
+			// to prevent premature hint showup.. navigate scenes will look at this and show the hint
+			hintFlags.isHintMsgShowing=true;
+			hintFlags.apartmentVisit=1;
+		}
 	}
 }
 
@@ -2917,9 +2949,9 @@ function showOOIDescription(info,i){
 	
 	engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] = 0 ;	
 	
-/*	//added these 2 lines for easier dev , need to be removed in prod
-	document.getElementById("characterPin").click();
-	document.getElementById("objectEffectPostive").click();*/
+/*	//added these 2 lines for easier dev , need to be removed in prod */
+	// document.getElementById("characterPin").click();
+	// document.getElementById("objectEffectPostive").click();
 	
 	
 	
@@ -3283,7 +3315,7 @@ function navigateInstructions() {
 		instructionCount = 0;
 		instructionHUD.classList.add('hide');
 		showInstructions(instructionCount);
-		showAilmentDescription(0)
+		showAilmentDescription(0);
 		showAilmentNotes();
 /*		guideHeader.innerText = 'Choose a member';
 		characterSelectionWidget.classList.remove('hide');*/
