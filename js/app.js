@@ -1737,14 +1737,11 @@ gameRestart.addEventListener('click', function(e) {
 
 
 function restartGame(){
-	console.log("gameRestartgameRestart gameRestart gameRestart gameRestart gameRestart");
-console.log(playerOOITags);
 
 
 currentOOIDescription = "";
+
 currentOOI = {};
-hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "isHintMsgShowing": false}; 
-currentHint = "";
 engagementScoreArray = [
 												{
 														apartmentClass : "pinegrove",
@@ -1899,6 +1896,7 @@ controlScore.classList.add('hide');
 rightNav.classList.add('hide');
 leftNav.classList.add('hide');
 controlNotes.classList.add('hide');
+OOILayer.classList.remove('active');
 exploredObjectsList.classList.add('hide');
 conversationLayer.classList.add('hide');
 
@@ -1907,9 +1905,8 @@ gameMode.classList.remove('hide');
 hideDiamond();
 
 
-	objectDescription.classList.add('hide');
+objectDescription.classList.add('hide');
 gameMap.classList.add('hide');
-showHint();
 closeAilmentNotes();
 
 
@@ -1917,13 +1914,26 @@ closeAilmentNotes();
 		apartmentIcon[j].classList.remove('location');
 	}
 
+	settingOn = false;
+
+infoText.classList.remove("hide-perm");
+controlInfoIcon.classList.remove("hide-perm");
+controlInfo.classList.remove("hide-perm");
+
+infoText.classList.remove("desc-hint");
+controlInfoIcon.classList.remove("desc-hint");
+controlInfo.classList.remove("desc-hint");
+
 
 
 hideHint();
 hideHintIcon();
+hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "isHintMsgShowing": true}; 
+currentHint = "Spin the wheel to choose the character you will be playing.";
 navigateScenes(0,0);
 //navigateInstructions();
 //selectCharacter(playerCharacterArray);
+
 }
 	
 
@@ -2736,13 +2746,13 @@ function selectCharacter(info) {
 }
 
 function initApartmentHint(){
-	if(hintFlags.apartmentExit==1){
-		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
-		hintInfoText.innerHTML = currentHint;
-	} else if(hintFlags.apartmentRoam==1){
-		currentHint = infoScriptArray.apartmentRoam.informationText + closeHint;
-		hintInfoText.innerHTML = currentHint;
-	} else {
+    if(apartmentObjectsExplored[currentApartment.index]==6){
+        currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
+        hintInfoText.innerHTML = currentHint;
+    } else if(apartmentObjectsExplored[currentApartment.index]>0){
+        currentHint = infoScriptArray.apartmentRoam.informationText + closeHint;
+        hintInfoText.innerHTML = currentHint;
+    } else {
 		currentHint = infoScriptArray.apartmentVisit.informationText + closeHint;
 		hintInfoText.innerHTML = currentHint;
 	}
