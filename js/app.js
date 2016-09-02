@@ -1714,6 +1714,7 @@ spinButton.addEventListener('click', function() {
 		}else{
 			if(!spinned){
 			playerSelected = true;
+			replayControl.classList.remove('inactive');
 			spinned = true;
 			spinButton.classList.add('hide');
 			characterInfoLayer.classList.add('show')
@@ -1830,6 +1831,8 @@ dismissAilmentButton.innerHTML = "Dismiss";
 
 
 
+			playerSelected = false;
+			replayControl.classList.add('inactive');
 
 dialogueCount = 0;
 introPage = true;
