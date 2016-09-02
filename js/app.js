@@ -1832,6 +1832,8 @@ dismissAilmentButton.innerHTML = "Dismiss";
   progressBar.classList.remove('tint');
 
 
+
+
 dialogueCount = 0;
 introPage = true;
 checkLeg = true;
@@ -1900,9 +1902,22 @@ controlNotes.classList.add('hide');
 exploredObjectsList.classList.add('hide');
 conversationLayer.classList.add('hide');
 
+gameMode.classList.remove('hide');
+
+hideDiamond();
+
+
+	objectDescription.classList.add('hide');
 gameMap.classList.add('hide');
 showHint();
 closeAilmentNotes();
+
+
+		for ( var j = 0; j < 3; j++) {
+		apartmentIcon[j].classList.remove('location');
+	}
+
+
 
 hideHint();
 hideHintIcon();
@@ -1911,9 +1926,12 @@ navigateScenes(0,0);
 //selectCharacter(playerCharacterArray);
 }
 	
+
+
+
 document.getElementById("musicControl").addEventListener('click' , function(){
 	if(playerSelected){
-		restartGame();
+	//	restartGame();
 	}
 })
 
@@ -2034,7 +2052,7 @@ inSceneOOIs[5].addEventListener('click', function() {
 
 replayControl.addEventListener('click', function() {
 	if(playerSelected){
-		restartTheGame();
+		restartGame();
 	}
 });
 
