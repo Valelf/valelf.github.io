@@ -1818,7 +1818,7 @@ li.controls {
     margin: -4.4%;
     padding: 0 0px 0 15%;
     height: auto;
-    cursor: pointer;
+
     right: 25%;
 }
 
@@ -1829,7 +1829,8 @@ li.controls {
 }
 
 .controls.music{
-	opacity:1;   /* deactivated temporarily */
+	opacity:1;
+        cursor: pointer;   /* deactivated temporarily */
 }
 
 .apply-button{
