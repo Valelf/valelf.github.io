@@ -1,4 +1,5 @@
 
+
 var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
 var controlInfo, closeInfoText, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
@@ -23,17 +24,25 @@ infoScriptArray = {
 			'informationText' : 'Use your mouse to move around the apartment. Keep an eye out for objects that glow.',
 			'index' : 0
 		},
-		'apartmentExit' :{
-			'informationText' : 'Use map to checkout other apartments.',
+		'apartmentRoam' : {
+			'informationText' : 'Move around the apartment. Use the arrows on the left and right sides of the screens to go from room to room.',
 			'index' : 0
 		},
+		'apartmentExit' :{
+			'informationText' : 'Use map to check out other apartments.',
+			'index' : 0
+		},
+		'apartmentDiamond' :{
+			'informationText' : 'Tap on diamond icon to categorize the object.',
+			'index' : 0
+		}
 
 };
 //flags set for hints. 0 - firsttime. 1 otherwise
-hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0, "isHintMsgShowing": false}; 
+hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "isHintMsgShowing": false}; 
 currentHint = "";
 closeHint = ""; //'<div id="infoClose" class="info-close hide">';
-
+var playerSelected = false;
 conversationScriptArray = [
 		{
 			"character" : "Gladys",
@@ -1704,6 +1713,7 @@ spinButton.addEventListener('click', function() {
 			meetCharacter();
 		}else{
 			if(!spinned){
+			playerSelected = true;
 			spinned = true;
 			spinButton.classList.add('hide');
 			characterInfoLayer.classList.add('show')
@@ -1719,7 +1729,7 @@ spinButton.addEventListener('click', function() {
 gameRestart.addEventListener('click', function(e) {
 
 	//window.location.reload();
-
+	
 	//restartTheGame();
 	restartGame();
 });
@@ -1733,7 +1743,8 @@ console.log(playerOOITags);
 
 currentOOIDescription = "";
 currentOOI = {};
-
+hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "isHintMsgShowing": false}; 
+currentHint = "";
 engagementScoreArray = [
 												{
 														apartmentClass : "pinegrove",
@@ -1893,13 +1904,17 @@ gameMap.classList.add('hide');
 showHint();
 closeAilmentNotes();
 
+hideHint();
+hideHintIcon();
 navigateScenes(0,0);
 //navigateInstructions();
 //selectCharacter(playerCharacterArray);
 }
 	
 document.getElementById("musicControl").addEventListener('click' , function(){
-	restartGame();
+	if(playerSelected){
+		restartGame();
+	}
 })
 
 
@@ -1957,13 +1972,26 @@ else {
 
 
 ailments[0].addEventListener('click', function() {
+	ailments[1].classList.remove('cursor');
+	ailments[2].classList.remove('cursor');
+	ailments[0].classList.add('cursor');
+
 	showAilmentDescription(0);
+	
 });
 ailments[1].addEventListener('click', function() {
+	ailments[0].classList.remove('cursor');
+	ailments[2].classList.remove('cursor');
+	ailments[1].classList.add('cursor');
 	showAilmentDescription(1);
+	
 });
 ailments[2].addEventListener('click', function() {
+	ailments[0].classList.remove('cursor');
+	ailments[1].classList.remove('cursor');
+	ailments[2].classList.add('cursor');
 	showAilmentDescription(2);
+	
 });
 
 decisionScreenButton.addEventListener('click', function() {
@@ -2005,7 +2033,9 @@ inSceneOOIs[5].addEventListener('click', function() {
 });
 
 replayControl.addEventListener('click', function() {
-	restartTheGame();
+	if(playerSelected){
+		restartTheGame();
+	}
 });
 
 closeObject.addEventListener('click', function() {
@@ -2217,6 +2247,7 @@ gameOverlay.addEventListener('click', function() {
 		}
 	}
 
+	//hideHint();
 
 	// hideMap();
 });
@@ -2491,7 +2522,6 @@ function reviewByLouise(){
 
 
 function showAilmentDescription(i){
-	
 	if(i == 0){
 		 checkEye = true ;
 	}else if(i == 1){
@@ -2519,12 +2549,13 @@ function showAilmentNotes(){
 function closeAilmentNotes(){
 
 	if(introPage){
-
+	
 		if(!checkLeg){
 			showAilmentDescription(1);	
 		}else{
 		if(!checkEar){
 			showAilmentDescription(2);	
+		
 		}else{
 			introPage = false;
 			ailmentNotes.classList.add('hide');
@@ -2535,6 +2566,7 @@ function closeAilmentNotes(){
 			//at this point of the game hints become useful.
 			//seting the initial hint(we are at spinning wheel)
 			currentHint = infoScriptArray.wheelSpin.informationText + closeHint;
+			hintInfoText.innerHTML = currentHint;
 			//displaying the icons.
 			showHintIcon();
 			//show the hint
@@ -2572,14 +2604,14 @@ function hideHintIcon(){
 
 function showHint(){
 	hintFlags.isHintMsgShowing = true;
-	hintInfoText.innerHTML = currentHint + closeHint;
-	controlInfo.classList.add("hide");
-	infoText.classList.remove("hide");
+	hintInfoText.innerHTML = currentHint;
+	//controlInfo.classList.add("hide");
+		infoText.classList.remove("hide");
 }
 
 function hideHint(){
 	hintFlags.isHintMsgShowing = false;
-	controlInfo.classList.remove("hide");
+	//controlInfo.classList.remove("hide");
 	infoText.classList.add("hide");
 }
 
@@ -2684,6 +2716,25 @@ function selectCharacter(info) {
 	// closeCharWiget();
 	console.log(charName);
 }
+
+function initApartmentHint(){
+	if(hintFlags.apartmentExit==1){
+		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
+		hintInfoText.innerHTML = currentHint;
+	} else if(hintFlags.apartmentRoam==1){
+		currentHint = infoScriptArray.apartmentRoam.informationText + closeHint;
+		hintInfoText.innerHTML = currentHint;
+	} else {
+		currentHint = infoScriptArray.apartmentVisit.informationText + closeHint;
+		hintInfoText.innerHTML = currentHint;
+	}
+	if(hintFlags.apartmentVisit==0){
+		// to prevent premature hint showup.. navigate scenes will look at this and show the hint
+		hintFlags.isHintMsgShowing=true;
+		hintFlags.apartmentVisit=1;
+	}
+}
+
 function initApartmentControls(){
 	leftNav.classList.add('hide');
 	
@@ -2707,15 +2758,7 @@ function initApartmentControls(){
 		userInterface.classList.remove(subSceneArray[i]);
 	};
 	
-	if(hintFlags.apartmentExit==0){
-		currentHint = infoScriptArray.apartmentVisit.informationText + closeHint;
-	} else {
-		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
-	}
-	if(hintFlags.apartmentVisit==0){
-		hintFlags.isHintMsgShowing=true;
-		hintFlags.apartmentVisit=1;
-	}
+	initApartmentHint();
 	
 	
 	controlInfo.classList.remove('bring-it-up');
@@ -2783,6 +2826,21 @@ function showOOIsControl(){
 	
 	
 }
+
+function moveHintsUp(){
+	infoText.classList.add("desc-hint");
+	controlInfo.classList.add("desc-hint");
+	controlInfoIcon.classList.add("desc-hint");
+	hintInterface.classList.add("desc-hint");
+}
+
+function moveHintsDown(){
+	infoText.classList.remove("desc-hint");
+	controlInfo.classList.remove("desc-hint");
+	controlInfoIcon.classList.remove("desc-hint");
+	hintInterface.classList.remove("desc-hint");
+}
+
 function showOOIDescription(info,i){
 	
 	
@@ -2794,10 +2852,17 @@ function showOOIDescription(info,i){
 	conversationLayer.classList.add('hide');
 	conversationLayer.classList.remove('tag-response');
 	selectOOI(i);
-	if(hintFlags.isHintMsgShowing){
-		infoText.classList.add("hide");
+	// if(hintFlags.isHintMsgShowing){
+	// 	infoText.classList.add("hide");
+	// }
+	// hideHintIcon();
+	moveHintsUp();
+	currentHint = infoScriptArray.apartmentDiamond.informationText + closeHint;
+	hintInfoText.innerHTML = currentHint;
+	if(hintFlags.apartmentDiamond==0){
+		showHint();
+		hintFlags.apartmentDiamond=1;
 	}
-	hideHintIcon();
 	objectDescription.classList.remove('hide');
 	for(var j=0 ; j < OOIContentArray[currentApartment.index].apartmentOOIs.length ; j++){
 		if(OOIContentArray[currentApartment.index].apartmentOOIs[j].OOIClass == info){
@@ -2852,14 +2917,9 @@ function closeOOIDescription(a){
 
 	exploredObjectsList.classList.remove('slide');
 	controlNotes.classList.remove('hide');
-
-	if(!a){
-		if(hintFlags.isHintMsgShowing){
-			infoText.classList.remove("hide");
-		}
-		showHintIcon();
-	}
 	
+	moveHintsDown();
+	initApartmentHint();
 	
 	objectDescription.classList.add('hide');	
 }
@@ -2904,7 +2964,7 @@ function showCharProfile(info) {
 	
 
 	guideHeader.innerText = 'Great. You got ' + info.name + '!';
-	spinButton.innerText = 'meet ' + info.name + ' >>';
+spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.png" id="nextArrow" class="next-arrow"> ';
 	charName[0].innerText = info.name;
 	charGender[0].innerText = info.gender;
 	//charEthnicity[0].innerText = info.ethnicity;
@@ -2942,7 +3002,7 @@ function toggleMap() {
 		controlMap.classList.add('hide');        //removes controlmap icon
 	
 		currentHint = infoScriptArray.map.informationText + closeHint;
-		hintInfoText.innerHTML = currentHint + closeHint;
+		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.map==0){
 			showHint();
 			hintFlags.map=1;
@@ -3144,11 +3204,19 @@ function NPCTagResponse(){
 				
 			},2500);
 		},1000);
-	} else if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] == 3){
+	} else if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18 && apartmentObjectsExplored[currentApartment.index]==6){
 		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
+		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.apartmentExit==0){
 			showHint();
 			hintFlags.apartmentExit=1;
+		}
+	} else if(apartmentObjectsExplored[currentApartment.index]==1){
+		currentHint = infoScriptArray.apartmentRoam.informationText + closeHint;
+		hintInfoText.innerHTML = currentHint;
+		if(hintFlags.apartmentRoam==0){
+			showHint();
+			hintFlags.apartmentRoam=1;
 		}
 	}
 }
@@ -3203,6 +3271,7 @@ function meetCharacter() {
 	navigateScenes(1,0);
 	
 	currentHint = infoScriptArray.officeConversation.informationText + closeHint;
+	hintInfoText.innerHTML = currentHint;
 	if(hintFlags.officeConversation==0){
 		hintFlags.isHintMsgShowing = true;
 		hintFlags.officeConversation=1;
