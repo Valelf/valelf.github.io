@@ -2,9 +2,9 @@
 
 var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
-var controlInfo, closeInfoText, subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+var controlInfo, closeInfoText, movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
-var tagScore = 5 , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
+var tagScore = 5 ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_Louise_Office_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
 var apartmentObjectsExplored = [ pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
 function initHints(isRestart){
@@ -77,6 +77,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Gladys. It's great to see you. How are you doing?",
+						"audioFile" :"GLADYS/LateAdulthood_Louise_Louise_Office_11.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -87,6 +88,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Gladys",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
+						"audioFile" :"GLADYS/LateAdulthood_Gladys_Louise_Office_12.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -97,6 +99,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
+						"audioFile" :"GLADYS/LateAdulthood_Louise_Louise_Office_13.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -118,6 +121,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Gladys, I'm Sarah. I can help you find an apartment. How are you today?",
+						"audioFile" :"GLADYS/LateAdulthood_Sarah_Louise_Office_14.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -128,6 +132,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Gladys",
 						"dialogue" : "Wonderful. I'd like to find a place that is close to the senior center and the library. I love reading but my eyes aren't what they used to be. My doctor tells me I have macular degeneration.",
+						"audioFile" :"GLADYS/LateAdulthood_Gladys_Louise_Office_15.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -138,6 +143,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Okay. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
+						"audioFile" :"GLADYS/LateAdulthood_Sarah_Louise_Office_16.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -155,6 +161,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Mary. It's great to see you. How are you doing?",
+						"audioFile" :"MARY/LateAdulthood_Louise_Louise_Office_11.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -165,6 +172,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
+						"audioFile" :"MARY/LateAdulthood_Mary_Louise_Office_12.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -175,6 +183,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
+						"audioFile" :"MARY/LateAdulthood_Louise_Louise _Office_13.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -196,6 +205,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Mary, I'm Sarah. I can help you find an apartment. How are you today?",
+						"audioFile" :"MARY/LateAdulthood_Sarah_Louise_Office_14.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -206,6 +216,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "I am doing fine. My balance is off these days because I'm recovering from hip surgery.  ",
+						"audioFile" :"MARY/LateAdulthood_Mary_Louise_Office_15.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -216,6 +227,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "I'm sorry to hear that. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
+						"audioFile" :"MARY/LateAdulthood_Sarah_Louise_Office_16.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -226,6 +238,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "Are these places all very close? I can't walk around for too long.",
+						"audioFile" :"MARY/LateAdulthood_Mary_Louise_Office_84.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -236,6 +249,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "We'll take plenty of breaks if you need them.",
+						"audioFile" :"MARY/LateAdulthood_Sarah_Louise_Office_18.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -253,6 +267,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Raymond. It's great to see you. How are you doing?",
+						"audioFile" :"RAYMOND/LateAdulthood_Louise_Louise_Office_11.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -263,6 +278,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
+						"audioFile" :"RAYMOND/LateAdulthood_Raymond_Louise_Office_12.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -273,6 +289,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
+						"audioFile" :"RAYMOND/LateAdulthood_Louise_Louise_Office_13.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -294,6 +311,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Raymond, I'm Sarah. I can help you find an apartment. How are you today?",
+						"audioFile" :"RAYMOND/LateAdulthood_Sarah_Louise_Office_14.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -304,6 +322,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Hello...I'm sorry. Did you say your name was Terri?",
+						"audioFile" :"RAYMOND/LateAdulthood_Raymond_Louise_Office_15.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -314,6 +333,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "No, sir. It's Sarah.",
+						"audioFile" :"RAYMOND/LateAdulthood_Sarah_Louise Office_14.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -324,6 +344,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Oh, Sarah! I'm sorry. I thought you said Terri. I have a little trouble hearing these days.",
+						"audioFile" :"RAYMOND/LateAdulthood_Raymond_Louise_Office_17.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -334,6 +355,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "No worries, Raymond. I understand.",
+						"audioFile" :"RAYMOND/LateAdulthood_Sarah_Louise_Office_18.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -345,6 +367,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Thank you, Sarah. My wife passed away last year, and I just sold our house. It isn't the same without her here. I hope you can help me find an apartment, maybe a little bit closer to the senior center and the grocery store.",
+						"audioFile" :"RAYMOND/LateAdulthood_Raymond_Louise_Office_19.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -355,6 +378,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "I'm sorry to hear that. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
+						"audioFile" :"RAYMOND/LateAdulthood_Sarah_Louise_Office_20.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -1536,6 +1560,9 @@ chairLouiseZero = document.getElementById('chairLouiseZero');
 leftNav = document.getElementById('leftNav');
 rightNav = document.getElementById('rightNav');
 
+
+movingCircle = document.querySelectorAll('circle')[0];
+
 tagNotes = document.getElementById('tagNotes');
 replayControl = document.getElementById('replayControl');
 controlNotes = document.getElementById('controlNotes');
@@ -1983,6 +2010,19 @@ tourButton.addEventListener('click', function() {
 	objectsExplored();
 });
 apartmentIcon[0].addEventListener('click', function() {
+
+	var currentEngagementScore = engagementScore ;
+	engagementScore = engagementScore + engagementScoreArray[0].mapIcon ;
+	
+	if(!engagementScoreArray[0].mapIcon == 0 ){
+		
+		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
+		
+		animateEngagementScore(engagementScore);
+	}
+	
+	engagementScoreArray[0].mapIcon = 0 ;	
+
 	controlScore.classList.remove('hide');
 	if(hasClass(this,'clicked'))
 	{
@@ -2008,6 +2048,19 @@ apartmentIcon[0].addEventListener('click', function() {
 
 });
 apartmentIcon[1].addEventListener('click', function() {
+
+	var currentEngagementScore = engagementScore ;
+	engagementScore = engagementScore + engagementScoreArray[1].mapIcon ;
+	
+	if(!engagementScoreArray[1].mapIcon == 0 ){
+		
+		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
+		
+		animateEngagementScore(engagementScore);
+	}
+	
+	engagementScoreArray[1].mapIcon = 0 ;	
+
 	controlScore.classList.remove('hide');
 	if(hasClass(this,'clicked'))
 	{
@@ -2033,6 +2086,19 @@ apartmentIcon[1].addEventListener('click', function() {
 	
 });
 apartmentIcon[2].addEventListener('click', function() {
+
+	var currentEngagementScore = engagementScore ;
+	engagementScore = engagementScore + engagementScoreArray[2].mapIcon ;
+	
+	if(!engagementScoreArray[2].mapIcon == 0 ){
+		
+		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
+		
+		animateEngagementScore(engagementScore);
+	}
+	
+	engagementScoreArray[2].mapIcon = 0 ;	
+
 	controlScore.classList.remove('hide');
 	if(hasClass(this,'clicked'))
 	{
@@ -2150,6 +2216,14 @@ characterPin.addEventListener('click', function() {
 });
 
 noteDismissButton.addEventListener('click', function() {
+
+	var currentEngagementScore = engagementScore ;
+	engagementScore = engagementScore + 5 ;
+		
+	animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
+	
+	animateEngagementScore(engagementScore);
+
 	endGameReview = true;
 	evaluateApartmentScore();
 	closeTagNotes();
@@ -2347,6 +2421,16 @@ gameOverlay.addEventListener('click', function() {
 			conversationBubble.classList.add(playerChar.class); 
 			conversationBubble.classList.remove('scene-one'); 
 			conversationBubble.classList.add('scene-zero'); 
+
+
+/*
+
+	var louiseInScene = currentScene.getElementsByClassName('character'),
+	playerInScene = currentScene.getElementsByClassName('player')
+
+		louiseInScene.classList.remove('talk');
+		playerInScene.classList.add('talk');*/
+
 			speakerName.innerHTML = playerChar.name;
 			conversationtext.innerHTML = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].playerReview ; //+ '<div class="tap-to-contn">TAP TO CONTINUE</div>';
 			
@@ -2355,6 +2439,13 @@ gameOverlay.addEventListener('click', function() {
 			conversationLayer.classList.remove('player-review');
 			conversationLayer.classList.add('hide');
 			navigateScenes(0,0);
+
+/*	var playerInScene = currentScene.getElementsByClassName('player')
+
+		
+		playerInScene.classList.add('talk');
+
+*/
 
 			displayScore();
 			
@@ -2411,6 +2502,50 @@ function evaluateApartmentScore(){
 }
 
 
+
+
+/******* Play Audio******/
+
+/*
+function playAudio(audioFile,duration){
+
+	var audioLocation = "/LifeSPan/assets/sounds/"+audioFile ; // /LifeSPan/
+
+audio = new Audio(audioLocation);
+
+audio.play();
+
+audio.addEventListener('ended',function(){
+     console.log('done');
+    });
+
+/*	setTimeout(function(){
+
+
+
+
+	}, duration*1000)*/
+
+}
+
+
+
+
+
+*/
+
+
+
+
+
+/******* Play Audio******/
+
+
+
+
+
+
+
 function cleanArray(actual) {
 	  var newArray = new Array();
 	  for (var i = 0; i < actual.length; i++) {
@@ -2421,8 +2556,17 @@ function cleanArray(actual) {
 	  return newArray;
 	}
 
-function animateEngagementScore(){
+function animateEngagementScore(eScore){
 	
+	console.log("animateEngagementScore");
+	console.log(eScore);
+	 /*outerCircle = document.querySelectorAll('path')[0],					 The colored circle outside the white progress line
+		progressCircle = document.querySelectorAll('path')[1],	*/				/* The white circle that stays static */
+
+		movingCircle.style.strokeDashoffset = 113 -  (113/200)*eScore; 
+
+
+
 }
 
 function restartTheGame(){
@@ -2529,7 +2673,11 @@ playerOOITags   = [
   document.getElementById("ring-1").classList.remove("mary")
   document.getElementById("ring-1").classList.remove("gladys")
   document.getElementById("ring-1").classList.remove("mary")
-  spinnerCharInfo[0].classList.add("vanish")
+  spinnerCharInfo[0].classList.add("vanish");
+
+	movingCircle.style.strokeDashoffset = 113;   //resetting score progress display
+
+
   for ( var j = 0; j < characterIDArray.length ; j++) {
     ringOne.classList.remove(characterIDArray[j]);
   }
@@ -2602,7 +2750,7 @@ function displayScore(){
 	scoreContainer.classList.remove('hide');
 	
 	
-	if(engagementScore == 180 && gameScore == 100){
+	if(engagementScore == 200 && gameScore == 100){
 		scoreTitle.innerHTML = "Good Work!";
 	}else{
 		scoreTitle.innerHTML = "Try Again!";
@@ -2613,11 +2761,22 @@ function displayScore(){
 
 
 function reviewByLouise(){
+
+
+
+
 	endGameReview = false;
 	
 	guideHeader.innerText = "";
 	
-	
+		var charactersInScene = currentScene.getElementsByClassName('character');
+	for ( var i = 0; i < charactersInScene.length; i++) {
+		charactersInScene[i].classList.remove('talk');
+	};
+
+
+
+
 	// /navigateScenes(1,0);
 	conversationLayer.classList.remove('hide');
 	conversationLayer.classList.add('louise-review');
@@ -2627,6 +2786,13 @@ function reviewByLouise(){
 	conversationBubble.classList.add('scene-zero'); 
 	document.getElementById('characterSarahZero').classList.remove('talk');
 	speakerName.innerHTML = "Louise";
+/*
+	var louiseInScene = currentScene.getElementsByClassName('character');
+
+		louiseInScene.classList.add('talk');
+
+*/
+
 	conversationtext.innerHTML = "Hi, "+ playerChar.name +". Good to see you again. How do you like your new apartment?"; // + " <div class='tap-to-contn'>TAP TO CONTINUE</div>";
 
 	
@@ -3011,7 +3177,7 @@ function showOOIDescription(info,i){
 		
 		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
 		
-		animateEngagementScore();
+		animateEngagementScore(engagementScore);
 	}
 	
 	engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] = 0 ;	
@@ -3260,7 +3426,7 @@ function tagOOI(info,i){
 		
 		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
 		
-		animateEngagementScore();
+		animateEngagementScore(engagementScore);
 	}
 	
 	engagementScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] = 0 ;
@@ -3497,6 +3663,10 @@ function runConversation(info) {
 
 				speakerName.innerText = info[charNum].conversation[dialogueCount].speaker;
 				conversationtext.innerHTML = info[charNum].conversation[dialogueCount].dialogue ; //+ '<div class="tap-to-contn">TAP TO CONTINUE</div>';
+
+              //  playAudio(info[charNum].conversation[dialogueCount].audioFile);
+
+
 				charAnimation(info[charNum].conversation[dialogueCount]);
 				dialogueCount = dialogueCount + 1;
 
@@ -3692,6 +3862,11 @@ function navigateScenes(sceneNo,subSceneNo) {
 				OOILayer.classList.remove("hide");
 			};
 			 if(endGameReview){
+
+		guideHeader.classList.remove("decision");
+		guideHeader.classList.add("hide");
+
+
                   reviewByLouise();
 			 }
 

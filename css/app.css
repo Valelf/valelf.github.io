@@ -1984,10 +1984,15 @@ li.controls {
 .control-button.info:active{
 	    background-image: url(../assets/images/info.png) , url(../assets/images/icon-base-active.png);
 }
+
 .control-button.score{
-	    background-image: url(../assets/images/star.png) , url(../assets/images/icon-base-default.png);
-		cursor:default;
+  background-image: url(../assets/images/star.png) , url(../assets/images/icon-base-default.png);
+  cursor: default;
+  background-size: 156%;
+  height: 50px;
+  width: 50px;
 }
+
 
 div#engagementScoreBox {
     /* border: 1px solid; */
@@ -1996,6 +2001,7 @@ div#engagementScoreBox {
     height: auto;
     position: absolute;
     width: 100%;
+        margin-top: 6px;
     color: #e95325;
     font-size: 100%;
     font-weight: bold;
@@ -2358,6 +2364,21 @@ position: absolute;
     width: 133%;
     left: -16.5%;
 }
+
+.circleProgress {
+  r: 18;
+stroke-width: 4px;
+cx: 25;
+stroke-dasharray: 113;
+stroke-dashoffset: 113;
+cy: 25;
+transition: all ease-in 0.3s;
+-webkit-transition: all ease-in 0.3s;
+-moz-transition: all ease-in 0.3s;
+
+}
+
+
 .apartment{
      position: absolute;
     width: 9.75%;
