@@ -778,6 +778,27 @@ position: absolute;
 .ailments.cursor{
     cursor: default;
 }
+.eye .ailment-eye{
+-webkit-border-radius:50%;
+-moz-border-radius:50%;
+-webkit-box-shadow:0.25px -0.25px 20px 7px #ea5216;
+-moz-box-shadow:0.25px -0.25px 20px 7px #ea5216;
+}
+
+.leg .ailment-mobility{
+-webkit-border-radius:50%;
+-moz-border-radius:50%;
+-webkit-box-shadow:0.25px -0.25px 20px 7px #ea5216;
+-moz-box-shadow:0.25px -0.25px 20px 7px #ea5216;
+}
+
+.ear .ailment-auditory{
+-webkit-border-radius:50%;
+-moz-border-radius:50%;
+-webkit-box-shadow:0.25px -0.25px 20px 7px #ea5216;
+-moz-box-shadow:0.25px -0.25px 20px 7px #ea5216;
+}
+
 .ailments.ailment-eye{
 	    left: 15%;
     background-image: url(../assets/images/eye.png) , url(../assets/images/icon-base-default.png);
@@ -2362,9 +2383,9 @@ position: absolute;
     background-size: auto 70% , auto 100%;  
 }
 .apartment.location{
-    background-image: url(../assets/images/home-icon.png) , -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
+    background-image: url(../assets/images/home-icon.png) , -webkit-linear-gradient(top, #fbc6b1 0%,#fdb497 13%,#ff946e 50%,rgb(255, 79, 16) 100%);
     background-position: 50% , 50%;
-    background-size: auto 70% , auto 100%;  
+    background-size: auto 70% , auto 100%; 
 }
 .apartment.one{
 	    left: 20%;
