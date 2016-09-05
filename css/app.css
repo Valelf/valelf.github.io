@@ -20,6 +20,15 @@ body {
 	margin:0%;
 }
 
+.disable-click-layer{
+        height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    /* background: #000000; */
+    /* border: 1px solid red; */
+    z-index: 20;
+}
 
 ul,li { list-style-type: none;
         list-style-position:inside;

@@ -2,9 +2,9 @@
 
 var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
 
-var controlInfo, closeInfoText, movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+var controlInfo, closeInfoText, audioNarrationActive = false , instructionAudio , OOIEffectAudio , objectDescriptionAudio , disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
-var tagScore = 5 ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_Louise_Office_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
+var tagScore = 5 , audio ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_LouiseOffice_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
 var apartmentObjectsExplored = [ pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
 function initHints(isRestart){
@@ -77,7 +77,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Gladys. It's great to see you. How are you doing?",
-						"audioFile" :"GLADYS/LateAdulthood_Louise_Louise_Office_11.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Louise_LouiseOffice_11.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -88,7 +88,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Gladys",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
-						"audioFile" :"GLADYS/LateAdulthood_Gladys_Louise_Office_12.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_12.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -99,7 +99,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
-						"audioFile" :"GLADYS/LateAdulthood_Louise_Louise_Office_13.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Louise_LouiseOffice_13.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -121,7 +121,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Gladys, I'm Sarah. I can help you find an apartment. How are you today?",
-						"audioFile" :"GLADYS/LateAdulthood_Sarah_Louise_Office_14.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Sarah_LouiseOffice_14.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -132,7 +132,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Gladys",
 						"dialogue" : "Wonderful. I'd like to find a place that is close to the senior center and the library. I love reading but my eyes aren't what they used to be. My doctor tells me I have macular degeneration.",
-						"audioFile" :"GLADYS/LateAdulthood_Gladys_Louise_Office_15.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_15.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -143,7 +143,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Okay. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
-						"audioFile" :"GLADYS/LateAdulthood_Sarah_Louise_Office_16.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Sarah_LouiseOffice_16.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -161,7 +161,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Mary. It's great to see you. How are you doing?",
-						"audioFile" :"MARY/LateAdulthood_Louise_Louise_Office_11.mp3", 
+						"audioFile" :"mary/LateAdulthood_Louise_LouiseOffice_11.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -172,7 +172,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
-						"audioFile" :"MARY/LateAdulthood_Mary_Louise_Office_12.mp3", 
+						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_12.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -183,7 +183,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
-						"audioFile" :"MARY/LateAdulthood_Louise_Louise _Office_13.mp3", 
+						"audioFile" :"mary/LateAdulthood_Louise_Louise _Office_13.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -205,7 +205,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Mary, I'm Sarah. I can help you find an apartment. How are you today?",
-						"audioFile" :"MARY/LateAdulthood_Sarah_Louise_Office_14.mp3", 
+						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_14.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -216,7 +216,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "I am doing fine. My balance is off these days because I'm recovering from hip surgery.  ",
-						"audioFile" :"MARY/LateAdulthood_Mary_Louise_Office_15.mp3", 
+						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_15.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -227,7 +227,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "I'm sorry to hear that. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
-						"audioFile" :"MARY/LateAdulthood_Sarah_Louise_Office_16.mp3", 
+						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_16.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -238,7 +238,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "Are these places all very close? I can't walk around for too long.",
-						"audioFile" :"MARY/LateAdulthood_Mary_Louise_Office_84.mp3", 
+						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_15.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -249,7 +249,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "We'll take plenty of breaks if you need them.",
-						"audioFile" :"MARY/LateAdulthood_Sarah_Louise_Office_18.mp3", 
+						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_18.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -267,7 +267,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Raymond. It's great to see you. How are you doing?",
-						"audioFile" :"RAYMOND/LateAdulthood_Louise_Louise_Office_11.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Louise_LouiseOffice_11.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -278,7 +278,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
-						"audioFile" :"RAYMOND/LateAdulthood_Raymond_Louise_Office_12.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_12.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -289,7 +289,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
-						"audioFile" :"RAYMOND/LateAdulthood_Louise_Louise_Office_13.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Louise_LouiseOffice_13.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -311,7 +311,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Raymond, I'm Sarah. I can help you find an apartment. How are you today?",
-						"audioFile" :"RAYMOND/LateAdulthood_Sarah_Louise_Office_14.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_14.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -322,7 +322,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Hello...I'm sorry. Did you say your name was Terri?",
-						"audioFile" :"RAYMOND/LateAdulthood_Raymond_Louise_Office_15.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_15.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -333,7 +333,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "No, sir. It's Sarah.",
-						"audioFile" :"RAYMOND/LateAdulthood_Sarah_Louise Office_14.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_16.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -344,7 +344,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Oh, Sarah! I'm sorry. I thought you said Terri. I have a little trouble hearing these days.",
-						"audioFile" :"RAYMOND/LateAdulthood_Raymond_Louise_Office_17.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_17.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -355,7 +355,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "No worries, Raymond. I understand.",
-						"audioFile" :"RAYMOND/LateAdulthood_Sarah_Louise_Office_18.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_18.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -367,7 +367,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Thank you, Sarah. My wife passed away last year, and I just sold our house. It isn't the same without her here. I hope you can help me find an apartment, maybe a little bit closer to the senior center and the grocery store.",
-						"audioFile" :"RAYMOND/LateAdulthood_Raymond_Louise_Office_19.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_19.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -378,7 +378,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "I'm sorry to hear that. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
-						"audioFile" :"RAYMOND/LateAdulthood_Sarah_Louise_Office_20.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_20.mp3", 
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -390,6 +390,16 @@ conversationScriptArray = [
 			]
 
 		} ];
+
+
+
+
+
+
+
+
+
+
 
 OOIContentArray = [
                    {
@@ -403,6 +413,7 @@ OOIContentArray = [
                 	                		"OOIClass":"frontdoor",
                 	                		"OOIID": 5 ,
                 	                		"OOIDescription" : "This apartment features a video intercom, and smoke and carbon monoxide detectors with strobe-vibrator features.",
+						                    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_38.mp3", 
                 	                		"sceneNo":2,
                 	                		"subSceneNo":0,
                 	                		"characterImpact" : [
@@ -414,7 +425,8 @@ OOIContentArray = [
                 	                					"NPCName":"Sarah",
                 	                					"NPCID":0,
                 	                					"NPCClass":"sarah,",
-                	                					"NPCResponse":"It's great that they have all these safety features."
+                	                					"NPCResponse":"It's great that they have all these safety features.",
+                	                					"audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_40.mp3"
                 	                				},
                 	                				{
                 	                					"character" : "Mary",
@@ -424,7 +436,8 @@ OOIContentArray = [
                 	                					"NPCName":"Sarah",
                 	                					"NPCID":0,
                 	                					"NPCClass":"sarah,",
-                	                					"NPCResponse":"It's great that they have all these safety features."
+                	                					"NPCResponse":"It's great that they have all these safety features.",
+                	                					"audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_41.mp3"
                 	                				},
                 	                				{
                 	                					"character" : "Raymond",
@@ -434,7 +447,8 @@ OOIContentArray = [
                 	                					"NPCName":"Sarah",
                 	                					"NPCID":0,
                 	                					"NPCClass":"sarah,",
-                	                					"NPCResponse":"It's great that they have all these safety features."
+                	                					"NPCResponse":"It's great that they have all these safety features.",
+                	                					"audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_43.mp3"
                 	                				}
 
                 	                		]
@@ -446,6 +460,7 @@ OOIContentArray = [
                 	                		"OOIClass":"steps",
                 	                		"OOIID": 3 ,
                 	                		"OOIDescription" : "The entrance has steps leading to the living space.",
+						                    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_32.mp3", 
                 	                		"sceneNo":2,
                 	                		"subSceneNo":1,
                 	                		"characterImpact" : [
@@ -457,7 +472,8 @@ OOIContentArray = [
                 	                					"NPCName":"Sarah",
                 	                					"NPCID":0,
                 	                					"NPCClass":"sarah,",
-                	                					"NPCResponse":"It's nice this apartment is on the ground floor, but what do you think of those steps?"
+                	                					"NPCResponse":"It's nice this apartment is on the ground floor, but what do you think of those steps?",
+                	                					"audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_34.mp3"
                 	                				},
                 	                				{
                 	                					"character" : "Mary",
@@ -467,7 +483,8 @@ OOIContentArray = [
                 	                					"NPCName":"Sarah",
                 	                					"NPCID":0,
                 	                					"NPCClass":"sarah,",
-                	                					"NPCResponse":"Will getting up and down these steps be a problem?"
+                	                					"NPCResponse":"Will getting up and down these steps be a problem?",
+                	                					"audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_35.mp3"
                 	                				},
                 	                				{
                 	                					"character" : "Raymond",
@@ -477,7 +494,8 @@ OOIContentArray = [
                 	                					"NPCName":"Sarah",
                 	                					"NPCID":0,
                 	                					"NPCClass":"sarah,",
-                	                					"NPCResponse":"It's nice this apartment is on the ground floor, but what do you think of those steps?"
+                	                					"NPCResponse":"It's nice this apartment is on the ground floor, but what do you think of those steps?",
+                	                					"audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_37.mp3"
                 	                				}
 
                 	                		]
@@ -490,6 +508,7 @@ OOIContentArray = [
 		"OOIClass":"windows",
 		"OOIID": 0 ,
 		"OOIDescription" : "This apartment features original wood windows with heavy frames, facing an alley.",
+		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_23.mp3", 
 		"sceneNo":2,
 		"subSceneNo":1,
 		"characterImpact" : [
@@ -501,7 +520,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"Will these windows provide good lighting?"
+					"NPCResponse":"Will these windows provide good lighting?",
+                	"audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_25.mp3"
 				},
 				{
 					"character" : "Mary",
@@ -511,7 +531,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"These windows are difficult to open. I think it's because of the old paint."
+					"NPCResponse":"These windows are difficult to open. I think it's because of the old paint.",
+                	"audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_26.mp3"
 				},
 				{
 					"character" : "Raymond",
@@ -521,7 +542,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"These windows provide a terrible view."
+					"NPCResponse":"These windows provide a terrible view.",
+                	"audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_28.mp3"
 				}
 
 		]
@@ -533,6 +555,7 @@ OOIContentArray = [
 		"OOIClass":"lighting",
 		"OOIID": 1 ,
 		"OOIDescription" : "There are no overhead lighting and switches in most rooms. Lamps with cords are needed.",
+		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_26.mp3", 
 		"sceneNo":2,
 		"subSceneNo":1,
 		"characterImpact" : [
@@ -544,7 +567,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"It's a bit dark in here. Don't trip over the lamp cord."
+					"NPCResponse":"It's a bit dark in here. Don't trip over the lamp cord.",
+                	"audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_28.mp3"
 				},
 				{
 					"character" : "Mary",
@@ -554,7 +578,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"It's a bit dark in here. Don't trip over the lamp cord."
+					"NPCResponse":"It's a bit dark in here. Don't trip over the lamp cord.",
+                	"audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_29.mp3"
 				},
 				{
 					"character" : "Raymond",
@@ -564,7 +589,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"It's too bad there's no overhead lighting."
+					"NPCResponse":"It's too bad there's no overhead lighting.",
+                	"audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_31.mp3"
 				}
 
 		]
@@ -576,6 +602,7 @@ OOIContentArray = [
 		"OOIClass":"flooring",
 		"OOIID": 2 ,
 		"OOIDescription" : "There is thick carpeting in the living space and bedroom.",
+		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_29.mp3", 
 		"sceneNo":2,
 		"subSceneNo":1,
 		"characterImpact" : [
@@ -587,7 +614,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"Isn't this carpet nice?"
+					"NPCResponse":"Isn't this carpet nice?",
+                	"audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_31.mp3"
 				},
 				{
 					"character" : "Mary",
@@ -597,7 +625,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"Can you move around easily with the carpeting?"
+					"NPCResponse":"Can you move around easily with the carpeting?",
+                	"audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_32.mp3"
 				},
 				{
 					"character" : "Raymond",
@@ -607,7 +636,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"Does carpeting help reduce background noise?"
+					"NPCResponse":"Does carpeting help reduce background noise?",
+                	"audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_PG_LivingRoom_34.mp3"
 				}
 
 		]
@@ -619,6 +649,7 @@ OOIContentArray = [
 		"OOIClass":"bathtub",
 		"OOIID": 4 ,
 		"OOIDescription" : "The bathroom has a standard tub.",
+		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_Bathroom_35.mp3", 
 		"sceneNo":2,
 		"subSceneNo":2,
 		"characterImpact" : [
@@ -630,7 +661,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"This bathroom is pretty spacious."
+					"NPCResponse":"This bathroom is pretty spacious.",
+                	"audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_PG_Bathroom_37.mp3"
 				},
 				{
 					"character" : "Mary",
@@ -640,7 +672,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"Will you need to renovate the bathroom?"
+					"NPCResponse":"Will you need to renovate the bathroom?",
+                	"audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_PG_Bathroom_38.mp3"
 				},
 				{
 					"character" : "Raymond",
@@ -650,7 +683,8 @@ OOIContentArray = [
 					"NPCName":"Sarah",
 					"NPCID":0,
 					"NPCClass":"sarah,",
-					"NPCResponse":"This bathroom is pretty spacious."
+					"NPCResponse":"This bathroom is pretty spacious.",
+                	"audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_PG_Bathroom_40.mp3"
 				}
 
 		]
@@ -675,6 +709,7 @@ OOIContentArray = [
                      	                		"OOIClass":"frontdoor",
                      	                		"OOIID": 5 ,
                      	                 		"OOIDescription" : "The entrance has wide, garden-facing French doors with window panes.",
+		                                        "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Porch_56.mp3", 
                      	                 		"sceneNo":2,
                      	                 		"subSceneNo":0,
                      	                 		"characterImpact" : [
@@ -686,7 +721,8 @@ OOIContentArray = [
                      	                 					"NPCName":"Sarah",
                      	                 					"NPCID":0,
                      	                 					"NPCClass":"sarah,",
-                     	                					"NPCResponse":"Wow. A nice big entrance with lots of character."
+                     	                					"NPCResponse":"Wow. A nice big entrance with lots of character.",
+                	                                        "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_LV_Porch_58.mp3"
                      	                 				},
                      	                 				{
                      	                 					"character" : "Mary",
@@ -696,7 +732,8 @@ OOIContentArray = [
                      	                 					"NPCName":"Sarah",
                      	                 					"NPCID":0,
                      	                 					"NPCClass":"sarah,",
-                     	                					"NPCResponse":"Do you need help with the doors?"
+                     	                					"NPCResponse":"Do you need help with the doors?",
+                	                                        "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour-LV-Porch_59.mp3"
                      	                 				},
                      	                 				{
                      	                 					"character" : "Raymond",
@@ -706,7 +743,8 @@ OOIContentArray = [
                      	                 					"NPCName":"Sarah",
                      	                 					"NPCID":0,
                      	                 					"NPCClass":"sarah,",
-                     	                					"NPCResponse":"Wow. A nice big entrance with lots of character."
+                     	                					"NPCResponse":"Wow. A nice big entrance with lots of character.",
+                	                                        "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_LV_Porch_61.mp3"
                      	                 				}
 
                      	                 		]
@@ -719,6 +757,7 @@ OOIContentArray = [
                      	               		"OOIClass":"steps",
                      	               		"OOIID": 3 ,
                      	                		"OOIDescription" : "The entrance has porch steps leading up to front door.",
+		                                        "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Porch_50.mp3", 
                      	                		"sceneNo":2,
                      	                		"subSceneNo":0,
                      	                		"characterImpact" : [
@@ -730,7 +769,8 @@ OOIContentArray = [
                      	                					"NPCName":"Sarah",
                      	                					"NPCID":0,
                      	                					"NPCClass":"sarah,",
-                     	               					"NPCResponse":"Be careful getting up and down the porch steps."
+                     	               					"NPCResponse":"Be careful getting up and down the porch steps.",
+                	                                        "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_LV_Porch_52.mp3"
                      	                				},
                      	                				{
                      	                					"character" : "Mary",
@@ -740,7 +780,8 @@ OOIContentArray = [
                      	                					"NPCName":"Sarah",
                      	                					"NPCID":0,
                      	                					"NPCClass":"sarah,",
-                     	               					"NPCResponse":"Be careful getting up and down the porch steps."
+                     	               					"NPCResponse":"Be careful getting up and down the porch steps.",
+                	                                        "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_LV_Porch_53.mp3"
                      	                				},
                      	                				{
                      	                					"character" : "Raymond",
@@ -750,7 +791,8 @@ OOIContentArray = [
                      	                					"NPCName":"Sarah",
                      	                					"NPCID":0,
                      	                					"NPCClass":"sarah,",
-                     	               					"NPCResponse":"What do you think about having porch steps?"
+                     	               					"NPCResponse":"What do you think about having porch steps?",
+                	                                        "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_LV_Porch_55.mp3"
                      	                				}
 
                      	                		]
@@ -763,6 +805,7 @@ OOIContentArray = [
     		"OOIClass":"windows",
     		"OOIID": 0 ,
      		"OOIDescription" : "This apartment features sliding windows and a skylight in the living space.",
+		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_41.mp3", 
      		"sceneNo":2,
      		"subSceneNo":1,
      		"characterImpact" : [
@@ -774,7 +817,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"It's so nice and bright in here."
+    					"NPCResponse":"It's so nice and bright in here.",
+                	    "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_43.mp3"
      				},
      				{
      					"character" : "Mary",
@@ -784,7 +828,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"You can easily open these windows."
+    					"NPCResponse":"You can easily open these windows.",
+                	    "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_44.mp3"
      				},
      				{
      					"character" : "Raymond",
@@ -794,7 +839,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"It's so nice and bright in here."
+    					"NPCResponse":"It's so nice and bright in here.",
+                	    "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_46.mp3"
      				}
 
      		]
@@ -806,6 +852,7 @@ OOIContentArray = [
     		"OOIClass":"lighting",
     		"OOIID": 1 ,
      		"OOIDescription" : "This apartment has glowing light switches.",
+		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_44.mp3", 
      		"sceneNo":2,
      		"subSceneNo":1,
      		"characterImpact" : [
@@ -817,7 +864,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"Glowing switches make them easy to find."
+    					"NPCResponse":"Glowing switches make them easy to find.",
+                	    "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_47.mp3"
      				},
      				{
      					"character" : "Mary",
@@ -827,7 +875,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"Glowing switches make them easy to find."
+    					"NPCResponse":"Glowing switches make them easy to find.",
+                	    "audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_18.mp3"
      				},
      				{
      					"character" : "Raymond",
@@ -837,7 +886,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"Glowing switches make them easy to find."
+    					"NPCResponse":"Glowing switches make them easy to find.",
+                	    "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_49.mp3"
      				}
 
      		]
@@ -849,6 +899,7 @@ OOIContentArray = [
     		"OOIClass":"flooring",
     		"OOIID": 2 ,
      		"OOIDescription" : "This apartment has an open floor plan with hardwood floors.",
+		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_47.mp3", 
      		"sceneNo":2,
      		"subSceneNo":1,
      		"characterImpact" : [
@@ -860,7 +911,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"There's so much room to move around easily."
+    					"NPCResponse":"There's so much room to move around easily.",
+                	    "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_49.mp3"
      				},
      				{
      					"character" : "Mary",
@@ -870,7 +922,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"There's so much room to move around easily."
+    					"NPCResponse":"There's so much room to move around easily.",
+                	    "audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_18.mp3"
      				},
      				{
      					"character" : "Raymond",
@@ -880,7 +933,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"Does the open space create too much echoing?"
+    					"NPCResponse":"Does the open space create too much echoing?",
+                	    "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_52.mp3"
      				}
 
      		]
@@ -892,6 +946,7 @@ OOIContentArray = [
     		"OOIClass":"bathtub",
     		"OOIID": 4 ,
      		"OOIDescription" : "This apartment features an accessible bathtub with handrails along the walls.",
+		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Bathroom_53.mp3", 
      		"sceneNo":2,
      		"subSceneNo":2,
      		"characterImpact" : [
@@ -903,7 +958,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"This is really nice bathroom with great safety features."
+    					"NPCResponse":"This is really nice bathroom with great safety features.",
+                	    "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_LV_Bathroom_55.mp3"
      				},
      				{
      					"character" : "Mary",
@@ -913,7 +969,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"This is really nice bathroom with great safety features."
+    					"NPCResponse":"This is really nice bathroom with great safety features.",
+                	    "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_LV_Bathroom_56.mp3"
      				},
      				{
      					"character" : "Raymond",
@@ -923,7 +980,8 @@ OOIContentArray = [
      					"NPCName":"Sarah",
      					"NPCID":0,
      					"NPCClass":"sarah,",
-    					"NPCResponse":"This is really nice bathroom with great safety features."
+    					"NPCResponse":"This is really nice bathroom with great safety features.",
+                	    "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_LV_Bathroom_58.mp3"
      				}
 
      		]
@@ -948,6 +1006,7 @@ OOIContentArray = [
                              	                		"OOIClass":"frontdoor",
                              	                		"OOIID": 5 ,
                              	                 		"OOIDescription" : "The building entrance faces a busy street.",
+                	                                    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_SV_LivingRoom_74.mp3",
                              	                 		"sceneNo":2,
                              	                 		"subSceneNo":0,
                              	                 		"characterImpact" : [
@@ -959,7 +1018,8 @@ OOIContentArray = [
                              	                 					"NPCName":"Sarah",
                              	                 					"NPCID":0,
                              	                 					"NPCClass":"sarah,",
-                             	                					"NPCResponse":"Lots of cars and foot traffic around here. Will you be able to get around okay?"
+                             	                					"NPCResponse":"Lots of cars and foot traffic around here. Will you be able to get around okay?",
+                	                                                "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_76.mp3"
                              	                 				},
                              	                 				{
                              	                 					"character" : "Mary",
@@ -969,7 +1029,8 @@ OOIContentArray = [
                              	                 					"NPCName":"Sarah",
                              	                 					"NPCID":0,
                              	                 					"NPCClass":"sarah,",
-                             	                					"NPCResponse":"Lots of cars and foot traffic around here. Will you be able to get around okay?"
+                             	                					"NPCResponse":"Lots of cars and foot traffic around here. Will you be able to get around okay?",
+                	                                                "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_77.mp3"
                              	                 				},
                              	                 				{
                              	                 					"character" : "Raymond",
@@ -979,7 +1040,8 @@ OOIContentArray = [
                              	                 					"NPCName":"Sarah",
                              	                 					"NPCID":0,
                              	                 					"NPCClass":"sarah,",
-                             	                					"NPCResponse":"Lots of cars and foot traffic around here. Is this too noisy for you?"
+                             	                					"NPCResponse":"Lots of cars and foot traffic around here. Is this too noisy for you?",
+                	                                                "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_79.mp3"
                              	                 				}
 
                              	                 		]
@@ -992,6 +1054,7 @@ OOIContentArray = [
                              	               		"OOIClass":"steps",
                              	               		"OOIID": 3 ,
                              	                		"OOIDescription" : "The entrance has a ramp to the front door.",
+                	                                    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_SV_Porch_68.mp3",
                              	                		"sceneNo":2,
                              	                		"subSceneNo":0,
                              	                		"characterImpact" : [
@@ -1003,7 +1066,8 @@ OOIContentArray = [
                              	                					"NPCName":"Sarah",
                              	                					"NPCID":0,
                              	                					"NPCClass":"sarah,",
-                             	               					"NPCResponse":"It's good that there's a ramp instead of stairs."
+                             	               					"NPCResponse":"It's good that there's a ramp instead of stairs.",
+                	                                                "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_SV_Porch_70.mp3"
                              	                				},
                              	                				{
                              	                					"character" : "Mary",
@@ -1013,7 +1077,8 @@ OOIContentArray = [
                              	                					"NPCName":"Sarah",
                              	                					"NPCID":0,
                              	                					"NPCClass":"sarah,",
-                             	               					"NPCResponse":"It's good they have a ramp instead of stairs."
+                             	               					"NPCResponse":"It's good they have a ramp instead of stairs.",
+                	                                                "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_SV_Porch_71.mp3"
                              	                				},
                              	                				{
                              	                					"character" : "Raymond",
@@ -1023,7 +1088,8 @@ OOIContentArray = [
                              	                					"NPCName":"Sarah",
                              	                					"NPCID":0,
                              	                					"NPCClass":"sarah,",
-                             	               					"NPCResponse":"It's good that there's a ramp instead of stairs."
+                             	               					"NPCResponse":"It's good that there's a ramp instead of stairs.",
+                	                                                "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_SV_Porch_73.mp3"
                              	                				}
 
                              	                		]
@@ -1036,6 +1102,7 @@ OOIContentArray = [
             		"OOIClass":"windows",
             		"OOIID": 0 ,
              		"OOIDescription" : "This apartment has narrow, crank-to-open windows.",
+                	"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_SV_LivingRoom_59.mp3",
              		"sceneNo":2,
              		"subSceneNo":1,
              		"characterImpact" : [
@@ -1047,7 +1114,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"You won't get a lot of sunlight with these windows."
+            					"NPCResponse":"You won't get a lot of sunlight with these windows.",
+                	            "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_61.mp3"
              				},
              				{
              					"character" : "Mary",
@@ -1057,7 +1125,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"These windows open easily."
+            					"NPCResponse":"These windows open easily.",
+                	            "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_62.mp3"
              				},
              				{
              					"character" : "Raymond",
@@ -1067,7 +1136,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"These windows seem to block a lot of outside noise."
+            					"NPCResponse":"These windows seem to block a lot of outside noise.",
+                	            "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_64.mp3"
              				}
 
              		]
@@ -1079,6 +1149,7 @@ OOIContentArray = [
             		"OOIClass":"lighting",
             		"OOIID": 1 ,
              		"OOIDescription" : "This apartment features track lighting with motion detectors.",
+                	"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_SV_LivingRoom_62.mp3",
              		"sceneNo":2,
              		"subSceneNo":1,
              		"characterImpact" : [
@@ -1090,7 +1161,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"It's so cool not to have to use switches to turn on the lights."
+            					"NPCResponse":"It's so cool not to have to use switches to turn on the lights.",
+                	            "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_64.mp3"
              				},
              				{
              					"character" : "Mary",
@@ -1100,7 +1172,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"It's so cool not to have to use switches to turn on the lights."
+            					"NPCResponse":"It's so cool not to have to use switches to turn on the lights.",
+                	            "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_65.mp3"
              				},
              				{
              					"character" : "Raymond",
@@ -1110,7 +1183,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"It's so cool not to have to use switches to turn on the lights."
+            					"NPCResponse":"It's so cool not to have to use switches to turn on the lights.",
+                	            "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_67.mp3"
              				}
 
              		]
@@ -1122,6 +1196,7 @@ OOIContentArray = [
             		"OOIClass":"flooring",
             		"OOIID": 2 ,
              		"OOIDescription" : "This apartment has an open floor plan with linoleum flooring.",
+                	"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_SV_LivingRoom_65.mp3",
              		"sceneNo":2,
              		"subSceneNo":1,
              		"characterImpact" : [
@@ -1133,7 +1208,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"There's so much room to move around easily."
+            					"NPCResponse":"There's so much room to move around easily.",
+                	            "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_67.mp3"
              				},
              				{
              					"character" : "Mary",
@@ -1143,7 +1219,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"There's so much room to move around easily."
+            					"NPCResponse":"There's so much room to move around easily.",
+                	            "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_70.mp3"
              				},
              				{
              					"character" : "Raymond",
@@ -1153,7 +1230,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"Does the open space create too much echoing?"
+            					"NPCResponse":"Does the open space create too much echoing?",
+                	            "audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_18.mp3"
              				}
 
              		]
@@ -1165,6 +1243,7 @@ OOIContentArray = [
             		"OOIClass":"bathtub",
             		"OOIID": 4 ,
              		"OOIDescription" : "This apartment features an accessible shower with handrails along the walls.",
+                	"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_SV_Bathroom_71.mp3",
              		"sceneNo":2,
              		"subSceneNo":2,
              		"characterImpact" : [
@@ -1176,7 +1255,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"This is really nice bathroom with great safety features."
+            					"NPCResponse":"This is really nice bathroom with great safety features.",
+                	            "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_SV_Bathroom_73.mp3"
              				},
              				{
              					"character" : "Mary",
@@ -1186,7 +1266,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"This is really nice bathroom with great safety features."
+            					"NPCResponse":"This is really nice bathroom with great safety features.",
+                	            "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_SV_Bathroom_74.mp3"
              				},
              				{
              					"character" : "Raymond",
@@ -1196,7 +1277,8 @@ OOIContentArray = [
              					"NPCName":"Sarah",
              					"NPCID":0,
              					"NPCClass":"sarah,",
-            					"NPCResponse":"This is really nice bathroom with great safety features."
+            					"NPCResponse":"This is really nice bathroom with great safety features.",
+                	            "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_SV_BathRoom_79.mp3"
              				}
 
              		]
@@ -1338,18 +1420,22 @@ instructionsArray = [
 		{
 			"instructionTitle" : "Good day, Quest Adventurer!",
 			"instructionContent" : "<p>Imagine yourself as an older adult, living in Quest City. You have recently sold your home and need to find a new apartment today. </p><p>	Apply knowledge of physical changes in late adulthood to real world scenarios</p>",
+            "audioFile" :"common/LateAdulthood_Narration_GameIntro1_2.mp3"
 		},
 		{
 			"instructionTitle" : "",
+			"audioFile" :"common/LateAdulthood_Narration_GameIntro2_NEW.mp3",
 			"instructionContent" : "<p>Sarah, a senior center volunteer, will go with you to look at three different apartments. Explore each apartment carefully. Pay attention to the clues and make the best choice.  </p><p>What do you want or need in a living space? </p><p>What features will help you live longer and happier?</p>  ",
 		},
 		{
 			"instructionTitle" : "",
+			"audioFile" :"common/LateAdulthood_Narration_GameIntro3_NEW.mp3",
 			"instructionContent" : "<p>Each apartment has pros and cons , so take your time in picking the place that will make your life safer and healthier. </p><p>Your happiness depends on it.</p>",
 
 		},
 		{
 			"instructionTitle" : "",
+			"audioFile" :"common/LateAdulthood_Narration_GameIntro-Interactive_3.mp3",
 			"instructionContent" : "<p>As we get older, we start to notice some physical changes such as wrinkled skin and thinning hair. </p><p>But there are also functional changes that can impact daily living.</p>",
 		}
 
@@ -1357,18 +1443,21 @@ instructionsArray = [
 
 ailmentArray = [ {
 	'ailment' : 'Visual Impairment',
+	"audioFile" :"common/LateAdulthood_Narration_GameIntro-Interactive_4.mp3",
 	'description' : 'People who are older generally need more light in order to see, sometimes have difficulty with depth perception, and may be more sensitive to glare. Activities such as driving can become difficult. ',
 	"index": 0,
 	"class" : "eye"
 
 }, {
 	'ailment' : 'Mobility Impairment',
+	"audioFile" :"common/LateAdulthood_Narration_GameIntro-Interactive_6.mp3",
 	'description' : 'People who are older also lose body strength, flexibility and balance, affecting daily activities such as doing chores around the home, and possibly contributing to falls and accidents. ',
 	"index": 1,
 	"class" : "leg"
 
 }, {
 	'ailment' : 'Auditory Impairment',
+	"audioFile" :"common/LateAdulthood_Narration_GameIntro-Interactive_5.mp3",
 	'description' : 'People who are older may have hearing impairments. Although hearing aids are an option, they sometimes magnify background noise as well as speech. ',
 	"index": 2,
 	"class" : "ear"
@@ -1381,6 +1470,7 @@ ailmentArray = [ {
 
 infoApartmentArray = [ {
 	'title' : 'Pine Grove Apartments',
+	"audioFile" :"common/LateAdulthood_Narration_MapView_19.mp3",
 	'name' : 'Pine Grove',
 	'rent' : '$ 850 /month ',
 	'distance' : " 0.5 mile",
@@ -1390,6 +1480,7 @@ infoApartmentArray = [ {
 
 }, {
 	'title' : 'Lakeview Courts',
+	"audioFile" :"common/LateAdulthood_Narration_MapView_20.mp3",
 	'name' : 'Lakeview',
 	'rent' : '$ 975 /month ',
 	'distance' : " 0.25 mile",
@@ -1398,6 +1489,7 @@ infoApartmentArray = [ {
 	"index": 1
 }, {
 	'title' : 'Sunnyvale Apartments',
+	"audioFile" :"common/LateAdulthood_Narration_MapView_21.mp3",
 	'name' : 'Sunnyvale',
 	'rent' : '$ 1000 /month ',
 	'distance' : " 0.14 mile",
@@ -1414,14 +1506,17 @@ var reviewConversationArray = [
                         	   "selectedApartment":[
                         	                        {
                         	                        	"apartment":"pinegrove",
+	                                                    "audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_83.mp3",
                         	                        	"playerReview":"It's much too dark, and I get nervous when I move around. I tripped over the coffee table the other day and hurt my ankle. I'm going to have to get the lights replaced with some brighter ones."
                         	                        },
                         	                        {
                         	                        	"apartment":"lakeview",
+	                                                    "audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_84.mp3",
                         	                        	"playerReview":"It's perfect.The apartment is really bright, and the glowing light switches are great. I can find them easily."
                         	                        },
                         	                        {
                         	                        	"apartment":"sunnyvale",
+	                                                    "audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_85.mp3",
                         	                        	"playerReview":"The narrow windows let in very little light making it difficult for me to see and move around. I'm going to need better lighting."
                         	                        }
                         	                        
@@ -1434,14 +1529,17 @@ var reviewConversationArray = [
                         	   "selectedApartment":[
                         	                        {
                         	                        	"apartment":"pinegrove",
+	                                                    "audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_84.mp3",
                         	                        	"playerReview":"The apartment is quite nice, but it's difficult to get up and down the steps into the living room with my walker. And I really need an accessible bathroom. The poor lighting also does not help. I get scared about tripping over all the lamp cords. "
                         	                        },
                         	                        {
                         	                        	"apartment":"lakeview",
+	                                                    "audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_85.mp3",
                         	                        	"playerReview":"The apartment would probably be fine for someone else, but the bathroom does not work for me. And the steps leading up to the porch is just too much work to get up and down each day. I also can't get those French doors to open without much effort."
                         	                        },
                         	                        {
                         	                        	"apartment":"sunnyvale",
+	                                                    "audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_86.mp3",
                         	                        	"playerReview":"I'm not quite as spry as I used to be, and I have some trouble getting around. This apartment has a great floor plan. I can move around easily. And the bathroom's been modified for people with impaired mobility, which is perfect for my condition."
                         	                        }
                         	                        
@@ -1454,14 +1552,17 @@ var reviewConversationArray = [
                         	   "selectedApartment":[
                         	                        {
                         	                        	"apartment":"pinegrove",
+	                                                    "audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_86.mp3",
                         	                        	"playerReview":"I love it. The video intercom and accessible smoke and carbon detectors are just what I needed."
                         	                        },
                         	                        {
                         	                        	"apartment":"lakeview",
+	                                                    "audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_87.mp3",
                         	                        	"playerReview":"I'm not happy with it. The apartment is nice, and I like the hardwood floors because I can feel vibrations. But Pine Grove would have been better with the video intercom and detectors with strobe lights and vibrations."
                         	                        },
                         	                        {
                         	                        	"apartment":"sunnyvale",
+	                                                    "audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_88.mp3",
                         	                        	"playerReview":"I don't really like it. The building faces a busy street, and the noise outside is very distracting. I also wish it has a video intercom and the accessible detectors that Pine Grove has."
                         	                        }
                         	                        
@@ -1488,6 +1589,7 @@ playerCharacterArray = [ {
 	'name' : 'Gladys',
 	'gender' : 'Female',
 	'age' : ' 73 ',
+	"audioFile" :"gladys/LateAdulthood_Narration_SpinWheel_10.mp3",
 	'ethnicity' : 'African-American ',
 	'identity' : 'Woman',
 	'avtar' : 'assets/images/gladys-icon.png',
@@ -1501,6 +1603,7 @@ playerCharacterArray = [ {
 	'name' : 'Mary',
 	'gender' : 'Female',
 	'age' : '83 ',
+	"audioFile" :"mary/LateAdulthood_Narration_SpinWheel_10.mp3",
 	'ethnicity' : 'Caucasian  ',
 	'identity' : 'Woman',
 	'avtar' : 'assets/images/mary-icon.png',
@@ -1514,6 +1617,7 @@ playerCharacterArray = [ {
 	'name' : 'Raymond',
 	'gender' : 'Male',
 	'age' : '79 ',
+	"audioFile" :"raymond/LateAdulthood_Narration_SpinWheel_10.mp3",
 	'ethnicity' : 'Hispanic',
 	'identity' : 'man',
 	'avtar' : 'assets/images/raymond-icon.png',
@@ -1559,6 +1663,7 @@ charSarah = document.getElementById('characterSarah');
 chairLouiseZero = document.getElementById('chairLouiseZero');
 leftNav = document.getElementById('leftNav');
 rightNav = document.getElementById('rightNav');
+disableClickLayer = document.getElementById('disableClickLayer');
 
 
 movingCircle = document.querySelectorAll('circle')[0];
@@ -1710,13 +1815,22 @@ function resetgame(){
 function toggleGameMusic() {
 	if (gameMusicControl)
 		if (hasClass(gameMusicControl, 'on')) {
+		    audioNarrationActive = false;
 			gameMusicControl.classList.remove('on');
 			soundControl.src = "assets/images/audio-off.png";
-			gameMusic.pause();
+			if(audio){
+				audio.pause();
+			}
+	
+			//gameMusic.pause();
 		} else {
+			audioNarrationActive = true ;
 			gameMusicControl.classList.add('on');
 			soundControl.src = "assets/images/audio-on.png";
-			gameMusic.play();
+				if(audio){
+				//audio.play();
+			}
+			//gameMusic.play();
 		}
 
 }
@@ -1780,6 +1894,7 @@ spinButton.addEventListener('click', function() {
 			characterInfoLayer.classList.add('show')
 			spinButton.classList.remove('point');
 			selectCharacter(playerCharacterArray);	
+			audio.pause();
 			}
 		}
 
@@ -2193,6 +2308,10 @@ replayControl.addEventListener('click', function() {
 	}
 });
 
+disableClickLayer.addEventListener('click', function(e) {
+e.stopPropagation();
+});
+
 closeObject.addEventListener('click', function() {
 	closeOOIDescription(); 
 	hideDiamond();
@@ -2213,6 +2332,12 @@ characterPin.addEventListener('click', function() {
 		showHint();
 		hintFlags.gameScore=1;
 	}
+
+	OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
+	playAudio(OOIEffectAudio);
+
+
+
 });
 
 noteDismissButton.addEventListener('click', function() {
@@ -2506,17 +2631,38 @@ function evaluateApartmentScore(){
 
 /******* Play Audio******/
 
-/*
+
 function playAudio(audioFile,duration){
 
-	var audioLocation = "/LifeSPan/assets/sounds/"+audioFile ; // /LifeSPan/
+if(audioNarrationActive){
+
+if(audio){
+
+	audio.pause();
+}
+
+if(window.location.href.indexOf("restrictClick") > -1){
+	 disableClickLayer.classList.remove('hide');
+}
+
+  
+
+	var audioLocation = "/LifeSpan/assets/sounds/"+audioFile ; // /LifeSPan/
 
 audio = new Audio(audioLocation);
 
 audio.play();
 
 audio.addEventListener('ended',function(){
-     console.log('done');
+
+
+	console.log('audio-complete');
+    if(window.location.href.indexOf("restrictClick") > -1){
+disableClickLayer.classList.add('hide');
+}
+
+
+
     });
 
 /*	setTimeout(function(){
@@ -2524,7 +2670,11 @@ audio.addEventListener('ended',function(){
 
 
 
-	}, duration*1000)
+	}, duration*1000);
+
+
+*/
+}
 
 }
 
@@ -2532,7 +2682,7 @@ audio.addEventListener('ended',function(){
 
 
 
-*/
+
 
 
 
@@ -2794,8 +2944,8 @@ function reviewByLouise(){
 */
 
 	conversationtext.innerHTML = "Hi, "+ playerChar.name +". Good to see you again. How do you like your new apartment?"; // + " <div class='tap-to-contn'>TAP TO CONTINUE</div>";
-
-	
+    var louiseReviewAudioFile = playerChar.class+"/LateAdulthood_Louise_LouiseOffice_83.mp3"
+		playAudio(louiseReviewAudioFile);
 	
 	//reviewConversationArray
 }
@@ -2830,6 +2980,9 @@ function showAilmentDescription(i){
 	
 	ailmentTitle.innerHTML = ailmentArray[i].ailment;
 	ailmentContent.innerHTML = ailmentArray[i].description ;
+	var ailmentAudio = ailmentArray[i].audioFile;
+	playAudio(ailmentAudio);
+
 }
 
 
@@ -3164,8 +3317,15 @@ function showOOIDescription(info,i){
 		if(OOIContentArray[currentApartment.index].apartmentOOIs[j].OOIClass == info){
 			currentOOI = OOIContentArray[currentApartment.index].apartmentOOIs[j];
 			objectDescriptionContent.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[j].OOIDescription ;
+		    objectDescriptionAudio = OOIContentArray[currentApartment.index].apartmentOOIs[j].audioFile;
 			objectTitle.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[j].OOIName;
 			objectEffectContent.innerHTML = "How might this feature affect a person with " + playerCharacterArray[playerChar.index].impairment + "? Is this a positive, negative, or neutral aspect of the apartment for " +playerCharacterArray[playerChar.index].name +"?"         //OOIContentArray[currentApartment.index].apartmentOOIs[j].characterImpact[playerChar.index]
+		    
+            OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
+
+		    playAudio(objectDescriptionAudio);
+
+
 		}
 	}
 	showDiamond();
@@ -3192,6 +3352,7 @@ function showOOIDescription(info,i){
 function showDiamond(){
 //	objectEffect.classList.remove('hide');
 	characterPin.classList.remove('hide');
+
 }
 function hideDiamond(){
 	objectEffect.classList.remove('active');
@@ -3263,8 +3424,11 @@ function showCharProfile(info) {
 spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.png" id="nextArrow" class="next-arrow"> ';
 	charName[0].innerText = info.name;
 	charGender[0].innerText = info.gender;
+
+	var charAudioFile = info.class+"/LateAdulthood_Narration_SpinWheel_10.mp3"
 	//charEthnicity[0].innerText = info.ethnicity;
 	charAge[0].innerText = info.age + 'Years';
+	playAudio(charAudioFile);
 
 	spinnerCharInfo[0].classList.remove('vanish');
 	setTimeout(function(){
@@ -3350,6 +3514,7 @@ function showApartmentInfo(info, i) {
 	apartmentIcon[i].classList.remove('point');
 	apartmentTitle.innerText = info[i].title;
 	rentDetails.innerText = "Rent : " + info[i].rent;
+	playAudio(info[i].audioFile);
 	//ratingDetails.innerText = "Locality rating : " + info[i].rating;
 	distanceDetails.innerText = "Distance from senior center : "
 			+ info[i].distance;
@@ -3466,6 +3631,11 @@ function NPCTagResponse(){
 	conversationBubble.classList.add('OOI-tagging'); //to fix chat bubble on top of sarah
 	speakerName.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCName
 	conversationtext.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCResponse;
+	playAudio(OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].audioFile);
+
+
+
+
 
 	if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] == 18){
 		setTimeout(function(){
@@ -3556,7 +3726,9 @@ function navigateInstructions() {
 }
 function showInstructions(i) {
 	instructionContent.innerHTML = instructionsArray[i].instructionContent;
+	instructionAudio = instructionsArray[i].audioFile;
 	instructionTitle.innerText = instructionsArray[i].instructionTitle;
+	playAudio(instructionAudio);
 }
 function meetCharacter() {
 	closeCharWiget();
@@ -3664,7 +3836,7 @@ function runConversation(info) {
 				speakerName.innerText = info[charNum].conversation[dialogueCount].speaker;
 				conversationtext.innerHTML = info[charNum].conversation[dialogueCount].dialogue ; //+ '<div class="tap-to-contn">TAP TO CONTINUE</div>';
 
-              //  playAudio(info[charNum].conversation[dialogueCount].audioFile);
+                playAudio(info[charNum].conversation[dialogueCount].audioFile);
 
 
 				charAnimation(info[charNum].conversation[dialogueCount]);
