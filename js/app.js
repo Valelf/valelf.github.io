@@ -2524,7 +2524,7 @@ audio.addEventListener('ended',function(){
 
 
 
-	}, duration*1000)*/
+	}, duration*1000)
 
 }
 
