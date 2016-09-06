@@ -38,6 +38,24 @@ ul,li { list-style-type: none;
 	display : none ;
 }
 
+div#apartmentRedirect{
+    /* border: 1px solid; */
+    top: 20%;
+    padding: 2px 1px;
+    height: auto;
+    position: absolute;
+    width: 100%;
+    color: #e95325;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
+    /* background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(196,198,199,0.9) 13%,rgba(255,255,255,1) 100%); */
+    box-shadow: 0.3px 0px 5px 1px rgba(64, 64, 64, 0.66);
+}
+
 .hide-perm {
 	display: none !important;
 }
@@ -3118,7 +3136,7 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
     bottom: -0.3%;
     overflow: visible;
     z-index: 2;	
-    display:none
+    display:none ;
 }
 .walker-front-two-one{
     position: absolute;
