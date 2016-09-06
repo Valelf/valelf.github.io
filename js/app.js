@@ -1,10 +1,43 @@
 
 
-var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer;
+var charAnn, charSarah, buttonPlay, buttonPrev, buttonNext, appContainer , 
+infoApartmentArray = [ {
+	'title' : 'Pine Grove Apartments',
+	"audioFile" :"common/LateAdulthood_Narration_MapView_19.mp3",
+	'name' : 'Pine Grove',
+	'rent' : '$ 850 /month ',
+	'distance' : " 0.5 mile",
+	'ammenities' : "Swimming Pool , Super Market",
+	"class" : 'pinegrove',
+	"index": 0
 
-var controlInfo, closeInfoText, audioNarrationActive = false , instructionAudio , OOIEffectAudio , objectDescriptionAudio , disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoApartmentArray, infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+}, {
+	'title' : 'Lakeview Courts',
+	"audioFile" :"common/LateAdulthood_Narration_MapView_20.mp3",
+	'name' : 'Lakeview',
+	'rent' : '$ 975 /month ',
+	'distance' : " 0.25 mile",
+	'ammenities' : "Library , Super Market",
+	"class" : 'lakeview',
+	"index": 1
+}, {
+	'title' : 'Sunnyvale Apartments',
+	"audioFile" :"common/LateAdulthood_Narration_MapView_21.mp3",
+	'name' : 'Sunnyvale',
+	'rent' : '$ 1000 /month ',
+	'distance' : " 0.14 mile",
+	'ammenities' : "Super Market",
+	"class" : 'sunnyvale',
+	"index": 2
+}
 
-var tagScore = 5 , audio ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_LouiseOffice_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene, currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
+];
+
+
+
+var controlInfo, closeInfoText, audioNarrationActive = false , instructionAudio , OOIEffectAudio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+
+var tagScore = 5 , audio ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_LouiseOffice_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene = infoApartmentArray[0], currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo;
 
 var apartmentObjectsExplored = [ pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
 function initHints(isRestart){
@@ -183,7 +216,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
-						"audioFile" :"mary/LateAdulthood_Louise_Louise _Office_13.mp3", 
+						"audioFile" :"mary/LateAdulthood_Louise_Louise_Office_13.mp3", 
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -1363,6 +1396,53 @@ engagementScoreArray = [
                            
                            ]
 
+defaultPlayerOOITags = [
+													 									                 {
+													 									                	apartmentClass : "pinegrove",
+													 									                	taggedOOIs :
+													 									                	              [
+													 									                	            	{"frontdoor": "minus"},
+													 									                	            	{"steps":"plus"},
+													 									                	            	{"windows":"none"},
+													 									                	            	{"lighting":"minus"},
+													 									                	            	{"flooring":"plus"},
+													 									                	            	{"bathtub":"neutral"}
+													 									                	              ]
+
+
+													 									                 },
+													 									                 {
+													 									                	apartmentClass : "lakeview",
+													 									                	taggedOOIs :
+													 									                	              [
+													 									               	            	{"frontdoor": "plus"},
+													 									            	            	{"steps":"minus"},
+													 									            	            	{"windows":"plus"},
+													 									            	            	{"lighting":"plus"},
+													 									            	            	{"flooring":"plus"},
+													 									            	            	{"bathtub":"neutral"}
+													 									            	              ]
+
+
+													 									                 },
+													 									                 {
+													 									                	apartmentClass : "sunnyvale",
+													 									                	taggedOOIs :
+													 									                	              [
+													 									               	            	{"frontdoor": "plus"},
+													 									            	            	{"steps":"minus"},
+													 									            	            	{"windows":"plus"},
+													 									            	            	{"lighting":"neutral"},
+													 									            	            	{"flooring":"minus"},
+													 									            	            	{"bathtub":"neutral"}
+													 									            	              ]
+
+
+													 									                 }
+
+
+													 									                 ]                           
+
 
 
 playerOOITags = [
@@ -1468,37 +1548,6 @@ ailmentArray = [ {
 
 
 
-infoApartmentArray = [ {
-	'title' : 'Pine Grove Apartments',
-	"audioFile" :"common/LateAdulthood_Narration_MapView_19.mp3",
-	'name' : 'Pine Grove',
-	'rent' : '$ 850 /month ',
-	'distance' : " 0.5 mile",
-	'ammenities' : "Swimming Pool , Super Market",
-	"class" : 'pinegrove',
-	"index": 0
-
-}, {
-	'title' : 'Lakeview Courts',
-	"audioFile" :"common/LateAdulthood_Narration_MapView_20.mp3",
-	'name' : 'Lakeview',
-	'rent' : '$ 975 /month ',
-	'distance' : " 0.25 mile",
-	'ammenities' : "Library , Super Market",
-	"class" : 'lakeview',
-	"index": 1
-}, {
-	'title' : 'Sunnyvale Apartments',
-	"audioFile" :"common/LateAdulthood_Narration_MapView_21.mp3",
-	'name' : 'Sunnyvale',
-	'rent' : '$ 1000 /month ',
-	'distance' : " 0.14 mile",
-	'ammenities' : "Super Market",
-	"class" : 'sunnyvale',
-	"index": 2
-}
-
-];
 
 var reviewConversationArray = [
                            {
@@ -1894,7 +1943,10 @@ spinButton.addEventListener('click', function() {
 			characterInfoLayer.classList.add('show')
 			spinButton.classList.remove('point');
 			selectCharacter(playerCharacterArray);	
-			audio.pause();
+			if(audio){
+			audio.pause();	
+			}
+			
 			}
 		}
 
@@ -2413,6 +2465,66 @@ applyButton.addEventListener('click', function(e) {
 controlSetting.addEventListener('click', function() {
 	showSettings();
 });
+
+
+//sagar's auto finish game code integrated below by dixit
+apartmentRedirect.addEventListener('click', function() {
+	apartmentRedirect.classList.add('hide');
+	currentApartment = infoApartmentArray[0];
+	closeCharWiget();
+	guideHeader.classList.add('hide');
+	instructionHUD.classList.add('hide');
+	guideHeader.innerText = '';
+	setTimeout(function(){
+			infoText.classList.add("hide-perm");
+			controlInfoIcon.classList.add("hide-perm");
+			controlInfo.classList.add("hide-perm");
+      pinegroveObjectsExplored = 6;
+      lakeviewObjectsExplored = 6;
+      sunnyvaleObjectsExplored = 6;
+      apartmentObjectsExplored = [ 6 , 6 , 6 ] ;
+      engagementScore = 195;
+      gameScore = 95 ;
+      allotTagsfast();
+			navigateScenes(2,0);
+			conversationLayer.classList.add('hide');
+
+			rightNav.classList.add('hide');
+			OOILayer.classList.add('hide');
+			exploredObjectsList.classList.add('hide');
+			leftNav.classList.add('hide');
+			controlMap.classList.add('hide');
+			setTimeout(function(){
+			// add talk animation to sarah also
+
+				for ( var i = 0; i < infoApartmentArray.length; i++) {
+					userInterface.classList.remove(infoApartmentArray[i].class);
+				};
+
+
+
+				conversationLayer.classList.remove('hide');
+				conversationLayer.classList.remove('active');
+				conversationBubble.classList.remove('hide');
+				conversationBubble.classList.remove('scene-zero');
+				conversationBubble.classList.remove(playerChar.class);
+				conversationBubble.classList.add('sarah'); 
+				conversationBubble.classList.add('scene-one'); 
+				conversationLayer.classList.remove('tag-response');
+				conversationBubble.classList.remove('OOI-tagging');
+				speakerName.innerHTML = "Sarah"
+				conversationtext.innerHTML = "I'm glad to join you today. Which apartment will you choose?";
+				decisionButtonHUD.classList.remove('hide');
+
+
+			},2500);
+		},1000);
+
+});
+
+
+
+
 gameMusicControl.addEventListener('click', function() {
 	toggleGameMusic();
 });
@@ -2647,7 +2759,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
   
 
-	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSPan/
+	var audioLocation = "/LifeSpan/assets/sounds/"+audioFile ; // /LifeSPan/
 
 audio = new Audio(audioLocation);
 
@@ -2858,7 +2970,9 @@ playerOOITags   = [
 
 function navigateApartmentRooms(info){
 
-
+if(audio){
+				audio.pause();
+			}
 
 if (info == 'left'){
     rightNav.classList.remove('hide');
@@ -3009,6 +3123,9 @@ function closeAilmentNotes(){
 			guideHeader.classList.remove('hide');
 			characterSelectionWidget.classList.remove('hide');
 			dismissAilmentButton.innerHTML = "Dismiss";
+						if(audio){
+			audio.pause();	
+			}
 			//at this point of the game hints become useful.
 			//seting the initial hint(we are at spinning wheel)
 			currentHint = infoScriptArray.wheelSpin.informationText + closeHint;
@@ -3136,6 +3253,17 @@ function allotTags(info){
 	}
 
 }
+
+
+//function done by sagar integrated by dixit
+function allotTagsfast(info){
+
+console.log(defaultPlayerOOITags);
+playerOOITags = defaultPlayerOOITags;
+console.log(playerOOITags);
+							
+}
+
 
 function closeTagNotes(info){
 	tagNotes.classList.add("hide");
@@ -3435,6 +3563,17 @@ spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.pn
 
     spinButton.classList.remove('hide');
 
+
+
+		//sagar's code for auto-finish integrated by dixit
+		if(window.location.href.indexOf("fast") > -1){
+console.log('fast present');
+apartmentRedirect.classList.remove('hide');
+}else{
+	console.log('fast NOT present');
+}
+
+
 	},2000);
 	
 	/*charDetailsOne.innerText = info.ethnicity + ' ' + info.identity;
@@ -3501,7 +3640,9 @@ function toggleNavButton(){
 }}
 function revealMap(){
 	controlMap.classList.add('hide');
-	
+		if(audio){
+				audio.pause();
+			}
 	toggleMap();
 }
 function showApartmentInfo(info, i) {
