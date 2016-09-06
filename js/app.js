@@ -2684,6 +2684,10 @@ gameOverlay.addEventListener('click', function() {
 			conversationBubble.classList.add('scene-zero'); 
 
 
+    var playerReviewAudioFile = playerChar.class+"/LateAdulthood_Sarah_LouiseOffice_77.mp3"
+		playAudio(playerReviewAudioFile);
+
+
 /*
 
 	var louiseInScene = currentScene.getElementsByClassName('character'),
@@ -2794,7 +2798,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
   
 
-	var audioLocation = "/LifeSpan/assets/sounds/"+audioFile ; // /LifeSPan/
+	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSPan/
 
 audio = new Audio(audioLocation);
 
@@ -3863,7 +3867,7 @@ function NPCTagResponse(){
 				conversationBubble.classList.remove('OOI-tagging'); 
 				speakerName.innerHTML = "Sarah"
 				conversationtext.innerHTML = "I'm glad to join you today. Which apartment will you choose?";
-				
+
     var sarahReviewAudioFile = playerChar.class+"/LateAdulthood_Sarah_LouiseOffice_77.mp3"
 		playAudio(sarahReviewAudioFile);
 
