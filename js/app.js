@@ -35,7 +35,7 @@ infoApartmentArray = [ {
 
 
 
-var controlInfo, closeInfoText, audioNarrationActive = false , instructionAudio, apartmentRedirect , OOIEffectAudio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+var controlInfo, closeInfoText, audioNarrationActive = true , instructionAudio, apartmentRedirect , OOIEffectAudio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
 var tagScore = 5 , audio ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_LouiseOffice_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene = infoApartmentArray[0], currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo,forceShowHints;
 
@@ -97,9 +97,9 @@ function initHints(isRestart){
 
 		hideHint();
 		hideHintIcon();
-		hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": true}; 
+		//hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": true}; 
 		currentHint = "Spin the wheel to choose the character you will be playing.";
-		forceShowHints = true;
+		forceShowHints = false;
 	}
 }
 initHints(false);
@@ -1255,7 +1255,7 @@ OOIContentArray = [
              					"NPCID":0,
              					"NPCClass":"sarah,",
             					"NPCResponse":"There's so much room to move around easily.",
-                	            "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_70.mp3"
+                	            "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_68.mp3"
              				},
              				{
              					"character" : "Raymond",
@@ -1266,7 +1266,7 @@ OOIContentArray = [
              					"NPCID":0,
              					"NPCClass":"sarah,",
             					"NPCResponse":"Does the open space create too much echoing?",
-                	            "audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_18.mp3"
+                	            "audioFile" :"raymond/LateAdulthood_Sarah_ApartmentTour_SV_LivingRoom_70.mp3"
              				}
 
              		]
@@ -1941,7 +1941,6 @@ spinButton.addEventListener('click', function() {
 		}else{
 			if(!spinned){
 			playerSelected = true;
-			replayControl.classList.remove('inactive');
 			spinned = true;
 			spinButton.classList.add('hide');
 			characterInfoLayer.classList.add('show')
@@ -2149,6 +2148,16 @@ closeAilmentNotes();
 	}
 
 	settingOn = false;
+
+for(var j=0;j<characterPlayerIDArray.length;j++){
+	userInterface.classList.remove(characterPlayerIDArray[j]);
+}
+for(var j=0;j<infoApartmentArray.length;j++){
+	userInterface.classList.remove(infoApartmentArray[j].class);
+}
+for(var j=0;j<subSceneArray.length;j++){
+	userInterface.classList.remove(subSceneArray[j]);
+}
 
 initHints(true);
 activeApartment.classList.remove('active');
@@ -2528,6 +2537,9 @@ apartmentRedirect.addEventListener('click', function() {
 				decisionButtonHUD.classList.remove('hide');
 
 
+
+
+
 			},2500);
 		},1000);
 
@@ -2782,7 +2794,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
   
 
-	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSPan/
+	var audioLocation = "/LifeSpan/assets/sounds/"+audioFile ; // /LifeSPan/
 
 audio = new Audio(audioLocation);
 
@@ -3601,6 +3613,7 @@ spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.pn
 	setTimeout(function(){
 
     spinButton.classList.remove('hide');
+	replayControl.classList.remove('inactive');
 
 
 
@@ -3827,7 +3840,7 @@ function NPCTagResponse(){
 			infoText.classList.add("hide-perm");
 			controlInfoIcon.classList.add("hide-perm");
 			controlInfo.classList.add("hide-perm");
-			
+			apartmentRedirect.classList.add("hide");
 			navigateScenes(2,0);
 			conversationLayer.classList.add('hide');
 			
@@ -3850,6 +3863,10 @@ function NPCTagResponse(){
 				conversationBubble.classList.remove('OOI-tagging'); 
 				speakerName.innerHTML = "Sarah"
 				conversationtext.innerHTML = "I'm glad to join you today. Which apartment will you choose?";
+				
+    var sarahReviewAudioFile = playerChar.class+"/LateAdulthood_Sarah_LouiseOffice_77.mp3"
+		playAudio(sarahReviewAudioFile);
+
 				decisionButtonHUD.classList.remove('hide');
 
 				
@@ -4192,6 +4209,7 @@ if(audio){
 
 
 function navigateScenes(sceneNo,subSceneNo) {
+
 	gameOverlay.classList.remove('tint');
 	gameOverlay.classList.add('darken');
 	controlMode.classList.add('hide');
@@ -4199,8 +4217,8 @@ function navigateScenes(sceneNo,subSceneNo) {
 	if(hintFlags.isHintMsgShowing){
 		infoText.classList.add("hide");
 	}
-	guideHeader.classList.add("hide");
-	guideHeader.classList.remove("move-guide-back");
+	//guideHeader.classList.add("hide");
+	//guideHeader.classList.remove("move-guide-back");
 	//guideHeader.innerText="";
 		OOILayer.classList.add("hide");
 	
@@ -4221,6 +4239,13 @@ function navigateScenes(sceneNo,subSceneNo) {
 		currentScene = sceneWrapper.children[sceneNo];
 		currentSubScene = sceneWrapper.children[sceneNo].children[subSceneNo] ;
 		setTimeout(function() {
+			
+			var allChars = sceneWrapper.getElementsByClassName('character');
+			for ( var j = 0; j < allChars.length; j++) {
+				NPCChar = allChars[j];
+				NPCChar.classList.remove('talk');
+			}
+
 			gameOverlay.classList.remove('darken');
 			controlMode.classList.remove('hide');
 			showHintIcon();
@@ -4239,9 +4264,9 @@ function navigateScenes(sceneNo,subSceneNo) {
                   reviewByLouise();
 			 }
 			if(sceneNo==3){
-				guideHeader.classList.remove("hide");
+			/*	guideHeader.classList.remove("hide");
 				guideHeader.classList.add("move-guide-back");
-				guideHeader.innerText = currentApartment.name + ". "+subSceneNames[subSceneNo];
+				guideHeader.innerText = currentApartment.name + ". "+subSceneNames[subSceneNo];*/
 			}
 
 
