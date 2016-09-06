@@ -2782,7 +2782,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
   
 
-	var audioLocation = "/LifeSpan/assets/sounds/"+audioFile ; // /LifeSPan/
+	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSPan/
 
 audio = new Audio(audioLocation);
 
