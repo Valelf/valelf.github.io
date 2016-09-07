@@ -1936,7 +1936,7 @@ function toggleSarahSitAnimation() {
  */
 spinButton.addEventListener('click', function(e) {
 
-	e.stopPropagation();
+	//e.stopPropagation();
 		if (contextCount == 1) {
 			meetCharacter();
 		}else{
