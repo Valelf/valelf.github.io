@@ -910,7 +910,7 @@ OOIContentArray = [
      					"NPCID":0,
      					"NPCClass":"sarah,",
     					"NPCResponse":"Glowing switches make them easy to find.",
-                	    "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_47.mp3"
+                	    "audioFile" :"gladys/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_46.mp3"
      				},
      				{
      					"character" : "Mary",
@@ -921,7 +921,7 @@ OOIContentArray = [
      					"NPCID":0,
      					"NPCClass":"sarah,",
     					"NPCResponse":"Glowing switches make them easy to find.",
-                	    "audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_18.mp3"
+                	    "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_47.mp3"
      				},
      				{
      					"character" : "Raymond",
@@ -968,7 +968,7 @@ OOIContentArray = [
      					"NPCID":0,
      					"NPCClass":"sarah,",
     					"NPCResponse":"There's so much room to move around easily.",
-                	    "audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_18.mp3"
+                	    "audioFile" :"mary/LateAdulthood_Sarah_ApartmentTour_LV_LivingRoom_50.mp3"
      				},
      				{
      					"character" : "Raymond",
