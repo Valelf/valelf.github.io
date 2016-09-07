@@ -2151,6 +2151,12 @@ conversationLayer.classList.remove('player-review');
 conversationLayer.classList.remove('louise-review-started');
 conversationLayer.classList.remove('sarah-review');
 conversationLayer.classList.remove('sarah-review-started');
+
+  for ( var j = 0; j < characterIDArray.length ; j++) {
+    conversationBubble.classList.remove(characterIDArray[j]);
+  }
+
+
 tagNotes.classList.add("hide");
 gameMode.classList.remove('hide');
 
@@ -2975,7 +2981,7 @@ function animateEngagementScore(eScore){
 }
 
 function restartTheGame(){
-
+/*
 
 navigateScenes(0,0);
 
@@ -3108,7 +3114,7 @@ playerOOITags   = [
 	gameMode.classList.remove('hide');
 	settingsView.classList.add('hide');
 	settingOn = false;
-
+*/
 }
 
 function navigateApartmentRooms(info){
