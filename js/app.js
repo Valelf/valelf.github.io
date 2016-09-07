@@ -2684,7 +2684,9 @@ gameOverlay.addEventListener('click', function() {
 			conversationBubble.classList.add('scene-zero'); 
 
 
-    var playerReviewAudioFile = playerChar.class+"/LateAdulthood_Sarah_LouiseOffice_77.mp3"
+
+
+    var playerReviewAudioFile = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].audioFile ;
 		playAudio(playerReviewAudioFile);
 
 
@@ -3874,7 +3876,7 @@ function NPCTagResponse(){
 				decisionButtonHUD.classList.remove('hide');
 
 				
-			},2500);
+			},4000);
 		},1000);
 	} else if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18 && apartmentObjectsExplored[currentApartment.index]==6){
 		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
