@@ -36,7 +36,7 @@ infoApartmentArray = [ {
 
 
 
-var controlInfo, closeInfoText, audioNarrationActive = true , instructionAudio, apartmentRedirect , OOIEffectAudio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+var controlInfo, closeInfoText, audioNarrationActive = true , instructionAudio, apartmentRedirect , OOIEffectAudio , currentHintAduio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
 var tagScore = 5 , audio ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_LouiseOffice_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene = infoApartmentArray[0], currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo,forceShowHints;
 
@@ -47,38 +47,47 @@ function initHints(isRestart){
 		infoScriptArray = {
 				'wheelSpin' :{
 					'informationText' : 'Spin the wheel to choose the character you will be playing.',
+					"audioFile" :"common/LateAdulthood_Narration_SpinWheel_9.mp3",
 					'index' : 0
 				},
 				'officeConversation' :{
 					'informationText' : 'Tap to continue.',
+					"audioFile" :"",
 					'index' : 0
 				},
 				'map' :{
 					'informationText' : 'Using the map, click to tour each apartment to learn more about it.',
+					"audioFile" :"common/LateAdulthood_Narration_MapView_18.mp3",
 					'index' : 0
 				},
 				'apartmentVisit' :{
 					'informationText' : 'Use your mouse to move around the apartment. Keep an eye out for objects that glow.',
+					"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_22.mp3",
 					'index' : 0
 				},
 				'apartmentRoam' : {
 					'informationText' : 'Move around the apartment. Use the arrows on the left and right sides of the screens to go from room to room.',
+					"audioFile" :"",
 					'index' : 0
 				},
 				'apartmentExit' :{
 					'informationText' : 'Use map to check out other apartments.',
+					"audioFile" :"",
 					'index' : 0
 				},
 				'apartmentDiamond' :{
 					'informationText' : 'Tap on diamond icon to categorize the object.',
+					"audioFile" :"",
 					'index' : 0
 				},
 				'gameScore' :{
 					'informationText' : 'Increase your game score by categorizing objects correctly and choosing the best apartment for ',
+					"audioFile" :"",
 					'index' : 0
 				},
 				'engagementScore' :{
 					'informationText' : 'Receive engagement points for exploring and categorizing objects.',
+					"audioFile" :"",
 					'index' : 0
 				}
 
@@ -2227,6 +2236,7 @@ apartmentIcon[0].addEventListener('click', function() {
 		if(hintFlags.map==0){
 			forceShowHints = true;
 			showHint();
+		
 			hintFlags.map=1;
 		}
 	}
@@ -3267,6 +3277,7 @@ function closeAilmentNotes(){
 			if(hintFlags.wheelSpin==0){
 				forceShowHints = true;
 				showHint();
+				playAudio(infoScriptArray.wheelSpin.audioFile);
 				hintFlags.wheelSpin=1;
 			}
 		}
@@ -3308,6 +3319,11 @@ function hideHint(){
 	hintFlags.isHintMsgShowing = false;
 	//controlInfo.classList.remove("hide");
 	infoText.classList.add("hide");
+
+if(audio){
+				audio.pause();
+			}
+
 }
 
 function toggleHint(){
@@ -3447,6 +3463,7 @@ function initApartmentHint(){
 			forceShowHints = true;
 			// to prevent premature hint showup.. navigate scenes will look at this and show the hint
 			hintFlags.isHintMsgShowing=true;
+			currentHintAduio = infoScriptArray.apartmentVisit.audioFile ;
 			hintFlags.apartmentVisit=1;
 		}
 	}
@@ -3761,6 +3778,7 @@ function toggleMap() {
 		if(hintFlags.map==0){
 			forceShowHints = true;
 			showHint();
+				playAudio(infoScriptArray.map.audioFile);
 			hintFlags.map=1;
 		}
 
@@ -4354,7 +4372,13 @@ function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 			controlMode.classList.remove('hide');
 			showHintIcon();
 			if(hintFlags.isHintMsgShowing){
-				showHint()
+				showHint();
+
+				if(currentHintAduio){
+
+				playAudio(currentHintAduio);
+				currentHintAduio = null ;
+				}
 			};
 			if(currentScene && hasClass(currentScene,"scene-two")){
 				OOILayer.classList.remove("hide");
