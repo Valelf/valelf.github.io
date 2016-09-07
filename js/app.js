@@ -2168,7 +2168,7 @@ for(var j=0;j<infoApartmentArray.length;j++){
 for(var j=0;j<subSceneArray.length;j++){
 	userInterface.classList.remove(subSceneArray[j]);
 }
-
+apartmentRedirect.classList.add("hide");
 initHints(true);
 
 activeApartment.classList.remove('active');
@@ -2388,7 +2388,7 @@ inSceneOOIs[5].addEventListener('click', function() {
 
 replayControl.addEventListener('click', function(e) {
 	e.stopPropagation();
-	if(playerSelected){
+	if(!hasClass(replayControl,"inactive")){
 		restartGame();
 	}
 });
@@ -2730,7 +2730,10 @@ gameOverlay.addEventListener('click', function() {
 			conversationLayer.classList.add('hide');
 var sarahInScene = currentScene.getElementsByClassName('sarah');
 		sarahInScene[0].classList.remove('talk');
+if(audio){
 
+	audio.pause();
+}
 
 			conversationLayer.classList.remove('sarah-review-started');
 		} else if(hasClass(conversationLayer, 'louise-review')){
@@ -2784,6 +2787,7 @@ var sarahInScene = currentScene.getElementsByClassName('sarah');
 
 			conversationLayer.classList.remove('player-review');
 			conversationLayer.classList.add('hide');
+
 			displayScore();
 			navigateScenes(0,0,scoreContainer);
 
@@ -2815,6 +2819,13 @@ controlMode.addEventListener("click", function(){
 
 OOILayer.addEventListener('click', function() {
 	conversationLayer.classList.add('hide');
+
+if(audio){
+
+	audio.pause();
+}
+
+
 
 });
 nextButton.addEventListener('click', function() {
@@ -2882,10 +2893,9 @@ if(window.location.href.indexOf("restrictClick") > -1){
 	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSpan/
 
 audio = new Audio(audioLocation);
-
 setTimeout(function(){
-	audio.play();
-	},150);
+audio.play();
+},150);
 
 
 audio.addEventListener('ended',function(){
@@ -3140,6 +3150,7 @@ function displayScore(){
 
 	if(engagementScore == 200 && gameScore == 100){
 		scoreTitle.innerHTML = "Good Work!";
+
 	}else{
 		scoreTitle.innerHTML = "Try Again!";
 	}
