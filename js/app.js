@@ -2161,7 +2161,8 @@ for(var j=0;j<subSceneArray.length;j++){
 
 initHints(true);
 activeApartment.classList.remove('active');
-navigateScenes(0,0);
+characterSelectionWidget.classList.add('hide');
+navigateScenes(0,0,characterSelectionWidget);
 //navigateInstructions();
 //selectCharacter(playerCharacterArray);
 
@@ -2418,7 +2419,7 @@ noteDismissButton.addEventListener('click', function() {
 	engagementScore = engagementScore + 5 ;
 		
 	animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
-	
+	guideHeader.classList.add("hide");
 	animateEngagementScore(engagementScore);
 
 	endGameReview = true;
@@ -2474,7 +2475,9 @@ applyButton.addEventListener('click', function(e) {
 	settingOn = false;
 	console.log(currentScene);
 	if ((hasClass(currentScene,"scene-zero") || hasClass(currentScene,"scene-one") ) && apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18) {
+		if(!((playerChar.index==0 && dialogueCount==7) || (playerChar.index==1 && dialogueCount==9) || (playerChar.index==2 && dialogueCount==11))){
 			conversationLayer.classList.add("active");
+		}
 	}
 
 
@@ -2601,7 +2604,9 @@ inActiveApartmentLeft.addEventListener('click', function() {
 	
 	if(activateApartment){
 
-		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
+		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing." ; 
+			var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
+		playAudio(playerSelectedApartmentAudioFile);
 		
 	}
 	
@@ -2627,7 +2632,8 @@ inActiveApartmentRight.addEventListener('click', function() {
 	if(activateApartment){
 
 		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
-		
+					var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
+		playAudio(playerSelectedApartmentAudioFile);
 	}
 	
 	
@@ -2640,7 +2646,8 @@ activeApartment.addEventListener('click', function() {
 	
 	
 	guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
-	
+				var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
+		playAudio(playerSelectedApartmentAudioFile);
 	
 	this.classList.add('active');
 	for(var i=0 ; i < taggedApartmentOOI.length ;i++ ){
@@ -2705,7 +2712,8 @@ gameOverlay.addEventListener('click', function() {
 		}else if(hasClass(conversationLayer, 'player-review')){
 			conversationLayer.classList.remove('player-review');
 			conversationLayer.classList.add('hide');
-			navigateScenes(0,0);
+			displayScore();
+			navigateScenes(0,0,scoreContainer);
 
 /*	var playerInScene = currentScene.getElementsByClassName('player')
 
@@ -2714,7 +2722,7 @@ gameOverlay.addEventListener('click', function() {
 
 */
 
-			displayScore();
+			
 			
 		}
 	}
@@ -2800,7 +2808,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
   
 
-	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSPan/
+	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSpan/
 
 audio = new Audio(audioLocation);
 
@@ -3052,7 +3060,6 @@ showOOIsControl();
 }
 
 function displayScore(){
-	scoreContainer.classList.remove('hide');
 	
 	
 	if(engagementScore == 200 && gameScore == 100){
@@ -3240,7 +3247,8 @@ function showTagNotes(info){
 	guideHeader.classList.add("decision");
 	
 	guideHeader.innerText = 'Click on the apartments to recall the pros and cons, and choose the apartment you think will work best for ' +playerChar.name+ '.';
-	
+	var playerTagsAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_78.mp3" ;
+		playAudio(playerTagsAudioFile);
 	
 }
 
@@ -4046,7 +4054,7 @@ function runConversation(info) {
 
 				speakerName.innerText = info[charNum].conversation[dialogueCount].speaker;
 				conversationtext.innerHTML = info[charNum].conversation[dialogueCount].dialogue ; //+ '<div class="tap-to-contn">TAP TO CONTINUE</div>';
-
+                 
                 playAudio(info[charNum].conversation[dialogueCount].audioFile);
 
 
@@ -4214,7 +4222,7 @@ if(audio){
 }
 
 
-function navigateScenes(sceneNo,subSceneNo) {
+function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 
 	gameOverlay.classList.remove('tint');
 	gameOverlay.classList.add('darken');
@@ -4269,13 +4277,15 @@ function navigateScenes(sceneNo,subSceneNo) {
 
                   reviewByLouise();
 			 }
-			if(sceneNo==3){
+			//if(sceneNo==3){
 			/*	guideHeader.classList.remove("hide");
 				guideHeader.classList.add("move-guide-back");
 				guideHeader.innerText = currentApartment.name + ". "+subSceneNames[subSceneNo];*/
+			//}
+
+			if(optUnhideElement){
+				optUnhideElement.classList.remove('hide');
 			}
-
-
 			//callBack;
 		}, 1000);
 
