@@ -1,6 +1,7 @@
 
 
-var charAnn, charSarah, buttonPlay, buttonPrev, scoreSvg , buttonNext, appContainer , 
+var charAnn, charSarah, buttonPlay, buttonPrev, scoreSvg , buttonNext, appContainer ,
+
 infoApartmentArray = [ {
 	'title' : 'Pine Grove Apartments',
 	"audioFile" :"common/LateAdulthood_Narration_MapView_19.mp3",
@@ -83,7 +84,7 @@ function initHints(isRestart){
 
 		};
 		//flags set for hints. 0 - firsttime. 1 otherwise
-		hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": false}; 
+		hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": false};
 		currentHint = "";
 		closeHint = ""; //'<div id="infoClose" class="info-close hide">';
 	} else {
@@ -112,7 +113,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Gladys. It's great to see you. How are you doing?",
-						"audioFile" :"gladys/LateAdulthood_Louise_LouiseOffice_11.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Louise_LouiseOffice_11.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -123,7 +124,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Gladys",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
-						"audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_12.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_12.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -134,7 +135,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
-						"audioFile" :"gladys/LateAdulthood_Louise_LouiseOffice_13.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Louise_LouiseOffice_13.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -156,7 +157,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Gladys, I'm Sarah. I can help you find an apartment. How are you today?",
-						"audioFile" :"gladys/LateAdulthood_Sarah_LouiseOffice_14.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Sarah_LouiseOffice_14.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -167,7 +168,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Gladys",
 						"dialogue" : "Wonderful. I'd like to find a place that is close to the senior center and the library. I love reading but my eyes aren't what they used to be. My doctor tells me I have macular degeneration.",
-						"audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_15.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_15.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -178,7 +179,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Okay. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
-						"audioFile" :"gladys/LateAdulthood_Sarah_LouiseOffice_16.mp3", 
+						"audioFile" :"gladys/LateAdulthood_Sarah_LouiseOffice_16.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -196,7 +197,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Mary. It's great to see you. How are you doing?",
-						"audioFile" :"mary/LateAdulthood_Louise_LouiseOffice_11.mp3", 
+						"audioFile" :"mary/LateAdulthood_Louise_LouiseOffice_11.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -207,7 +208,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
-						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_12.mp3", 
+						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_12.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -218,7 +219,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
-						"audioFile" :"mary/LateAdulthood_Louise_Louise_Office_13.mp3", 
+						"audioFile" :"mary/LateAdulthood_Louise_Louise_Office_13.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -240,7 +241,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Mary, I'm Sarah. I can help you find an apartment. How are you today?",
-						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_14.mp3", 
+						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_14.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -251,7 +252,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "I am doing fine. My balance is off these days because I'm recovering from hip surgery.  ",
-						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_15.mp3", 
+						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_15.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -262,7 +263,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "I'm sorry to hear that. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
-						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_16.mp3", 
+						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_16.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -273,7 +274,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "Are these places all very close? I can't walk around for too long.",
-						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_15.mp3", 
+						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_15.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -284,7 +285,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "We'll take plenty of breaks if you need them.",
-						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_18.mp3", 
+						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_18.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -302,7 +303,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Hi, Raymond. It's great to see you. How are you doing?",
-						"audioFile" :"raymond/LateAdulthood_Louise_LouiseOffice_11.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Louise_LouiseOffice_11.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -313,7 +314,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "I am looking for a place to live, and need some advice. You mentioned you have volunteers who might be able to help out.",
-						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_12.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_12.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -324,7 +325,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Louise",
 						"dialogue" : "Sure, I'll introduce you to Sarah, one of our volunteers.",
-						"audioFile" :"raymond/LateAdulthood_Louise_LouiseOffice_13.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Louise_LouiseOffice_13.mp3",
 						"sceneName" : "scene-zero",
 						"sceneNo" : 0,
 						"subSceneNo":0,
@@ -346,7 +347,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "Hi Raymond, I'm Sarah. I can help you find an apartment. How are you today?",
-						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_14.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_14.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -357,7 +358,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Hello...I'm sorry. Did you say your name was Terri?",
-						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_15.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_15.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -368,7 +369,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "No, sir. It's Sarah.",
-						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_16.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_16.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -379,7 +380,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Oh, Sarah! I'm sorry. I thought you said Terri. I have a little trouble hearing these days.",
-						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_17.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_17.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -390,7 +391,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "No worries, Raymond. I understand.",
-						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_18.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_18.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -402,7 +403,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Raymond",
 						"dialogue" : "Thank you, Sarah. My wife passed away last year, and I just sold our house. It isn't the same without her here. I hope you can help me find an apartment, maybe a little bit closer to the senior center and the grocery store.",
-						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_19.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_19.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -413,7 +414,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Sarah",
 						"dialogue" : "I'm sorry to hear that. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
-						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_20.mp3", 
+						"audioFile" :"raymond/LateAdulthood_Sarah_LouiseOffice_20.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -448,7 +449,7 @@ OOIContentArray = [
                 	                		"OOIClass":"frontdoor",
                 	                		"OOIID": 5 ,
                 	                		"OOIDescription" : "This apartment features a video intercom, and smoke and carbon monoxide detectors with strobe-vibrator features.",
-						                    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_38.mp3", 
+						                    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_38.mp3",
                 	                		"sceneNo":2,
                 	                		"subSceneNo":0,
                 	                		"characterImpact" : [
@@ -495,7 +496,7 @@ OOIContentArray = [
                 	                		"OOIClass":"steps",
                 	                		"OOIID": 3 ,
                 	                		"OOIDescription" : "The entrance has steps leading to the living space.",
-						                    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_32.mp3", 
+						                    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_32.mp3",
                 	                		"sceneNo":2,
                 	                		"subSceneNo":1,
                 	                		"characterImpact" : [
@@ -536,14 +537,14 @@ OOIContentArray = [
                 	                		]
 
                 	                	},
-                	                     
+
 {
 		"OOI" : "Windows",
 		"OOIName" : "Windows",
 		"OOIClass":"windows",
 		"OOIID": 0 ,
 		"OOIDescription" : "This apartment features original wood windows with heavy frames, facing an alley.",
-		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_23.mp3", 
+		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_23.mp3",
 		"sceneNo":2,
 		"subSceneNo":1,
 		"characterImpact" : [
@@ -590,7 +591,7 @@ OOIContentArray = [
 		"OOIClass":"lighting",
 		"OOIID": 1 ,
 		"OOIDescription" : "There are no overhead lighting and switches in most rooms. Lamps with cords are needed.",
-		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_26.mp3", 
+		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_26.mp3",
 		"sceneNo":2,
 		"subSceneNo":1,
 		"characterImpact" : [
@@ -637,7 +638,7 @@ OOIContentArray = [
 		"OOIClass":"flooring",
 		"OOIID": 2 ,
 		"OOIDescription" : "There is thick carpeting in the living space and bedroom.",
-		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_29.mp3", 
+		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_LivingRoom_29.mp3",
 		"sceneNo":2,
 		"subSceneNo":1,
 		"characterImpact" : [
@@ -684,7 +685,7 @@ OOIContentArray = [
 		"OOIClass":"bathtub",
 		"OOIID": 4 ,
 		"OOIDescription" : "The bathroom has a standard tub.",
-		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_Bathroom_35.mp3", 
+		"audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_PG_Bathroom_35.mp3",
 		"sceneNo":2,
 		"subSceneNo":2,
 		"characterImpact" : [
@@ -725,12 +726,12 @@ OOIContentArray = [
 		]
 
 	}
-           
-                	                     
+
+
                 	                     ]
-                   		
-                   		
-                   		
+
+
+
                    		},
                    		{
                      	   "apartmentName" : "Lakeview Courts",
@@ -744,7 +745,7 @@ OOIContentArray = [
                      	                		"OOIClass":"frontdoor",
                      	                		"OOIID": 5 ,
                      	                 		"OOIDescription" : "The entrance has wide, garden-facing French doors with window panes.",
-		                                        "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Porch_56.mp3", 
+		                                        "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Porch_56.mp3",
                      	                 		"sceneNo":2,
                      	                 		"subSceneNo":0,
                      	                 		"characterImpact" : [
@@ -792,7 +793,7 @@ OOIContentArray = [
                      	               		"OOIClass":"steps",
                      	               		"OOIID": 3 ,
                      	                		"OOIDescription" : "The entrance has porch steps leading up to front door.",
-		                                        "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Porch_50.mp3", 
+		                                        "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Porch_50.mp3",
                      	                		"sceneNo":2,
                      	                		"subSceneNo":0,
                      	                		"characterImpact" : [
@@ -833,14 +834,14 @@ OOIContentArray = [
                      	                		]
 
                      	                	},
-                     	                     
+
      {
      		"OOI" : "Windows",
      		"OOIName" : "Windows",
     		"OOIClass":"windows",
     		"OOIID": 0 ,
      		"OOIDescription" : "This apartment features sliding windows and a skylight in the living space.",
-		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_41.mp3", 
+		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_41.mp3",
      		"sceneNo":2,
      		"subSceneNo":1,
      		"characterImpact" : [
@@ -887,7 +888,7 @@ OOIContentArray = [
     		"OOIClass":"lighting",
     		"OOIID": 1 ,
      		"OOIDescription" : "This apartment has glowing light switches.",
-		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_44.mp3", 
+		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_44.mp3",
      		"sceneNo":2,
      		"subSceneNo":1,
      		"characterImpact" : [
@@ -934,7 +935,7 @@ OOIContentArray = [
     		"OOIClass":"flooring",
     		"OOIID": 2 ,
      		"OOIDescription" : "This apartment has an open floor plan with hardwood floors.",
-		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_47.mp3", 
+		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_LivingRoom_47.mp3",
      		"sceneNo":2,
      		"subSceneNo":1,
      		"characterImpact" : [
@@ -981,7 +982,7 @@ OOIContentArray = [
     		"OOIClass":"bathtub",
     		"OOIID": 4 ,
      		"OOIDescription" : "This apartment features an accessible bathtub with handrails along the walls.",
-		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Bathroom_53.mp3", 
+		    "audioFile" :"common/LateAdulthood_Narration_Apartment_Tour_LV_Bathroom_53.mp3",
      		"sceneNo":2,
      		"subSceneNo":2,
      		"characterImpact" : [
@@ -1021,19 +1022,19 @@ OOIContentArray = [
 
      		]
 
-     	}       
-                     	                     
+     	}
+
                      	                     ]
-                        		
-                        		
-                        		
+
+
+
                         		},
                         		{
                              	   "apartmentName" : "Sunnyvale Apartments",
                              	   "apartmrntClass" : "sunnyvale",
                              	   "apartmentID":2,
                              	   "apartmentOOIs": [
-                             	                     
+
 
                              	                 	{
                              	                 		"OOI" : "Front Door",
@@ -1082,7 +1083,7 @@ OOIContentArray = [
                              	                 		]
 
                              	                 	}      ,
-                             	                 	
+
                              	                	{
                              	                		"OOI" : "Steps",
                              	                		"OOIName" : "Steps",
@@ -1130,7 +1131,7 @@ OOIContentArray = [
                              	                		]
 
                              	                	},
-                             	                     
+
              {
              		"OOI" : "Windows",
              		"OOIName" : "Windows",
@@ -1318,12 +1319,12 @@ OOIContentArray = [
 
              		]
 
-             	}      
-                             	                     
+             	}
+
                              	                     ]
-                                		
-                                		
-                                		
+
+
+
                                 		}
                    		];
 
@@ -1334,13 +1335,13 @@ OOIContentArray = [
  * something else. I dont care as long as you do something over here.Have a nice
  * Day.', 'index': 1 } , { 'speaker':'Gladys', 'informationText': 'Alright
  * Alright Alright! It works apparently!', 'index': 2 }
- * 
+ *
  */
 
 gameScoreArray = [
                   {
                   	apartmentClass : "pinegrove",
-                  	taggedOOIs : 
+                  	taggedOOIs :
                   	              [5,5,5,5,5,5/*
                   	            	{"frontdoor": 5},
                   	            	{"steps":5},
@@ -1349,25 +1350,25 @@ gameScoreArray = [
                   	            	{"flooring":5},
                   	            	{"bathtub":5}
                   	              */]
-                  	              
-                  	
+
+
                    },
                    {
                   	apartmentClass : "lakeview",
-                  	taggedOOIs : 
+                  	taggedOOIs :
                   	              [5,5,5,5,5,5]
-                  	              
-                  	
+
+
                    },
                    {
                   	apartmentClass : "sunnyvale",
-                  	taggedOOIs : 
+                  	taggedOOIs :
                   	              [5,5,5,5,5,5]
-                  	              
-                  	
+
+
                    }
-                   
-                   
+
+
                    ];
 
 
@@ -1378,24 +1379,24 @@ engagementScoreArray = [
                           	apartmentClass : "pinegrove",
                           	mapIcon : 5 ,
                           	taggedOOIs :[5,5,5,5,5,5] ,
-                            clickedOOIs : [5,5,5,5,5,5] 
+                            clickedOOIs : [5,5,5,5,5,5]
                            },
                            {
                           	apartmentClass : "lakeview",
                           	mapIcon : 5 ,
                           	taggedOOIs :[5,5,5,5,5,5] ,
-                            clickedOOIs : [5,5,5,5,5,5]            
-                                      	 
+                            clickedOOIs : [5,5,5,5,5,5]
+
                            },
                            {
                           	apartmentClass : "sunnyvale",
                           	mapIcon : 5 ,
                           	taggedOOIs :[5,5,5,5,5,5] ,
-                            clickedOOIs : [5,5,5,5,5,5]       
-                          	
+                            clickedOOIs : [5,5,5,5,5,5]
+
                            }
-                           
-                           
+
+
                            ]
 
 defaultPlayerOOITags = [
@@ -1405,7 +1406,7 @@ defaultPlayerOOITags = [
 													 									                	              [
 													 									                	            	{"frontdoor": "minus"},
 													 									                	            	{"steps":"plus"},
-													 									                	            	{"windows":"none"},
+													 									                	            	{"windows":"neutral"},
 													 									                	            	{"lighting":"minus"},
 													 									                	            	{"flooring":"plus"},
 													 									                	            	{"bathtub":"neutral"}
@@ -1443,14 +1444,14 @@ defaultPlayerOOITags = [
 													 									                 }
 
 
-													 									                 ]                           
+													 									                 ]
 
 
 
 playerOOITags = [
                  {
                 	apartmentClass : "pinegrove",
-                	taggedOOIs : 
+                	taggedOOIs :
                 	              [
                 	            	{"frontdoor": "none"},
                 	            	{"steps":"none"},
@@ -1459,12 +1460,12 @@ playerOOITags = [
                 	            	{"flooring":"none"},
                 	            	{"bathtub":"none"}
                 	              ]
-                	              
-                	
+
+
                  },
                  {
                 	apartmentClass : "lakeview",
-                	taggedOOIs : 
+                	taggedOOIs :
                 	              [
                	            	{"frontdoor": "none"},
             	            	{"steps":"none"},
@@ -1473,12 +1474,12 @@ playerOOITags = [
             	            	{"flooring":"none"},
             	            	{"bathtub":"none"}
             	              ]
-                	              
-                	
+
+
                  },
                  {
                 	apartmentClass : "sunnyvale",
-                	taggedOOIs : 
+                	taggedOOIs :
                 	              [
                	            	{"frontdoor": "none"},
             	            	{"steps":"none"},
@@ -1487,11 +1488,11 @@ playerOOITags = [
             	            	{"flooring":"none"},
             	            	{"bathtub":"none"}
             	              ]
-                	              
-                	
+
+
                  }
-                 
-                 
+
+
                  ]
 
 
@@ -1570,10 +1571,10 @@ var reviewConversationArray = [
 	                                                    "audioFile" :"gladys/LateAdulthood_Gladys_LouiseOffice_85.mp3",
                         	                        	"playerReview":"The narrow windows let in very little light making it difficult for me to see and move around. I'm going to need better lighting."
                         	                        }
-                        	                        
-                        	                        
+
+
                         	                        ]
-                        	   
+
                            } ,
                            {
                         	   "character":"Mary",
@@ -1593,10 +1594,10 @@ var reviewConversationArray = [
 	                                                    "audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_86.mp3",
                         	                        	"playerReview":"I'm not quite as spry as I used to be, and I have some trouble getting around. This apartment has a great floor plan. I can move around easily. And the bathroom's been modified for people with impaired mobility, which is perfect for my condition."
                         	                        }
-                        	                        
-                        	                        
+
+
                         	                        ]
-                        	   
+
                            } ,
                            {
                         	   "character":"Raymond",
@@ -1616,17 +1617,17 @@ var reviewConversationArray = [
 	                                                    "audioFile" :"raymond/LateAdulthood_Raymond_LouiseOffice_88.mp3",
                         	                        	"playerReview":"I don't really like it. The building faces a busy street, and the noise outside is very distracting. I also wish it has a video intercom and the accessible detectors that Pine Grove has."
                         	                        }
-                        	                        
-                        	                        
+
+
                         	                        ]
-                        	   
-                           } 
-                           
-                               
-                               
-                               
-                               
-                               
+
+                           }
+
+
+
+
+
+
                                ]
 
 
@@ -1687,8 +1688,8 @@ var apartmentSelected=   {
 		"pinegrove"	: 0 ,
 		"lakeview" : 1,
 		"sunnyvale":2
-		
-		
+
+
 };
 
 
@@ -1727,9 +1728,9 @@ controlNotes = document.getElementById('controlNotes');
 dismissAilmentButton  = document.getElementById('dismissAilmentButton');
 buttonPrev = document.getElementById('prevButton');
 sceneWrapper = document.getElementById('sceneWrapper');
-OOILayer = document.getElementById('OOILayer'); 
-ailmentNotes = document.getElementById('ailmentNotes'); 
-engagementScoreBox = document.getElementById('engagementScoreBox'); 
+OOILayer = document.getElementById('OOILayer');
+ailmentNotes = document.getElementById('ailmentNotes');
+engagementScoreBox = document.getElementById('engagementScoreBox');
 buttonPlay = document.getElementById('playButton');
 guideHeader = document.getElementById('guideHeader');
 buttonNext = document.getElementById('nextButton');
@@ -1782,7 +1783,7 @@ controlMap  = document.getElementById('controlMap');
 objectDescriptionContent  = document.getElementById('objectDescriptionContent');
 objectDescription  = document.getElementById('objectDescription');
 objectEffectContent   = document.getElementById('objectEffectContent');
-activeApartment   = document.getElementById('activeApartment'); 
+activeApartment   = document.getElementById('activeApartment');
 inActiveApartmentLeft   = document.getElementById('inActiveApartmentLeft');
 inActiveApartmentRight   = document.getElementById('inActiveApartmentRight');
 scoreContainer   = document.getElementById('scoreContainer');
@@ -1799,8 +1800,8 @@ taggedApartmentOOI = document.getElementsByClassName('apartment-OOI');
 ailments = document.getElementsByClassName('ailments');
 controlBars = document.getElementsByClassName('controlBars');
 objectEffectTag = document.getElementsByClassName('object-effect-tag');
-charAge = document.getElementsByClassName('char-age'); 
-spinnerCharInfo = document.getElementsByClassName('spinner-char-info'); 
+charAge = document.getElementsByClassName('char-age');
+spinnerCharInfo = document.getElementsByClassName('spinner-char-info');
 charEthnicity = document.getElementsByClassName('char-ethnicity');
 charGender = document.getElementsByClassName('char-gender');
 charName = document.getElementsByClassName('char-name');
@@ -1826,7 +1827,7 @@ loadGame();
 // toggleGameMusic();
 
 /** Initializing functions ** */
-//appContainer.webkitRequestFullscreen(); 
+//appContainer.webkitRequestFullscreen();
 function loadGame() {
 	setup_posters(ringOne);
 	showProgress();
@@ -1844,13 +1845,13 @@ function initGame() {
 
 
 
-	
+
 
 }
 function resetgame(){
-	
+
 	location.reload();
-	
+
 	/*
 	navigateScenes(0,0,function(){
 		instructionHUD.classList.remove('hide');
@@ -1862,7 +1863,7 @@ function resetgame(){
 	controlMap.classList.add('hide');
 	gameOverlay.classList.add('tint');
 	progressBar.classList.remove('tint');
-	
+
 	navigateInstructions();
 */}
 function toggleGameMusic() {
@@ -1874,7 +1875,7 @@ function toggleGameMusic() {
 			if(audio){
 				audio.pause();
 			}
-	
+
 			//gameMusic.pause();
 		} else {
 			audioNarrationActive = true ;
@@ -1929,13 +1930,13 @@ function toggleSarahSitAnimation() {
 /*
  * buttonPlay.addEventListener('click',function(){ toggleAnnAnimation();
  * toggleSarahAnimation(); });
- * 
+ *
  * buttonPrev.addEventListener('click',function(){ toggleSarahSitAnimation();
  * });
  */
-spinButton.addEventListener('click', function() {
-	
+spinButton.addEventListener('click', function(e) {
 
+	e.stopPropagation();
 		if (contextCount == 1) {
 			meetCharacter();
 		}else{
@@ -1945,21 +1946,22 @@ spinButton.addEventListener('click', function() {
 			spinButton.classList.add('hide');
 			characterInfoLayer.classList.add('show')
 			spinButton.classList.remove('point');
-			selectCharacter(playerCharacterArray);	
+			selectCharacter(playerCharacterArray);
 			if(audio){
-			audio.pause();	
+			audio.pause();
 			}
-			
+
 			}
 		}
 
 
-	
+
+
 });
 gameRestart.addEventListener('click', function(e) {
 
 	//window.location.reload();
-	
+
 	//restartTheGame();
 	restartGame();
 });
@@ -2055,7 +2057,7 @@ guideHeader.innerText = '';
 
 dismissAilmentButton.innerHTML = "Dismiss";
   controlMap.classList.add('hide');
-  gameOverlay.classList.add('tint');
+  //gameOverlay.classList.add('tint');
   progressBar.classList.remove('tint');
 
 
@@ -2128,10 +2130,18 @@ scoreContainer.classList.add('hide');
 controlScore.classList.add('hide');
 rightNav.classList.add('hide');
 leftNav.classList.add('hide');
+decisionButtonHUD.classList.add("hide");
 controlNotes.classList.add('hide');
 OOILayer.classList.remove('active');
 exploredObjectsList.classList.add('hide');
 conversationLayer.classList.add('hide');
+conversationLayer.classList.remove('active');
+conversationLayer.classList.remove('vanish');
+conversationLayer.classList.remove('louise-review');
+conversationLayer.classList.remove('player-review');
+conversationLayer.classList.remove('louise-review-started');
+conversationLayer.classList.remove('sarah-review');
+conversationLayer.classList.remove('sarah-review-started');
 tagNotes.classList.add("hide");
 gameMode.classList.remove('hide');
 
@@ -2160,14 +2170,17 @@ for(var j=0;j<subSceneArray.length;j++){
 }
 
 initHints(true);
+
 activeApartment.classList.remove('active');
 characterSelectionWidget.classList.add('hide');
+
 navigateScenes(0,0,characterSelectionWidget);
+gameOverlay.classList.add('tint');
 //navigateInstructions();
 //selectCharacter(playerCharacterArray);
 
 }
-	
+
 
 
 
@@ -2179,13 +2192,13 @@ document.getElementById("musicControl").addEventListener('click' , function(){
 
 
 tourButton.addEventListener('click', function() {
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	tourApartment();
 	controlMap.classList.remove('hide');
 	objectsExplored();
@@ -2194,15 +2207,15 @@ apartmentIcon[0].addEventListener('click', function() {
 
 	var currentEngagementScore = engagementScore ;
 	engagementScore = engagementScore + engagementScoreArray[0].mapIcon ;
-	
+
 	if(!engagementScoreArray[0].mapIcon == 0 ){
-		
+
 		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
-		
+
 		animateEngagementScore(engagementScore);
 	}
-	
-	engagementScoreArray[0].mapIcon = 0 ;	
+
+	engagementScoreArray[0].mapIcon = 0 ;
 
 	controlScore.classList.remove('hide');
 	if(hasClass(this,'clicked'))
@@ -2221,7 +2234,6 @@ apartmentIcon[0].addEventListener('click', function() {
 		showApartmentInfo(infoApartmentArray, 0);
 		apartmentInfo.classList.remove('hide');
 		if(hintFlags.engagementScore==0){
-			forceShowHints = true;
 			currentHint = infoScriptArray.engagementScore.informationText + closeHint;
 			hintInfoText.innerHTML = currentHint;
 			showHint();
@@ -2234,15 +2246,15 @@ apartmentIcon[1].addEventListener('click', function() {
 
 	var currentEngagementScore = engagementScore ;
 	engagementScore = engagementScore + engagementScoreArray[1].mapIcon ;
-	
+
 	if(!engagementScoreArray[1].mapIcon == 0 ){
-		
+
 		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
-		
+
 		animateEngagementScore(engagementScore);
 	}
-	
-	engagementScoreArray[1].mapIcon = 0 ;	
+
+	engagementScoreArray[1].mapIcon = 0 ;
 
 	controlScore.classList.remove('hide');
 	if(hasClass(this,'clicked'))
@@ -2268,21 +2280,21 @@ apartmentIcon[1].addEventListener('click', function() {
 			hintFlags.engagementScore=1;
 		}
 	}
-	
+
 });
 apartmentIcon[2].addEventListener('click', function() {
 
 	var currentEngagementScore = engagementScore ;
 	engagementScore = engagementScore + engagementScoreArray[2].mapIcon ;
-	
+
 	if(!engagementScoreArray[2].mapIcon == 0 ){
-		
+
 		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
-		
+
 		animateEngagementScore(engagementScore);
 	}
-	
-	engagementScoreArray[2].mapIcon = 0 ;	
+
+	engagementScoreArray[2].mapIcon = 0 ;
 
 	controlScore.classList.remove('hide');
 	if(hasClass(this,'clicked'))
@@ -2308,7 +2320,7 @@ apartmentIcon[2].addEventListener('click', function() {
 			hintFlags.engagementScore=1;
 		}
 	}
-	
+
 });
 
 
@@ -2318,21 +2330,21 @@ ailments[0].addEventListener('click', function() {
 	ailments[0].classList.add('cursor');
 
 	showAilmentDescription(0);
-	
+
 });
 ailments[1].addEventListener('click', function() {
 	ailments[0].classList.remove('cursor');
 	ailments[2].classList.remove('cursor');
 	ailments[1].classList.add('cursor');
 	showAilmentDescription(1);
-	
+
 });
 ailments[2].addEventListener('click', function() {
 	ailments[0].classList.remove('cursor');
 	ailments[1].classList.remove('cursor');
 	ailments[2].classList.add('cursor');
 	showAilmentDescription(2);
-	
+
 });
 
 decisionScreenButton.addEventListener('click', function(e) {
@@ -2351,30 +2363,31 @@ objectEffectTag[2].addEventListener('click', function() {
 });
 
 inSceneOOIs[0].addEventListener('click', function() {
-	showOOIDescription('frontdoor',0); 
+	showOOIDescription('frontdoor',0);
 });
 
 inSceneOOIs[1].addEventListener('click', function() {
-	showOOIDescription('steps',1); 
+	showOOIDescription('steps',1);
 });
 
 inSceneOOIs[2].addEventListener('click', function() {
-	showOOIDescription('windows',2); 
+	showOOIDescription('windows',2);
 });
 
 inSceneOOIs[3].addEventListener('click', function() {
-	showOOIDescription('lighting',3); 
+	showOOIDescription('lighting',3);
 });
 
 inSceneOOIs[4].addEventListener('click', function() {
-	showOOIDescription('flooring',4); 
+	showOOIDescription('flooring',4);
 });
 
 inSceneOOIs[5].addEventListener('click', function() {
-	showOOIDescription('bathtub',5); 
+	showOOIDescription('bathtub',5);
 });
 
-replayControl.addEventListener('click', function() {
+replayControl.addEventListener('click', function(e) {
+	e.stopPropagation();
 	if(playerSelected){
 		restartGame();
 	}
@@ -2385,13 +2398,13 @@ e.stopPropagation();
 });
 
 closeObject.addEventListener('click', function() {
-	closeOOIDescription(); 
+	closeOOIDescription();
 	hideDiamond();
 	conversationLayer.classList.add('hide');
 });
 
 characterPin.addEventListener('click', function() {
-	//closeOOIDescription(); 
+	//closeOOIDescription();
 	objectEffect.classList.add('active');
 	objectEffect.classList.remove('hide');
 	for(var k = 0 ; k < objectEffect.children.length ; k++){
@@ -2417,9 +2430,11 @@ noteDismissButton.addEventListener('click', function() {
 
 	var currentEngagementScore = engagementScore ;
 	engagementScore = engagementScore + 5 ;
-		
+
 	animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
+
 	guideHeader.classList.add("hide");
+
 	animateEngagementScore(engagementScore);
 
 	endGameReview = true;
@@ -2440,14 +2455,14 @@ dismissAilmentButton.addEventListener('click', function() {
 	closeAilmentNotes(); //showTagNotes(taggedOOI);
 	if(hasClass(OOILayer,'active')){
 	   controlNotes.classList.remove('hide');
-	   }	
-	 if(!hasClass(OOILayer,'hide')){  
+	   }
+	 if(!hasClass(OOILayer,'hide')){
 	controlMap.classList.remove('hide');
 	toggleNavButton();
-	}	
+	}
 });
 rightNav.addEventListener('click', function() {
-	closeOOIDescription(true); 
+	closeOOIDescription(true);
 navigateApartmentRooms('right');
 
 	hideDiamond();
@@ -2456,7 +2471,7 @@ navigateApartmentRooms('right');
 });
 leftNav.addEventListener('click', function() {
 
-	closeOOIDescription(true); 
+	closeOOIDescription(true);
 	navigateApartmentRooms('left');
 
 	hideDiamond();
@@ -2517,6 +2532,7 @@ apartmentRedirect.addEventListener('click', function() {
 			exploredObjectsList.classList.add('hide');
 			leftNav.classList.add('hide');
 			controlMap.classList.add('hide');
+			gameMap.classList.add('hide');
 			setTimeout(function(){
 			// add talk animation to sarah also
 
@@ -2526,20 +2542,24 @@ apartmentRedirect.addEventListener('click', function() {
 
 
 
-				conversationLayer.classList.remove('hide');
+			//	conversationLayer.classList.remove('hide');
 				conversationLayer.classList.remove('active');
+				conversationLayer.classList.remove('vanish');
+				conversationLayer.classList.remove('louise-review');
+				conversationLayer.classList.remove('player-review');
 				conversationBubble.classList.remove('hide');
 				conversationBubble.classList.remove('scene-zero');
+				conversationBubble.classList.remove('louise');
 				conversationBubble.classList.remove(playerChar.class);
-				conversationBubble.classList.add('sarah'); 
-				conversationBubble.classList.add('scene-one'); 
+				conversationBubble.classList.add('sarah');
+				conversationBubble.classList.add('scene-one');
 				conversationLayer.classList.remove('tag-response');
 				conversationBubble.classList.remove('OOI-tagging');
-				speakerName.innerHTML = "Sarah"
+			/*	speakerName.innerHTML = "Sarah"
 				conversationtext.innerHTML = "I'm glad to join you today. Which apartment will you choose?";
-				decisionButtonHUD.classList.remove('hide');
-
-
+				conversationLayer.classList.add('sarah-review-started');
+				decisionButtonHUD.classList.remove('hide');*/
+                 conversationLayer.classList.add('sarah-review');
 
 
 
@@ -2572,7 +2592,7 @@ controlMap.addEventListener('click', function() {
 
 
 
-	closeOOIDescription(); 
+	closeOOIDescription();
 	hideDiamond();
 	conversationLayer.classList.add('hide');
 	toggleMap();
@@ -2582,7 +2602,7 @@ gameMap.addEventListener('click', function() {
 	// hideMap();
 });
 
-var activateApartment = false; 
+var activateApartment = false;
 
 inActiveApartmentLeft.addEventListener('click', function() {
 	var newClass = activeApartment.classList[0];
@@ -2600,16 +2620,18 @@ inActiveApartmentLeft.addEventListener('click', function() {
 	activeApartment.classList.add(currentApartment.class);
 	activeApartment.classList.add("active");
 	noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
-	
-	
+
+
 	if(activateApartment){
+
 
 		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing." ; 
 			var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
 		playAudio(playerSelectedApartmentAudioFile);
 		
+
 	}
-	
+
 });
 inActiveApartmentRight.addEventListener('click', function() {
 	var newClass = activeApartment.classList[0];
@@ -2627,33 +2649,37 @@ inActiveApartmentRight.addEventListener('click', function() {
 	activeApartment.classList.add(currentApartment.class);
 	activeApartment.classList.add("active");
 	noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
-	
-	
+
+
 	if(activateApartment){
 
 		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
+
 					var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
 		playAudio(playerSelectedApartmentAudioFile);
+
 	}
-	
-	
+
+
 });
 
 
 
 activeApartment.addEventListener('click', function() {
 	activateApartment =true;
-	
-	
+
+
 	guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
+
 				var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
 		playAudio(playerSelectedApartmentAudioFile);
 	
+
 	this.classList.add('active');
 	for(var i=0 ; i < taggedApartmentOOI.length ;i++ ){
-		taggedApartmentOOI[i].classList.remove('hide');	
+		taggedApartmentOOI[i].classList.remove('hide');
 	}
-	
+
 	if(!apartmentPlayerSelected){
 		if(activeApartment.classList[0] == "pinegrove"){
 			currentApartment = infoApartmentArray[0];
@@ -2671,31 +2697,57 @@ activeApartment.addEventListener('click', function() {
 });
 var countcheck=0;
 gameOverlay.addEventListener('click', function() {
+
+
+
 	if(!settingOn){
 		if (hasClass(conversationLayer, 'active')) {
 			/* if(dialogueCount < ) */
 			countcheck++;
 			if(countcheck>1)
 			{
-			conversationBubble.classList.remove('hide');
+				conversationBubble.classList.remove('hide');
 			}
 			runConversation(conversationScriptArray);
-		}else if(hasClass(conversationLayer, 'louise-review')){
+
+		} else if(hasClass(conversationLayer,"sarah-review")){
+			conversationLayer.classList.remove('hide');
+			conversationLayer.classList.remove('sarah-review');
+			conversationLayer.classList.add('sarah-review-started');
+			speakerName.innerHTML = "Sarah";
+			conversationtext.innerHTML = "I'm glad to join you today. Which apartment will you choose?";
+			var sarahReviewAudioFile = playerChar.class+"/LateAdulthood_Sarah_LouiseOffice_77.mp3"
+			playAudio(sarahReviewAudioFile);
+
+
+
+		var sarahInScene = currentScene.getElementsByClassName('sarah');
+
+		sarahInScene[0].classList.add('talk');
+
+			decisionButtonHUD.classList.remove('hide');
+		} else if(hasClass(conversationLayer,"sarah-review-started")){
+			conversationLayer.classList.add('hide');
+var sarahInScene = currentScene.getElementsByClassName('sarah');
+		sarahInScene[0].classList.remove('talk');
+
+
+			conversationLayer.classList.remove('sarah-review-started');
+		} else if(hasClass(conversationLayer, 'louise-review')){
 			
 			
+			conversationLayer.classList.remove('hide');
+			conversationtext.innerHTML = "Hi, "+ playerChar.name +". Good to see you again. How do you like your new apartment?"; // + " <div class='tap-to-contn'>TAP TO CONTINUE</div>";
+			var louiseReviewAudioFile = playerChar.class+"/LateAdulthood_Louise_LouiseOffice_83.mp3"
+			playAudio(louiseReviewAudioFile);
 			conversationLayer.classList.remove('louise-review');
-			conversationLayer.classList.add('player-review');
-			conversationBubble.classList.remove('louise');
-			conversationBubble.classList.add(playerChar.class); 
-			conversationBubble.classList.remove('scene-one'); 
-			conversationBubble.classList.add('scene-zero'); 
+			conversationLayer.classList.add("louise-review-started");
 
+	var louiseInScene = currentScene.getElementsByClassName('louise');
+	
 
-
-
-    var playerReviewAudioFile = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].audioFile ;
-		playAudio(playerReviewAudioFile);
-
+		louiseInScene[0].classList.add('talk');
+	
 
 /*
 
@@ -2705,11 +2757,31 @@ gameOverlay.addEventListener('click', function() {
 		louiseInScene.classList.remove('talk');
 		playerInScene.classList.add('talk');*/
 
+		
+			
+		} else if(hasClass(conversationLayer, 'louise-review-started')){
+			conversationLayer.classList.remove('louise-review-started');
+			conversationLayer.classList.add('player-review');
+			conversationBubble.classList.remove('louise');
+			conversationBubble.classList.add(playerChar.class); 
+			conversationBubble.classList.remove('scene-one'); 
+			conversationBubble.classList.add('scene-zero'); 
 			speakerName.innerHTML = playerChar.name;
 			conversationtext.innerHTML = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].playerReview ; //+ '<div class="tap-to-contn">TAP TO CONTINUE</div>';
-			
-			
-		}else if(hasClass(conversationLayer, 'player-review')){
+
+	var louiseInScene = currentScene.getElementsByClassName('louise'),
+	playerInScene = currentScene.getElementsByClassName('player')
+
+		louiseInScene[0].classList.remove('talk');
+		playerInScene[0].classList.add('talk');
+
+
+
+
+			var playerReviewAudioFile = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].audioFile ;
+			playAudio(playerReviewAudioFile);
+		} else if(hasClass(conversationLayer, 'player-review')){
+
 			conversationLayer.classList.remove('player-review');
 			conversationLayer.classList.add('hide');
 			displayScore();
@@ -2717,13 +2789,12 @@ gameOverlay.addEventListener('click', function() {
 
 /*	var playerInScene = currentScene.getElementsByClassName('player')
 
-		
+
 		playerInScene.classList.add('talk');
 
 */
 
-			
-			
+
 		}
 	}
 	if(!forceShowHints){
@@ -2806,7 +2877,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 	 disableClickLayer.classList.remove('hide');
 }
 
-  
+
 
 	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSpan/
 
@@ -2868,13 +2939,13 @@ function cleanArray(actual) {
 	}
 
 function animateEngagementScore(eScore){
-	
+
 	console.log("animateEngagementScore");
 	console.log(eScore);
 	 /*outerCircle = document.querySelectorAll('path')[0],					 The colored circle outside the white progress line
 		progressCircle = document.querySelectorAll('path')[1],	*/				/* The white circle that stays static */
 
-		movingCircle.style.strokeDashoffset = 113 -  (113/200)*eScore; 
+		movingCircle.style.strokeDashoffset = 113 -  (113/200)*eScore;
 
       //  scoreSvg.setAttribute('viewBox','0 0 50 50');
 
@@ -3014,7 +3085,7 @@ playerOOITags   = [
 	gameMode.classList.remove('hide');
 	settingsView.classList.add('hide');
 	settingOn = false;
-  
+
 }
 
 function navigateApartmentRooms(info){
@@ -3028,16 +3099,16 @@ if (info == 'left'){
 	if(currentSubSceneIndex == 1 ){
     leftNav.classList.add('hide');
 	}else{
-	leftNav.classList.remove('hide');	
+	leftNav.classList.remove('hide');
 	}
 	currentSubSceneIndex = currentSubSceneIndex-1
 
 }else if (info == 'right'){
-	leftNav.classList.remove('hide');	
+	leftNav.classList.remove('hide');
 		if(currentSubSceneIndex == 1 ){
     rightNav.classList.add('hide');
 	}else{
-	rightNav.classList.remove('hide');	
+	rightNav.classList.remove('hide');
 	}
 	currentSubSceneIndex = currentSubSceneIndex+1
 }
@@ -3060,14 +3131,16 @@ showOOIsControl();
 }
 
 function displayScore(){
-	
-	
+
+
+
+
 	if(engagementScore == 200 && gameScore == 100){
 		scoreTitle.innerHTML = "Good Work!";
 	}else{
 		scoreTitle.innerHTML = "Try Again!";
 	}
-	
+
 	scoreContent.innerHTML = '<p class="score-value" >'+gameScore+'</p><p class="score-description" >Your Score</p><p class="score-value" >'+engagementScore+'</p><p class="score-description" >Your Engagement Score</p>'
 }
 
@@ -3078,9 +3151,9 @@ function reviewByLouise(){
 
 
 	endGameReview = false;
-	
+
 	guideHeader.innerText = "";
-	
+
 		var charactersInScene = currentScene.getElementsByClassName('character');
 	for ( var i = 0; i < charactersInScene.length; i++) {
 		charactersInScene[i].classList.remove('talk');
@@ -3090,12 +3163,12 @@ function reviewByLouise(){
 
 
 	// /navigateScenes(1,0);
-	conversationLayer.classList.remove('hide');
+	
 	conversationLayer.classList.add('louise-review');
 	conversationBubble.classList.remove('scene-one');
 	conversationBubble.classList.remove('sarah');
-	conversationBubble.classList.add('louise'); 
-	conversationBubble.classList.add('scene-zero'); 
+	conversationBubble.classList.add('louise');
+	conversationBubble.classList.add('scene-zero');
 	document.getElementById('characterSarahZero').classList.remove('talk');
 	speakerName.innerHTML = "Louise";
 /*
@@ -3105,10 +3178,6 @@ function reviewByLouise(){
 
 */
 
-	conversationtext.innerHTML = "Hi, "+ playerChar.name +". Good to see you again. How do you like your new apartment?"; // + " <div class='tap-to-contn'>TAP TO CONTINUE</div>";
-    var louiseReviewAudioFile = playerChar.class+"/LateAdulthood_Louise_LouiseOffice_83.mp3"
-		playAudio(louiseReviewAudioFile);
-	
 	//reviewConversationArray
 }
 
@@ -3132,14 +3201,14 @@ function showAilmentDescription(i){
 		{
 		ailments[i+1].classList.add('learn');
 		}
-	
+
 	}
 	for(var k=0 ; k < ailmentArray.length ;  k++){
-		ailmentNotes.classList.remove(ailmentArray[k].class);	
+		ailmentNotes.classList.remove(ailmentArray[k].class);
 
 	}
 	ailmentNotes.classList.add(ailmentArray[i].class);
-	
+
 	ailmentTitle.innerHTML = ailmentArray[i].ailment;
 	ailmentContent.innerHTML = ailmentArray[i].description ;
 	var ailmentAudio = ailmentArray[i].audioFile;
@@ -3157,13 +3226,13 @@ function showAilmentNotes(){
 function closeAilmentNotes(){
 
 	if(introPage){
-	
+
 		if(!checkLeg){
-			showAilmentDescription(1);	
+			showAilmentDescription(1);
 		}else{
 		if(!checkEar){
-			showAilmentDescription(2);	
-		
+			showAilmentDescription(2);
+
 		}else{
 			introPage = false;
 			ailmentNotes.classList.add('hide');
@@ -3172,7 +3241,7 @@ function closeAilmentNotes(){
 			characterSelectionWidget.classList.remove('hide');
 			dismissAilmentButton.innerHTML = "Dismiss";
 						if(audio){
-			audio.pause();	
+			audio.pause();
 			}
 			//at this point of the game hints become useful.
 			//seting the initial hint(we are at spinning wheel)
@@ -3187,7 +3256,7 @@ function closeAilmentNotes(){
 				hintFlags.wheelSpin=1;
 			}
 		}
-			
+
 		}
 
 	}else{
@@ -3207,8 +3276,8 @@ function showHintIcon(){
 }
 
 function hideHintIcon(){
-	//should we take care of hiding hint message here as well 
-	//hideHint(); 
+	//should we take care of hiding hint message here as well
+	//hideHint();
 	controlInfo.classList.add("hide");
 	controlInfoIcon.classList.add("hide");
 	hintInterface.classList.add("hide");
@@ -3242,62 +3311,64 @@ function showTagNotes(info){
 	decisionButtonHUD.classList.add('hide');
 	allotTags(currentApartment);
 	controlNotes.classList.add('hide');
-	
+
 	guideHeader.classList.remove("hide");
 	guideHeader.classList.add("decision");
-	
+
 	guideHeader.innerText = 'Click on the apartments to recall the pros and cons, and choose the apartment you think will work best for ' +playerChar.name+ '.';
+
 	var playerTagsAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_78.mp3" ;
 		playAudio(playerTagsAudioFile);
 	
+
 }
 
 function allotTags(info){
-	
-	
+
+
 
 	var negativeTags = [] , positiveTags = [] , neutralTags = [] ;
-	
+
 	for(var i=0 ; i< playerOOITags[info.index].taggedOOIs.length ; i++){
 		negativeTags.push(playerOOITags[info.index].taggedOOIs[i].getKeyByValue("minus"));
 		positiveTags.push(playerOOITags[info.index].taggedOOIs[i].getKeyByValue("plus"));
 		neutralTags.push(playerOOITags[info.index].taggedOOIs[i].getKeyByValue("neutral"));
 	}
-	
+
 	negativeTags = cleanArray(negativeTags);
 	positiveTags = cleanArray(positiveTags);
 	neutralTags = cleanArray(neutralTags);
-	
+
 	var taggedOOISet = [],  taggedOOIValues = [];
-	
+
 	for(var i=0 ; i < negativeTags.length ;i++ ){
 		taggedOOIValues.push('negative');
 	}
-	
+
 	for(var i=0 ; i < positiveTags.length ;i++ ){
 		taggedOOIValues.push('positive');
 	}
-	
+
 	for(var i=0 ; i < neutralTags.length ;i++ ){
 		taggedOOIValues.push('neutral');
 	}
-	
-	
 
-	
+
+
+
 	taggedOOISet = negativeTags.concat(positiveTags , neutralTags);
-	
+
 	for(var i=0 ; i < taggedApartmentOOI.length ;i++ ){
 		for(var j=0 ; j < taggedOOISet.length ;j++ ){
-			taggedApartmentOOI[i].classList.remove(taggedOOISet[j]);	
+			taggedApartmentOOI[i].classList.remove(taggedOOISet[j]);
 		}
 		for(var j=0 ; j < taggedOOIValues.length ;j++ ){
-			taggedApartmentOOI[i].children[0].classList.remove(taggedOOIValues[j]);	
+			taggedApartmentOOI[i].children[0].classList.remove(taggedOOIValues[j]);
 		}
-		
-	
+
+
 	}
-	
+
 	for(var i=0 ; i < taggedOOISet.length ;i++ ){
 		taggedApartmentOOI[i].classList.add(taggedOOISet[i]);
 		taggedApartmentOOI[i].children[0].classList.add(taggedOOIValues[i]);
@@ -3312,7 +3383,7 @@ function allotTagsfast(info){
 console.log(defaultPlayerOOITags);
 playerOOITags = defaultPlayerOOITags;
 console.log(playerOOITags);
-							
+
 }
 
 
@@ -3326,20 +3397,20 @@ function closeTagNotes(info){
 function selectCharacter(info) {
 
 	guideHeader.innerText = 'Spinning...';
-	
+
 	var randChar = info[Math.floor(Math.random() * info.length)];
 
 	playerChar = randChar;
-	
+
 	sceneWrapper.classList.add(playerChar.class);
-	
+
 	var charName = randChar.name;
 	//machineBackground.innerText = charName;
 	selectPlayerInAllScenes();
 	preLoadPlayerImages();
-	
+
 	SpinTheMachine(playerChar);
-	
+
 
 	// closeCharWiget();
 	console.log(charName);
@@ -3369,94 +3440,94 @@ function initApartmentHint(){
 
 function initApartmentControls(){
 	leftNav.classList.add('hide');
-	
 
-	
+
+
 	rightNav.classList.remove('hide');
-	
+
 	OOILayer.classList.add("active");
 	for ( var i = 0; i < infoApartmentArray.length; i++) {
 		OOILayer.classList.remove(infoApartmentArray[i].class);
 		userInterface.classList.remove(infoApartmentArray[i].class);
 	};
-	
+
 	for ( var i = 0; i < playerCharacterArray.length; i++) {
 		OOILayer.classList.remove(playerCharacterArray[i].class);
 		userInterface.classList.remove(playerCharacterArray[i].class);
 	};
-	
+
 	for ( var i = 0; i < subSceneArray.length; i++) {
 		OOILayer.classList.remove(subSceneArray[i]);
 		userInterface.classList.remove(subSceneArray[i]);
 	};
-	
+
 	initApartmentHint();
-	
-	
+
+
 	controlInfo.classList.remove('bring-it-up');
 	infoText.classList.remove('bring-it-up');
 	controlInfoIcon.classList.remove('bring-it-up');
-	
-	
-	
+
+
+
 	userInterface.classList.add(playerChar.class);
 	OOILayer.classList.add(playerChar.class);
-	
+
 	userInterface.classList.add(subSceneArray[currentSubSceneIndex]);
 	OOILayer.classList.add(subSceneArray[currentSubSceneIndex]);
 
 	userInterface.classList.add(currentApartment.class);
 	OOILayer.classList.add(currentApartment.class);
-	
+
 	//OOILayer.classList.remove("hide");
-	rightNav.classList.remove('hide');	
-	
+	rightNav.classList.remove('hide');
+
 	showOOIsControl();
-	
-	
-	
-	
-	
+
+
+
+
+
 }
 
 function showOOIsControl(){
-	
-	
+
+
 	/****   need to be changed into a new function    **/
 	controlNotes.classList.remove('hide');
 	exploredObjectsList.classList.remove('hide');
 	/****   need to be changed into a new function    **/
-	
-	
+
+
 
 	var allApartmentGlows = document.getElementsByClassName('glowing-object');
 	for ( var i = 0; i < allApartmentGlows.length; i++) {
 		allApartmentGlows[i].classList.add('hide');
 	};
-	
+
 	var apartmentGlows = document.getElementsByClassName(currentApartment.class + '-glow');
 	for ( var i = 0; i < apartmentGlows.length; i++) {
 		apartmentGlows[i].classList.remove('hide');
 	};
-	
+
 	for(var j=0 ; j < OOILayer.children.length ; j++){
 		OOILayer.children[j].classList.add('hide');
 	}
-	
+
 	for(var j=0 ; j < OOIContentArray[currentApartment.index].apartmentOOIs.length ; j++){
 		if(OOIContentArray[currentApartment.index].apartmentOOIs[j].subSceneNo == currentSubSceneIndex ){
 			for(var k=0 ; k < OOILayer.children.length ; k++){
 				if(hasClass(OOILayer.children[k], OOIContentArray[currentApartment.index].apartmentOOIs[j].OOIClass)){
 					OOILayer.children[k].classList.remove('hide');
 				}
-				
+
 			}
-		
-			
+
+
 		}
 	}
-	
-	
+
+
 }
 
 function moveHintsUp(){
@@ -3474,13 +3545,13 @@ function moveHintsDown(){
 }
 
 function showOOIDescription(info,i){
-	
-	
 
-	
+
+
+
 	exploredObjectsList.classList.add('slide');
 	controlNotes.classList.add('hide');
-	
+
 	objectEffect.classList.add('hide');
 	objectEffect.classList.remove('active');
 
@@ -3507,7 +3578,7 @@ function showOOIDescription(info,i){
 		    objectDescriptionAudio = OOIContentArray[currentApartment.index].apartmentOOIs[j].audioFile;
 			objectTitle.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[j].OOIName;
 			objectEffectContent.innerHTML = "How might this feature affect a person with " + playerCharacterArray[playerChar.index].impairment + "? Is this a positive, negative, or neutral aspect of the apartment for " +playerCharacterArray[playerChar.index].name +"?"         //OOIContentArray[currentApartment.index].apartmentOOIs[j].characterImpact[playerChar.index]
-		    
+
             OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
 
 		    playAudio(objectDescriptionAudio);
@@ -3516,25 +3587,25 @@ function showOOIDescription(info,i){
 		}
 	}
 	showDiamond();
-	
+
 	var currentEngagementScore = engagementScore ;
 	engagementScore = engagementScore + engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] ;
-	
+
 	if(!engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] == 0 ){
-		
+
 		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
-		
+
 		animateEngagementScore(engagementScore);
 	}
-	
-	engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] = 0 ;	
-	
+
+	engagementScoreArray[currentApartment.index].clickedOOIs[currentOOIIndex] = 0 ;
+
 /*	//added these 2 lines for easier dev , need to be removed in prod */
 	// document.getElementById("characterPin").click();
 	// document.getElementById("objectEffectPostive").click();
-	
-	
-	
+
+
+
 }
 function showDiamond(){
 //	objectEffect.classList.remove('hide');
@@ -3551,7 +3622,7 @@ function objectsExplored(){
 	setTimeout(function() {
   exploredObjectsList.classList.remove('slide');
 }, 1700);
-	
+
 }
 function closeOOIDescription(a){
 
@@ -3566,11 +3637,11 @@ if(audio){
 
 	exploredObjectsList.classList.remove('slide');
 	controlNotes.classList.remove('hide');
-	
+
 	moveHintsDown();
 	initApartmentHint();
-	
-	objectDescription.classList.add('hide');	
+
+	objectDescription.classList.add('hide');
 }
 
 function selectPlayerInAllScenes() {
@@ -3604,13 +3675,13 @@ function CharWigetAnim() {
 	for ( var j = 0; j < charPoster.length ; j++) {
 		charPoster[j].classList.add('selected');
 	}
-	
+
 	showCharProfile(playerChar);
 }
 
 function showCharProfile(info) {
 	contextCount = 1;
-	
+
 
 	guideHeader.innerText = 'Great. You got ' + info.name + '!';
 	spinButton.classList.add('meet');
@@ -3630,7 +3701,6 @@ spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.pn
 	replayControl.classList.remove('inactive');
 
 
-
 		//sagar's code for auto-finish integrated by dixit
 		if(window.location.href.indexOf("fast") > -1){
 console.log('fast present');
@@ -3641,7 +3711,7 @@ apartmentRedirect.classList.remove('hide');
 
 
 	},2000);
-	
+
 	/*charDetailsOne.innerText = info.ethnicity + ' ' + info.identity;
 	charDetailsTwo.innerText = info.age + 'year old ' + info.identity;
 	charAvtar.style.backgroundImage = 'url(' + info.avtar + ')';
@@ -3653,7 +3723,7 @@ function showRelevantInfo(info) {
 }
 function closeInfo(){
 	infoText.classList.remove('activate');
-	
+
 };
 function showInfo(){
 	infoText.classList.add('activate');
@@ -3671,7 +3741,7 @@ function toggleMap() {
 		toggleNavButton();
 		controlNotes.classList.add('hide');
 		controlMap.classList.add('hide');        //removes controlmap icon
-	
+
 		currentHint = infoScriptArray.map.informationText + closeHint;
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.map==0){
@@ -3679,12 +3749,12 @@ function toggleMap() {
 			showHint();
 			hintFlags.map=1;
 		}
-		
+
 		controlInfo.classList.add('bring-it-up');
 		infoText.classList.add('bring-it-up');
 		controlInfoIcon.classList.add('bring-it-up');
-		
-		
+
+
 	} else {
 		gameMap.classList.add('hide');
 		toggleNavButton();
@@ -3733,12 +3803,12 @@ function showApartmentInfo(info, i) {
 	ammenitiesDetails.innerText = "Near By : " + info[i].ammenities;
 	apartmentInfo.classList.remove('hide');
 	var apartmentClasses = ['pinegrove','sunnyvale','lakeview','hide'] //'hide' added in array for simplicity
-	
+
 	for ( var j = 0; j < apartmentClasses.length ; j++) {
 		apartmentInfo.classList.remove(apartmentClasses[j]);
 	}
 	apartmentInfo.classList.add(info[i].class);
-	
+
 /*	controlNotes.classList.remove('hide');
 	exploredObjectsList.classList.remove('hide');*/
 }
@@ -3768,53 +3838,53 @@ function tagOOI(info,i){
 	}else if(tagOOIClass == "bathtub"){
 		playerOOITags[currentApartment.index].taggedOOIs[5].bathtub = currentTag ;
 	}
-	
+
 	var nonTags = [];
-	
+
 	for(var i=0 ; i< playerOOITags[currentApartment.index].taggedOOIs.length ; i++){
 		nonTags.push(playerOOITags[currentApartment.index].taggedOOIs[i].getKeyByValue("none"));
 	}
 	nonTags = cleanArray(nonTags);
 	//console.log(6 - nonTags.length);
 
-	
+
 	apartmentObjectsExplored[currentApartment.index] = 6 - nonTags.length ;
-	
-	
-	
+
+
+
 	//apartmentObjectsExplored[currentApartment.index] = apartmentObjectsExplored[currentApartment.index] + 1 ;
-	
-	
+
+
 	noOfObjectsExplored.innerHTML = apartmentObjectsExplored[currentApartment.index] + " / 6 ";
-	
+
 	NPCTagResponse();
-	
-	
-/*	
-	var exploredItems = 
-	
+
+
+/*
+	var exploredItems =
+
 	noOfObjectsExplored.innerHTML =  + "/6";*/
-	
+
 	var currentEngagementScore = engagementScore ;
-	
+
 	engagementScore = engagementScore + engagementScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] ;
-	
+
 	if(!engagementScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] == 0 ){
-		
+
 		animateValue(engagementScoreBox.id, currentEngagementScore, engagementScore, 500);
-		
+
 		animateEngagementScore(engagementScore);
 	}
-	
+
 	engagementScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] = 0 ;
-	
-	
+
+
 	if(info[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].OOIImpact.indexOf(currentTag) > -1){
 		gameScore = gameScore + gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] ;
 		gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] = 0 ;
-		
 
-		
+
+
 	}else{
 		if(gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] == 0){
 			gameScore = gameScore - 5 ;
@@ -3825,19 +3895,19 @@ function tagOOI(info,i){
 }
 function selectOOI(i){
 	currentOOIIndex = i ;
-	
+
 }
 function NPCTagResponse(){
 
 
 	characterPin.classList.add('hide');
-	closeOOIDescription(); 
-	
-	
+	closeOOIDescription();
 
 
-	
-	
+
+
+
+
 	conversationLayer.classList.remove('hide');
 	conversationLayer.classList.add('tag-response');
 	conversationBubble.classList.add('OOI-tagging'); //to fix chat bubble on top of sarah
@@ -3854,10 +3924,12 @@ function NPCTagResponse(){
 			infoText.classList.add("hide-perm");
 			controlInfoIcon.classList.add("hide-perm");
 			controlInfo.classList.add("hide-perm");
+
 			apartmentRedirect.classList.add("hide");
+
 			navigateScenes(2,0);
 			conversationLayer.classList.add('hide');
-			
+
 			rightNav.classList.add('hide');
 			OOILayer.classList.add('hide');
 			exploredObjectsList.classList.add('hide');
@@ -3865,26 +3937,27 @@ function NPCTagResponse(){
 			controlMap.classList.add('hide');
 			setTimeout(function(){
 			// add talk animation to sarah also
-		
+
 				for ( var i = 0; i < infoApartmentArray.length; i++) {
 					userInterface.classList.remove(infoApartmentArray[i].class);
 				};
+
 				
 						
 				
-				conversationLayer.classList.remove('hide');
+				
 				conversationLayer.classList.remove('tag-response');
 				conversationBubble.classList.remove('OOI-tagging'); 
-				speakerName.innerHTML = "Sarah"
-				conversationtext.innerHTML = "I'm glad to join you today. Which apartment will you choose?";
 
-    var sarahReviewAudioFile = playerChar.class+"/LateAdulthood_Sarah_LouiseOffice_77.mp3"
-		playAudio(sarahReviewAudioFile);
 
-				decisionButtonHUD.classList.remove('hide');
+				conversationLayer.classList.add("sarah-review");
 
-				
+
+
+
 			},4000);
+
+
 		},1000);
 	} else if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18 && apartmentObjectsExplored[currentApartment.index]==6){
 		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
@@ -3955,7 +4028,7 @@ function meetCharacter() {
 	instructionHUD.classList.add('hide');
 	guideHeader.innerText = '';
 	navigateScenes(1,0);
-	
+
 	currentHint = infoScriptArray.officeConversation.informationText + closeHint;
 	hintInfoText.innerHTML = currentHint;
 	if(hintFlags.officeConversation==0){
@@ -4054,7 +4127,7 @@ function runConversation(info) {
 
 				speakerName.innerText = info[charNum].conversation[dialogueCount].speaker;
 				conversationtext.innerHTML = info[charNum].conversation[dialogueCount].dialogue ; //+ '<div class="tap-to-contn">TAP TO CONTINUE</div>';
-                 
+
                 playAudio(info[charNum].conversation[dialogueCount].audioFile);
 
 
@@ -4106,7 +4179,7 @@ function welcomePlayer() {
 	navigateInstructions();
 }
 function preLoadPlayerImages(){
-	
+
 	var speakerChar;
 
 /*
@@ -4121,8 +4194,8 @@ function preLoadPlayerImages(){
 				speakerChar = sceneWrapper.getElementsByClassName('player')[j];
 				speakerChar.classList.remove('talk');
 			}
-		
-			
+
+
 		},10000)	;
 
 */
@@ -4142,20 +4215,20 @@ function preLoadNPCImages(){
   '/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00923.png',
   '/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00924.png']; */
   var louiseImagesLength = louiseImages.length;
-  console.log("louiseImagesLength");
-  console.log(louiseImagesLength);
+//  console.log("louiseImagesLength");
+//  console.log(louiseImagesLength);
   var completedCount = 0;
-    
-    console.log('preLoadNPCImages sceneWrapper length');
-    console.log(sceneWrapper.getElementsByClassName('character').length);
+
+//    console.log('preLoadNPCImages sceneWrapper length');
+//    console.log(sceneWrapper.getElementsByClassName('character').length);
 
     var loader = new PxLoader({statusInterval: 500});
     for (var i = 0; i < louiseImages.length; i++) {
        loader.add(new PxLoaderImage(louiseImages[i]));
     }
     loader.addProgressListener(function(e) {
-      console.log(e);
-      console.log(53.5*completedCount/louiseImagesLength);
+    //  console.log(e);
+  //    console.log(53.5*completedCount/louiseImagesLength);
       completedCount++;
       progressLine.style.transitionDuration = "0.2s"
       progressLine.style.width = (53.5*completedCount/louiseImagesLength).toString() +"%";
@@ -4168,15 +4241,15 @@ function preLoadNPCImages(){
     });
     loader.start();
 	for ( var j = 0; j < sceneWrapper.getElementsByClassName('character').length; j++) {
-    console.log(j);
-    console.log('preLoadNPCImages sceneWrapper at '+ j);
+//    console.log(j);
+//    console.log('preLoadNPCImages sceneWrapper at '+ j);
     if(j != 4 && j != 5 && j != 7 && j != 9 && j != 1){
      //var backgroundImg = loader.addImage('assets/images/character-animations/scene-0/talk/louise/Louise_00924.png');
-      console.log("loaded sample louise Images")
-      console.log(sceneWrapper.getElementsByClassName('character')[j]);
+  //    console.log("loaded sample louise Images")
+  //    console.log(sceneWrapper.getElementsByClassName('character')[j]);
     }else{
 
-      console.log(sceneWrapper.getElementsByClassName('character')[j]);
+    //  console.log(sceneWrapper.getElementsByClassName('character')[j]);
       NPCChar = sceneWrapper.getElementsByClassName('character')[j];
       NPCChar.classList.add('talk');
     }
@@ -4202,7 +4275,7 @@ if(audio){
 		apartmentIcon[j].classList.remove('location');
 	}
 	apartmentIcon[currentApartment.index].classList.add('location');
-	
+
 	dialogueCount = 0 ;
 	currentSubSceneIndex = 0 ;
 	for ( var i = 0; i < 3; i++) {
@@ -4213,8 +4286,8 @@ if(audio){
 	for ( var i = 0; i < infoApartmentArray.length; i++) {
 		sceneWrapper.children[3].classList.remove(infoApartmentArray[i].class);
 	};
-	
-	
+
+
 	sceneWrapper.children[3].classList.add(currentApartment.class);
 	navigateScenes(3,currentSubSceneIndex);
 	initApartmentControls();
@@ -4224,6 +4297,7 @@ if(audio){
 
 function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 
+
 	gameOverlay.classList.remove('tint');
 	gameOverlay.classList.add('darken');
 	controlMode.classList.add('hide');
@@ -4231,21 +4305,23 @@ function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 	if(hintFlags.isHintMsgShowing){
 		infoText.classList.add("hide");
 	}
+
 	//guideHeader.classList.add("hide");
 	//guideHeader.classList.remove("move-guide-back");
 	//guideHeader.innerText="";
+
 		OOILayer.classList.add("hide");
-	
+
 	setTimeout(function() {
 
 		for ( var i = 0; i < sceneWrapper.children.length; i++) {
 			sceneWrapper.children[i].classList.add('hide');
-			
+
 			for ( var j = 0; j < sceneWrapper.children[i].children.length; j++) {
 				sceneWrapper.children[i].children[j].classList.add('hide');
 			};
-			
-			
+
+
 		};
 
 		sceneWrapper.children[sceneNo].classList.remove('hide');
@@ -4253,7 +4329,7 @@ function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 		currentScene = sceneWrapper.children[sceneNo];
 		currentSubScene = sceneWrapper.children[sceneNo].children[subSceneNo] ;
 		setTimeout(function() {
-			
+
 			var allChars = sceneWrapper.getElementsByClassName('character');
 			for ( var j = 0; j < allChars.length; j++) {
 				NPCChar = allChars[j];
@@ -4277,11 +4353,13 @@ function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 
                   reviewByLouise();
 			 }
+
 			//if(sceneNo==3){
 			/*	guideHeader.classList.remove("hide");
 				guideHeader.classList.add("move-guide-back");
 				guideHeader.innerText = currentApartment.name + ". "+subSceneNames[subSceneNo];*/
 			//}
+
 
 			if(optUnhideElement){
 				optUnhideElement.classList.remove('hide');
