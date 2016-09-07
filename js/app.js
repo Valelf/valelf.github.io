@@ -2883,7 +2883,10 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
 audio = new Audio(audioLocation);
 
-audio.play();
+setTimeout(function(){
+	audio.play();
+	},150);
+
 
 audio.addEventListener('ended',function(){
 
