@@ -3987,7 +3987,7 @@ function NPCTagResponse(){
 
 
 
-			},4000);
+			},6000);
 
 
 		},1000);
