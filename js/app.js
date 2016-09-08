@@ -82,12 +82,12 @@ function initHints(isRestart){
 				},
 				'gameScore' :{
 					'informationText' : 'Increase your game score by categorizing objects correctly and choosing the best apartment for ',
-					"audioFile" :"/LateAdulthood_Narration_Score_92.mp3",
+					"audioFile" :"",
 					'index' : 0
 				},
 				'engagementScore' :{
 					'informationText' : 'Receive engagement points for exploring and categorizing objects.',
-					"audioFile" :"common/LateAdulthood_Narration_Score_91.mp3",
+					"audioFile" :"",
 					'index' : 0
 				}
 
