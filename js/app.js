@@ -272,7 +272,7 @@ conversationScriptArray = [
 						"class" : "mary"
 					},
 					{
-						"speaker" : "Sarah",
+						"speaker" : "Sarah" ,
 						"dialogue" : "I'm sorry to hear that. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
 						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_16.mp3",
 						"sceneName" : "scene-one",
