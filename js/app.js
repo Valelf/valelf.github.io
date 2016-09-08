@@ -82,12 +82,12 @@ function initHints(isRestart){
 				},
 				'gameScore' :{
 					'informationText' : 'Increase your game score by categorizing objects correctly and choosing the best apartment for ',
-					"audioFile" :"",
+					"audioFile" :"/LateAdulthood_Narration_Score_92.mp3",
 					'index' : 0
 				},
 				'engagementScore' :{
 					'informationText' : 'Receive engagement points for exploring and categorizing objects.',
-					"audioFile" :"",
+					"audioFile" :"common/LateAdulthood_Narration_Score_91.mp3",
 					'index' : 0
 				}
 
@@ -95,6 +95,7 @@ function initHints(isRestart){
 		//flags set for hints. 0 - firsttime. 1 otherwise
 		hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": false};
 		currentHint = "";
+		currentHintAduio = null;
 		closeHint = ""; //'<div id="infoClose" class="info-close hide">';
 	} else {
 		infoText.classList.remove("hide-perm");
@@ -108,7 +109,8 @@ function initHints(isRestart){
 		hideHint();
 		hideHintIcon();
 		//hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": true}; 
-		currentHint = "Spin the wheel to choose the character you will be playing.";
+		currentHint =	infoScriptArray.wheelSpin.informationText;
+		currentHintAduio = infoScriptArray.wheelSpin.audioFile;
 		forceShowHints = false;
 	}
 }
@@ -283,7 +285,7 @@ conversationScriptArray = [
 					{
 						"speaker" : "Mary",
 						"dialogue" : "Are these places all very close? I can't walk around for too long.",
-						"audioFile" :"mary/LateAdulthood_Mary_LouiseOffice_15.mp3",
+						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_17.mp3",
 						"sceneName" : "scene-one",
 						"sceneNo" : 1,
 						"subSceneNo":0,
@@ -2238,6 +2240,7 @@ apartmentIcon[0].addEventListener('click', function() {
 		apartmentInfo.classList.add('hide');
 		apartmentOne.classList.remove('clicked');
 		currentHint = infoScriptArray.map.informationText + closeHint;
+		currentHintAduio = infoScriptArray.map.audioFile;
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.map==0){
 			forceShowHints = true;
@@ -2250,7 +2253,9 @@ apartmentIcon[0].addEventListener('click', function() {
 		showApartmentInfo(infoApartmentArray, 0);
 		apartmentInfo.classList.remove('hide');
 		if(hintFlags.engagementScore==0){
+			forceShowHints = true;
 			currentHint = infoScriptArray.engagementScore.informationText + closeHint;
+			currentHintAduio = infoScriptArray.engagementScore.audioFile;
 			hintInfoText.innerHTML = currentHint;
 			showHint();
 			hintFlags.engagementScore=1;
@@ -2278,6 +2283,7 @@ apartmentIcon[1].addEventListener('click', function() {
 		apartmentInfo.classList.add('hide');
 		apartmentTwo.classList.remove('clicked');
 		currentHint = infoScriptArray.map.informationText + closeHint;
+		currentHintAduio = infoScriptArray.map.audioFile;
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.map==0){
 			forceShowHints = true;
@@ -2291,8 +2297,8 @@ apartmentIcon[1].addEventListener('click', function() {
 		if(hintFlags.engagementScore==0){
 			forceShowHints = true;
 			currentHint = infoScriptArray.engagementScore.informationText + closeHint;
+			currentHintAduio = infoScriptArray.engagementScore.audioFile;
 			hintInfoText.innerHTML = currentHint;
-			showHint();
 			hintFlags.engagementScore=1;
 		}
 	}
@@ -2318,6 +2324,7 @@ apartmentIcon[2].addEventListener('click', function() {
 		apartmentInfo.classList.add('hide');
 		apartmentThree.classList.remove('clicked');
 		currentHint = infoScriptArray.map.informationText + closeHint;
+		currentHintAduio = infoScriptArray.map.audioFile;
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.map==0){
 			forceShowHints = true;
@@ -2331,6 +2338,7 @@ apartmentIcon[2].addEventListener('click', function() {
 		if(hintFlags.engagementScore==0){
 			forceShowHints = true;
 			currentHint = infoScriptArray.engagementScore.informationText + closeHint;
+			currentHintAduio = infoScriptArray.engagementScore.audioFile;
 			hintInfoText.innerHTML = currentHint;
 			showHint();
 			hintFlags.engagementScore=1;
@@ -2428,6 +2436,7 @@ characterPin.addEventListener('click', function() {
 	}
 
 	currentHint = infoScriptArray.gameScore.informationText + playerChar.name + "." + closeHint;
+	currentHintAduio = infoScriptArray.gameScore.audioFile; //todo: this has to be dynamic
 	hintInfoText.innerHTML = currentHint;
 	if(hintFlags.gameScore==0){
 		forceShowHints = true;
@@ -2891,7 +2900,7 @@ function evaluateApartmentScore(){
 /******* Play Audio******/
 
 
-function playAudio(audioFile,duration){
+function playAudio(audioFileOne,audioFileTwo){
 
 if(audioNarrationActive){
 
@@ -2906,7 +2915,8 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
 
 
-	var audioLocation = "/assets/sounds/"+audioFile ; // /LifeSpan/
+	var audioLocation = "/assets/sounds/"+audioFileOne ; // /LifeSpan/
+	var audioLocationLatter = "/LifeSpan/assets/sounds/"+audioFileTwo ; // /LifeSpan/
 
 audio = new Audio(audioLocation);
 setTimeout(function(){
@@ -2915,7 +2925,10 @@ audio.play();
 
 
 audio.addEventListener('ended',function(){
+	if(audioFileTwo){
 
+audio = new Audio(audioLocationLatter);	
+	}
 
 	console.log('audio-complete');
     if(window.location.href.indexOf("restrictClick") > -1){
@@ -3276,6 +3289,7 @@ function closeAilmentNotes(){
 			//at this point of the game hints become useful.
 			//seting the initial hint(we are at spinning wheel)
 			currentHint = infoScriptArray.wheelSpin.informationText + closeHint;
+			currentHintAduio = infoScriptArray.wheelSpin.audioFile;
 			hintInfoText.innerHTML = currentHint;
 			//displaying the icons.
 			showHintIcon();
@@ -3283,7 +3297,6 @@ function closeAilmentNotes(){
 			if(hintFlags.wheelSpin==0){
 				forceShowHints = true;
 				showHint();
-				playAudio(infoScriptArray.wheelSpin.audioFile);
 				hintFlags.wheelSpin=1;
 			}
 		}
@@ -3314,11 +3327,15 @@ function hideHintIcon(){
 	hintInterface.classList.add("hide");
 }
 
-function showHint(){
+function showHint(secondaryAudioFile){
 	hintFlags.isHintMsgShowing = true;
 	hintInfoText.innerHTML = currentHint;
 	//controlInfo.classList.add("hide");
 		infoText.classList.remove("hide");
+	console.log("show hint called");
+	if(currentHintAduio){
+		playAudio(currentHintAduio,secondaryAudioFile);
+	}
 }
 
 function hideHint(){
@@ -3457,19 +3474,21 @@ function initApartmentHint(){
 
 	    if(apartmentObjectsExplored[currentApartment.index]==6){
 	        currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
+			currentHintAduio = infoScriptArray.apartmentExit.audioFile;
 	        hintInfoText.innerHTML = currentHint;
 	    } else if(apartmentObjectsExplored[currentApartment.index]>0){
 	        currentHint = infoScriptArray.apartmentRoam.informationText + closeHint;
+			currentHintAduio = infoScriptArray.apartmentRoam.audioFile;
 	        hintInfoText.innerHTML = currentHint;
 	    } else {
 			currentHint = infoScriptArray.apartmentVisit.informationText + closeHint;
+			currentHintAduio = infoScriptArray.apartmentVisit.audioFile;
 			hintInfoText.innerHTML = currentHint;
 		}
 		if(hintFlags.apartmentVisit==0){
 			forceShowHints = true;
 			// to prevent premature hint showup.. navigate scenes will look at this and show the hint
 			hintFlags.isHintMsgShowing=true;
-			currentHintAduio = infoScriptArray.apartmentVisit.audioFile ;
 			hintFlags.apartmentVisit=1;
 		}
 	}
@@ -3601,6 +3620,7 @@ function showOOIDescription(info,i){
 	// hideHintIcon();
 	moveHintsUp();
 	currentHint = infoScriptArray.apartmentDiamond.informationText + closeHint;
+	currentHintAduio = infoScriptArray.apartmentDiamond.audioFile;
 	hintInfoText.innerHTML = currentHint;
 	if(hintFlags.apartmentDiamond==0){
 			forceShowHints = true;
@@ -3617,6 +3637,9 @@ function showOOIDescription(info,i){
 			objectEffectContent.innerHTML = "How might this feature affect a person with " + playerCharacterArray[playerChar.index].impairment + "? Is this a positive, negative, or neutral aspect of the apartment for " +playerCharacterArray[playerChar.index].name +"?"         //OOIContentArray[currentApartment.index].apartmentOOIs[j].characterImpact[playerChar.index]
 
             OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
+
+		    
+			
 
 		    playAudio(objectDescriptionAudio);
 
@@ -3780,11 +3803,11 @@ function toggleMap() {
 		controlMap.classList.add('hide');        //removes controlmap icon
 
 		currentHint = infoScriptArray.map.informationText + closeHint;
+		currentHintAduio = infoScriptArray.map.audioFile;
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.map==0){
 			forceShowHints = true;
 			showHint();
-				playAudio(infoScriptArray.map.audioFile);
 			hintFlags.map=1;
 		}
 
@@ -3999,6 +4022,7 @@ function NPCTagResponse(){
 		},1000);
 	} else if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18 && apartmentObjectsExplored[currentApartment.index]==6){
 		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
+		currentHintAduio = infoScriptArray.apartmentExit.audioFile;
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.apartmentExit==0){
 			forceShowHints = true;
@@ -4007,6 +4031,7 @@ function NPCTagResponse(){
 		}
 	} else if(apartmentObjectsExplored[currentApartment.index]==1){
 		currentHint = infoScriptArray.apartmentRoam.informationText + closeHint;
+		currentHintAduio = infoScriptArray.apartmentRoam.audioFile;
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.apartmentRoam==0){
 			forceShowHints = true;
@@ -4065,15 +4090,16 @@ function meetCharacter() {
 	guideHeader.classList.add('hide');
 	instructionHUD.classList.add('hide');
 	guideHeader.innerText = '';
-	navigateScenes(1,0);
 
 	currentHint = infoScriptArray.officeConversation.informationText + closeHint;
+	currentHintAduio = infoScriptArray.officeConversation.audioFile;
 	hintInfoText.innerHTML = currentHint;
 	if(hintFlags.officeConversation==0){
 		forceShowHints = true;
 		hintFlags.isHintMsgShowing = true;
 		hintFlags.officeConversation=1;
 	}
+	navigateScenes(1,0);
 	 runConversation(conversationScriptArray);
 }
 function showProgress() {
@@ -4379,12 +4405,6 @@ function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 			showHintIcon();
 			if(hintFlags.isHintMsgShowing){
 				showHint();
-
-				if(currentHintAduio){
-
-				playAudio(currentHintAduio);
-				currentHintAduio = null ;
-				}
 			};
 			if(currentScene && hasClass(currentScene,"scene-two")){
 				OOILayer.classList.remove("hide");
