@@ -4321,18 +4321,19 @@ function preLoadNPCImages(){
     }else{
 
     //  console.log(sceneWrapper.getElementsByClassName('character')[j]);
-      NPCChar = sceneWrapper.getElementsByClassName('character')[j];
-      NPCChar.classList.add('talk');
+     // NPCChar = sceneWrapper.getElementsByClassName('character')[j];
+     // NPCChar.classList.add('talk');
     }
 	}
   //initGame();
-setTimeout(function(){
+/*setTimeout(function(){
 	for ( var j = 0; j < sceneWrapper.getElementsByClassName('character').length; j++) {
 		NPCChar = sceneWrapper.getElementsByClassName('character')[j];
 		NPCChar.classList.remove('talk');
 	}
 
-},100) }
+},100) */
+}
 
 function tourApartment() {
 if(audio){
