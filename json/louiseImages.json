@@ -1697,7 +1697,6 @@ images = [
 "/assets/sounds/common/LateAdulthood_Narration_MapView_19.mp3",
 "/assets/sounds/common/LateAdulthood_Narration_MapView_20.mp3",
 "/assets/sounds/common/LateAdulthood_Narration_MapView_21.mp3",
-"/assets/sounds/gladys/.DS_Store",
 "/assets/sounds/gladys/extras_alternate_reads/LateAdulthood_Narration_MapView_19_alt.mp3",
 "/assets/sounds/gladys/extras_alternate_reads/LateAdulthood_Narration_MapView_20_alt.mp3",
 "/assets/sounds/gladys/extras_alternate_reads/LateAdulthood_Narration_MapView_21_alt.mp3",
@@ -1738,7 +1737,6 @@ images = [
 "/assets/sounds/gladys/LateAdulthood_Sarah_LouiseOffice_14.mp3",
 "/assets/sounds/gladys/LateAdulthood_Sarah_LouiseOffice_16.mp3",
 "/assets/sounds/gladys/LateAdulthood_Sarah_LouiseOffice_77.mp3",
-"/assets/sounds/mary/.DS_Store",
 "/assets/sounds/mary/extras_alternate_reads/LateAdulthood_Narration_ApartmentTour_LV_Porch_51_alt.mp3",
 "/assets/sounds/mary/extras_alternate_reads/LateAdulthood_Narration_MapView_20_alt.mp3",
 "/assets/sounds/mary/extras_alternate_reads/LateAdulthood_Narration_MapView_21_alt.mp3",
@@ -1821,5 +1819,4 @@ images = [
 "/assets/sounds/raymond/LateAdulthood_Sarah_LouiseOffice_20.mp3",
 "/assets/sounds/raymond/LateAdulthood_Sarah_LouiseOffice_77.mp3",
 "/assets/sounds/mary/LateAdulthood_Sarah_LouiseOffice_17.mp3"
-
 ]
