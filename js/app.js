@@ -1,5 +1,6 @@
 
 
+
 var charAnn, charSarah, buttonPlay, buttonPrev, scoreSvg , buttonNext, appContainer ,
 
 infoApartmentArray = [ {
@@ -82,12 +83,12 @@ function initHints(isRestart){
 				},
 				'gameScore' :{
 					'informationText' : 'Increase your game score by categorizing objects correctly and choosing the best apartment for ',
-					"audioFile" :"",
+					"audioFile" :"/LateAdulthood_Narration_Score_92.mp3",
 					'index' : 0
 				},
 				'engagementScore' :{
 					'informationText' : 'Receive engagement points for exploring and categorizing objects.',
-					"audioFile" :"",
+					"audioFile" :"common/LateAdulthood_Narration_Score_91.mp3",
 					'index' : 0
 				}
 
@@ -272,7 +273,7 @@ conversationScriptArray = [
 						"class" : "mary"
 					},
 					{
-						"speaker" : "Sarah" ,
+						"speaker" : "Sarah",
 						"dialogue" : "I'm sorry to hear that. Louise suggested these three places: Pine Grove Apartments, Lakeview Courts, and Sunnyvale Apartments. Let's take a look.",
 						"audioFile" :"mary/LateAdulthood_Sarah_LouiseOffice_16.mp3",
 						"sceneName" : "scene-one",
@@ -2252,14 +2253,6 @@ apartmentIcon[0].addEventListener('click', function() {
 	else {
 		showApartmentInfo(infoApartmentArray, 0);
 		apartmentInfo.classList.remove('hide');
-		if(hintFlags.engagementScore==0){
-			forceShowHints = true;
-			currentHint = infoScriptArray.engagementScore.informationText + closeHint;
-			currentHintAduio = infoScriptArray.engagementScore.audioFile;
-			hintInfoText.innerHTML = currentHint;
-			showHint();
-			hintFlags.engagementScore=1;
-		}
 	}
 
 });
@@ -2294,13 +2287,6 @@ apartmentIcon[1].addEventListener('click', function() {
 	else {
 		showApartmentInfo(infoApartmentArray, 1);
 		apartmentInfo.classList.remove('hide');
-		if(hintFlags.engagementScore==0){
-			forceShowHints = true;
-			currentHint = infoScriptArray.engagementScore.informationText + closeHint;
-			currentHintAduio = infoScriptArray.engagementScore.audioFile;
-			hintInfoText.innerHTML = currentHint;
-			hintFlags.engagementScore=1;
-		}
 	}
 
 });
@@ -2335,14 +2321,6 @@ apartmentIcon[2].addEventListener('click', function() {
 	else {
 		showApartmentInfo(infoApartmentArray, 2);
 		apartmentInfo.classList.remove('hide');
-		if(hintFlags.engagementScore==0){
-			forceShowHints = true;
-			currentHint = infoScriptArray.engagementScore.informationText + closeHint;
-			currentHintAduio = infoScriptArray.engagementScore.audioFile;
-			hintInfoText.innerHTML = currentHint;
-			showHint();
-			hintFlags.engagementScore=1;
-		}
 	}
 
 });
@@ -2436,16 +2414,16 @@ characterPin.addEventListener('click', function() {
 	}
 
 	currentHint = infoScriptArray.gameScore.informationText + playerChar.name + "." + closeHint;
-	currentHintAduio = infoScriptArray.gameScore.audioFile; //todo: this has to be dynamic
+	currentHintAduio = playerChar.class + infoScriptArray.gameScore.audioFile; //todo: this has to be dynamic
 	hintInfoText.innerHTML = currentHint;
+	OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
 	if(hintFlags.gameScore==0){
 		forceShowHints = true;
-		showHint();
+		showHint(OOIEffectAudio);
 		hintFlags.gameScore=1;
+	} else {
+		playAudio(OOIEffectAudio);
 	}
-
-	OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
-	playAudio(OOIEffectAudio);
 
 
 
@@ -2551,7 +2529,9 @@ apartmentRedirect.addEventListener('click', function() {
       allotTagsfast();
 			navigateScenes(2,0);
 			conversationLayer.classList.add('hide');
-
+            objectDescription.classList.add('hide');
+				objectEffect.classList.add('hide');
+					characterPin.classList.add('hide');
 			rightNav.classList.add('hide');
 			OOILayer.classList.add('hide');
 			exploredObjectsList.classList.add('hide');
@@ -2915,8 +2895,9 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
 
 
-	var audioLocation = "/assets/sounds/"+audioFileOne ; // /LifeSpan/
-	var audioLocationLatter = "/LifeSpan/assets/sounds/"+audioFileTwo ; // /LifeSpan/
+
+	var audioLocation = "/LifeSpan/assets/sounds/"+audioFileOne ; // /LifeSpan/
+	//var audioLocationLatter = "/LifeSpan/assets/sounds/"+audioFileTwo ; // /LifeSpan/
 
 audio = new Audio(audioLocation);
 setTimeout(function(){
@@ -2927,7 +2908,7 @@ audio.play();
 audio.addEventListener('ended',function(){
 	if(audioFileTwo){
 
-audio = new Audio(audioLocationLatter);	
+		playAudio(audioFileTwo);
 	}
 
 	console.log('audio-complete');
@@ -3334,7 +3315,13 @@ function showHint(secondaryAudioFile){
 		infoText.classList.remove("hide");
 	console.log("show hint called");
 	if(currentHintAduio){
-		playAudio(currentHintAduio,secondaryAudioFile);
+		if(secondaryAudioFile){
+			playAudio(currentHintAduio,secondaryAudioFile);
+		} else {
+			playAudio(currentHintAduio);
+		}
+	} else if(secondaryAudioFile){
+		playAudio(secondaryAudioFile);
 	}
 }
 
@@ -3343,9 +3330,9 @@ function hideHint(){
 	//controlInfo.classList.remove("hide");
 	infoText.classList.add("hide");
 
-if(audio){
-				audio.pause();
-			}
+	if(audio){
+		audio.pause();
+	}
 
 }
 
@@ -3619,14 +3606,6 @@ function showOOIDescription(info,i){
 	// }
 	// hideHintIcon();
 	moveHintsUp();
-	currentHint = infoScriptArray.apartmentDiamond.informationText + closeHint;
-	currentHintAduio = infoScriptArray.apartmentDiamond.audioFile;
-	hintInfoText.innerHTML = currentHint;
-	if(hintFlags.apartmentDiamond==0){
-			forceShowHints = true;
-		showHint();
-		hintFlags.apartmentDiamond=1;
-	}
 	objectDescription.classList.remove('hide');
 	for(var j=0 ; j < OOIContentArray[currentApartment.index].apartmentOOIs.length ; j++){
 		if(OOIContentArray[currentApartment.index].apartmentOOIs[j].OOIClass == info){
@@ -3639,9 +3618,19 @@ function showOOIDescription(info,i){
             OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
 
 		    
+			currentHint = infoScriptArray.apartmentDiamond.informationText + closeHint;
+			currentHintAduio = infoScriptArray.apartmentDiamond.audioFile;
+			hintInfoText.innerHTML = currentHint;
+			if(hintFlags.apartmentDiamond==0){
+				forceShowHints = true;
+				showHint(objectDescriptionAudio);
+				hintFlags.apartmentDiamond=1;
+			} else {
+				playAudio(objectDescriptionAudio);
+			}
 			
 
-		    playAudio(objectDescriptionAudio);
+		    
 
 
 		}
@@ -3857,7 +3846,16 @@ function showApartmentInfo(info, i) {
 	apartmentIcon[i].classList.remove('point');
 	apartmentTitle.innerText = info[i].title;
 	rentDetails.innerText = "Rent : " + info[i].rent;
-	playAudio(info[i].audioFile);
+	if(hintFlags.engagementScore==0){
+		forceShowHints = true;
+		currentHint = infoScriptArray.engagementScore.informationText + closeHint;
+		currentHintAduio = infoScriptArray.engagementScore.audioFile;
+		hintInfoText.innerHTML = currentHint;
+		showHint(info[i].audioFile);
+		hintFlags.engagementScore=1;
+	} else {
+		playAudio(info[i].audioFile);
+	}
 	//ratingDetails.innerText = "Locality rating : " + info[i].rating;
 	distanceDetails.innerText = "Distance from senior center : "
 			+ info[i].distance;
@@ -3974,21 +3972,27 @@ function NPCTagResponse(){
 	conversationBubble.classList.add('OOI-tagging'); //to fix chat bubble on top of sarah
 	speakerName.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCName
 	conversationtext.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCResponse;
-	playAudio(OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].audioFile);
+	
+	var played = 0;
 
 
 
 
 
 	if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] == 18){
-		setTimeout(function(){
-			infoText.classList.add("hide-perm");
-			controlInfoIcon.classList.add("hide-perm");
-			controlInfo.classList.add("hide-perm");
+		disableClickLayer.classList.remove("hide");
+		infoText.classList.add("hide-perm");
+		controlInfoIcon.classList.add("hide-perm");
+		controlInfo.classList.add("hide-perm");
+		//this function will be called when the audio is done or when user clicks on disableClickLayer.
+		var afterAudio = function(){
+			if(audio){
+				audio.pause();
+			}
 
 			apartmentRedirect.classList.add("hide");
 
-			navigateScenes(2,0);
+			navigateScenes(2, 0);
 			conversationLayer.classList.add('hide');
 
 			rightNav.classList.add('hide');
@@ -3996,37 +4000,36 @@ function NPCTagResponse(){
 			exploredObjectsList.classList.add('hide');
 			leftNav.classList.add('hide');
 			controlMap.classList.add('hide');
-			setTimeout(function(){
-			// add talk animation to sarah also
+			setTimeout(function () {
+				// add talk animation to sarah also
 
-				for ( var i = 0; i < infoApartmentArray.length; i++) {
+				for (var i = 0; i < infoApartmentArray.length; i++) {
 					userInterface.classList.remove(infoApartmentArray[i].class);
 				};
 
-				
-						
-				
-				
 				conversationLayer.classList.remove('tag-response');
-				conversationBubble.classList.remove('OOI-tagging'); 
-
+				conversationBubble.classList.remove('OOI-tagging');
 
 				conversationLayer.classList.add("sarah-review");
 
-
-
-
-			},6000);
-
-
-		},1000);
+				disableClickLayer.classList.add("hide");
+				// no side effects, remove click listener on the global disableClickLayer.
+				disableClickLayer.removeEventListener("click",afterAudio);
+			}, 2000);
+		}
+		//not restrict user. proceed when user clicks.
+		disableClickLayer.addEventListener("click",afterAudio);
+		playAudio(OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].audioFile);
+		played=1;
+		audio.addEventListener("ended",afterAudio);
 	} else if(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18 && apartmentObjectsExplored[currentApartment.index]==6){
 		currentHint = infoScriptArray.apartmentExit.informationText + closeHint;
 		currentHintAduio = infoScriptArray.apartmentExit.audioFile;
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.apartmentExit==0){
 			forceShowHints = true;
-			showHint();
+			showHint(OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].audioFile);
+			played=1;
 			hintFlags.apartmentExit=1;
 		}
 	} else if(apartmentObjectsExplored[currentApartment.index]==1){
@@ -4035,9 +4038,13 @@ function NPCTagResponse(){
 		hintInfoText.innerHTML = currentHint;
 		if(hintFlags.apartmentRoam==0){
 			forceShowHints = true;
-			showHint();
+			showHint(OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].audioFile);
+			played=1;
 			hintFlags.apartmentRoam=1;
 		}
+	}
+	if(played==0){
+		playAudio(OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].audioFile);
 	}
 }
 
@@ -4458,3 +4465,4 @@ function setup_posters (row)
 
 
 /** ****** button Events ****** */
+
