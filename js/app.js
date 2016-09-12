@@ -2088,16 +2088,16 @@ document.getElementById("ring-1").classList.remove("mary")
 document.getElementById("ring-1").classList.remove("gladys")
 document.getElementById("ring-1").classList.remove("mary")
 spinnerCharInfo[0].classList.add("vanish")
-console.log("characterPlayerIDArray characterPlayerIDArray");
-console.log(characterPlayerIDArray);
+// console.log("characterPlayerIDArray characterPlayerIDArray");
+// console.log(characterPlayerIDArray);
 for ( var j = 0; j < characterPlayerIDArray.length ; j++) {
 	ringOne.classList.remove(characterPlayerIDArray[j]);
 
 
-	console.log(characterPlayerIDArray[j]);
+	// console.log(characterPlayerIDArray[j]);
 	var charElements = sceneWrapper.getElementsByClassName(characterPlayerIDArray[j])
-	console.log(charElements);
-	console.log(charElements.length);
+	// console.log(charElements);
+	// console.log(charElements.length);
 	//resetting scenewrapper by removing player classes if exists
 	if(charElements){
 		sceneWrapper.classList.remove(characterPlayerIDArray[j]);
@@ -2485,13 +2485,13 @@ leftNav.addEventListener('click', function() {
 applyButton.addEventListener('click', function(e) {
 
 	e.stopPropagation();
-	console.log("asdfsdfdf asdfasdf asdfadsf  == 18");
-	console.log(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2]);
+	// console.log("asdfsdfdf asdfasdf asdfadsf  == 18");
+	// console.log(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2]);
 
 	gameMode.classList.remove('hide');
 	settingsView.classList.add('hide');
 	settingOn = false;
-	console.log(currentScene);
+	// console.log(currentScene);
 	if ((hasClass(currentScene,"scene-zero") || hasClass(currentScene,"scene-one") ) && apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18) {
 		if(!((playerChar.index==0 && dialogueCount==7) || (playerChar.index==1 && dialogueCount==9) || (playerChar.index==2 && dialogueCount==11))){
 			conversationLayer.classList.add("active");
@@ -2911,7 +2911,7 @@ audio.addEventListener('ended',function(){
 		playAudio(audioFileTwo);
 	}
 
-	console.log('audio-complete');
+	// console.log('audio-complete');
     if(window.location.href.indexOf("restrictClick") > -1){
 disableClickLayer.classList.add('hide');
 }
@@ -2963,8 +2963,8 @@ function cleanArray(actual) {
 
 function animateEngagementScore(eScore){
 
-	console.log("animateEngagementScore");
-	console.log(eScore);
+	// console.log("animateEngagementScore");
+	// console.log(eScore);
 	 /*outerCircle = document.querySelectorAll('path')[0],					 The colored circle outside the white progress line
 		progressCircle = document.querySelectorAll('path')[1],	*/				/* The white circle that stays static */
 
@@ -3313,7 +3313,7 @@ function showHint(secondaryAudioFile){
 	hintInfoText.innerHTML = currentHint;
 	//controlInfo.classList.add("hide");
 		infoText.classList.remove("hide");
-	console.log("show hint called");
+	// console.log("show hint called");
 	if(currentHintAduio){
 		if(secondaryAudioFile){
 			playAudio(currentHintAduio,secondaryAudioFile);
@@ -3420,9 +3420,9 @@ function allotTags(info){
 //function done by sagar integrated by dixit
 function allotTagsfast(info){
 
-console.log(defaultPlayerOOITags);
+// console.log(defaultPlayerOOITags);
 playerOOITags = defaultPlayerOOITags;
-console.log(playerOOITags);
+// console.log(playerOOITags);
 
 }
 
@@ -3453,7 +3453,7 @@ function selectCharacter(info) {
 
 
 	// closeCharWiget();
-	console.log(charName);
+	// console.log(charName);
 }
 
 function initApartmentHint(){
@@ -3752,10 +3752,10 @@ spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.pn
 
 		//sagar's code for auto-finish integrated by dixit
 		if(window.location.href.indexOf("fast") > -1){
-console.log('fast present');
+// console.log('fast present');
 apartmentRedirect.classList.remove('hide');
 }else{
-	console.log('fast NOT present');
+	// console.log('fast NOT present');
 }
 
 
@@ -3950,7 +3950,7 @@ function tagOOI(info,i){
 			gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] = 5 ;
 		}
 	}
-	console.log(gameScore);
+	// console.log(gameScore);
 }
 function selectOOI(i){
 	currentOOIIndex = i ;
@@ -4093,7 +4093,7 @@ function showInstructions(i) {
 }
 function meetCharacter() {
 	closeCharWiget();
-	console.log('meet');
+	// console.log('meet');
 	guideHeader.classList.add('hide');
 	instructionHUD.classList.add('hide');
 	guideHeader.innerText = '';
@@ -4136,7 +4136,7 @@ function charAnimation(info) {
 
 	idleCharacters(info, function() {
 		speakerChar.classList.add('talk');
-		console.log('working');
+		// console.log('working');
 	})
 }
 
@@ -4173,7 +4173,7 @@ function runConversation(info) {
 		conversationLayer.classList.add('active');
 
 	}
-	console.log(dialogueCount);
+	// console.log(dialogueCount);
 
 	var charNum = playerChar.index;
 	var charPositionArray = [ 'sarah', 'louise', 'gladys', 'raymond', 'mary',
@@ -4278,7 +4278,7 @@ function preLoadNPCImages(){
 
 	var NPCChar;
   var louiseImages = images;
-  console.log(louiseImages[1]);
+  // console.log(louiseImages[1]);
   var totalCountWidth = 53.5;
 /*  var louiseImages = ['/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00920.png',
   '/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00921.png',
