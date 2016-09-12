@@ -1,4 +1,5 @@
 images = [
+  "/assets/images/splash-screen.jpg",
 "/assets/images/Arrow-icon-white-left.png",
 "/assets/images/Arrow-icon-white-right.png",
 "/assets/images/audio-off.png",
@@ -1639,7 +1640,6 @@ images = [
 "/assets/images/secondary-chair-scene-0.png",
 "/assets/images/setting.png",
 "/assets/images/sofa-pinegrove.png",
-"/assets/images/splash-screen.jpg",
 "/assets/images/stairs-icon.png",
 "/assets/images/star.png",
 "/assets/images/steps-lakeview.png",
