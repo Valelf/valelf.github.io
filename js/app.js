@@ -109,7 +109,7 @@ function initHints(isRestart){
 
 		hideHint();
 		hideHintIcon();
-		//hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": true}; 
+		//hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": true};
 		currentHint =	infoScriptArray.wheelSpin.informationText;
 		currentHintAduio = infoScriptArray.wheelSpin.audioFile;
 		forceShowHints = false;
@@ -1854,12 +1854,188 @@ function initGame() {
 	welcomePlayer();
 	// showControls();
 	// alert();
-
-
-
-
-
 }
+
+
+
+var myElem = document.getElementById("characterLouiseZero")
+
+
+function initAnimationFrame() {
+
+
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+};
+
+
+
+	var coin,
+		coinImage,
+		canvas;
+
+	var charObjects;
+
+	function gameLoop () {
+	  window.requestAnimationFrame(gameLoop);
+	  coin.update();
+	  coin.render();
+	}
+
+	function sprite (options) {
+
+		var that = {},
+			frameIndex = 0,
+			tickCount = 0,
+			ticksPerFrame = options.ticksPerFrame || 0,
+			numberOfFrames = options.numberOfFrames || 1;
+
+		that.elementId = options.elementId;
+		that.frameWidth = options.frameWidth;
+		that.frameHeight = options.frameHeight;
+	//	that.image = options.image;
+	that.prevIndex = 0;
+        that.forwards = true;
+
+		that.update = function () {
+
+            tickCount += 1;
+
+            if (tickCount > ticksPerFrame) {
+
+				tickCount = 0;
+            //    console.log(that.forwards);
+            //    console.log(frameIndex);
+                // If the current frame index is in range
+                //d if forwards is true and frameIndex == numberOfFrames -1 or forwards is false and frameIndex == 0 then
+                //toggle that.forwards , then in frameIndex < numberOfFrames -1 && that.forwards that frameIndex++
+                //else if no that.forwards frameIndex--
+                if (frameIndex < numberOfFrames - 1 && that.forwards) {
+                    // Go to the next frame
+                    frameIndex += 1;
+                } else if(frameIndex < numberOfFrames && frameIndex > 0 && !that.forwards){
+                    frameIndex -= 1;
+                }else if((frameIndex == numberOfFrames - 1 && that.forwards) || (frameIndex == 0 && !that.forwards)){
+
+                    that.forwards = !that.forwards;
+                }else {
+                    frameIndex = 0;
+                }
+            }
+        };
+
+		that.render = function () {
+            //instead of drawing to canvas can perform some css operations
+            //like moving background position
+		  // Clear the canvas
+          //document.getElementById("testAnim").style.backgroundPosition = "-"+frameIndex*638+"px 0px";
+		  //console.log(computedFrameWidth);
+		  if(that.prevIndex != frameIndex || frameIndex == 0){
+		//	  console.log(that);
+			  console.log(frameIndex);
+			  console.log(computedFrameWidth);
+			  var computedFrameWidth = myElem.clientHeight*that.frameWidth/that.frameHeight
+
+			  //var elem = document.getElementById(that.elementId);
+			  myElem.style.backgroundPosition = "-"+(frameIndex*computedFrameWidth)+"px 0px";
+			  that.prevIndex = frameIndex;
+		  }
+          //document.getElementById(that.elementId).style.backgroundPosition = "-"+frameIndex*computedFrameWidth+"px 0px";
+/*
+		  that.context.clearRect(0, 0, that.width, that.height);
+console.log("X Value : "+frameIndex * that.width / numberOfFrames);
+		  // Draw the animation
+		  that.context.drawImage(
+		    that.image,
+		    frameIndex * that.width / numberOfFrames,
+		    0,
+		    that.width / numberOfFrames,
+		    that.height,
+		    0,
+		    0,
+		    that.width / numberOfFrames,
+		    that.height);
+			*/
+		};
+
+		return that;
+	};
+
+	// Get canvas
+//	canvas = document.getElementById("coinAnimation");
+//	canvas.width = 441;
+//	canvas.height = 479;
+
+
+
+	// Create sprite sheet
+	//coinImage = new Image();
+
+	// Create sprite
+    //create louise width 53361 , height 479 , frames 121
+/*	coin = sprite({
+		context: canvas.getContext("2d"),
+		width: 1000,
+		height: 100,
+		image: coinImage,
+		numberOfFrames: 10,
+		ticksPerFrame: 4
+	});  */
+
+    coin = sprite({
+		elementId: "characterLouiseZero",
+		frameHeight: 479,
+		frameWidth: 441,
+		numberOfFrames: 151,
+		ticksPerFrame: 2
+
+        //context: canvas.getContext("2d"),
+        //width: 53361,
+        //height: 479,
+        //image: coinImage,
+    });
+//	console.log("check width "+document.getElementById("characterLouiseZero").getBoundingClientRect().height*51*coin.frameWidth/coin.frameHeight+"px 100%");
+	console.log(myElem.getBoundingClientRect());
+//myElem.style.backgroundSize = ""+(myElem.getBoundingClientRect().height*151*coin.frameWidth)/coin.frameHeight+"px "+myElem.getBoundingClientRect().height+"px";
+myElem.style.backgroundImage = "url('assets/images/louise_talk_test.png')";
+
+//gameLoop();
+	// Load sprite sheet
+//	coinImage.addEventListener("load", gameLoop);
+    //d replace with louise images/louisetest
+	//coinImage.src = "images/coin-sprite-animation.png";
+//	coinImage.src = "../images/louise_talk_test.png";
+
+
+
+
+
+
+
+
+
+
+
 function resetgame(){
 
 	location.reload();
@@ -2246,7 +2422,7 @@ apartmentIcon[0].addEventListener('click', function() {
 		if(hintFlags.map==0){
 			forceShowHints = true;
 			showHint();
-		
+
 			hintFlags.map=1;
 		}
 	}
@@ -2630,10 +2806,10 @@ inActiveApartmentLeft.addEventListener('click', function() {
 	if(activateApartment){
 
 
-		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing." ; 
+		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing." ;
 			var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
 		playAudio(playerSelectedApartmentAudioFile);
-		
+
 
 	}
 
@@ -2678,7 +2854,7 @@ activeApartment.addEventListener('click', function() {
 
 				var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
 		playAudio(playerSelectedApartmentAudioFile);
-	
+
 
 	this.classList.add('active');
 	for(var i=0 ; i < taggedApartmentOOI.length ;i++ ){
@@ -2742,8 +2918,8 @@ if(audio){
 
 			conversationLayer.classList.remove('sarah-review-started');
 		} else if(hasClass(conversationLayer, 'louise-review')){
-			
-			
+
+
 			conversationLayer.classList.remove('hide');
 			conversationtext.innerHTML = "Hi, "+ playerChar.name +". Good to see you again. How do you like your new apartment?"; // + " <div class='tap-to-contn'>TAP TO CONTINUE</div>";
 			var louiseReviewAudioFile = playerChar.class+"/LateAdulthood_Louise_LouiseOffice_83.mp3"
@@ -2752,10 +2928,10 @@ if(audio){
 			conversationLayer.classList.add("louise-review-started");
 
 	var louiseInScene = currentScene.getElementsByClassName('louise');
-	
+
 
 		louiseInScene[0].classList.add('talk');
-	
+
 
 /*
 
@@ -2765,15 +2941,15 @@ if(audio){
 		louiseInScene.classList.remove('talk');
 		playerInScene.classList.add('talk');*/
 
-		
-			
+
+
 		} else if(hasClass(conversationLayer, 'louise-review-started')){
 			conversationLayer.classList.remove('louise-review-started');
 			conversationLayer.classList.add('player-review');
 			conversationBubble.classList.remove('louise');
-			conversationBubble.classList.add(playerChar.class); 
-			conversationBubble.classList.remove('scene-one'); 
-			conversationBubble.classList.add('scene-zero'); 
+			conversationBubble.classList.add(playerChar.class);
+			conversationBubble.classList.remove('scene-one');
+			conversationBubble.classList.add('scene-zero');
 			speakerName.innerHTML = playerChar.name;
 			conversationtext.innerHTML = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].playerReview ; //+ '<div class="tap-to-contn">TAP TO CONTINUE</div>';
 
@@ -3187,7 +3363,7 @@ function reviewByLouise(){
 
 
 	// /navigateScenes(1,0);
-	
+
 	conversationLayer.classList.add('louise-review');
 	conversationBubble.classList.remove('scene-one');
 	conversationBubble.classList.remove('sarah');
@@ -3359,7 +3535,7 @@ function showTagNotes(info){
 
 	var playerTagsAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_78.mp3" ;
 		playAudio(playerTagsAudioFile);
-	
+
 
 }
 
@@ -3617,7 +3793,7 @@ function showOOIDescription(info,i){
 
             OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
 
-		    
+
 			currentHint = infoScriptArray.apartmentDiamond.informationText + closeHint;
 			currentHintAduio = infoScriptArray.apartmentDiamond.audioFile;
 			hintInfoText.innerHTML = currentHint;
@@ -3628,9 +3804,9 @@ function showOOIDescription(info,i){
 			} else {
 				playAudio(objectDescriptionAudio);
 			}
-			
 
-		    
+
+
 
 
 		}
@@ -3680,7 +3856,7 @@ if(audio){
 				audio.pause();
 			}
 
-	
+
 	objectEffect.classList.remove('active');
 	objectEffect.classList.add('hide');
 
@@ -3833,7 +4009,7 @@ function toggleNavButton(){
 }}
 function revealMap(){
 	controlMap.classList.add('hide');
-		
+
 	toggleMap();
 }
 function showApartmentInfo(info, i) {
@@ -3972,7 +4148,7 @@ function NPCTagResponse(){
 	conversationBubble.classList.add('OOI-tagging'); //to fix chat bubble on top of sarah
 	speakerName.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCName
 	conversationtext.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCResponse;
-	
+
 	var played = 0;
 
 
@@ -4295,7 +4471,7 @@ function preLoadNPCImages(){
 
     var loader = new PxLoader({statusInterval: 500});
     for (var i = 0; i < louiseImages.length; i++) {
-       loader.add(new PxLoaderImage(louiseImages[i]));
+       loader.add(new PxLoaderImage(window.location.pathname.split("/")[1]+louiseImages[i]));
     }
     loader.addProgressListener(function(e) {
     //  console.log(e);
@@ -4466,4 +4642,3 @@ function setup_posters (row)
 
 
 /** ****** button Events ****** */
-
