@@ -1704,6 +1704,560 @@ var apartmentSelected=   {
 
 };
 
+var spriteInfoArray = [ { 
+  "currentScene" : "scene-zero",
+ "subScenes" : [
+{
+      
+      "characters" : {
+      "idle" : [
+
+      {
+    "elementClass": "sarah",
+    "frameHeight": 1026,
+    "frameWidth": 600,
+    "numberOfFrames": 48,
+    "ticksPerFrame": 2,
+        "width": 28800,
+        "height": 1026,
+        "forwards" : true,
+        "runOnce" : true,
+        "imagePath" : "assets/images/character-animations/sarah_0_walk.png"
+
+    },
+          {
+    "elementClass": "louise",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 51,
+    "ticksPerFrame": 1,
+        "width": 22491,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/louise_0_idle.png"
+
+    },
+          {
+    "elementClass": "gladys",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 55,
+    "ticksPerFrame": 2,
+        "width": 24255,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/gladys_0_idle.png"
+
+    },
+          {
+    "elementClass": "mary",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 55,
+    "ticksPerFrame": 2,
+        "width": 24255,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/mary_0_idle.png"
+
+    } , 
+      {
+    "elementClass": "raymond",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 56,
+    "ticksPerFrame": 2,
+        "width": 24696,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/raymond_0_idle.png"
+
+    }
+      ],
+
+      "talk" : [
+{
+    } ,
+{
+    "elementClass": "louise",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 151,
+    "ticksPerFrame": 2,
+        "width": 66591,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/louise_0_talk.png"
+
+    } ,
+{
+    } ,
+{
+    } ,
+{
+    } 
+
+
+
+
+      ]
+
+
+
+
+
+
+      }
+},
+
+{},
+
+
+{
+}
+
+
+
+
+
+
+ ]
+
+} , 
+
+
+{ 
+  "currentScene" : "scene-one",
+ "subScenes" : [
+{
+      
+      "characters" : {
+      "idle" : [
+
+      {
+    "elementClass": "sarah",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 51,
+    "ticksPerFrame": 2,
+        "width": 25500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/sarah_1_idle.png"
+
+    },
+          {
+    },
+          {
+    "elementClass": "gladys",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 30,
+    "ticksPerFrame": 2,
+        "width": 13230,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/gladys_1_idle.png"
+
+    },
+          {
+    "elementClass": "mary",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 41,
+    "ticksPerFrame": 2,
+        "width": 18081,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/mary_1_idle.png"
+
+    } , 
+      {
+    "elementClass": "raymond",
+    "frameHeight": 517,
+    "frameWidth": 441,
+    "numberOfFrames": 63,
+    "ticksPerFrame": 2,
+        "width": 27783,
+        "height": 517,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/raymond_1_idle.png"
+
+    }
+      ],
+
+      "talk" : [
+{
+    "elementClass": "sarah",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 37,
+    "ticksPerFrame": 2,
+        "width": 18500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/sarah_1_talk.png"
+
+    } ,
+{
+    } ,
+{
+    "elementClass": "gladys",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 39,
+    "ticksPerFrame": 2,
+        "width": 17199,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/gladys_1_talk.png"
+
+    } ,
+{
+    "elementClass": "mary",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 43,
+    "ticksPerFrame": 2,
+        "width": 18963,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/mary_1_talk.png"
+
+    } ,
+{
+    "elementClass": "raymond",
+    "frameHeight": 517,
+    "frameWidth": 441,
+    "numberOfFrames": 67,
+    "ticksPerFrame": 2,
+        "width": 29547,
+        "height": 517,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/raymond_1_talk.png"
+
+    } 
+
+
+
+
+      ]
+
+
+
+
+
+
+      }
+},
+
+{
+},
+
+
+{
+}
+
+
+
+
+
+
+ ]
+
+} ,
+
+
+{ 
+  "currentScene" : "scene-two",
+ "subScenes" : [
+{
+      
+      "characters" : {
+      "idle" : [
+
+      {
+    "elementClass": "sarah",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 48,
+    "ticksPerFrame": 2,
+        "width": 24000,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/sarah_2_idle.png"
+
+    },
+          {
+    },
+          {
+    "elementClass": "gladys",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 51,
+    "ticksPerFrame": 2,
+        "width": 25500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/gladys_2_idle.png"
+
+    },
+          {
+    "elementClass": "mary",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 141,
+    "ticksPerFrame": 2,
+        "width": 70500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/mary_2_idle.png"
+
+    } , 
+      {
+    "elementClass": "raymond",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 103,
+    "ticksPerFrame": 2,
+        "width": 51500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/raymond_2_idle.png"
+
+    }
+      ],
+
+      "talk" : [
+{
+    "elementClass": "sarah",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 142,
+    "ticksPerFrame": 2,
+        "width": 71000,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/sarah_2_talk.png"
+
+    } ,
+{ } ,
+{ } ,
+{ } ,
+{ } 
+
+
+
+
+      ]
+
+
+
+
+
+
+      }
+},
+
+{
+      
+      "characters" : {
+      "idle" : [
+
+      {
+    "elementClass": "sarah",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 48,
+    "ticksPerFrame": 2,
+        "width": 24000,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/sarah_2_idle.png"
+
+    },
+          {
+    },
+          {
+    "elementClass": "gladys",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 51,
+    "ticksPerFrame": 2,
+        "width": 25500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/gladys_2_idle.png"
+
+    },
+          {
+    "elementClass": "mary",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 141,
+    "ticksPerFrame": 2,
+        "width": 70500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/mary_2_idle.png"
+
+    } , 
+      {
+    "elementClass": "raymond",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 103,
+    "ticksPerFrame": 2,
+        "width": 51500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/raymond_2_idle.png"
+
+    }
+      ],
+
+      "talk" : [
+{
+    "elementClass": "sarah",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 142,
+    "ticksPerFrame": 2,
+        "width": 71000,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/sarah_2_talk.png"
+
+    } ,
+{ } ,
+{ } ,
+{ } ,
+{ } 
+
+
+
+
+      ]
+
+
+
+
+
+
+      }
+},
+
+
+{
+      
+      "characters" : {
+      "idle" : [
+
+      {
+    "elementClass": "sarah",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 48,
+    "ticksPerFrame": 2,
+        "width": 24000,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/sarah_2_idle.png"
+
+    },
+          {
+    },
+          {
+    "elementClass": "gladys",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 51,
+    "ticksPerFrame": 2,
+        "width": 25500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/gladys_2_idle.png"
+
+    },
+          {
+    "elementClass": "mary",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 141,
+    "ticksPerFrame": 2,
+        "width": 70500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/mary_2_idle.png"
+
+    } , 
+      {
+    "elementClass": "raymond",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 103,
+    "ticksPerFrame": 2,
+        "width": 51500,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/raymond_2_idle.png"
+
+    }
+      ],
+
+      "talk" : [
+{
+    "elementClass": "sarah",
+    "frameHeight": 650,
+    "frameWidth": 500,
+    "numberOfFrames": 142,
+    "ticksPerFrame": 2,
+        "width": 71000,
+        "height": 650,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/sarah_2_talk.png"
+
+    } ,
+{ } ,
+{ } ,
+{ } ,
+{ } 
+
+
+
+
+      ]
+
+
+
+
+
+
+      }
+}
+
+
+
+
+
+
+ ]
+
+}
+
+
+
+
+
+
+
+] ; 
+
+var activeSpriteArray = [];
+
+
+
+
 
 
 appContainer = document.getElementById('appContainer');
@@ -1852,14 +2406,262 @@ function initGame() {
 	hideProgress();
 	hideGameTitle();
 	welcomePlayer();
+	gameLoop();
 	// showControls();
 	// alert();
-
-
-
-
-
 }
+
+
+
+//var myElem = document.getElementById("characterLouiseZero")
+
+
+function initAnimationFrame() {
+
+
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+};
+
+
+
+	var louiseSprite,
+		spriteImage,
+		canvas;
+
+	var charObjects;
+
+	function gameLoop () {
+	  window.requestAnimationFrame(gameLoop);
+
+	  for(var i = 0 ; i < activeSpriteArray.length ; i++ ){
+	  	  activeSpriteArray[i].update();
+	      activeSpriteArray[i].render();
+	  }
+	
+	}
+
+	function sprite (options) {
+
+		var that = {},
+			frameIndex = 0,
+			tickCount = 0,
+			ticksPerFrame = options.ticksPerFrame || 0,
+			numberOfFrames = options.numberOfFrames || 1,
+			spriteImage;
+
+		that.elementClass = options.elementClass;
+		that.frameWidth = options.frameWidth;
+		that.frameHeight = options.frameHeight;
+
+		var canvas = document.createElement('canvas');
+		var frameEl = currentSubScene.getElementsByClassName(that.elementClass)[0] , //  sceneWrapper.getElementByClass(that.elementClass)[0] ;
+		frameElHeight = Number(window.getComputedStyle(frameEl).height.split("px")[0]),
+		frameElWidth = Number(window.getComputedStyle(frameEl).width.split("px")[0]);
+
+		that.width = options.width;
+		that.newWidth = options.width*frameElHeight/that.frameHeight;
+		that.height = frameElHeight;
+		console.log(that.newWidth);
+		console.log(that.height);
+
+
+		frameEl.appendChild(canvas);
+		canvas.height = frameElHeight ; //frameEl.getBoundingClientRect().height ;
+		canvas.width =  frameElWidth ;  //frameEl.getBoundingClientRect().width ;
+        that.context = canvas.getContext('2d');
+		//that.image = options.image;
+	    that.prevIndex = 0;
+        that.forwards = options.forwards;
+        that.runOnce = options.runOnce;
+        spriteImage = new Image();
+        that.imagePath = options.imagePath;
+	    spriteImage.src = that.imagePath;
+
+
+	    that.destroySprite = function(){
+	    	if(frameEl.children.length > 0){
+	    	frameEl.removeChild(canvas);
+	    	//activeSpriteArray.pop();
+	    	delete that;
+	    	}
+
+	    }
+
+	    that.resetAnimation = function(){
+
+	    	console.log("spriteImage");
+	    	console.log(spriteImage);
+	    	that.newWidth = that.width*frameElHeight/that.frameHeight;
+	    	frameIndex = 0;
+	    	that.forwards = true;
+	    	that.prevIndex = 0;
+	    	spriteImage = new Image();
+	    	spriteImage.src = that.imagePath;
+	    	console.log(spriteImage);
+	    }
+
+
+		that.update = function () {
+
+            tickCount += 1;
+
+
+
+ 	if(that.runOnce){
+                		
+            if (tickCount > ticksPerFrame) {
+
+				tickCount = 0;
+            //    console.log(that.forwards);
+            //    console.log(frameIndex);
+                // If the current frame index is in range
+                //d if forwards is true and frameIndex == numberOfFrames -1 or forwards is false and frameIndex == 0 then
+                //toggle that.forwards , then in frameIndex < numberOfFrames -1 && that.forwards that frameIndex++
+                //else if no that.forwards frameIndex--
+                if (frameIndex < numberOfFrames - 1 && that.forwards) {
+                    // Go to the next frame
+                    frameIndex += 1;
+                } 
+            }
+
+
+
+
+
+                	} else{
+
+
+            if (tickCount > ticksPerFrame) {
+
+				tickCount = 0;
+            //    console.log(that.forwards);
+            //    console.log(frameIndex);
+                // If the current frame index is in range
+                //d if forwards is true and frameIndex == numberOfFrames -1 or forwards is false and frameIndex == 0 then
+                //toggle that.forwards , then in frameIndex < numberOfFrames -1 && that.forwards that frameIndex++
+                //else if no that.forwards frameIndex--
+                if (frameIndex < numberOfFrames - 1 && that.forwards) {
+                    // Go to the next frame
+                    frameIndex += 1;
+                } else if(frameIndex < numberOfFrames && frameIndex > 0 && !that.forwards){
+                    frameIndex -= 1;
+                }else if((frameIndex == numberOfFrames - 1 && that.forwards) || (frameIndex == 0 && !that.forwards)){
+
+
+                    that.forwards = !that.forwards;
+                }else {
+                    frameIndex = 0;
+                }
+            }
+
+
+                	}
+
+        };
+
+		that.render = function () {
+            //instead of drawing to canvas can perform some css operations
+            //like moving background position
+		  // Clear the canvas
+          //document.getElementById("testAnim").style.backgroundPosition = "-"+frameIndex*638+"px 0px";
+		  //console.log(computedFrameWidth);
+		  if(that.prevIndex != frameIndex || frameIndex == 0){
+		//	  console.log(that);
+	/*		  console.log(frameIndex);
+			  console.log(computedFrameWidth);
+			  var computedFrameWidth = myElem.clientHeight*that.frameWidth/that.frameHeight
+
+			  //var elem = document.getElementById(that.elementClass);
+			  myElem.style.backgroundPosition = "-"+(frameIndex*computedFrameWidth)+"px 0px";*/
+			  that.prevIndex = frameIndex;
+
+          that.context.clearRect(0, 0, that.width, that.height);
+        //   console.log("X Value : "+frameIndex +" "+ that.width +" "+ numberOfFrames);
+         //  console.log("X Value : "+frameIndex*that.width / numberOfFrames);
+         //  console.log("X defaultWidth : "+that.width / numberOfFrames);
+         //  console.log("X newWidth : "+that.newWidth / numberOfFrames);
+		  // Draw the animation
+		  that.context.drawImage(
+		    spriteImage,
+		    frameIndex*that.width / numberOfFrames,
+		    0,
+		    that.width / numberOfFrames,
+		    that.frameHeight,
+		    0,
+		    0,
+		    that.newWidth / numberOfFrames,
+		    that.height);
+
+
+		  }
+          //document.getElementById(that.elementClass).style.backgroundPosition = "-"+frameIndex*computedFrameWidth+"px 0px";
+
+		  
+			
+		};
+        activeSpriteArray.push(that);
+		return that;
+	};
+
+	// Get canvas
+//	canvas = document.getElementById("coinAnimation");
+//	canvas.width = 441;
+//	canvas.height = 479;
+
+
+
+	// Create sprite sheet
+
+
+	// Create sprite
+    //create louise width 53361 , height 479 , frames 121
+/*	louiseSpriteAnim = sprite({
+		context: canvas.getContext("2d"),
+		width: 1000,
+		height: 100,
+		image: spriteImage,
+		numberOfFrames: 10,
+		ticksPerFrame: 4
+	});  */
+    
+ //   louiseSprite = sprite(spriteInfoArray[0]);
+
+	//console.log(myElem.getBoundingClientRect());
+
+//myElem.style.backgroundImage = "url('assets/images/louise_talk_test.png')";
+
+
+
+
+
+
+
+
+
+
+
+
 function resetgame(){
 
 	location.reload();
@@ -3247,6 +4049,30 @@ function showAilmentNotes(){
 }
 
 
+function initSpriteAnimInScene(sceneNo , subSceneNo){
+	console.log(sceneNo);
+	console.log(subSceneNo);
+      for (var i = 0; i < activeSpriteArray.length; i++) {
+      			
+				activeSpriteArray[i].destroySprite() ;
+      			
+			};
+      			activeSpriteArray = [];
+
+		for (var i = 0; i < spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle.length; i++) {
+			if(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i] != {} ){
+			console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+				
+if(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i].elementClass == playerChar.class || spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i].elementClass == "louise" || spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i].elementClass == "sarah")
+{			
+			console.log(i);
+			console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+                sprite(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+			}
+				
+			};
+}
+}
 function closeAilmentNotes(){
 
 	if(introPage){
@@ -4137,7 +4963,16 @@ function charAnimation(info) {
 	idleCharacters(info, function() {
 		speakerChar.classList.add('talk');
 		// console.log('working');
-	})
+	});
+
+/*louiseSprite.imagePath = spriteInfoArray[1].imagePath ;
+louiseSprite.width = spriteInfoArray[1].width ;
+louiseSprite.numberOfFrames = spriteInfoArray[1].numberOfFrames;
+louiseSprite.resetAnimation();*/
+console.log(louiseSprite);
+//louiseSprite.destroySprite();
+//var louiseSpriteNew = sprite(spriteInfoArray[1]);
+
 }
 
 function idleCharacters(info, callback) {
@@ -4396,17 +5231,33 @@ function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 
 		};
 
+
+
+
 		sceneWrapper.children[sceneNo].classList.remove('hide');
 		sceneWrapper.children[sceneNo].children[subSceneNo].classList.remove('hide');
 		currentScene = sceneWrapper.children[sceneNo];
 		currentSubScene = sceneWrapper.children[sceneNo].children[subSceneNo] ;
+
+
+
+      initSpriteAnimInScene(sceneNo , subSceneNo);
+
+
+
+
 		setTimeout(function() {
 
 			var allChars = sceneWrapper.getElementsByClassName('character');
 			for ( var j = 0; j < allChars.length; j++) {
 				NPCChar = allChars[j];
 				NPCChar.classList.remove('talk');
+
 			}
+
+	
+
+
 
 			gameOverlay.classList.remove('darken');
 			controlMode.classList.remove('hide');
