@@ -916,7 +916,6 @@ position: relative;
 }
 .meet{
     width:29%;
-	left:35.5%;
 }
 .score-container{
         position: absolute;
@@ -3128,12 +3127,14 @@ z-index: 0;
 .scene-zero .character.louise 
 {
         position: absolute;
-    /* border: 1px solid yellow; */
+    /* border: 1px solid yellow; 
+
+    background-image: url(../assets/images/character-animations/scene-0/idle/louise/Louise_00250.png);
+    */
     height: 49%;
     bottom: 11.2%;
     left: 52%;
     width: 23%;
-    background-image: url(../assets/images/character-animations/scene-0/idle/louise/Louise_00250.png);
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 0 0;
@@ -3153,7 +3154,7 @@ z-index: 0;
     z-index:0;
 }
 
-.scene-zero .character.player.gladys{
+/*.scene-zero .character.player.gladys{
 background-image: url(../assets/images/character-animations/scene-0/idle/gladys/Gladys_waiting_00170.png);
 }
 
@@ -3162,7 +3163,7 @@ background-image: url(../assets/images/character-animations/scene-0/idle/gladys/
 }
 .scene-zero .character.player.mary{
  background-image: url(../assets/images/character-animations/scene-0/idle/mary/mary_waiting_00090.png); 
-}
+}*/
 
 
  .walker-zero {
@@ -3241,7 +3242,7 @@ background-image: url(../assets/images/character-animations/scene-0/idle/gladys/
 .scene-zero .character.sarah{
     position: absolute;
     width: 37%;
-    background-image: url(../assets/images/character-animations/scene-0/idle/sarah/saraha_walking_00001.png);
+ /*   background-image: url(../assets/images/character-animations/scene-0/idle/sarah/saraha_walking_00001.png);*/
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 0 0;
@@ -3340,8 +3341,8 @@ position: absolute;
     position: absolute;
     /* border: 1px solid #DEB313; */
     width: 47%;
-    background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01000.png);
-    background-repeat: no-repeat;
+/*    background-image: url(../assets/images/character-animations/scene-1/idle/sarah/sarah_01000.png);
+*/    background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: 50%;
     height: 76%;
@@ -3369,11 +3370,11 @@ position: absolute;
     z-index: 0;
 }
 .scene-one .character.player.gladys{
- background-image: url(../assets/images/character-animations/scene-1/idle/gladys/Gladys_talking_00054.png); 
+ /*background-image: url(../assets/images/character-animations/scene-1/idle/gladys/Gladys_talking_00054.png); */
 }
 
 .scene-one .character.player.raymond{
- background-image: url(../assets/images/character-animations/scene-1/idle/raymond/Raymond_talking_00016.png);
+/* background-image: url(../assets/images/character-animations/scene-1/idle/raymond/Raymond_talking_00016.png);*/
      right: 10%;
     width: 39%;
     height: 54%; /*  because raymond is tall */ 
@@ -3382,7 +3383,7 @@ position: absolute;
 right: 15%;
 width: 35%;
 height: 46%;
-background-image: url(../assets/images/character-animations/scene-1/idle/mary/Mary_talking_00054.png);  
+/*background-image: url(../assets/images/character-animations/scene-1/idle/mary/Mary_talking_00054.png);  */
 }
 
 .pinegrove .walker-back-two-two{
@@ -3683,7 +3684,7 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
     position: absolute;
     /* border: 1px solid #DEB313; */
     width: 41%;
-    background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00000.png);
+  /*  background-image: url(../assets/images/character-animations/scene-2/idle/sarah/sarah_00000.png);*/
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position:50%;
@@ -3770,6 +3771,7 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
     bottom: 0%;
     z-index: 2
 }
+/*
 .scene-two .character.player.gladys{
  background-image: url(../assets/images/character-animations/scene-2/idle/gladys/gladys_00127.png); 
 }
@@ -3782,7 +3784,7 @@ background-image: url(../assets/images/character-animations/scene-1/idle/mary/Ma
 
  background-image: url(../assets/images/character-animations/scene-2/idle/mary/mary_00410.png); 
 }
-
+*/
 
 
 
@@ -4278,6 +4280,8 @@ position: absolute;
 
 /***********************      Character Animation                         **************************/
 
+
+/*
 .scene-zero .sarah.talk{
      -webkit-animation-name:sarahWalkIn;
     -webkit-animation-duration:1.25s;
@@ -4487,7 +4491,7 @@ position: absolute;
 }
 
 /**/
-
+/*
 .scene-one .gladys.idle{
      -webkit-animation-name:gladysIdleSceneOne;
     -webkit-animation-duration:1.4s;
@@ -4672,7 +4676,7 @@ position: absolute;
 
 /****/
 
-
+/*
 .scene-two .gladys.idle{
      -webkit-animation-name:gladysIdleSceneTwo;
     -webkit-animation-duration:4.4s;
@@ -4790,7 +4794,7 @@ position: absolute;
 
 
 
-
+*/
 
 
 
