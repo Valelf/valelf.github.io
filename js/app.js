@@ -37,7 +37,7 @@ infoApartmentArray = [ {
 
 
 
-var controlInfo, closeInfoText, audioNarrationActive = true , instructionAudio, apartmentRedirect , OOIEffectAudio , currentHintAduio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+var controlInfo, closeInfoText, audioNarrationActive = true , instructionAudio, apartmentRedirect , OOIEffectAudio , currentHintAduio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSceneIndex = 0 , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 
 var tagScore = 5 , audio ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_LouiseOffice_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene = infoApartmentArray[0], currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo,forceShowHints;
 
@@ -1713,17 +1713,6 @@ var spriteInfoArray = [ {
       "idle" : [
 
       {
-    "elementClass": "sarah",
-    "frameHeight": 1026,
-    "frameWidth": 600,
-    "numberOfFrames": 48,
-    "ticksPerFrame": 2,
-        "width": 28800,
-        "height": 1026,
-        "forwards" : true,
-        "runOnce" : true,
-        "imagePath" : "assets/images/character-animations/sarah_0_walk.png"
-
     },
           {
     "elementClass": "louise",
@@ -1742,7 +1731,7 @@ var spriteInfoArray = [ {
     "frameHeight": 479,
     "frameWidth": 441,
     "numberOfFrames": 55,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 24255,
         "height": 479,
         "forwards" : true,
@@ -1754,7 +1743,7 @@ var spriteInfoArray = [ {
     "frameHeight": 479,
     "frameWidth": 441,
     "numberOfFrames": 55,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 24255,
         "height": 479,
         "forwards" : true,
@@ -1766,7 +1755,7 @@ var spriteInfoArray = [ {
     "frameHeight": 479,
     "frameWidth": 441,
     "numberOfFrames": 56,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 24696,
         "height": 479,
         "forwards" : true,
@@ -1777,26 +1766,66 @@ var spriteInfoArray = [ {
 
       "talk" : [
 {
+    "elementClass": "sarah",
+    "frameHeight": 1026,
+    "frameWidth": 600,
+    "numberOfFrames": 48,
+    "ticksPerFrame": 1,
+        "width": 28800,
+        "height": 1026,
+        "forwards" : true,
+        "runOnce" : true,
+        "imagePath" : "assets/images/character-animations/sarah_0_walk.png"
+
     } ,
 {
     "elementClass": "louise",
     "frameHeight": 479,
     "frameWidth": 441,
     "numberOfFrames": 151,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 66591,
         "height": 479,
         "forwards" : true,
         "imagePath" : "assets/images/character-animations/louise_0_talk.png"
 
     } ,
-{
-    } ,
-{
-    } ,
-{
-    } 
+          {
+    "elementClass": "gladys",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 55,
+    "ticksPerFrame": 1,
+        "width": 24255,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/gladys_0_idle.png"
 
+    },
+          {
+    "elementClass": "mary",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 55,
+    "ticksPerFrame": 1,
+        "width": 24255,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/mary_0_idle.png"
+
+    } , 
+      {
+    "elementClass": "raymond",
+    "frameHeight": 479,
+    "frameWidth": 441,
+    "numberOfFrames": 56,
+    "ticksPerFrame": 1,
+        "width": 24696,
+        "height": 479,
+        "forwards" : true,
+        "imagePath" : "assets/images/character-animations/raymond_0_idle.png"
+
+    }
 
 
 
@@ -1839,7 +1868,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 51,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 25500,
         "height": 650,
         "forwards" : true,
@@ -1853,7 +1882,7 @@ var spriteInfoArray = [ {
     "frameHeight": 479,
     "frameWidth": 441,
     "numberOfFrames": 30,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 13230,
         "height": 479,
         "forwards" : true,
@@ -1865,7 +1894,7 @@ var spriteInfoArray = [ {
     "frameHeight": 479,
     "frameWidth": 441,
     "numberOfFrames": 41,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 18081,
         "height": 479,
         "forwards" : true,
@@ -1877,7 +1906,7 @@ var spriteInfoArray = [ {
     "frameHeight": 517,
     "frameWidth": 441,
     "numberOfFrames": 63,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 27783,
         "height": 517,
         "forwards" : true,
@@ -1892,7 +1921,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 37,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 18500,
         "height": 650,
         "forwards" : true,
@@ -1906,7 +1935,7 @@ var spriteInfoArray = [ {
     "frameHeight": 479,
     "frameWidth": 441,
     "numberOfFrames": 39,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 17199,
         "height": 479,
         "forwards" : true,
@@ -1918,7 +1947,7 @@ var spriteInfoArray = [ {
     "frameHeight": 479,
     "frameWidth": 441,
     "numberOfFrames": 43,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 18963,
         "height": 479,
         "forwards" : true,
@@ -1930,7 +1959,7 @@ var spriteInfoArray = [ {
     "frameHeight": 517,
     "frameWidth": 441,
     "numberOfFrames": 67,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 29547,
         "height": 517,
         "forwards" : true,
@@ -1981,7 +2010,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 48,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 24000,
         "height": 650,
         "forwards" : true,
@@ -1995,7 +2024,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 51,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 25500,
         "height": 650,
         "forwards" : true,
@@ -2007,7 +2036,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 141,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 70500,
         "height": 650,
         "forwards" : true,
@@ -2019,7 +2048,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 103,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 51500,
         "height": 650,
         "forwards" : true,
@@ -2034,7 +2063,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 142,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 71000,
         "height": 650,
         "forwards" : true,
@@ -2069,7 +2098,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 48,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 24000,
         "height": 650,
         "forwards" : true,
@@ -2083,7 +2112,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 51,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 25500,
         "height": 650,
         "forwards" : true,
@@ -2095,7 +2124,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 141,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 70500,
         "height": 650,
         "forwards" : true,
@@ -2107,7 +2136,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 103,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 51500,
         "height": 650,
         "forwards" : true,
@@ -2122,7 +2151,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 142,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 71000,
         "height": 650,
         "forwards" : true,
@@ -2158,7 +2187,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 48,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 24000,
         "height": 650,
         "forwards" : true,
@@ -2172,7 +2201,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 51,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 25500,
         "height": 650,
         "forwards" : true,
@@ -2184,7 +2213,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 141,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 70500,
         "height": 650,
         "forwards" : true,
@@ -2196,7 +2225,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 103,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 51500,
         "height": 650,
         "forwards" : true,
@@ -2211,7 +2240,7 @@ var spriteInfoArray = [ {
     "frameHeight": 650,
     "frameWidth": 500,
     "numberOfFrames": 142,
-    "ticksPerFrame": 2,
+    "ticksPerFrame": 1,
         "width": 71000,
         "height": 650,
         "forwards" : true,
@@ -3531,12 +3560,14 @@ gameOverlay.addEventListener('click', function() {
 		var sarahInScene = currentScene.getElementsByClassName('sarah');
 
 		sarahInScene[0].classList.add('talk');
+		initCharTalkAnimation('sarah' , currentSceneIndex , currentSubSceneIndex);
 
 			decisionButtonHUD.classList.remove('hide');
 		} else if(hasClass(conversationLayer,"sarah-review-started")){
 			conversationLayer.classList.add('hide');
 var sarahInScene = currentScene.getElementsByClassName('sarah');
 		sarahInScene[0].classList.remove('talk');
+		initSpriteAnimInScene(currentSceneIndex , currentSubSceneIndex);
 if(audio){
 
 	audio.pause();
@@ -3557,7 +3588,7 @@ if(audio){
 	
 
 		louiseInScene[0].classList.add('talk');
-	
+		initCharTalkAnimation('louise' , currentSceneIndex , currentSubSceneIndex);
 
 /*
 
@@ -3583,7 +3614,9 @@ if(audio){
 	playerInScene = currentScene.getElementsByClassName('player')
 
 		louiseInScene[0].classList.remove('talk');
+		initSpriteAnimInScene(currentSceneIndex , currentSubSceneIndex);
 		playerInScene[0].classList.add('talk');
+			initCharTalkAnimation('player' , currentSceneIndex , currentSubSceneIndex);
 
 
 
@@ -3698,7 +3731,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
 
 
-	var audioLocation = "/assets/sounds/"+audioFileOne ; // /LifeSpan/
+	var audioLocation = "/LifeSpan/assets/sounds/"+audioFileOne ; // /LifeSpan/
 	//var audioLocationLatter = "/LifeSpan/assets/sounds/"+audioFileTwo ; // /LifeSpan/
 
 audio = new Audio(audioLocation);
@@ -3984,7 +4017,7 @@ function reviewByLouise(){
 	for ( var i = 0; i < charactersInScene.length; i++) {
 		charactersInScene[i].classList.remove('talk');
 	};
-
+initSpriteAnimInScene(currentSceneIndex , currentSubSceneIndex);
 
 
 
@@ -4061,18 +4094,103 @@ function initSpriteAnimInScene(sceneNo , subSceneNo){
 
 		for (var i = 0; i < spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle.length; i++) {
 			if(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i] != {} ){
-			console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+			//console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
 				
 if(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i].elementClass == playerChar.class || spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i].elementClass == "louise" || spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i].elementClass == "sarah")
 {			
-			console.log(i);
-			console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+			//console.log(i);
+			//console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
                 sprite(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
 			}
 				
+			}
+};
+
+} ;
+
+function initCharTalkAnimation(className , sceneNo , subSceneNo){
+
+
+     initSpriteAnimInScene(sceneNo , subSceneNo);
+
+var speakerChar = currentScene.getElementsByClassName(className.class)[0];
+
+      for (var i = 0; i < activeSpriteArray.length; i++) {
+      			// break the loop to avoid length changes
+
+      			if(activeSpriteArray[i].elementClass == className){
+      				activeSpriteArray[i].destroySprite() ;
+      				activeSpriteArray.splice(i,1);
+      			}
+				
+      			
 			};
-}
-}
+      			//activeSpriteArray = [];
+
+		for (var i = 0; i < spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.talk.length; i++) {
+			if(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.talk[i] != {} ){
+			//console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+				
+if( spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.talk[i].elementClass == className )
+{			
+			//console.log(i);
+			//console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+                sprite(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.talk[i]);
+			}
+				
+			}
+};
+
+
+
+
+
+};
+
+
+
+function removeCharTalkAnimation(info , sceneNo , subSceneNo){
+
+
+     initSpriteAnimInScene(sceneNo , subSceneNo);
+
+var speakerChar = currentScene.getElementsByClassName(info.class)[0];
+
+      for (var i = 0; i < activeSpriteArray.length; i++) {
+      			// break the loop to avoid length changes
+
+      			if(activeSpriteArray[i].elementClass == info.class){
+      				activeSpriteArray[i].destroySprite() ;
+      				activeSpriteArray.splice(i,1);
+      			}
+				
+      			
+			};
+      			//activeSpriteArray = [];
+
+		for (var i = 0; i < spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle.length; i++) {
+			if(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i] != {} ){
+			//console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+				
+if( spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i].elementClass == info.class )
+{			
+			//console.log(i);
+			//console.log(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+                sprite(spriteInfoArray[sceneNo - 1].subScenes[subSceneNo].characters.idle[i]);
+			}
+				
+			}
+};
+
+
+
+
+
+};
+
+
+
+
 function closeAilmentNotes(){
 
 	if(introPage){
@@ -4817,7 +4935,7 @@ function NPCTagResponse(){
 			}
 
 			apartmentRedirect.classList.add("hide");
-
+           
 			navigateScenes(2, 0);
 			conversationLayer.classList.add('hide');
 
@@ -5038,6 +5156,7 @@ function runConversation(info) {
 
 
 				charAnimation(info[charNum].conversation[dialogueCount]);
+				initCharTalkAnimation(info[charNum].conversation[dialogueCount].class , currentSceneIndex , currentSubSceneIndex);
 				dialogueCount = dialogueCount + 1;
 
 			} else {
@@ -5050,6 +5169,7 @@ function runConversation(info) {
 				conversationBubble.classList
 						.add(conversationScriptArray[charNum].conversation[dialogueCount].sceneName);
 				charAnimation(conversationScriptArray[charNum].conversation[dialogueCount]);
+				initCharTalkAnimation(conversationScriptArray[charNum].conversation[dialogueCount].class , currentSceneIndex , currentSubSceneIndex);
 				dialogueCount = dialogueCount + 1;
 				disableCoversation();
 				// debugger;
@@ -5204,7 +5324,8 @@ if(audio){
 
 function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 
-
+    currentSceneIndex = sceneNo ;
+    currentSubSceneIndex = subSceneNo ;
 	gameOverlay.classList.remove('tint');
 	gameOverlay.classList.add('darken');
 	controlMode.classList.add('hide');
@@ -5240,8 +5361,10 @@ function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 		currentSubScene = sceneWrapper.children[sceneNo].children[subSceneNo] ;
 
 
-
-      initSpriteAnimInScene(sceneNo , subSceneNo);
+if(currentSceneIndex > 0){
+	     initSpriteAnimInScene(sceneNo , subSceneNo); // objects from prev scene are not destroyed.
+}
+ 
 
 
 
