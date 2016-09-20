@@ -1,7 +1,7 @@
 
 
 
-var charAnn, charSarah, buttonPlay, buttonPrev, scoreSvg , buttonNext, appContainer ,
+var charAnn, charSarah, buttonPlay, buttonPrev, scoreSvg , buttonNext, appContainer , divtag ,
 
 infoApartmentArray = [ {
 	'title' : 'Pine Grove Apartments',
@@ -1744,6 +1744,7 @@ charSarah = document.getElementById('characterSarah');
 chairLouiseZero = document.getElementById('chairLouiseZero');
 leftNav = document.getElementById('leftNav');
 rightNav = document.getElementById('rightNav');
+divtag = document.getElementById('divtag');
 disableClickLayer = document.getElementById('disableClickLayer');
 apartmentRedirect = document.getElementById('apartmentRedirect');
 
