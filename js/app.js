@@ -2933,7 +2933,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
 
 
-	var audioLocation = "/LifeSpan/assets/sounds/"+audioFileOne ; // /LifeSpan/
+	var audioLocation = "/assets/sounds/"+audioFileOne ; // /LifeSpan/
 	//var audioLocationLatter = "/LifeSpan/assets/sounds/"+audioFileTwo ; // /LifeSpan/
 
 audio = new Audio(audioLocation);
