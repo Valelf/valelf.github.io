@@ -38,7 +38,23 @@ infoApartmentArray = [ {
 
 
 var controlInfo, closeInfoText, audioNarrationActive = true , instructionAudio, apartmentRedirect , OOIEffectAudio , currentHintAduio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
-
+var scoreInfoContent,scoreInfoContentText,scoreInfoCloseButton;
+scoreInfoContent = document.getElementById("scoreInfoContent");
+scoreInfoContentText = document.getElementById("scoreInfoContentText");
+scoreInfoCloseButton = document.getElementById("scoreInfoCloseButton");
+scoreInfoCloseButton.addEventListener("click", function(){
+    scoreInfoContent.classList.add("hide");
+})
+var scoreinfolist = {
+    "game": {
+        "text": "Increase your game score by categorizing objects correctly and choosing the best apartment for ",
+        "audioFile" :"/LateAdulthood_Narration_Score_92.mp3"
+    },
+    "engagement": {
+        'text' : 'Receive engagement points for exploring and categorizing objects.',
+        "audioFile" :"common/LateAdulthood_Narration_Score_91.mp3"
+    }
+}
 var tagScore = 5 , audio ,  audioLocation = "/LifeSPan/assets/sounds/LateAdulthood_Louise_LouiseOffice_11.mp3 " , endGameReview = false , replayControl ,scoreContainer , gameRestart , scoreTitle , engagementScoreArray, gameScoreArray  , controlScore , engagementScoreBox , scoreContent , apartmentPlayerSelected = false , pinegroveObjectsExplored = 0 , activeApartment , inActiveApartmentLeft , inActiveApartmentRight , taggedApartmentOOI , decisionButtonHUD , lakeviewObjectsExplored = 0 , sunnyvaleObjectsExplored = 0 , checkEye = false , checkEar = false ,  checkLeg = false ,  introPage = true , exploredObjectsList , noOfObjectsExplored , ailmentContent , dismissAilmentButton , controlNotes , apartmentScore = 60 , closeObject , userInterface , characterPin , objectTitle , inSceneOOIs , currentOOIDescription= "" , objectDescription , objectEffectContent , objectDescriptionContent , engagementScore = 0 , gameScore = 0 , rentDetails, loadDuration = 30000 , currentApartment , gameMode , settingOn = false , controlMode ,soundControl ,gameMusicControl , spinned = false, ringOne ,playerChar, ratingDetails, distanceDetails, ammenitiesDetails, tourButton, instructionHUD, instructionTitle, instructionContent, nextButton, spinButton, characterSelectionWidget, widgetTitle, guideHeader, slotMachine, spinButton, charProfile, charAvtar, charProfileName, charProfileSummary, charDetailsList, charDetailsOne, charDetailsTwo, conversationLayer, conversationBubble, speakerName, conversationtext, chairLouiseZero, currentScene = infoApartmentArray[0], currentSubScene , characterIDArray, conversationScriptArray, contextCount = 0, dialogueCount = 0, sceneWrapper, sceneTwo , gameOverlay, sceneTransition = false, machineBackground, apartmentIcon, instructionCount = 0, apartmentInfo,forceShowHints;
 
 var apartmentObjectsExplored = [ pinegroveObjectsExplored , lakeviewObjectsExplored , sunnyvaleObjectsExplored ] ;
@@ -109,7 +125,7 @@ function initHints(isRestart){
 
 		hideHint();
 		hideHintIcon();
-		//hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": true}; 
+		//hintFlags = {"wheelSpin": 0, "officeConversation": 0, "map": 0, "apartmentVisit": 0, "apartmentExit": 0,"apartmentRoam":0, "apartmentDiamond": 0, "gameScore":0, "engagementScore":0, "isHintMsgShowing": true};
 		currentHint =	infoScriptArray.wheelSpin.informationText;
 		currentHintAduio = infoScriptArray.wheelSpin.audioFile;
 		forceShowHints = false;
@@ -1824,9 +1840,9 @@ ailments[0].classList.add('learn');
 
 /** Initializing functions ** */
 //document.documentElement.webkitRequestFullscreen();
-var windowWidth = window.innerWidth, windowHeight = window.innerHeight, windowWidthNew;
+var windowWidth = window.innerWidth, windowHeight = window.innerHeight, windowWidthNew,windowWidthNew1,marginNew;
 windowWidthNew = (windowHeight * 4) / 3;
-
+windowWidthNew1=windowWidthNew.toFixed(1)+2;
 appContainer.style.height = windowHeight + 'px';
 appContainer.style.width = windowWidthNew + 'px';
 var margin = windowWidth - windowWidthNew;
@@ -2088,16 +2104,16 @@ document.getElementById("ring-1").classList.remove("mary")
 document.getElementById("ring-1").classList.remove("gladys")
 document.getElementById("ring-1").classList.remove("mary")
 spinnerCharInfo[0].classList.add("vanish")
-// console.log("characterPlayerIDArray characterPlayerIDArray");
-// console.log(characterPlayerIDArray);
+console.log("characterPlayerIDArray characterPlayerIDArray");
+console.log(characterPlayerIDArray);
 for ( var j = 0; j < characterPlayerIDArray.length ; j++) {
 	ringOne.classList.remove(characterPlayerIDArray[j]);
 
 
-	// console.log(characterPlayerIDArray[j]);
+	console.log(characterPlayerIDArray[j]);
 	var charElements = sceneWrapper.getElementsByClassName(characterPlayerIDArray[j])
-	// console.log(charElements);
-	// console.log(charElements.length);
+	console.log(charElements);
+	console.log(charElements.length);
 	//resetting scenewrapper by removing player classes if exists
 	if(charElements){
 		sceneWrapper.classList.remove(characterPlayerIDArray[j]);
@@ -2154,6 +2170,14 @@ conversationLayer.classList.remove('player-review');
 conversationLayer.classList.remove('louise-review-started');
 conversationLayer.classList.remove('sarah-review');
 conversationLayer.classList.remove('sarah-review-started');
+apartmentOOIOne.classList.add('hide');
+apartmentOOITwo.classList.add('hide');
+apartmentOOIThree.classList.add('hide');
+apartmentOOIFour.classList.add('hide');
+apartmentOOIFive.classList.add('hide');
+apartmentOOISix.classList.add('hide');
+activeApartment.classList.remove('active');
+
 
   for ( var j = 0; j < characterIDArray.length ; j++) {
     conversationBubble.classList.remove(characterIDArray[j]);
@@ -2196,7 +2220,7 @@ navigateScenes(0,0,characterSelectionWidget);
 gameOverlay.classList.add('tint');
 //navigateInstructions();
 //selectCharacter(playerCharacterArray);
-
+scoreInfoContent.classList.add("hide");
 }
 
 
@@ -2246,7 +2270,7 @@ apartmentIcon[0].addEventListener('click', function() {
 		if(hintFlags.map==0){
 			forceShowHints = true;
 			showHint();
-		
+
 			hintFlags.map=1;
 		}
 	}
@@ -2485,13 +2509,13 @@ leftNav.addEventListener('click', function() {
 applyButton.addEventListener('click', function(e) {
 
 	e.stopPropagation();
-	// console.log("asdfsdfdf asdfasdf asdfadsf  == 18");
-	// console.log(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2]);
+	console.log("asdfsdfdf asdfasdf asdfadsf  == 18");
+	console.log(apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2]);
 
 	gameMode.classList.remove('hide');
 	settingsView.classList.add('hide');
 	settingOn = false;
-	// console.log(currentScene);
+	console.log(currentScene);
 	if ((hasClass(currentScene,"scene-zero") || hasClass(currentScene,"scene-one") ) && apartmentObjectsExplored[0] + apartmentObjectsExplored[1] + apartmentObjectsExplored[2] != 18) {
 		if(!((playerChar.index==0 && dialogueCount==7) || (playerChar.index==1 && dialogueCount==9) || (playerChar.index==2 && dialogueCount==11))){
 			conversationLayer.classList.add("active");
@@ -2526,7 +2550,7 @@ apartmentRedirect.addEventListener('click', function() {
       apartmentObjectsExplored = [ 6 , 6 , 6 ] ;
       engagementScore = 195;
       gameScore = 95 ;
-      allotTagsfast();
+      allotTagsSkip();
 			navigateScenes(2,0);
 			conversationLayer.classList.add('hide');
             objectDescription.classList.add('hide');
@@ -2612,6 +2636,9 @@ var activateApartment = false;
 inActiveApartmentLeft.addEventListener('click', function() {
 	var newClass = activeApartment.classList[0];
 	activeApartment.classList = "";
+	activeApartment.classList.remove('pinegrove');
+	activeApartment.classList.remove('sunnyvale');
+	activeApartment.classList.remove('lakeview');
 	if(inActiveApartmentLeft.classList[0] == "pinegrove"){
 		currentApartment = infoApartmentArray[0];
 	}else if(inActiveApartmentLeft.classList[0] == "lakeview"){
@@ -2621,6 +2648,9 @@ inActiveApartmentLeft.addEventListener('click', function() {
 	}
 	allotTags(currentApartment);
 	this.classList="";
+	this.classList.remove('pinegrove');
+	this.classList.remove('sunnyvale');
+	this.classList.remove('lakeview');
 	this.classList.add(newClass);
 	activeApartment.classList.add(currentApartment.class);
 	activeApartment.classList.add("active");
@@ -2630,10 +2660,10 @@ inActiveApartmentLeft.addEventListener('click', function() {
 	if(activateApartment){
 
 
-		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing." ; 
+		guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing." ;
 			var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
 		playAudio(playerSelectedApartmentAudioFile);
-		
+
 
 	}
 
@@ -2641,6 +2671,9 @@ inActiveApartmentLeft.addEventListener('click', function() {
 inActiveApartmentRight.addEventListener('click', function() {
 	var newClass = activeApartment.classList[0];
 	activeApartment.classList = "";
+		activeApartment.classList.remove('pinegrove');
+	activeApartment.classList.remove('sunnyvale');
+	activeApartment.classList.remove('lakeview');
 	if(inActiveApartmentRight.classList[0] == "pinegrove"){
 		currentApartment = infoApartmentArray[0];
 	}else if(inActiveApartmentRight.classList[0] == "lakeview"){
@@ -2650,6 +2683,9 @@ inActiveApartmentRight.addEventListener('click', function() {
 	}
 	allotTags(currentApartment);
 	this.classList="";
+	this.classList.remove('pinegrove');
+	this.classList.remove('sunnyvale');
+	this.classList.remove('lakeview');
 	this.classList.add(newClass);
 	activeApartment.classList.add(currentApartment.class);
 	activeApartment.classList.add("active");
@@ -2674,11 +2710,6 @@ activeApartment.addEventListener('click', function() {
 	activateApartment =true;
 
 
-	guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
-
-				var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
-		playAudio(playerSelectedApartmentAudioFile);
-	
 
 	this.classList.add('active');
 	for(var i=0 ; i < taggedApartmentOOI.length ;i++ ){
@@ -2699,6 +2730,10 @@ activeApartment.addEventListener('click', function() {
 		noteDismissButton.classList.remove('hide');
 		noteDismissButton.innerHTML = "Choose "+currentApartment.name ;
 	}
+	guideHeader.innerText = "You choose " + infoApartmentArray[currentApartment.index].title +" . Let's see how " +playerChar.name+ " is doing."
+
+				var playerSelectedApartmentAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_"+(79 + currentApartment.index )+".mp3" ;
+		playAudio(playerSelectedApartmentAudioFile);
 });
 var countcheck=0;
 gameOverlay.addEventListener('click', function() {
@@ -2742,8 +2777,8 @@ if(audio){
 
 			conversationLayer.classList.remove('sarah-review-started');
 		} else if(hasClass(conversationLayer, 'louise-review')){
-			
-			
+
+
 			conversationLayer.classList.remove('hide');
 			conversationtext.innerHTML = "Hi, "+ playerChar.name +". Good to see you again. How do you like your new apartment?"; // + " <div class='tap-to-contn'>TAP TO CONTINUE</div>";
 			var louiseReviewAudioFile = playerChar.class+"/LateAdulthood_Louise_LouiseOffice_83.mp3"
@@ -2752,10 +2787,10 @@ if(audio){
 			conversationLayer.classList.add("louise-review-started");
 
 	var louiseInScene = currentScene.getElementsByClassName('louise');
-	
+
 
 		louiseInScene[0].classList.add('talk');
-	
+
 
 /*
 
@@ -2765,15 +2800,15 @@ if(audio){
 		louiseInScene.classList.remove('talk');
 		playerInScene.classList.add('talk');*/
 
-		
-			
+
+
 		} else if(hasClass(conversationLayer, 'louise-review-started')){
 			conversationLayer.classList.remove('louise-review-started');
 			conversationLayer.classList.add('player-review');
 			conversationBubble.classList.remove('louise');
-			conversationBubble.classList.add(playerChar.class); 
-			conversationBubble.classList.remove('scene-one'); 
-			conversationBubble.classList.add('scene-zero'); 
+			conversationBubble.classList.add(playerChar.class);
+			conversationBubble.classList.remove('scene-one');
+			conversationBubble.classList.add('scene-zero');
 			speakerName.innerHTML = playerChar.name;
 			conversationtext.innerHTML = reviewConversationArray[playerChar.index].selectedApartment[currentApartment.index].playerReview ; //+ '<div class="tap-to-contn">TAP TO CONTINUE</div>';
 
@@ -2812,6 +2847,7 @@ if(audio){
 		forceShowHints = false;
 	}
 	// hideMap();
+	scoreInfoContent.classList.add("hide");
 });
 
 controlMode.addEventListener("click", function(){
@@ -2896,7 +2932,7 @@ if(window.location.href.indexOf("restrictClick") > -1){
 
 
 
-	var audioLocation = "/assets/sounds/"+audioFileOne ; // /LifeSpan/
+	var audioLocation = "/LifeSpan/assets/sounds/"+audioFileOne ; // /LifeSpan/
 	//var audioLocationLatter = "/LifeSpan/assets/sounds/"+audioFileTwo ; // /LifeSpan/
 
 audio = new Audio(audioLocation);
@@ -2911,7 +2947,7 @@ audio.addEventListener('ended',function(){
 		playAudio(audioFileTwo);
 	}
 
-	// console.log('audio-complete');
+	console.log('audio-complete');
     if(window.location.href.indexOf("restrictClick") > -1){
 disableClickLayer.classList.add('hide');
 }
@@ -2963,13 +2999,17 @@ function cleanArray(actual) {
 
 function animateEngagementScore(eScore){
 
-	// console.log("animateEngagementScore");
-	// console.log(eScore);
+	console.log("animateEngagementScore");
+	console.log(eScore);
 	 /*outerCircle = document.querySelectorAll('path')[0],					 The colored circle outside the white progress line
 		progressCircle = document.querySelectorAll('path')[1],	*/				/* The white circle that stays static */
-
+          var height = window.innerHeight;
+		  if(height<=600){
+			  movingCircle.style.strokeDashoffset = 75.42 - (75.42/200)*eScore;
+		  }
+		  else{
 		movingCircle.style.strokeDashoffset = 113 -  (113/200)*eScore;
-
+		  }
       //  scoreSvg.setAttribute('viewBox','0 0 50 50');
 
 }
@@ -3165,9 +3205,24 @@ function displayScore(){
 		scoreTitle.innerHTML = "Try Again!";
 	}
 
-	scoreContent.innerHTML = '<p class="score-value" >'+gameScore+'</p><p class="score-description" >Your Score</p><p class="score-value" >'+engagementScore+'</p><p class="score-description" >Your Engagement Score</p>'
+	scoreContent.innerHTML = '<p class="score-value" >'+gameScore+'</p><p class="score-description" >Your Score<img class="score-info-button" onClick="displayScoreInfo(\'game\',event)" src="assets/images/score-info.png"></p><p class="score-value" >'+engagementScore+'</p><p class="score-description" >Your Engagement Score<img class="score-info-button" onClick="displayScoreInfo(\'engagement\',event)" src="assets/images/score-info.png"></p>';
 }
 
+function displayScoreInfo(score,event){
+	scoreInfoContent.classList.remove("game");
+	scoreInfoContent.classList.remove("engagement");
+	if(score==="game"){
+	    scoreInfoContent.classList.add("game");
+	    scoreInfoContentText.innerText=scoreinfolist.game.text+playerChar.name;
+	    playAudio(playerChar.class + scoreinfolist.game.audioFile);
+	} else if(score=="engagement"){
+	    scoreInfoContent.classList.add("engagement");
+	    scoreInfoContentText.innerText=scoreinfolist.engagement.text;
+	    playAudio(scoreinfolist.engagement.audioFile);
+	}
+	scoreInfoContent.classList.remove("hide");
+	event.stopPropagation();
+}
 
 function reviewByLouise(){
 
@@ -3187,7 +3242,7 @@ function reviewByLouise(){
 
 
 	// /navigateScenes(1,0);
-	
+
 	conversationLayer.classList.add('louise-review');
 	conversationBubble.classList.remove('scene-one');
 	conversationBubble.classList.remove('sarah');
@@ -3313,7 +3368,7 @@ function showHint(secondaryAudioFile){
 	hintInfoText.innerHTML = currentHint;
 	//controlInfo.classList.add("hide");
 		infoText.classList.remove("hide");
-	// console.log("show hint called");
+	console.log("show hint called");
 	if(currentHintAduio){
 		if(secondaryAudioFile){
 			playAudio(currentHintAduio,secondaryAudioFile);
@@ -3359,7 +3414,7 @@ function showTagNotes(info){
 
 	var playerTagsAudioFile = playerChar.class + "/LateAdulthood_Narration_DecisionScreen_78.mp3" ;
 		playAudio(playerTagsAudioFile);
-	
+
 
 }
 
@@ -3418,11 +3473,11 @@ function allotTags(info){
 
 
 //function done by sagar integrated by dixit
-function allotTagsfast(info){
+function allotTagsSkip(info){
 
-// console.log(defaultPlayerOOITags);
+console.log(defaultPlayerOOITags);
 playerOOITags = defaultPlayerOOITags;
-// console.log(playerOOITags);
+console.log(playerOOITags);
 
 }
 
@@ -3453,7 +3508,7 @@ function selectCharacter(info) {
 
 
 	// closeCharWiget();
-	// console.log(charName);
+	console.log(charName);
 }
 
 function initApartmentHint(){
@@ -3617,7 +3672,7 @@ function showOOIDescription(info,i){
 
             OOIEffectAudio  = playerChar.class+"/LateAdulthood_Narration_OOI_Effect.mp3";
 
-		    
+
 			currentHint = infoScriptArray.apartmentDiamond.informationText + closeHint;
 			currentHintAduio = infoScriptArray.apartmentDiamond.audioFile;
 			hintInfoText.innerHTML = currentHint;
@@ -3628,9 +3683,9 @@ function showOOIDescription(info,i){
 			} else {
 				playAudio(objectDescriptionAudio);
 			}
-			
 
-		    
+
+
 
 
 		}
@@ -3680,7 +3735,7 @@ if(audio){
 				audio.pause();
 			}
 
-	
+
 	objectEffect.classList.remove('active');
 	objectEffect.classList.add('hide');
 
@@ -3751,11 +3806,11 @@ spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.pn
 
 
 		//sagar's code for auto-finish integrated by dixit
-		if(window.location.href.indexOf("fast") > -1){
-// console.log('fast present');
+		if(window.location.href.indexOf("skip") > -1 || window.location.href.indexOf("fast") > -1){
+console.log('skip present');
 apartmentRedirect.classList.remove('hide');
 }else{
-	// console.log('fast NOT present');
+	console.log('skip NOT present');
 }
 
 
@@ -3833,7 +3888,7 @@ function toggleNavButton(){
 }}
 function revealMap(){
 	controlMap.classList.add('hide');
-		
+
 	toggleMap();
 }
 function showApartmentInfo(info, i) {
@@ -3876,10 +3931,10 @@ function showApartmentInfo(info, i) {
 
 
 function tagOOI(info,i){
-	for(var k = 0; k < objectEffectTag.length ; k++){
+/*	for(var k = 0; k < objectEffectTag.length ; k++){
 		objectEffectTag[k].classList.remove('tagged');
 	}
-	objectEffectTag[i].classList.add('tagged');
+	objectEffectTag[i].classList.add('tagged');*/
 
 	var tags = ['plus','neutral','minus'];
 	currentTag = tags[i];
@@ -3950,8 +4005,14 @@ function tagOOI(info,i){
 			gameScoreArray[currentApartment.index].taggedOOIs[currentOOIIndex] = 5 ;
 		}
 	}
-	// console.log(gameScore);
+	console.log(gameScore);
 }
+
+function tagGlowOff(){
+
+}
+
+
 function selectOOI(i){
 	currentOOIIndex = i ;
 
@@ -3972,7 +4033,7 @@ function NPCTagResponse(){
 	conversationBubble.classList.add('OOI-tagging'); //to fix chat bubble on top of sarah
 	speakerName.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCName
 	conversationtext.innerHTML = OOIContentArray[currentApartment.index].apartmentOOIs[currentOOIIndex].characterImpact[playerChar.index].NPCResponse;
-	
+
 	var played = 0;
 
 
@@ -4093,7 +4154,7 @@ function showInstructions(i) {
 }
 function meetCharacter() {
 	closeCharWiget();
-	// console.log('meet');
+	console.log('meet');
 	guideHeader.classList.add('hide');
 	instructionHUD.classList.add('hide');
 	guideHeader.innerText = '';
@@ -4136,7 +4197,7 @@ function charAnimation(info) {
 
 	idleCharacters(info, function() {
 		speakerChar.classList.add('talk');
-		// console.log('working');
+		console.log('working');
 	})
 }
 
@@ -4173,7 +4234,7 @@ function runConversation(info) {
 		conversationLayer.classList.add('active');
 
 	}
-	// console.log(dialogueCount);
+	console.log(dialogueCount);
 
 	var charNum = playerChar.index;
 	var charPositionArray = [ 'sarah', 'louise', 'gladys', 'raymond', 'mary',
@@ -4278,7 +4339,7 @@ function preLoadNPCImages(){
 
 	var NPCChar;
   var louiseImages = images;
-  // console.log(louiseImages[1]);
+  console.log(louiseImages[1]);
   var totalCountWidth = 53.5;
 /*  var louiseImages = ['/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00920.png',
   '/LifeSpan/assets/images/character-animations/scene-0/talk/louise/Louise_00921.png',
@@ -4462,7 +4523,19 @@ function setup_posters (row)
   }
 
 }
+   //screen.lockOrientation('landscape');
 
+window.addEventListener("orientationchange", function() {
+    //alert("the orientation of the device is now " + screen.orientation.angle);
+    if(screen.orientation.angle==0)
+    {
+    divtag.classList.remove('hide');
+    document.getElementById('divtag').style.height=window.innerHeight+"px";
+   	appContainer.classList.add('hide');
+}else{
+	divtag.classList.add('hide');
+	appContainer.classList.remove('hide');
+}
+});
 
 /** ****** button Events ****** */
-
