@@ -1,4 +1,5 @@
 images = [
+  "/assets/images/splash-screen.jpg",
 "/assets/images/Arrow-icon-white-left.png",
 "/assets/images/Arrow-icon-white-right.png",
 "/assets/images/audio-off.png",
@@ -1635,5 +1636,6 @@ images = [
 "/assets/sounds/raymond/LateAdulthood_Sarah_LouiseOffice_16.mp3",
 "/assets/sounds/raymond/LateAdulthood_Sarah_LouiseOffice_18.mp3",
 "/assets/sounds/raymond/LateAdulthood_Sarah_LouiseOffice_20.mp3",
-"/assets/sounds/raymond/LateAdulthood_Sarah_LouiseOffice_77.mp3"
+"/assets/sounds/raymond/LateAdulthood_Sarah_LouiseOffice_77.mp3",
+"/assets/sounds/mary/LateAdulthood_Sarah_LouiseOffice_17.mp3"
 ]
