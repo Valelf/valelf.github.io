@@ -20,7 +20,11 @@
 
 </head>
 <body>
+<div id="divtag" class="div-tag hide">
+	You have to use it only in landscape mode
+	</div>
 	<div id="appContainer" class="app-container">
+
 		<div id="sceneWrapper" class="scene-wrapper">
 			<div id="sceneIntro" class="scene-intro scene ">
 				<div id="subSceneZeroZero" class="sub-scene ">
@@ -98,11 +102,11 @@
 					<div id="gameWorldTwoZero" class="game-world">
 						<div id="backGroundTwoZero" class="background  "></div>
 						<div id="foreGroundTwoZero" class="foreground">
-						<div id="intercomPinegrove" class="glowing-object pinegrove-glow intercom glow  hide"></div>
-						<div id="rampSunnyvale" class="glowing-object sunnyvale-glow ramp glow hide"></div>
-						<div id="streetSunnyvale" class="glowing-object sunnyvale-glow street glow hide"></div>
-						<div id="stairsLakeview" class="glowing-object lakeview-glow stairs glow hide"></div>
-						<div id="frenchDoorLakeview" class="glowing-object lakeview-glow french-door glow hide"></div>
+						<div id="intercomPinegrove" class="glowing-object pinegrove-glow frontdoor glow  hide"></div>
+						<div id="rampSunnyvale" class="glowing-object sunnyvale-glow steps glow hide"></div>
+						<div id="streetSunnyvale" class="glowing-object sunnyvale-glow frontdoor glow hide"></div>
+						<div id="stairsLakeview" class="glowing-object lakeview-glow steps glow hide"></div>
+						<div id="frenchDoorLakeview" class="glowing-object lakeview-glow frontdoor glow hide"></div>
 
 							<div id="walkerBackTwoZero"
 								class="walker-back-two-zero"></div>
@@ -126,19 +130,19 @@
 						<div id="backGroundTwoOne" class="background  "></div>
 						<div id="foreGroundTwoOne" class="foreground">
 					<div id="stepsPinegrove" class="glowing-object pinegrove-glow steps glow hide"></div>
-					<div id="lightPinegrove" class="glowing-object pinegrove-glow light glow  hide"></div>
-					<div id="windowPinegrove" class="glowing-object pinegrove-glow window glow hide "></div>
+					<div id="lightPinegrove" class="glowing-object pinegrove-glow lighting glow  hide"></div>
+					<div id="windowPinegrove" class="glowing-object pinegrove-glow windows glow hide "></div>
 					<div id="sofaPinegrove" class="sofa-pinegrove pinegrove-glow hide"></div>
 					<div id="lampPinegrove" class="lamp-pinegrove hide "></div>
-					<div id="floorPinegrove" class="glowing-object pinegrove-glow floor glow  hide"></div>
+					<div id="floorPinegrove" class="glowing-object pinegrove-glow flooring glow  hide"></div>
 
-					<div id="windowSunnyvale" class="glowing-object sunnyvale-glow window glow  hide"></div>
-					<div id="lightSunnyvale" class="glowing-object sunnyvale-glow light glow  hide"></div>
-					<div id="floorSunnyvale" class="glowing-object sunnyvale-glow floor glow hide "></div>
+					<div id="windowSunnyvale" class="glowing-object sunnyvale-glow windows glow  hide"></div>
+					<div id="lightSunnyvale" class="glowing-object sunnyvale-glow lighting glow  hide"></div>
+					<div id="floorSunnyvale" class="glowing-object sunnyvale-glow flooring glow hide "></div>
 
-					<div id="floorLakeview" class="glowing-object lakeview-glow floor glow hide "></div>
-					<div id="ceilingLakeview" class="glowing-object lakeview-glow ceiling glow hide "></div>
-					<div id="lightLakeview" class="glowing-object lakeview-glow light glow hide "></div>
+					<div id="floorLakeview" class="glowing-object lakeview-glow flooring glow hide "></div>
+					<div id="ceilingLakeview" class="glowing-object lakeview-glow windows glow hide "></div>
+					<div id="lightLakeview" class="glowing-object lakeview-glow lighting glow hide "></div>
 						<div id="walkerBackTwoOne"
 								class="walker-back-two-one"></div>
 							<div id="characterPlayerTwoOne"
@@ -225,13 +229,13 @@
 
 				<div id="gameMap" class="game-map   hide">
 					<div id="apartmentOne" class="apartment one point">
-
+						<div>Pine Grove</div>
 					</div>
 					<div id="apartmentTwo" class="apartment two point">
-
+						<div>Lakeview</div>
 					</div>
 					<div id="apartmentThree" class="apartment three point">
-
+						<div>Sunnyvale</div>
 					</div>
 
 					<div id="apartmentInfo" class="apartment-info hide">
@@ -438,7 +442,6 @@
     <div id="characterTileThree" class="character-tiles three"></div> -->
     										<div class="spinner-char-info vanish"><span class="char-name">Gladys</span>
 											<div class="char-profile-spinner">
-											<span class="char-gender" >Female</span>
 											<span class="char-age">86 years</span></div>
 
 
@@ -447,7 +450,7 @@
 						<div id="glassFrame" class="glass-frame "></div>
 					</div>
 					<div id="spinButton" class="spin-button point">
-						Go <img
+						Spin <img
 						src="assets/images/next-icon.png" id="nextArrow"
 						class="next-arrow">
 					</div>
@@ -515,7 +518,6 @@
 		<audio id="gameMusic">
 			<source src="" type="audio/mpeg">
 
-
 		</audio>
 
 	</div>
@@ -526,18 +528,15 @@
 	<div id="disableClickLayer" class="disable-click-layer hide"></div>
 	</div>
 
-
-	
+	<!--  <script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/devAnimMaker.js"></script>
+	 -->
 	<script type="text/javascript" src="json/louiseImages.json"></script>
-<!-- 
-	<script type="text/javascript" data-main="js/app" src="js/require.js"></script> -->
+	<script type="text/javascript" data-main="js/app" src="js/require.js"></script>
 
-<!--	<script type="text/javascript" data-main="js/app" src="js/require.js"></script>  -->
-<!--	<script type="text/javascript" src="js/devAnimMaker.js"></script> -->
 	<script type="text/javascript" src="vendor/pxloader/PxLoader.js"></script>
 	<script type="text/javascript" src="vendor/pxloader/PxLoaderImage.js"></script>
 	<script type="text/javascript" src="vendor/pxloader/PxLoaderSound.js"></script>
-	 <script type="text/javascript" src="js/app.js"></script>
 	<!--  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-NFJ3V2');</script>
   <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFJ3V2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    -->

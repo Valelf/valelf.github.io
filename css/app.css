@@ -760,7 +760,7 @@ top: -2%;
     font-size: 70%;
     color: black;
     /* border-right: 1px solid; */
-    padding: 0% 0% 0 6%;
+        padding: 0 0 0 1%;
 }
 .char-ethnicity{
     font-size: 70%;
@@ -863,7 +863,7 @@ top: -2%;
     height: auto;
     min-height: 6%;
     padding: 1.6vh 2%;
-    left: 37.5%;
+    left: 35.5%;
     color: white;
     font-size: 2.5vh;
     text-align: center;
@@ -918,7 +918,11 @@ position: relative;
 }
 .meet{
     width:25%;
-    left:37.5%;
+
+    left:35.5%;
+
+
+
 }
 .score-container{
         position: absolute;
@@ -1192,7 +1196,7 @@ box-shadow:0.25px -0.25px 20px 7px #ea5216;
     bottom: 7%;
     height: auto;
     padding: 1.6vh 2%;
-    left: 40%;
+    left: 38%;
     min-height: 2.5vh;
     color: white;
     font-size: 110%;
@@ -1355,7 +1359,7 @@ list-style-type: circle;
     bottom: 7%;
     height: auto;
     padding: 1.6vh 2%;
-    left: 40%;
+    left: 38%;
     min-height: 6%;
     color: white;
     font-size: 110%;
@@ -1380,7 +1384,7 @@ list-style-type: circle;
     bottom: 9%;
     height: auto;
     padding: 1.6vh 2%;
-    left: 40%;
+    left: 38%;
     min-height: 3%;
     color: white;
     font-size: 110%;
@@ -2745,53 +2749,105 @@ transition: all ease-in 0.3s;
     width: 9.75%;
     height: 13%;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     background-color: rgba(194, 225, 239, 0);
     /* border: 1px solid; */
-    background-image: url(../assets/images/home-icon.png);
     background-repeat: no-repeat;
-    background-size: auto 70%;
+    background-size: auto 100%,auto 138%;
     background-position: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.apartment:hover{
-    background-image: url(../assets/images/home-icon.png) , -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    background-image: url(../assets/images/home-icon.png) , -moz-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    background-image: url(../assets/images/home-icon.png) , -o-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    background-image: url(../assets/images/home-icon.png) , -ms-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    background-position: 50% , 50%;
-    background-size: auto 70% , auto 100%;
-}
-.apartment.clicked{
-    background-image: url(../assets/images/home-icon.png) , -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-     background-image: url(../assets/images/home-icon.png) , -moz-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-      background-image: url(../assets/images/home-icon.png) , -o-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-       background-image: url(../assets/images/home-icon.png) , -ms-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    background-position: 50% , 50%;
-    background-size: auto 70% , auto 100%;
-}
-.apartment.location{
-
-    background-image: url(../assets/images/home-icon.png) , -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    background-image: url(../assets/images/home-icon.png) , -moz-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    background-image: url(../assets/images/home-icon.png) , -o-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-    background-image: url(../assets/images/home-icon.png) , -ms-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
-
-    background-image: url(../assets/images/home-icon.png) , -webkit-linear-gradient(top, #fbc6b1 0%,#fdb497 13%,#ff946e 50%,rgb(255, 79, 16) 100%);
-    background-position: 50% , 50%;
-    background-size: auto 70% , auto 100%;
+.apartment div{
+    padding: 7px;
+    height: auto;
+    left: 0%;
+    margin-top: 2px;
+    margin-left: -7px;
+    top: 100%;
+    /* min-width: 100%; */
+    position: absolute;
+    width: 100%;
+    font-size: 100%;
+    font-weight: bold;
+    content: "hello";
+    border-radius: 20px;
+    text-align: center;
+    cursor: default;
+    background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
+    background: -moz-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(205,206,208,0.9) 13%,rgba(255,255,255,0.94) 50%,rgba(255,255,255,1) 100%);
+    /* background: -webkit-linear-gradient(top, rgba(187,189,191,0.9) 0%,rgba(196,198,199,0.9) 13%,rgba(255,255,255,1) 100%); */
+    box-shadow: 0.3px 0px 5px 1px rgba(64, 64, 64, 0.66);
 }
 .apartment.one{
         left: 21%;
     top: 17%;
+  background-image: url(../assets/images/pinegrove-icon.png), url(../assets/images/icon-base-focus.png)
 }
 .apartment.two{
 left: 73%;
     top: 18%;
+  background-image: url(../assets/images/lakeview-icon.png), url(../assets/images/icon-base-focus.png)
 }
 .apartment.three{
 left: 66%;
-    top: 58%;
+  top: 58%;
+  background-image: url(../assets/images/sunnyvale-icon.png), url(../assets/images/icon-base-focus.png)
+}
+.apartment:hover{
+    background-position: 50% , 50%;
+    background-size: auto 100% , auto 138%;
+    box-shadow: 0.25px -0.25px 20px 7px gray;
+    -webkit-box-shadow: 0.25px -0.25px 20px 7px gray;
+    -moz-box-shadow: 0.25px -0.25px 20px 7px gray;
+}
+.apartment.one:hover{
+    background-image: url(../assets/images/pinegrove-icon.png) , url(../assets/images/icon-base-focus.png);
+}
+.apartment.two:hover{
+    background-image: url(../assets/images/lakeview-icon.png) , url(../assets/images/icon-base-focus.png);
+}
+.apartment.three:hover{
+    background-image: url(../assets/images/sunnyvale-icon.png) , url(../assets/images/icon-base-focus.png);
+}
+.apartment.clicked{
+    background-position: 50% , 50%;
+    background-size: auto 100% , auto 138%;
+    box-shadow: 0.25px -0.25px 20px 7px gray;
+    -webkit-box-shadow: 0.25px -0.25px 20px 7px gray;
+    -moz-box-shadow: 0.25px -0.25px 20px 7px gray;
+}
+.apartment.clicked.one{
+   background-image: url(../assets/images/pinegrove-icon.png) , url(../assets/images/icon-base-focus.png);
+}
+.apartment.clicked.two{
+    background-image: url(../assets/images/lakeview-icon.png) , url(../assets/images/icon-base-focus.png);
+}
+.apartment.clicked.three{
+    background-image: url(../assets/images/sunnyvale-icon.png) , url(../assets/images/icon-base-focus.png);
+}
+.apartment.location{
+    background-position: 50% , 50%;
+    background-size: auto 100% , auto 138%;
+    box-shadow: 0.25px -0.25px 20px 7px #ea5216;
+    -webkit-box-shadow: 0.25px -0.25px 20px 7px #ea5216;
+    -moz-box-shadow: 0.25px -0.25px 20px 7px #ea5216;
+}
+.apartment.location div{
+  box-shadow: 0.3px 0px 5px 1px rgba(64, 64, 64, 0.66);
+  color: #e95325;
+}
+.apartment.location.one{
+    background-image: url(../assets/images/pinegrove-icon.png) , url(../assets/images/icon-base-focus.png);
+}
+.apartment.location.two{
+    background-image: url(../assets/images/lakeview-icon.png) , url(../assets/images/icon-base-focus.png);
+}
+.apartment.location.three{
+    background-image: url(../assets/images/sunnyvale-icon.png) , url(../assets/images/icon-base-focus.png);
 }
 .pointer-arrow{
     position: absolute;
@@ -4304,6 +4360,94 @@ position: absolute;
     top: 57.9%;
 }
 
+#intercomPinegrove.taggedonce{
+    background-image: url(../assets/images/intercom-pinegrove-tagged.png);
+	opacity:0.5;
+}
+
+#stepsPinegrove.taggedonce{
+    background-image: url(../assets/images/steps-pinegrove-tagged.png);
+	opacity:0.5;
+}
+
+#lightPinegrove.taggedonce{
+    background-image: url(../assets/images/lamp-pinegrove-tagged.png);
+	opacity:0.5;
+}
+
+#windowPinegrove.taggedonce{
+    background-image: url(../assets/images/window-pinegrove-tagged.png);
+	opacity:0.5;
+}
+
+#floorPinegrove.taggedonce{
+    background-image: url(../assets/images/floor-pinegrove-tagged.png);
+	opacity:0.5;
+}
+
+#bathtubPinegrove.taggedonce{
+    background-image: url(../assets/images/bathtub-pinegrove-tagged.png);
+	opacity:0.5;
+}
+
+#stairsLakeview.taggedonce{
+    background-image: url(../assets/images/steps-lakeview-tagged.png);
+	opacity:0.5;
+}
+
+#frenchDoorLakeview.taggedonce{
+    background-image: url(../assets/images/frontdoor-lakeview-tagged.png);
+	opacity:0.5;
+}
+
+#bathtubLakeview.taggedonce {
+    background-image: url(../assets/images/bathtub-lakeview-tagged.png);
+	opacity:0.5;
+}
+#rampSunnyvale.taggedonce {
+    background-image: url(../assets/images/ramp-sunnyvale-tagged.png);
+	opacity:0.5;
+}
+
+#streetSunnyvale.taggedonce{
+    background-image: url(../assets/images/frontdoor-sunnyvale-tagged.png);
+	opacity:0.5;
+}
+
+#windowSunnyvale.taggedonce{
+    background-image: url(../assets/images/window-sunnyvale-tagged.png);
+	opacity:0.5;
+}
+
+#lightSunnyvale.taggedonce{
+    background-image: url(../assets/images/lights-sunnyvale-tagged.png);
+	opacity:0.5;
+}
+
+#floorSunnyvale.taggedonce{
+    background-image: url(../assets/images/floor-sunnyvale-tagged.png);
+	opacity:0.5;
+}
+#bathtubSunnyvale.taggedonce{
+    background-image: url(../assets/images/bathtub-sunnyvale-tagged.png);
+	opacity:0.5;
+}
+
+#floorLakeview.taggedonce{
+    background-image: url(../assets/images/floor-lakeview-tagged.png);
+	opacity:0.5;
+}
+
+#ceilingLakeview.taggedonce{
+    background-image: url(../assets/images/ceiling-lakeview-tagged.png);
+	opacity:0.5;
+}
+
+#lightLakeview.taggedonce{
+    background-image: url(../assets/images/light-lakeview-tagged.png);
+	opacity:0.5;
+}
+
 .glowing-object.glow{
     -webkit-animation-name:OOIGlow;
     -webkit-animation-duration:1.25s;
@@ -5172,7 +5316,11 @@ body{
     width:30%
 }
 .meet-next-arrow{
+
     top:6.5%;
+
+
+
 
 }
 .next-arrow{
@@ -5222,7 +5370,7 @@ cx:24px;
 }
 
 
-@media only screen and (max-device-height: 600px) and (orientation:landscape){
+@media only screen and (max-device-height: 599px) and (orientation:landscape){
 body{
    font-size:8px;
 }
@@ -5676,9 +5824,7 @@ div#engagementScoreBox{
                                            100% {   background-position: 50% 20% }
 }
 
- */
-<<<<<<< HEAD
-=======
+*/
  #divtag{
     width: 100%;
     text-align: center;
@@ -5688,4 +5834,96 @@ div#engagementScoreBox{
     color: white;
  }
 
->>>>>>> develop
+
+ @media only screen and (min-device-height : 600px) and (max-device-height : 960px) and (orientation: landscape) {
+    body{
+        font-size : 10.5px;
+
+    }
+    .ailments{
+        width: 19%;
+    }
+    div#engagementScoreBox{
+        height: 12px;
+            top: 94%;
+    }
+    .circleProgress {
+    r: 12px;
+    cx: 17px;
+    cy: 17px;
+    }
+    .circleProgress{
+        stroke-width: 2px;
+        stroke-dasharray: 75.42;
+
+    }
+    .control-button.score{
+        height: 33px;
+    width: 33px;
+    }
+    .control-button{
+        height: 33px;
+    width: 33px;
+    }
+    .hint-interface{
+        height: 33px;
+    }
+    .info-button{
+        height: 33px;
+    width: 33px;
+    }
+    .nav-button{
+        height: 50px;
+    width: 33px;
+    top: 44%;
+    }
+    .info-text{
+        font-size: 72%;
+        height: 17px;
+        padding: 1.5% 4% 0.6% 5.5%;
+    }
+    .control-bar.control-right{
+            top: 16px;
+    }
+    .object-effect{
+        width: 215px;
+    }
+    .desc-hint {
+    transform: translateY(-18vh);
+    }
+    .eye .ailment-content:before{
+        left:18.5%;
+    }
+    .leg .ailment-content:before{
+        left:47.5%;
+    }
+    .ear .ailment-content:before{
+        left:75%;
+    }
+    .ailment-content{
+        margin:1% 0% 10% 0%;
+    }
+    .meet-next-arrow{
+        top: 3%;
+    }
+    .apartment-info.pinegrove{
+        left: 32.5%;
+    }
+    .apartment-info.lakeview{
+        right: 29.5%;
+    }
+    .apartment-info.sunnyvale{
+        right: 36.5%;
+    }
+    .object-effect-content{
+        width: 91%;
+        font-size: 90%;
+    }
+    .next-arrow{
+        top:3%;
+    }
+    .dismiss-ailment-button{
+        bottom: 5%;
+    }
+
+}

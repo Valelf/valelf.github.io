@@ -1,15 +1,15 @@
 
 
 
-var charAnn, charSarah, buttonPlay, buttonPrev, scoreSvg , buttonNext, appContainer , divtag ,
+var charAnn, charSarah, buttonPlay, buttonPrev, scoreSvg , buttonNext, appContainer ,
 
 infoApartmentArray = [ {
 	'title' : 'Pine Grove Apartments',
 	"audioFile" :"common/LateAdulthood_Narration_MapView_19.mp3",
 	'name' : 'Pine Grove',
-	'rent' : '$ 850 /month ',
-	'distance' : " 0.5 mile",
-	'ammenities' : "Swimming Pool , Super Market",
+	'rent': '$850/month ',
+	'distance' : "0.5 mile",
+	'ammenities': "Swimming pool, supermarket",
 	"class" : 'pinegrove',
 	"index": 0
 
@@ -17,18 +17,18 @@ infoApartmentArray = [ {
 	'title' : 'Lakeview Courts',
 	"audioFile" :"common/LateAdulthood_Narration_MapView_20.mp3",
 	'name' : 'Lakeview',
-	'rent' : '$ 975 /month ',
-	'distance' : " 0.25 mile",
-	'ammenities' : "Library , Super Market",
+	'rent': '$975/month ',
+	'distance' : "0.25 mile",
+	'ammenities': "Library, supermarket",
 	"class" : 'lakeview',
 	"index": 1
 }, {
 	'title' : 'Sunnyvale Apartments',
 	"audioFile" :"common/LateAdulthood_Narration_MapView_21.mp3",
 	'name' : 'Sunnyvale',
-	'rent' : '$ 1000 /month ',
-	'distance' : " 0.14 mile",
-	'ammenities' : "Super Market",
+	'rent' : '$1000/month ',
+	'distance' : "0.14 mile",
+	'ammenities': "Supermarket",
 	"class" : 'sunnyvale',
 	"index": 2
 }
@@ -37,7 +37,7 @@ infoApartmentArray = [ {
 
 
 
-var controlInfo, closeInfoText, audioNarrationActive = true , instructionAudio, apartmentRedirect , OOIEffectAudio , currentHintAduio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
+var controlInfo, closeInfoText, audioNarrationActive = true , instructionAudio, apartmentRedirect , OOIEffectAudio , currentHintAduio , objectDescriptionAudio , defaultPlayerOOITags ,disableClickLayer ,movingCircle , subSceneArray , rightNav , ailmentNotes , ailmentTitle ,  backGroundZeroZero , currentSceneIndex = 0 ,  currentSubSceneIndex = 0 , leftNav , charAge ,spinnerCharInfo , charPoster ,  charEthnicity , charName ,  charGender , taggedOOI , noteDismissButton , infoClose , currentOOIIndex , currentOOI = {} , inSceneOOI = [] ,  playAgain = false , controlSetting, OOILayer ,controlMap, loadingTips, playerCharacterArray, playerOOITags,  instructionsArray, loadingTipsArray, progressBar, controlBars, progressLine, apartmentTitle, controlLayer, controlMap, gameMap, infoText, ailmentArray , infoScriptObject, OOIContentArray, apartmentSelectionScript ,  conversationScriptArray;
 var scoreInfoContent,scoreInfoContentText,scoreInfoCloseButton;
 scoreInfoContent = document.getElementById("scoreInfoContent");
 scoreInfoContentText = document.getElementById("scoreInfoContentText");
@@ -1744,7 +1744,6 @@ charSarah = document.getElementById('characterSarah');
 chairLouiseZero = document.getElementById('chairLouiseZero');
 leftNav = document.getElementById('leftNav');
 rightNav = document.getElementById('rightNav');
-divtag = document.getElementById('divtag');
 disableClickLayer = document.getElementById('disableClickLayer');
 apartmentRedirect = document.getElementById('apartmentRedirect');
 
@@ -2079,9 +2078,9 @@ sunnyvaleObjectsExplored = 0;
 apartmentObjectsExplored = [ 0 , 0 , 0 ] ;
 engagementScore = 0;
 currentEngagementScore = engagementScore;
+animateEngagementScore(engagementScore);
 	noOfObjectsExplored.innerHTML = "0 / 6 ";
 	engagementScoreBox.innerHTML = "0"
-guideHeader.innerText = '';
 //characterSelectionWidget.classList.remove('hide');
 
 dismissAilmentButton.innerHTML = "Dismiss";
@@ -2128,7 +2127,7 @@ for ( var j = 0; j < characterPlayerIDArray.length ; j++) {
 
 //add .point to spin button
 spinButton.classList.add("point");
-spinButton.innerHTML = "Go >>";
+spinButton.innerHTML = "Spin >>";
 // remove selected from poster
 var removePoster = document.getElementsByClassName("poster");
 for ( var j = 0; j < removePoster.length ; j++) {
@@ -2216,12 +2215,24 @@ initHints(true);
 
 activeApartment.classList.remove('active');
 characterSelectionWidget.classList.add('hide');
+guideHeader.classList.add("hide");
 
-navigateScenes(0,0,characterSelectionWidget);
+navigateScenes(0,0,characterSelectionWidget,guideHeader);
 gameOverlay.classList.add('tint');
 //navigateInstructions();
 //selectCharacter(playerCharacterArray);
 scoreInfoContent.classList.add("hide");
+
+for ( var i = 0; i < 3; i++) {
+	apartmentIcon[i].classList.remove('clicked');
+}
+apartmentInfo.classList.add('hide');
+
+var taggedElements= document.getElementsByClassName('glowing-object');
+for( var j=0 ; j<= taggedElements.length;j++){
+	taggedElements[j].classList.remove('taggedonce');
+	taggedElements[j].classList.add('glow');
+}
 }
 
 
@@ -2416,6 +2427,7 @@ inSceneOOIs[5].addEventListener('click', function() {
 replayControl.addEventListener('click', function(e) {
 	e.stopPropagation();
 	if(!hasClass(replayControl,"inactive")){
+		guideHeader.classList.remove("decision");
 		restartGame();
 	}
 });
@@ -2463,7 +2475,10 @@ noteDismissButton.addEventListener('click', function() {
 
 	guideHeader.classList.add("hide");
 
+noteDismissButton.classList.add('hide');
+noteDismissButton.innerHTML = "Dismiss" ;
 	animateEngagementScore(engagementScore);
+
 
 	endGameReview = true;
 	evaluateApartmentScore();
@@ -2542,6 +2557,7 @@ apartmentRedirect.addEventListener('click', function() {
 	instructionHUD.classList.add('hide');
 	guideHeader.innerText = '';
 	setTimeout(function(){
+		
 			infoText.classList.add("hide-perm");
 			controlInfoIcon.classList.add("hide-perm");
 			controlInfo.classList.add("hide-perm");
@@ -2569,6 +2585,13 @@ apartmentRedirect.addEventListener('click', function() {
 				for ( var i = 0; i < infoApartmentArray.length; i++) {
 					userInterface.classList.remove(infoApartmentArray[i].class);
 				};
+
+
+controlScore.classList.remove('hide');
+engagementScore = 195;
+currentEngagementScore = engagementScore;
+animateEngagementScore(engagementScore);
+engagementScoreBox.innerHTML = "195"
 
 
 
@@ -3316,7 +3339,7 @@ function closeAilmentNotes(){
 		}else{
 			introPage = false;
 			ailmentNotes.classList.add('hide');
-			guideHeader.innerText = '';
+			guideHeader.innerText = 'Spin for Character';
 			guideHeader.classList.remove('hide');
 			characterSelectionWidget.classList.remove('hide');
 			dismissAilmentButton.innerHTML = "Dismiss";
@@ -3792,11 +3815,10 @@ function showCharProfile(info) {
 	spinButton.classList.add('meet');
 spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.png" id="meetnextArrow" class="meet-next-arrow"> ';
 	charName[0].innerText = info.name;
-	charGender[0].innerText = info.gender;
 
 	var charAudioFile = info.class+"/LateAdulthood_Narration_SpinWheel_10.mp3"
 	//charEthnicity[0].innerText = info.ethnicity;
-	charAge[0].innerText = info.age + 'Years';
+	charAge[0].innerText =info.age + 'Years old';
 	playAudio(charAudioFile);
 
 	spinnerCharInfo[0].classList.remove('vanish');
@@ -3807,7 +3829,8 @@ spinButton.innerHTML= 'Meet  '+ info.name +'<img src="assets/images/next-icon.pn
 
 
 		//sagar's code for auto-finish integrated by dixit
-		if(window.location.href.indexOf("skip") > -1 || window.location.href.indexOf("fast") > -1){
+
+if(window.location.href.indexOf("skip") > -1 || window.location.href.indexOf("skip") > -1){
 console.log('skip present');
 apartmentRedirect.classList.remove('hide');
 }else{
@@ -3901,7 +3924,7 @@ function showApartmentInfo(info, i) {
 	apartmentIcon[i].classList.add('clicked');
 	apartmentIcon[i].classList.remove('point');
 	apartmentTitle.innerText = info[i].title;
-	rentDetails.innerText = "Rent : " + info[i].rent;
+	rentDetails.innerText = "Rent: " + info[i].rent;
 	if(hintFlags.engagementScore==0){
 		forceShowHints = true;
 		currentHint = infoScriptArray.engagementScore.informationText + closeHint;
@@ -3915,7 +3938,7 @@ function showApartmentInfo(info, i) {
 	//ratingDetails.innerText = "Locality rating : " + info[i].rating;
 	distanceDetails.innerText = "Distance from senior center : "
 			+ info[i].distance;
-	ammenitiesDetails.innerText = "Near By : " + info[i].ammenities;
+	ammenitiesDetails.innerText = "Nearby: " + info[i].ammenities;
 	apartmentInfo.classList.remove('hide');
 	var apartmentClasses = ['pinegrove','sunnyvale','lakeview','hide'] //'hide' added in array for simplicity
 
@@ -3940,6 +3963,14 @@ function tagOOI(info,i){
 	var tags = ['plus','neutral','minus'];
 	currentTag = tags[i];
 	var tagOOIClass = currentOOI.OOIClass ;
+	for(var i = 0 ; i < currentSubScene.children[0].children[1].children.length ; i++ ){
+
+if(hasClass(currentSubScene.children[0].children[1].children[i],tagOOIClass) && hasClass(currentSubScene.children[0].children[1].children[i],currentApartment.class+"-glow")){
+       currentSubScene.children[0].children[1].children[i].classList.add('taggedonce');
+	   currentSubScene.children[0].children[1].children[i].classList.remove('glow');
+}
+
+}
 	if(tagOOIClass == "frontdoor"){
 		playerOOITags[currentApartment.index].taggedOOIs[0].frontdoor = currentTag ;
 	}else if(tagOOIClass == "steps"){
@@ -4383,19 +4414,18 @@ function preLoadNPCImages(){
     }else{
 
     //  console.log(sceneWrapper.getElementsByClassName('character')[j]);
-     // NPCChar = sceneWrapper.getElementsByClassName('character')[j];
-     // NPCChar.classList.add('talk');
+      NPCChar = sceneWrapper.getElementsByClassName('character')[j];
+      NPCChar.classList.add('talk');
     }
 	}
   //initGame();
-/*setTimeout(function(){
+setTimeout(function(){
 	for ( var j = 0; j < sceneWrapper.getElementsByClassName('character').length; j++) {
 		NPCChar = sceneWrapper.getElementsByClassName('character')[j];
 		NPCChar.classList.remove('talk');
 	}
 
-},100) */
-}
+},100) }
 
 function tourApartment() {
 if(audio){
@@ -4429,7 +4459,7 @@ if(audio){
 }
 
 
-function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
+function navigateScenes(sceneNo,subSceneNo,optUnhideElement,optUnhideElement2) {
 
 
 	gameOverlay.classList.remove('tint');
@@ -4497,6 +4527,9 @@ function navigateScenes(sceneNo,subSceneNo,optUnhideElement) {
 
 			if(optUnhideElement){
 				optUnhideElement.classList.remove('hide');
+			}
+			if(optUnhideElement2){
+				optUnhideElement2.classList.remove('hide');
 			}
 			//callBack;
 		}, 1000);
