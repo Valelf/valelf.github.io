@@ -3936,7 +3936,7 @@ function showApartmentInfo(info, i) {
 		playAudio(info[i].audioFile);
 	}
 	//ratingDetails.innerText = "Locality rating : " + info[i].rating;
-	distanceDetails.innerText = "Distance from senior center : "
+	distanceDetails.innerText = "Distance from senior center: "
 			+ info[i].distance;
 	ammenitiesDetails.innerText = "Nearby: " + info[i].ammenities;
 	apartmentInfo.classList.remove('hide');
